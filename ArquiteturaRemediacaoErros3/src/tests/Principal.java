@@ -1,10 +1,11 @@
-package module.expressions.identifier;
+package tests;
 
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
 import module.error.sorter.ClassificadorErroControlador;
+import module.expressions.identifier.IdentificadorExpressaoControlador;
 import module.mer.manager.GerenciadorMREControlador;
 import module.merfunction.sorter.ClassificadorFuncaoMREControlador;
 import br.ufpr.c3sl.condigital.virtualkeyboard.communication.KeyBoardComunication;
