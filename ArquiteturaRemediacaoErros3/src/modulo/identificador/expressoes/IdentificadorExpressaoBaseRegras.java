@@ -926,7 +926,7 @@ import modulo.classificador.erro.ClassificadorErroControlador;
 /**
  * Knowledge base created by JEOPS from file IdentificadorExpressaoBaseRegras.rules
  *
- * @version 10/04/2014
+ * @version 17/04/2014
  */
 public class IdentificadorExpressaoBaseRegras extends jeops.AbstractKnowledgeBase {
 
