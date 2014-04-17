@@ -1,0 +1,136 @@
+package module.mer.manager;
+import entity.Historic;
+import entity.WrongAnswer;
+import util.Constantes;
+import entity.MERFunction;
+import java.util.ArrayList;
+
+ruleBase GerenciadorMREBaseRegras {
+	
+	
+	rule MRE1 {
+		declarations
+			Historico h;
+			FuncaoMRE funcaoMRE;
+			RespostaErrada e;
+			ArrayList representacoes;
+			
+		localdecl
+		
+		conditions
+			funcaoMRE.getTipo() == Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES;
+		actions
+			System.out.println("Exibi��o de MRE 1");	
+			System.out.println(GerenciadorMREControlador.getMRE(representacoes, 1).getId() + " - " + GerenciadorMREControlador.getMRE(representacoes, 1).getDescricao());	
+			retract(h);
+			retract(funcaoMRE);		
+			retract(e);
+			retract(representacoes);	
+	}
+
+	rule MRE2 {
+		declarations
+			Historico h;
+			FuncaoMRE funcaoMRE;
+			RespostaErrada e;			
+			ArrayList representacoes;
+			
+		localdecl
+		
+		conditions
+			funcaoMRE.getTipo() == Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO;
+			e.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
+		actions
+			System.out.println("Exibi��o de MRE 2");
+			System.out.println(GerenciadorMREControlador.getMRE(representacoes, 2).getId() + " - " + GerenciadorMREControlador.getMRE(representacoes, 2).getDescricao());								
+			retract(h);
+			retract(funcaoMRE);			
+			retract(e);
+			retract(representacoes);
+	}	
+	
+	rule MRE3 {
+		declarations
+			Historico h;
+			FuncaoMRE funcaoMRE;
+			RespostaErrada e;
+			ArrayList representacoes;
+			
+		localdecl
+		
+		conditions
+			funcaoMRE.getTipo() == Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA;
+			e.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA;
+		actions
+			System.out.println("Exibi��o de MRE 3");
+			System.out.println(GerenciadorMREControlador.getMRE(representacoes, 3).getId() + " - " + GerenciadorMREControlador.getMRE(representacoes, 3).getDescricao());	
+			retract(h);
+			retract(funcaoMRE);			
+			retract(e);
+			retract(representacoes);
+	}	
+		
+	rule MRE4 {
+		declarations
+			Historico h;
+			FuncaoMRE funcaoMRE;
+			RespostaErrada e;
+			ArrayList representacoes;
+			
+		localdecl
+		
+		conditions
+			funcaoMRE.getTipo() == Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA;
+			e.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;
+		actions
+			System.out.println("Exibi��o de MRE 4");
+			System.out.println(GerenciadorMREControlador.getMRE(representacoes, 4).getId() + " - " + GerenciadorMREControlador.getMRE(representacoes, 4).getDescricao());	
+			retract(h);
+			retract(funcaoMRE);
+			retract(e);
+			retract(representacoes);
+	}
+				
+	rule MRE5 {
+		declarations
+			Historico h;
+			FuncaoMRE funcaoMRE;
+			RespostaErrada e;
+			ArrayList representacoes;
+			
+		localdecl
+		
+		conditions
+			funcaoMRE.getTipo() == Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO;
+			e.getTipo() == Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL;
+		actions
+			System.out.println("Exibi��o de MRE 5");
+			System.out.println(GerenciadorMREControlador.getMRE(representacoes, 5).getId() + " - " + GerenciadorMREControlador.getMRE(representacoes, 5).getDescricao());	
+			retract(h);
+			retract(funcaoMRE);
+			retract(e);
+			retract(representacoes);
+	}	
+	
+			
+	rule MRE6 {
+		declarations
+			Historico h;
+			FuncaoMRE funcaoMRE;
+			RespostaErrada e;
+			ArrayList representacoes;
+			
+		localdecl
+		
+		conditions
+			funcaoMRE.getTipo() == Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA;
+			e.getTipo() == Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL;
+		actions
+			System.out.println("Exibi��o de MRE 6");
+			System.out.println(GerenciadorMREControlador.getMRE(representacoes, 6).getId() + " - " + GerenciadorMREControlador.getMRE(representacoes, 6).getDescricao());	
+			retract(h);
+			retract(funcaoMRE);
+			retract(e);
+			retract(representacoes);						
+	}	
+}
