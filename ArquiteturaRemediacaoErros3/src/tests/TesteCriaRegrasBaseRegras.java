@@ -11,171 +11,145 @@ import module.expressions.identifier.IdentificadorExpressaoControlador;
 
 
     /**
-     * Identifiers of rule detectaRespostaErrada_1
+     * Identifiers of rule wrongAnswer_0
      */
-    private String[] identifiers_detectaRespostaErrada_1 = {
-        "historico",
-        "erros",
-        "acertos",
-        "expressaoControlador",
+    private String[] identifiers_wrongAnswer_0 = {
+        "h",
         "respostaErrada"
     };
 
     /**
-     * Returns the identifiers declared in rule detectaRespostaErrada_1
+     * Returns the identifiers declared in rule wrongAnswer_0
      *
-     * @return the identifiers declared in rule detectaRespostaErrada_1
+     * @return the identifiers declared in rule wrongAnswer_0
      */
-    private String[] getDeclaredIdentifiers_detectaRespostaErrada_1() {
-         return identifiers_detectaRespostaErrada_1;
+    private String[] getDeclaredIdentifiers_wrongAnswer_0() {
+         return identifiers_wrongAnswer_0;
     }
 
     /**
      * Returns the name of the class of one declared object for
-     * rule detectaRespostaErrada_1.
+     * rule wrongAnswer_0.
      *
      * @param index the index of the declaration
      * @return the name of the class of the declared objects for
      *          this rule.
      */
-    private String getDeclaredClassName_detectaRespostaErrada_1(int index) {
+    private String getDeclaredClassName_wrongAnswer_0(int index) {
         switch (index) {
             case 0: return "entity.Historic";
-            case 1: return "java.util.ArrayList";
-            case 2: return "java.util.ArrayList";
-            case 3: return "module.expressions.identifier.IdentificadorExpressaoControlador";
-            case 4: return "entity.WrongAnswer";
+            case 1: return "entity.WrongAnswer";
             default: return null;
         }
     }
 
     /**
-     * Returns the class of one declared object for rule detectaRespostaErrada_1.
+     * Returns the class of one declared object for rule wrongAnswer_0.
      *
      * @param index the index of the declaration
      * @return the class of the declared objects for this rule.
      */
-    private Class getDeclaredClass_detectaRespostaErrada_1(int index) {
+    private Class getDeclaredClass_wrongAnswer_0(int index) {
         switch (index) {
             case 0: return entity.Historic.class;
-            case 1: return java.util.ArrayList.class;
-            case 2: return java.util.ArrayList.class;
-            case 3: return module.expressions.identifier.IdentificadorExpressaoControlador.class;
-            case 4: return entity.WrongAnswer.class;
+            case 1: return entity.WrongAnswer.class;
             default: return null;
         }
     }
 
     /**
-     * Sets an object declared in the rule detectaRespostaErrada_1.
+     * Sets an object declared in the rule wrongAnswer_0.
      *
      * @param index the index of the declared object
      * @param value the value of the object being set.
      */
-    private void setObject_detectaRespostaErrada_1(int index, Object value) {
+    private void setObject_wrongAnswer_0(int index, Object value) {
         switch (index) {
             case 0: this.entity_Historic_1 = (entity.Historic) value; break;
-            case 1: this.java_util_ArrayList_1 = (java.util.ArrayList) value; break;
-            case 2: this.java_util_ArrayList_2 = (java.util.ArrayList) value; break;
-            case 3: this.module_expressions_identifier_IdentificadorExpressaoControlador_1 = (module.expressions.identifier.IdentificadorExpressaoControlador) value; break;
-            case 4: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
         }
     }
 
     /**
-     * Returns an object declared in the rule detectaRespostaErrada_1.
+     * Returns an object declared in the rule wrongAnswer_0.
      *
      * @param index the index of the declared object
      * @return the value of the corresponding object.
      */
-    private Object getObject_detectaRespostaErrada_1(int index) {
+    private Object getObject_wrongAnswer_0(int index) {
         switch (index) {
             case 0: return entity_Historic_1;
-            case 1: return java_util_ArrayList_1;
-            case 2: return java_util_ArrayList_2;
-            case 3: return module_expressions_identifier_IdentificadorExpressaoControlador_1;
-            case 4: return entity_WrongAnswer_1;
+            case 1: return entity_WrongAnswer_1;
             default: return null;
         }
     }
 
     /**
      * Returns all variables bound to the declarations 
-     * of rule detectaRespostaErrada_1
+     * of rule wrongAnswer_0
      *
      * @return an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private Object[] getObjects_detectaRespostaErrada_1() {
+    private Object[] getObjects_wrongAnswer_0() {
         return new Object[] {
                             entity_Historic_1,
-                            java_util_ArrayList_1,
-                            java_util_ArrayList_2,
-                            module_expressions_identifier_IdentificadorExpressaoControlador_1,
                             entity_WrongAnswer_1
                             };
     }
 
     /**
      * Defines all variables bound to the declarations 
-     * of rule detectaRespostaErrada_1
+     * of rule wrongAnswer_0
      *
      * @param objects an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private void setObjects_detectaRespostaErrada_1(Object[] objects) {
+    private void setObjects_wrongAnswer_0(Object[] objects) {
         entity_Historic_1 = (entity.Historic) objects[0];
-        java_util_ArrayList_1 = (java.util.ArrayList) objects[1];
-        java_util_ArrayList_2 = (java.util.ArrayList) objects[2];
-        module_expressions_identifier_IdentificadorExpressaoControlador_1 = (module.expressions.identifier.IdentificadorExpressaoControlador) objects[3];
-        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[4];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
     }
 
     /**
-     * Condition 0 of rule detectaRespostaErrada_1.<p>
+     * Condition 0 of rule wrongAnswer_0.<p>
      * The original expression was:<br>
-     * <code>expressaoControlador.temRespostaErrada(historico, erros)</code>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean detectaRespostaErrada_1_cond_0() {
-        return (module_expressions_identifier_IdentificadorExpressaoControlador_1.temRespostaErrada(entity_Historic_1, java_util_ArrayList_1));
+    private boolean wrongAnswer_0_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
     }
 
     /**
-     * Checks whether some conditions of rule detectaRespostaErrada_1 is satisfied.
+     * Checks whether some conditions of rule wrongAnswer_0 is satisfied.
      *
      * @param index the index of the condition to be checked.
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean detectaRespostaErrada_1_cond(int index) {
+    private boolean wrongAnswer_0_cond(int index) {
         switch (index) {
-            case 0: return detectaRespostaErrada_1_cond_0();
+            case 0: return wrongAnswer_0_cond_0();
             default: return false;
         }
     }
 
     /**
-     * Checks whether all conditions of rule detectaRespostaErrada_1 that depend only on
+     * Checks whether all conditions of rule wrongAnswer_0 that depend only on
      * the given object are satisfied.
      *
      * @param declIndex the index of the declaration to be checked
      * @return <code>true</code> if all corresponding conditions for
      *          this rule are satisfied; <code>false</code> otherwise.
      */
-    private boolean checkConditionsOnlyOf_detectaRespostaErrada_1(int declIndex) {
+    private boolean checkConditionsOnlyOf_wrongAnswer_0(int declIndex) {
         switch (declIndex) {
             case 0:
+                if (!wrongAnswer_0_cond_0()) return false;
                 return true;
             case 1:
-                return true;
-            case 2:
-                return true;
-            case 3:
-                return true;
-            case 4:
                 return true;
             default: return false;
         }
@@ -191,48 +165,1668 @@ import module.expressions.identifier.IdentificadorExpressaoControlador;
      *          up to the given declaration are true;
      *          <code>false</code> otherwise.
      */
-    private boolean checkCondForDeclaration_detectaRespostaErrada_1(int declIndex) {
+    private boolean checkCondForDeclaration_wrongAnswer_0(int declIndex) {
         switch (declIndex) {
             case 0:
                 return true;
             case 1:
-                return true;
-            case 2:
-                return true;
-            case 3:
-                if (!detectaRespostaErrada_1_cond_0()) return false;
-                return true;
-            case 4:
                 return true;
             default: return false;
         }
     }
 
     /**
-     * Executes the action part of the rule detectaRespostaErrada_1
+     * Executes the action part of the rule wrongAnswer_0
      */
-    private void detectaRespostaErrada_1() {
+    private void wrongAnswer_0() {
 entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
 modified(entity_Historic_1);
 System.out.println("Resposta Errada (1) detectada");
 entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
 modified(entity_WrongAnswer_1);
-retract(entity_Historic_1);
-retract(java_util_ArrayList_1);
-retract(java_util_ArrayList_2);
-retract(module_expressions_identifier_IdentificadorExpressaoControlador_1);
-retract(entity_WrongAnswer_1);
+flush();
     }
 
 
-// fim_regras
+
+    /**
+     * Identifiers of rule wrongAnswer_1
+     */
+    private String[] identifiers_wrongAnswer_1 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_1
+     *
+     * @return the identifiers declared in rule wrongAnswer_1
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_1() {
+         return identifiers_wrongAnswer_1;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_1.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_1(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_1.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_1(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_1.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_1(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_1.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_1(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_1
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_1() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_1
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_1(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_1.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_1_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_1 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_1_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_1_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_1 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_1(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_1_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_1(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_1
+     */
+    private void wrongAnswer_1() {
+entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+modified(entity_Historic_1);
+System.out.println("Resposta Errada (1) detectada");
+entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+modified(entity_WrongAnswer_1);
+flush();
+    }
+
+
+
+    /**
+     * Identifiers of rule wrongAnswer_2
+     */
+    private String[] identifiers_wrongAnswer_2 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_2
+     *
+     * @return the identifiers declared in rule wrongAnswer_2
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_2() {
+         return identifiers_wrongAnswer_2;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_2.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_2(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_2.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_2(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_2.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_2(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_2.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_2(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_2
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_2() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_2
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_2(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_2.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_2_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_2 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_2_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_2_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_2 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_2(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_2_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_2(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_2
+     */
+    private void wrongAnswer_2() {
+entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+modified(entity_Historic_1);
+System.out.println("Resposta Errada (1) detectada");
+entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+modified(entity_WrongAnswer_1);
+flush();
+    }
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_3
+     */
+    private String[] identifiers_wrongAnswer_3 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_3
+     *
+     * @return the identifiers declared in rule wrongAnswer_3
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_3() {
+         return identifiers_wrongAnswer_3;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_3.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_3(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_3.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_3(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_3.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_3(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_3.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_3(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_3
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_3() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_3
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_3(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_3.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_3_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_3 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_3_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_3_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_3 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_3(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_3_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_3(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_3
+     */
+    private void wrongAnswer_3() {
+entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+modified(entity_Historic_1);
+System.out.println("Resposta Errada (1) detectada");
+entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+modified(entity_WrongAnswer_1);
+flush();
+    }
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_4
+     */
+    private String[] identifiers_wrongAnswer_4 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_4
+     *
+     * @return the identifiers declared in rule wrongAnswer_4
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_4() {
+         return identifiers_wrongAnswer_4;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_4.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_4(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_4.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_4(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_4.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_4(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_4.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_4(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_4
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_4() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_4
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_4(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_4.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_4_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_4 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_4_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_4_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_4 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_4(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_4_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_4(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_4
+     */
+    private void wrongAnswer_4() {
+			entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+			modified(entity_Historic_1);
+			System.out.println("Resposta Errada (1) detectada");
+			entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+			modified(entity_WrongAnswer_1);
+			flush();
+	    }
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_5
+     */
+    private String[] identifiers_wrongAnswer_5 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_5
+     *
+     * @return the identifiers declared in rule wrongAnswer_5
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_5() {
+         return identifiers_wrongAnswer_5;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_5.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_5(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_5.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_5(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_5.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_5(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_5.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_5(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_5
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_5() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_5
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_5(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_5.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_5_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_5 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_5_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_5_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_5 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_5(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_5_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_5(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_5
+     */
+    private void wrongAnswer_5() {
+			entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+			modified(entity_Historic_1);
+			System.out.println("Resposta Errada (1) detectada");
+			entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+			modified(entity_WrongAnswer_1);
+			flush();
+	    }
+
+
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_6
+     */
+    private String[] identifiers_wrongAnswer_6 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_6
+     *
+     * @return the identifiers declared in rule wrongAnswer_6
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_6() {
+         return identifiers_wrongAnswer_6;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_6.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_6(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_6.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_6(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_6.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_6(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_6.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_6(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_6
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_6() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_6
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_6(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_6.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_6_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_6 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_6_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_6_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_6 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_6(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_6_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_6(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_6
+     */
+    private void wrongAnswer_6() {
+			entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+			modified(entity_Historic_1);
+			System.out.println("Resposta Errada (1) detectada");
+			entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+			modified(entity_WrongAnswer_1);
+			flush();
+	    }
+
+
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_7
+     */
+    private String[] identifiers_wrongAnswer_7 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_7
+     *
+     * @return the identifiers declared in rule wrongAnswer_7
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_7() {
+         return identifiers_wrongAnswer_7;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_7.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_7(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_7.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_7(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_7.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_7(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_7.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_7(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_7
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_7() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_7
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_7(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_7.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_7_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_7 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_7_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_7_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_7 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_7(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_7_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_7(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_7
+     */
+    private void wrongAnswer_7() {
+			entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+			modified(entity_Historic_1);
+			System.out.println("Resposta Errada (1) detectada");
+			entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+			modified(entity_WrongAnswer_1);
+			flush();
+	    }
+
+
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_8
+     */
+    private String[] identifiers_wrongAnswer_8 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_8
+     *
+     * @return the identifiers declared in rule wrongAnswer_8
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_8() {
+         return identifiers_wrongAnswer_8;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_8.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_8(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_8.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_8(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_8.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_8(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_8.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_8(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_8
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_8() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_8
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_8(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_8.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_8_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_8 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_8_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_8_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_8 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_8(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_8_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_8(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_8
+     */
+    private void wrongAnswer_8() {
+			entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+			modified(entity_Historic_1);
+			System.out.println("Resposta Errada (1) detectada");
+			entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+			modified(entity_WrongAnswer_1);
+			flush();
+
+	    }
+
+
+
+
+	
+    /**
+     * Identifiers of rule wrongAnswer_9
+     */
+    private String[] identifiers_wrongAnswer_9 = {
+        "h",
+        "respostaErrada"
+    };
+
+    /**
+     * Returns the identifiers declared in rule wrongAnswer_9
+     *
+     * @return the identifiers declared in rule wrongAnswer_9
+     */
+    private String[] getDeclaredIdentifiers_wrongAnswer_9() {
+         return identifiers_wrongAnswer_9;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule wrongAnswer_9.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_wrongAnswer_9(int index) {
+        switch (index) {
+            case 0: return "entity.Historic";
+            case 1: return "entity.WrongAnswer";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule wrongAnswer_9.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_wrongAnswer_9(int index) {
+        switch (index) {
+            case 0: return entity.Historic.class;
+            case 1: return entity.WrongAnswer.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule wrongAnswer_9.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_wrongAnswer_9(int index, Object value) {
+        switch (index) {
+            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
+            case 1: this.entity_WrongAnswer_1 = (entity.WrongAnswer) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule wrongAnswer_9.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_wrongAnswer_9(int index) {
+        switch (index) {
+            case 0: return entity_Historic_1;
+            case 1: return entity_WrongAnswer_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule wrongAnswer_9
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_wrongAnswer_9() {
+        return new Object[] {
+                            entity_Historic_1,
+                            entity_WrongAnswer_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule wrongAnswer_9
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_wrongAnswer_9(Object[] objects) {
+        entity_Historic_1 = (entity.Historic) objects[0];
+        entity_WrongAnswer_1 = (entity.WrongAnswer) objects[1];
+    }
+
+    /**
+     * Condition 0 of rule wrongAnswer_9.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getDescricao().equalsIgnoreCase("123")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_9_cond_0() {
+        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("123"));
+    }
+
+    /**
+     * Checks whether some conditions of rule wrongAnswer_9 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean wrongAnswer_9_cond(int index) {
+        switch (index) {
+            case 0: return wrongAnswer_9_cond_0();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule wrongAnswer_9 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_wrongAnswer_9(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!wrongAnswer_9_cond_0()) return false;
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_wrongAnswer_9(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule wrongAnswer_9
+     */
+    private void wrongAnswer_9() {
+			entity_Historic_1.setNumeroTentativas(entity_Historic_1.getNumeroTentativas() + 1);
+			modified(entity_Historic_1);
+			System.out.println("Resposta Errada (1) detectada");
+			entity_WrongAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
+			modified(entity_WrongAnswer_1);
+			flush();
+
+	    }
+
+
+
+// end_rules
 
 
     /**
      * The names of the rules in this class file
      */
     private static final String[] File_ruleNames = {
-        "detectaRespostaErrada_1"
+        "wrongAnswer_0",
+        "wrongAnswer_1",
+        "wrongAnswer_2",
+        "wrongAnswer_3",
+        "wrongAnswer_4",
+        "wrongAnswer_5",
+        "wrongAnswer_6",
+        "wrongAnswer_7",
+        "wrongAnswer_8",
+        "wrongAnswer_9"
     };
 
     /**
@@ -248,7 +1842,16 @@ retract(entity_WrongAnswer_1);
      * The number of declarations of the rules in this class file.
      */
     private static final int[] File_numberOfDeclarations = {
-        5
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
     };
 
     /**
@@ -264,6 +1867,15 @@ retract(entity_WrongAnswer_1);
      * The number of conditions of the rules in this class file.
      */
     private static final int[] File_numberOfConditions = {
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1
     };
 
@@ -286,7 +1898,16 @@ retract(entity_WrongAnswer_1);
      */
     public boolean checkCondition(int ruleIndex, int condIndex) {
         switch (ruleIndex) {
-            case 0: return detectaRespostaErrada_1_cond(condIndex);
+            case 0: return wrongAnswer_0_cond(condIndex);
+            case 1: return wrongAnswer_1_cond(condIndex);
+            case 2: return wrongAnswer_2_cond(condIndex);
+            case 3: return wrongAnswer_3_cond(condIndex);
+            case 4: return wrongAnswer_4_cond(condIndex);
+            case 5: return wrongAnswer_5_cond(condIndex);
+            case 6: return wrongAnswer_6_cond(condIndex);
+            case 7: return wrongAnswer_7_cond(condIndex);
+            case 8: return wrongAnswer_8_cond(condIndex);
+            case 9: return wrongAnswer_9_cond(condIndex);
             default: return false;
         }
     }
@@ -303,7 +1924,16 @@ retract(entity_WrongAnswer_1);
      */
     public boolean checkConditionsOnlyOf(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkConditionsOnlyOf_detectaRespostaErrada_1(declIndex);
+            case 0: return checkConditionsOnlyOf_wrongAnswer_0(declIndex);
+            case 1: return checkConditionsOnlyOf_wrongAnswer_1(declIndex);
+            case 2: return checkConditionsOnlyOf_wrongAnswer_2(declIndex);
+            case 3: return checkConditionsOnlyOf_wrongAnswer_3(declIndex);
+            case 4: return checkConditionsOnlyOf_wrongAnswer_4(declIndex);
+            case 5: return checkConditionsOnlyOf_wrongAnswer_5(declIndex);
+            case 6: return checkConditionsOnlyOf_wrongAnswer_6(declIndex);
+            case 7: return checkConditionsOnlyOf_wrongAnswer_7(declIndex);
+            case 8: return checkConditionsOnlyOf_wrongAnswer_8(declIndex);
+            case 9: return checkConditionsOnlyOf_wrongAnswer_9(declIndex);
             default: return false;
         }
     }
@@ -321,7 +1951,16 @@ retract(entity_WrongAnswer_1);
      */
     public boolean checkCondForDeclaration(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkCondForDeclaration_detectaRespostaErrada_1(declIndex);
+            case 0: return checkCondForDeclaration_wrongAnswer_0(declIndex);
+            case 1: return checkCondForDeclaration_wrongAnswer_1(declIndex);
+            case 2: return checkCondForDeclaration_wrongAnswer_2(declIndex);
+            case 3: return checkCondForDeclaration_wrongAnswer_3(declIndex);
+            case 4: return checkCondForDeclaration_wrongAnswer_4(declIndex);
+            case 5: return checkCondForDeclaration_wrongAnswer_5(declIndex);
+            case 6: return checkCondForDeclaration_wrongAnswer_6(declIndex);
+            case 7: return checkCondForDeclaration_wrongAnswer_7(declIndex);
+            case 8: return checkCondForDeclaration_wrongAnswer_8(declIndex);
+            case 9: return checkCondForDeclaration_wrongAnswer_9(declIndex);
             default: return false;
         }
     }
@@ -335,7 +1974,16 @@ retract(entity_WrongAnswer_1);
      */
     public String getDeclaredClassName(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClassName_detectaRespostaErrada_1(declIndex);
+            case 0: return getDeclaredClassName_wrongAnswer_0(declIndex);
+            case 1: return getDeclaredClassName_wrongAnswer_1(declIndex);
+            case 2: return getDeclaredClassName_wrongAnswer_2(declIndex);
+            case 3: return getDeclaredClassName_wrongAnswer_3(declIndex);
+            case 4: return getDeclaredClassName_wrongAnswer_4(declIndex);
+            case 5: return getDeclaredClassName_wrongAnswer_5(declIndex);
+            case 6: return getDeclaredClassName_wrongAnswer_6(declIndex);
+            case 7: return getDeclaredClassName_wrongAnswer_7(declIndex);
+            case 8: return getDeclaredClassName_wrongAnswer_8(declIndex);
+            case 9: return getDeclaredClassName_wrongAnswer_9(declIndex);
             default: return null;
         }
     }
@@ -349,7 +1997,16 @@ retract(entity_WrongAnswer_1);
      */
     public Class getDeclaredClass(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClass_detectaRespostaErrada_1(declIndex);
+            case 0: return getDeclaredClass_wrongAnswer_0(declIndex);
+            case 1: return getDeclaredClass_wrongAnswer_1(declIndex);
+            case 2: return getDeclaredClass_wrongAnswer_2(declIndex);
+            case 3: return getDeclaredClass_wrongAnswer_3(declIndex);
+            case 4: return getDeclaredClass_wrongAnswer_4(declIndex);
+            case 5: return getDeclaredClass_wrongAnswer_5(declIndex);
+            case 6: return getDeclaredClass_wrongAnswer_6(declIndex);
+            case 7: return getDeclaredClass_wrongAnswer_7(declIndex);
+            case 8: return getDeclaredClass_wrongAnswer_8(declIndex);
+            case 9: return getDeclaredClass_wrongAnswer_9(declIndex);
             default: return null;
         }
     }
@@ -361,7 +2018,16 @@ retract(entity_WrongAnswer_1);
      */
     protected void internalFireRule(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: detectaRespostaErrada_1(); break;
+            case 0: wrongAnswer_0(); break;
+            case 1: wrongAnswer_1(); break;
+            case 2: wrongAnswer_2(); break;
+            case 3: wrongAnswer_3(); break;
+            case 4: wrongAnswer_4(); break;
+            case 5: wrongAnswer_5(); break;
+            case 6: wrongAnswer_6(); break;
+            case 7: wrongAnswer_7(); break;
+            case 8: wrongAnswer_8(); break;
+            case 9: wrongAnswer_9(); break;
         }
     }
 
@@ -371,7 +2037,7 @@ retract(entity_WrongAnswer_1);
      * @return the number of rules.
      */
     public int getNumberOfRules() {
-        return 1;
+        return 10;
     }
 
     /**
@@ -382,7 +2048,16 @@ retract(entity_WrongAnswer_1);
      */
     public String[] getDeclaredIdentifiers(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredIdentifiers_detectaRespostaErrada_1();
+            case 0: return getDeclaredIdentifiers_wrongAnswer_0();
+            case 1: return getDeclaredIdentifiers_wrongAnswer_1();
+            case 2: return getDeclaredIdentifiers_wrongAnswer_2();
+            case 3: return getDeclaredIdentifiers_wrongAnswer_3();
+            case 4: return getDeclaredIdentifiers_wrongAnswer_4();
+            case 5: return getDeclaredIdentifiers_wrongAnswer_5();
+            case 6: return getDeclaredIdentifiers_wrongAnswer_6();
+            case 7: return getDeclaredIdentifiers_wrongAnswer_7();
+            case 8: return getDeclaredIdentifiers_wrongAnswer_8();
+            case 9: return getDeclaredIdentifiers_wrongAnswer_9();
             default: return new String[0];
         }
     }
@@ -396,7 +2071,16 @@ retract(entity_WrongAnswer_1);
      */
     public void setObject(int ruleIndex, int declIndex, Object value) {
         switch (ruleIndex) {
-            case 0: setObject_detectaRespostaErrada_1(declIndex, value); break;
+            case 0: setObject_wrongAnswer_0(declIndex, value); break;
+            case 1: setObject_wrongAnswer_1(declIndex, value); break;
+            case 2: setObject_wrongAnswer_2(declIndex, value); break;
+            case 3: setObject_wrongAnswer_3(declIndex, value); break;
+            case 4: setObject_wrongAnswer_4(declIndex, value); break;
+            case 5: setObject_wrongAnswer_5(declIndex, value); break;
+            case 6: setObject_wrongAnswer_6(declIndex, value); break;
+            case 7: setObject_wrongAnswer_7(declIndex, value); break;
+            case 8: setObject_wrongAnswer_8(declIndex, value); break;
+            case 9: setObject_wrongAnswer_9(declIndex, value); break;
         }
     }
 
@@ -409,7 +2093,16 @@ retract(entity_WrongAnswer_1);
      */
     public Object getObject(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getObject_detectaRespostaErrada_1(declIndex);
+            case 0: return getObject_wrongAnswer_0(declIndex);
+            case 1: return getObject_wrongAnswer_1(declIndex);
+            case 2: return getObject_wrongAnswer_2(declIndex);
+            case 3: return getObject_wrongAnswer_3(declIndex);
+            case 4: return getObject_wrongAnswer_4(declIndex);
+            case 5: return getObject_wrongAnswer_5(declIndex);
+            case 6: return getObject_wrongAnswer_6(declIndex);
+            case 7: return getObject_wrongAnswer_7(declIndex);
+            case 8: return getObject_wrongAnswer_8(declIndex);
+            case 9: return getObject_wrongAnswer_9(declIndex);
             default: return null;
         }
     }
@@ -424,7 +2117,16 @@ retract(entity_WrongAnswer_1);
      */
     public Object[] getObjects(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getObjects_detectaRespostaErrada_1();
+            case 0: return getObjects_wrongAnswer_0();
+            case 1: return getObjects_wrongAnswer_1();
+            case 2: return getObjects_wrongAnswer_2();
+            case 3: return getObjects_wrongAnswer_3();
+            case 4: return getObjects_wrongAnswer_4();
+            case 5: return getObjects_wrongAnswer_5();
+            case 6: return getObjects_wrongAnswer_6();
+            case 7: return getObjects_wrongAnswer_7();
+            case 8: return getObjects_wrongAnswer_8();
+            case 9: return getObjects_wrongAnswer_9();
             default: return null;
         }
     }
@@ -438,7 +2140,16 @@ retract(entity_WrongAnswer_1);
      */
     public void setObjects(int ruleIndex, Object[] objects) {
         switch (ruleIndex) {
-            case 0: setObjects_detectaRespostaErrada_1(objects); break;
+            case 0: setObjects_wrongAnswer_0(objects); break;
+            case 1: setObjects_wrongAnswer_1(objects); break;
+            case 2: setObjects_wrongAnswer_2(objects); break;
+            case 3: setObjects_wrongAnswer_3(objects); break;
+            case 4: setObjects_wrongAnswer_4(objects); break;
+            case 5: setObjects_wrongAnswer_5(objects); break;
+            case 6: setObjects_wrongAnswer_6(objects); break;
+            case 7: setObjects_wrongAnswer_7(objects); break;
+            case 8: setObjects_wrongAnswer_8(objects); break;
+            case 9: setObjects_wrongAnswer_9(objects); break;
         }
     }
 
@@ -446,9 +2157,6 @@ retract(entity_WrongAnswer_1);
      * The variables declared in the rules.
      */
     private entity.Historic entity_Historic_1;
-    private java.util.ArrayList java_util_ArrayList_1;
-    private java.util.ArrayList java_util_ArrayList_2;
-    private module.expressions.identifier.IdentificadorExpressaoControlador module_expressions_identifier_IdentificadorExpressaoControlador_1;
     private entity.WrongAnswer entity_WrongAnswer_1;
 
     /**

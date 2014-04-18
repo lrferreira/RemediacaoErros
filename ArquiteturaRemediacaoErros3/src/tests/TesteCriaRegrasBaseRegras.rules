@@ -9,28 +9,175 @@ import module.expressions.identifier.IdentificadorExpressaoControlador;
 
 ruleBase TesteCriaRegrasBaseRegras {
 
-rule detectaRespostaErrada_1 {
+rule wrongAnswer_0 {
 declarations
-Historic historico;
-ArrayList erros;
-ArrayList acertos;
-IdentificadorExpressaoControlador expressaoControlador;
+Historic h;
 WrongAnswer respostaErrada;
 localdecl
 conditions
-expressaoControlador.temRespostaErrada(historico, erros);
+h.getResposta().getDescricao().equalsIgnoreCase("123");
 actions
-historico.setNumeroTentativas(historico.getNumeroTentativas() + 1);
-modified(historico);
+h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+modified(h);
 System.out.println("Resposta Errada (1) detectada");
-respostaErrada.setDescricao(historico.getResposta().getDescricao());
+respostaErrada.setDescricao(h.getResposta().getDescricao());
 modified(respostaErrada);
-retract(historico);
-retract(erros);
-retract(acertos);
-retract(expressaoControlador);
-retract(respostaErrada);
+flush();
 }
-// fim_regras
+rule wrongAnswer_1 {
+declarations
+Historic h;
+WrongAnswer respostaErrada;
+localdecl
+conditions
+h.getResposta().getDescricao().equalsIgnoreCase("123");
+actions
+h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+modified(h);
+System.out.println("Resposta Errada (1) detectada");
+respostaErrada.setDescricao(h.getResposta().getDescricao());
+modified(respostaErrada);
+flush();
+}
+rule wrongAnswer_2 {
+declarations
+Historic h;
+WrongAnswer respostaErrada;
+localdecl
+conditions
+h.getResposta().getDescricao().equalsIgnoreCase("123");
+actions
+h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+modified(h);
+System.out.println("Resposta Errada (1) detectada");
+respostaErrada.setDescricao(h.getResposta().getDescricao());
+modified(respostaErrada);
+flush();
+}
+	rule wrongAnswer_3 {
+		declarations
+Historic h;
+WrongAnswer respostaErrada;
+localdecl
+conditions
+h.getResposta().getDescricao().equalsIgnoreCase("123");
+actions
+h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+modified(h);
+System.out.println("Resposta Errada (1) detectada");
+respostaErrada.setDescricao(h.getResposta().getDescricao());
+modified(respostaErrada);
+flush();
+}
+	rule wrongAnswer_4 {
+		declarations
+			Historic h;
+			WrongAnswer respostaErrada;
+		localdecl
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(h.getResposta().getDescricao());
+			modified(respostaErrada);
+			flush();
+	}
+	rule wrongAnswer_5 {
+		declarations
+			Historic h;
+			WrongAnswer respostaErrada;
+		localdecl
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(h.getResposta().getDescricao());
+			modified(respostaErrada);
+			flush();
+	}
+
+
+	rule wrongAnswer_6 {
+		declarations
+			Historic h;
+			WrongAnswer respostaErrada;
+		localdecl
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(h.getResposta().getDescricao());
+			modified(respostaErrada);
+			flush();
+	}
+
+
+	rule wrongAnswer_7 {
+		declarations
+			Historic h;
+			WrongAnswer respostaErrada;
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(h.getResposta().getDescricao());
+			modified(respostaErrada);
+			flush();
+	}
+
+
+	rule wrongAnswer_8 {
+		declarations
+			Historic h;
+			WrongAnswer respostaErrada;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(h.getResposta().getDescricao());
+			modified(respostaErrada);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_9 {
+
+		declarations
+			Historic h;
+			WrongAnswer respostaErrada;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(h.getResposta().getDescricao());
+			modified(respostaErrada);
+			flush();
+
+	}
+
+// end_rules
 
 }

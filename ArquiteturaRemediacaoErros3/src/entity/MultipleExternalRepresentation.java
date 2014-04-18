@@ -1,12 +1,12 @@
 package entity;
 
-public class MultipleExternalRepresentacion {
+public class MultipleExternalRepresentation {
 
 	private int id;
 	
 	private String descricao;
 
-	public MultipleExternalRepresentacion(int id, String descricao) {
+	public MultipleExternalRepresentation(int id, String descricao) {
 		this.id = id;
 		this.setDescricao(descricao);
 	}

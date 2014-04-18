@@ -8,12 +8,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import jeops.compiler.Main;
+import module.creation.rules.RulesCreator;
+import entity.MultipleExternalRepresentation;
+import entity.WrongAnswer;
 
 public class CriaRegraDeProducao {
 
 	public static void main(String[] args){
+		RulesCreator.rulesCreate(new WrongAnswer("123"), new MultipleExternalRepresentation(1, "representação teste"));
+	}
 		
-		
+	public static void teste(){	
 		//Main.main(new String[]{".\\src\\tests\\TesteCriaRegrasBaseRegras.rules"});;
 		
 		//Código para escrever em arquivos: 
