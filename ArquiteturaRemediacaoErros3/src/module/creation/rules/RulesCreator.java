@@ -8,8 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import jeops.compiler.Main;
-import tests.TesteCriaRegrasBaseRegras;
 import util.ConstantesString;
+import entity.CorrectAnswer;
 import entity.MultipleExternalRepresentation;
 import entity.RuleInformation;
 import entity.WrongAnswer;
@@ -132,7 +132,7 @@ public class RulesCreator {
 		r.setRuleName("wrongAnswer_");
 		r.setDeclarations(new String[] {
 				"Historic h;", 
-				"WrongAnswer respostaErrada;"
+				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
 				"h.getResposta().getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
@@ -141,12 +141,32 @@ public class RulesCreator {
 				"h.setNumeroTentativas(h.getNumeroTentativas() + 1);",
 				"modified(h);",
 				"System.out.println(\"Resposta Errada (1) detectada\");",
-				"respostaErrada.setDescricao(h.getResposta().getDescricao());",
-				"modified(respostaErrada);",
+				"wrongAnswer.setDescricao(h.getResposta().getDescricao());",
+				"modified(wrongAnswer);",
 				"flush();"
 		});
 		
 		return r;
 	}
-	
+
+	public static RuleInformation ruleCorrectAnswer(CorrectAnswer correctAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("correctAnswer_");
+		r.setDeclarations(new String[] {
+				"Historic h;", 
+				"CorrectAnswer correctAnswer;"
+		});
+		r.setConditions(new String[] {
+				"h.getResposta().getDescricao().equalsIgnoreCase(\""+correctAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Resposta Correta (1) detectada\");",
+				"correctAnswer.setDescricao(h.getResposta().getDescricao());",
+				"modified(correctAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+
 }
