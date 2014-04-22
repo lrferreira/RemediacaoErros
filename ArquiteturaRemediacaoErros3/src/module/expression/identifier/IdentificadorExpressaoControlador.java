@@ -1,4 +1,4 @@
-package module.expressions.identifier;
+package module.expression.identifier;
 
 import java.util.ArrayList;
 

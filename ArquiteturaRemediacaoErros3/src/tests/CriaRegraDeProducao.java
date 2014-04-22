@@ -15,7 +15,7 @@ import entity.WrongAnswer;
 public class CriaRegraDeProducao {
 
 	public static void main(String[] args){
-		RulesCreator.rulesCreate(new WrongAnswer("123"), new MultipleExternalRepresentation(1, "representação teste"));
+		RulesCreator.createRules(new WrongAnswer("123"), new MultipleExternalRepresentation(1, "representação teste"));
 	}
 		
 	public static void teste(){	
@@ -91,7 +91,7 @@ public class CriaRegraDeProducao {
 	       out.write("import entity.WrongAnswer;\n");
 	       out.write("import java.util.ArrayList;\n");
 	       out.write("import module.error.sorter.ClassificadorErroControlador;\n");
-		   out.write("import module.expressions.identifier.IdentificadorExpressaoControlador;\n");
+		   out.write("import module.expression.identifier.IdentificadorExpressaoControlador;\n");
 		   
 
 		   out.write("ruleBase TesteCriaRegrasBaseRegras {\n");

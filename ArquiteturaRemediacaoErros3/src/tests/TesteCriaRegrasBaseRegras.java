@@ -2,9 +2,11 @@ package tests;
 
 import entity.Historic;
 import entity.WrongAnswer;
+
 import java.util.ArrayList;
+
 import module.error.sorter.ClassificadorErroControlador;
-import module.expressions.identifier.IdentificadorExpressaoControlador;
+import module.expression.identifier.IdentificadorExpressaoControlador;
 
 
  class Jeops_RuleBase_TesteCriaRegrasBaseRegras extends jeops.AbstractRuleBase {

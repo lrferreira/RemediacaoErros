@@ -16,12 +16,12 @@ import entity.WrongAnswer;
 
 public class RulesCreator {
 	
-	public static void rulesCreate(WrongAnswer wrongAnswer, MultipleExternalRepresentation mer) {
+	public static void createRules(WrongAnswer wrongAnswer, MultipleExternalRepresentation mer) {
 	
 		// create for Expressions Identifier
 
-		editFileRule(ConstantesString.FILE_IDENTIFICADOR_EXPRESSAO_KB, ruleWrongAnswer(wrongAnswer));
-		Main.main(new String[]{ConstantesString.FILE_IDENTIFICADOR_EXPRESSAO_KB});
+		editFileRule(ConstantesString.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB, ruleWrongAnswer(wrongAnswer));
+		Main.main(new String[]{ConstantesString.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB});
 		
 		// create for Error Sorter
 		

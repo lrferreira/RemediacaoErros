@@ -5,7 +5,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import module.error.sorter.ClassificadorErroControlador;
-import module.expressions.identifier.IdentificadorExpressaoControlador;
+import module.expression.identifier.IdentificadorExpressaoControlador;
 import module.mer.manager.GerenciadorMREControlador;
 import module.merfunction.sorter.ClassificadorFuncaoMREControlador;
 import br.ufpr.c3sl.condigital.virtualkeyboard.communication.KeyBoardComunication;

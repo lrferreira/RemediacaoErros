@@ -11,9 +11,12 @@ public class ConstantesString {
 	public static final String IMPORT_WRONGANSWER = "import entity.WrongAnswer";
 	public static final String IMPORT_ARRAYLIST = "import java.util.ArrayList";
 	public static final String IMPORT_CLASSIFICADORERROCONTROLADOR =" import module.error.sorter.ClassificadorErroControlador";
-	public static final String IMPORT_IDENTIFICADOREXPRESSAOCONTROLADOR = "import module.expressions.identifier.IdentificadorExpressaoControlador";
+	public static final String IMPORT_IDENTIFICADOREXPRESSAOCONTROLADOR = "import module.expression.identifier.IdentificadorExpressaoControlador";
 
 	public static final String END_RULES = "// end_rules"; 
 	
 	public static final String FILE_IDENTIFICADOR_EXPRESSAO_KB = ".\\src\\tests\\TesteCriaRegrasBaseRegras.rules";
+	public static final String FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB = ".\\src\\module\\expression\\identifier\\ExpressionIdentifierCorrectAnswerKB.rules";
+	public static final String FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB = ".\\src\\module\\expression\\identifier\\ExpressionIdentifierWrongAnswerKB.rules";
+	
 }
