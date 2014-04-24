@@ -372,7 +372,7 @@ public class RulesCreator {
 				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA;"		
 		});
 		r.setActions(new String[] {
-				"merFunction.setTipo(onstantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
+				"merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
 				"modified(merFunction);",
 				"System.out.println(\"Função MRE: Compreensão Mais Aprofundada\");",		
 				"flush();"
@@ -393,7 +393,7 @@ public class RulesCreator {
 				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;"		
 		});
 		r.setActions(new String[] {
-				"merFunction.setTipo(onstantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
+				"merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
 				"modified(merFunction);",
 				"System.out.println(\"Função MRE: Compreensão Mais Aprofundada\");",		
 				"flush();"
@@ -414,7 +414,7 @@ public class RulesCreator {
 				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL;"		
 		});
 		r.setActions(new String[] {
-				"merFunction.setTipo(onstantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
+				"merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
 				"modified(merFunction);",
 				"System.out.println(\"Função MRE: Compreensão Mais Aprofundada\");",		
 				"flush();"
@@ -424,7 +424,125 @@ public class RulesCreator {
 	}	
 	
 	/* Rules for MER Manager */
+
+	public static RuleInformation ruleMER01(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE01_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES;"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE 01\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
+	public static RuleInformation ruleMER02(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE02_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO;",
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;"
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE 02\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
+	public static RuleInformation ruleMER03(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE03_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA;",
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA;"
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE 03\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
 	
+	public static RuleInformation ruleMER04(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE04_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA;",
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;"
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE 04\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
 	
+	public static RuleInformation ruleMER05(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE05_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO;",
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL;"
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE 05\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+	
+	public static RuleInformation ruleMER06(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE06_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA;",
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL;"
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE 06\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
 	
 }
