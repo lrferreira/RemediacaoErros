@@ -10,13 +10,15 @@ import java.io.IOException;
 import jeops.compiler.Main;
 import util.ConstantesString;
 import entity.CorrectAnswer;
+import entity.MERFunction;
 import entity.MultipleExternalRepresentation;
 import entity.RuleInformation;
 import entity.WrongAnswer;
 
 public class RulesCreator {
 	
-	public static void createRules(WrongAnswer wrongAnswer, MultipleExternalRepresentation mer) {
+	public static void createRules(WrongAnswer wrongAnswer, MERFunction merFunction, 
+								MultipleExternalRepresentation mer) {
 	
 		// create for Expressions Identifier
 
@@ -127,6 +129,8 @@ public class RulesCreator {
 		}
 	}	
 	
+	/* Rules for Expression Identifier */
+	
 	public static RuleInformation ruleWrongAnswer(WrongAnswer wrongAnswer) {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("wrongAnswer_");
@@ -169,4 +173,258 @@ public class RulesCreator {
 		return r;
 	}
 
+	/* Rules for Error Sorter */
+	
+	public static RuleInformation ruleMisinterpretation(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("misinterpretation_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Erro classificado como Interpretação Equivocada\");",
+				"wrongAnswer.setTipo(Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);",
+				"modified(wrongAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+	
+	public static RuleInformation ruleDirectlyIdentifiableDeficiencyDomain(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("directlyIdentifiableDeficiencyDomain_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Erro classificado como Diretamente Identificável - Deficiência no Domínio\");",		
+				"wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);",
+				"modified(wrongAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+		
+	public static RuleInformation ruleDirectlyIdentifiableDeficiencyRule(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("directlyIdentifiableDeficiencyRule_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Erro classificado como Diretamente Identificável - Deficiência na Regra\");",		
+				"wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA);",
+				"modified(wrongAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+
+	public static RuleInformation ruleDirectlyIdentifiableDeficiencyOperatorChoice(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("directlyIdentifiableDeficiencyOperatorChoice_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador\");",		
+				"wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);",
+				"modified(wrongAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+
+	public static RuleInformation ruleIndirectlyIdentifiable(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("indirectlyIdentifiable_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Erro classificado como Indiretamente Identificável\");",		
+				"wrongAnswer.setTipo(Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);",
+				"modified(wrongAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+
+	public static RuleInformation ruleSolutionNonCategorizable(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("solutionNonCategorizable_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Erro classificado como Solução Não Categorizável\");",		
+				"wrongAnswer.setTipo(Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);",
+				"modified(wrongAnswer);",
+				"flush();"
+		});
+		
+		return r;
+	}
+	
+	/* Rules for MER Functions Sorter */
+
+	public static RuleInformation ruleComplementaryRoles(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("complementaryRoles_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA;"		
+		});
+		r.setActions(new String[] {
+				"merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES);",
+				"modified(merFunction);",
+				"System.out.println(\"Função MRE: Papéis Complementares\");",
+				"flush();"
+		});
+		
+		return r;
+	}	
+	
+	public static RuleInformation ruleConstrainInterpretation01(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("constrainInterpretation01_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;"		
+		});
+		r.setActions(new String[] {
+				"merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);",
+				"modified(merFunction);",
+				"System.out.println(\"Função MRE: Restrição Interpretação\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
+	public static RuleInformation ruleConstrainInterpretation02(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("constrainInterpretation02_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL;"		
+		});
+		r.setActions(new String[] {
+				"merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);",
+				"modified(merFunction);",
+				"System.out.println(\"Função MRE: Restrição Interpretação\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+	
+	public static RuleInformation ruleConstructDeeperUndestanding01(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("constructDeeperUnderstanding01_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA;"		
+		});
+		r.setActions(new String[] {
+				"merFunction.setTipo(onstantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
+				"modified(merFunction);",
+				"System.out.println(\"Função MRE: Compreensão Mais Aprofundada\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
+	public static RuleInformation ruleConstructDeeperUndestanding02(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("constructDeeperUnderstanding02_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;"		
+		});
+		r.setActions(new String[] {
+				"merFunction.setTipo(onstantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
+				"modified(merFunction);",
+				"System.out.println(\"Função MRE: Compreensão Mais Aprofundada\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
+	public static RuleInformation ruleConstructDeeperUndestanding03(WrongAnswer wrongAnswer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("constructDeeperUnderstanding03_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"wrongAnswer.getTipo() == Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL;"		
+		});
+		r.setActions(new String[] {
+				"merFunction.setTipo(onstantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);",
+				"modified(merFunction);",
+				"System.out.println(\"Função MRE: Compreensão Mais Aprofundada\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+	
+	/* Rules for MER Manager */
+	
+	
+	
 }
