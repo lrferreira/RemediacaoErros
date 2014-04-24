@@ -241,7 +241,7 @@ public class RulesCreator {
 				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
-				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+				"wrongAnswer.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
 		});
 		r.setActions(new String[] {
 				"System.out.println(\"Erro classificado como Diretamente Identificável - Deficiência no Domínio\");",		
@@ -301,7 +301,7 @@ public class RulesCreator {
 				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
-				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+				"wrongAnswer.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
 		});
 		r.setActions(new String[] {
 				"System.out.println(\"Erro classificado como Indiretamente Identificável\");",		
@@ -321,7 +321,7 @@ public class RulesCreator {
 				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
-				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+				"wrongAnswer.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
 		});
 		r.setActions(new String[] {
 				"System.out.println(\"Erro classificado como Solução Não Categorizável\");",		
