@@ -18,5 +18,8 @@ public class ConstantesString {
 	public static final String FILE_IDENTIFICADOR_EXPRESSAO_KB = ".\\src\\tests\\TesteCriaRegrasBaseRegras.rules";
 	public static final String FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB = ".\\src\\module\\expression\\identifier\\ExpressionIdentifierCorrectAnswerKB.rules";
 	public static final String FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB = ".\\src\\module\\expression\\identifier\\ExpressionIdentifierWrongAnswerKB.rules";
+	public static final String FILE_ERROR_SORTER_KB = ".\\src\\module\\error\\sorter\\ErrorSorterKB.rules";
+	public static final String FILE_MERFUNCTION_SORTER_KB = ".\\src\\module\\merfunction\\sorter\\MERFunctionSorterKB.rules";
+	public static final String FILE_MER_MANAGER_KB = ".\\src\\module\\mer\\manager\\MERManagerKB.rules";
 	
 }

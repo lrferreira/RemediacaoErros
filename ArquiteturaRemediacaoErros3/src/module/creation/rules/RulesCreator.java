@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import jeops.compiler.Main;
+import util.Constantes;
 import util.ConstantesString;
 import entity.CorrectAnswer;
 import entity.MERFunction;
@@ -25,9 +26,38 @@ public class RulesCreator {
 		editFileRule(ConstantesString.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB, ruleWrongAnswer(wrongAnswer));
 		Main.main(new String[]{ConstantesString.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB});
 		
-		// create for Error Sorter
+		// create for Error Sorter AND create for MER Function Sorter
+
+		switch (wrongAnswer.getTipo()){
+			case Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA:
+				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleMisinterpretation(wrongAnswer));
+				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleComplementaryRoles(wrongAnswer));
+				break;
+			case Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO:
+				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleDirectlyIdentifiableDeficiencyDomain(wrongAnswer));				
+				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstrainInterpretation01(wrongAnswer));
+				break;
+			case Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR:
+				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleDirectlyIdentifiableDeficiencyOperatorChoice(wrongAnswer));								
+				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstructDeeperUndestanding02(wrongAnswer));
+				break;
+			case Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA:
+				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleDirectlyIdentifiableDeficiencyRule(wrongAnswer));
+				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstructDeeperUndestanding01(wrongAnswer));
+				break;
+			case Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL:
+				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleIndirectlyIdentifiable(wrongAnswer));
+				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstrainInterpretation02(wrongAnswer));
+				break;
+			case Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL:
+				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleSolutionNonCategorizable(wrongAnswer));								
+				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstructDeeperUndestanding03(wrongAnswer));
+				break;
+		}
+
+		Main.main(new String[]{ConstantesString.FILE_ERROR_SORTER_KB});
+		Main.main(new String[]{ConstantesString.FILE_MERFUNCTION_SORTER_KB});
 		
-		// create for MER Function Sorter
 		
 		// create for MER Manager
 		
