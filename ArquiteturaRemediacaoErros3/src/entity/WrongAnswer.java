@@ -7,6 +7,11 @@ public class WrongAnswer extends Answer{
 	public WrongAnswer(String descricao) {
 		super(descricao);
 	}
+
+	public WrongAnswer(String descricao, int tipo) {
+		super(descricao);
+		this.tipo = tipo;
+	}
 	
 	public WrongAnswer() {
 

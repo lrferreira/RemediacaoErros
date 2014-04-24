@@ -32,26 +32,32 @@ public class RulesCreator {
 			case Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA:
 				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleMisinterpretation(wrongAnswer));
 				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleComplementaryRoles(wrongAnswer));
+				merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES);
 				break;
 			case Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO:
 				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleDirectlyIdentifiableDeficiencyDomain(wrongAnswer));				
 				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstrainInterpretation01(wrongAnswer));
+				merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
 				break;
 			case Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR:
 				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleDirectlyIdentifiableDeficiencyOperatorChoice(wrongAnswer));								
 				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstructDeeperUndestanding02(wrongAnswer));
+				merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
 				break;
 			case Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA:
 				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleDirectlyIdentifiableDeficiencyRule(wrongAnswer));
 				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstructDeeperUndestanding01(wrongAnswer));
+				merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
 				break;
 			case Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL:
 				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleIndirectlyIdentifiable(wrongAnswer));
 				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstrainInterpretation02(wrongAnswer));
+				merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
 				break;
 			case Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL:
 				editFileRule(ConstantesString.FILE_ERROR_SORTER_KB, ruleSolutionNonCategorizable(wrongAnswer));								
 				editFileRule(ConstantesString.FILE_MERFUNCTION_SORTER_KB, ruleConstructDeeperUndestanding03(wrongAnswer));
+				merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
 				break;
 		}
 
@@ -60,6 +66,8 @@ public class RulesCreator {
 		
 		
 		// create for MER Manager
+		editFileRule(ConstantesString.FILE_MER_MANAGER_KB, ruleMER(wrongAnswer, merFunction, mer));
+		Main.main(new String[]{ConstantesString.FILE_MER_MANAGER_KB});
 		
 	}
 
@@ -213,7 +221,7 @@ public class RulesCreator {
 				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
-				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+				"wrongAnswer.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
 		});
 		r.setActions(new String[] {
 				"System.out.println(\"Erro classificado como Interpretação Equivocada\");",
@@ -455,6 +463,27 @@ public class RulesCreator {
 	
 	/* Rules for MER Manager */
 
+	public static RuleInformation ruleMER(WrongAnswer wrongAnswer, MERFunction merFunction, MultipleExternalRepresentation mer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMRE01_");
+		r.setDeclarations(new String[] {
+				//"Historic h;", 
+				"WrongAnswer wrongAnswer;",
+				"MERFunction merFunction;"
+		});
+		r.setConditions(new String[] {
+				"merFunction.getTipo() == " + merFunction.getTipo() + ";", //Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES;"
+				"wrongAnswer.getTipo() == " + wrongAnswer.getTipo() + ";"
+		});
+		r.setActions(new String[] {
+				"System.out.println(\"Exibição de MRE " + mer.getId() +  "\");",		
+				"flush();"
+		});
+		
+		return r;
+	}	
+
+	
 	public static RuleInformation ruleMER01(WrongAnswer wrongAnswer) {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("ruleMRE01_");

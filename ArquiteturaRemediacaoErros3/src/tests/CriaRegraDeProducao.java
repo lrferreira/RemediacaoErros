@@ -7,15 +7,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import util.Constantes;
 import jeops.compiler.Main;
 import module.creation.rules.RulesCreator;
+import entity.MERFunction;
 import entity.MultipleExternalRepresentation;
 import entity.WrongAnswer;
 
 public class CriaRegraDeProducao {
 
 	public static void main(String[] args){
-		RulesCreator.createRules(new WrongAnswer("123"), new MultipleExternalRepresentation(1, "representação teste"));
+		RulesCreator.createRules(
+				new WrongAnswer("123", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
+				new MERFunction(), 
+				new MultipleExternalRepresentation(1, "representação teste"));
 	}
 		
 	public static void teste(){	
