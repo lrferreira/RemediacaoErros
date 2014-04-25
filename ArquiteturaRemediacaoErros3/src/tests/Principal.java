@@ -1,22 +1,17 @@
 package tests;
 
-import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
-
 import module.error.sorter.ClassificadorErroControlador;
 import module.expression.identifier.IdentificadorExpressaoControlador;
 import module.mer.manager.GerenciadorMREControlador;
 import module.merfunction.sorter.ClassificadorFuncaoMREControlador;
 import br.ufpr.c3sl.condigital.virtualkeyboard.communication.KeyBoardComunication;
-import br.ufpr.c3sl.condigital.virtualkeyboard.formula.ElementOfFormula;
 import br.ufpr.c3sl.condigital.virtualkeyboard.main.VirtualKeyBoardMain;
 import entity.Action;
-import entity.Student;
-import entity.MERFunction;
-import entity.Historic;
 import entity.Answer;
 import entity.CorrectAnswer;
+import entity.Historic;
+import entity.MERFunction;
+import entity.Student;
 import entity.WrongAnswer;
 
 
@@ -28,16 +23,6 @@ public class Principal {
 		
 		
 		
-		
-		ArrayList<WrongAnswer> erros = new ArrayList<WrongAnswer>();
-		erros.add(new WrongAnswer("1"));
-		erros.add(new WrongAnswer("2"));
-		erros.add(new WrongAnswer("3"));
-		erros.add(new WrongAnswer("4"));
-		erros.add(new WrongAnswer("5"));
-		
-		ArrayList<CorrectAnswer> acertos = new ArrayList<CorrectAnswer>();
-		acertos.add(new CorrectAnswer("6"));
 		
 		
 		Historic historico = new Historic();
@@ -58,21 +43,27 @@ public class Principal {
 		}
 		
 		historico.setResposta(respostaAluno);
-		System.out.println("Answer do aluno: " + respostaAluno.getDescricao());
+		System.out.println("Resposta do aluno: " + respostaAluno.getDescricao());
 
 		
 		WrongAnswer respostaErrada = new WrongAnswer();
+		CorrectAnswer respostaCerta = new CorrectAnswer();
 		
-		IdentificadorExpressaoControlador.identificaExpressao(historico, erros, acertos, respostaErrada);
+		IdentificadorExpressaoControlador.identificaExpressao(historico, respostaCerta, respostaErrada);
 		
-		if (respostaErrada.getDescricao() != null){
+		if (respostaCerta.getDescricao() != null) {
+			System.out.println("Resposta Correta! Fim!");
+			System.exit(1);
+		}
 		
-			ClassificadorErroControlador.classificarErro(historico, respostaErrada);
+		else{
+		
+			ClassificadorErroControlador.classificarErro(respostaErrada);
 			
 			MERFunction funcaoMRE = new MERFunction();
-			ClassificadorFuncaoMREControlador.classificarFuncaoMRE(historico, respostaErrada, funcaoMRE);
+			ClassificadorFuncaoMREControlador.classificarFuncaoMRE(respostaErrada, funcaoMRE);
 			
-			GerenciadorMREControlador.aciona(historico, respostaErrada, funcaoMRE);
+			GerenciadorMREControlador.aciona(respostaErrada, funcaoMRE);
 			
 		
 		}

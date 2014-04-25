@@ -2,24 +2,25 @@ package module.expression.identifier;
 
 import java.util.ArrayList;
 
-import entity.Historic;
 import entity.CorrectAnswer;
+import entity.Historic;
 import entity.WrongAnswer;
 
 public class IdentificadorExpressaoControlador {
 	
-	public static void identificaExpressao(Historic historico, ArrayList<WrongAnswer> erros, 
-			ArrayList<CorrectAnswer> acertos, WrongAnswer respostaErrada) {
-		IdentificadorExpressaoControlador controlador  = new IdentificadorExpressaoControlador();
-		IdentificadorExpressaoBaseRegras identificadorExpressaoKB = new IdentificadorExpressaoBaseRegras();
+	public static void identificaExpressao(Historic historico, CorrectAnswer correctAnswer, WrongAnswer wrongAnswer) {
 		
-		identificadorExpressaoKB.tell(erros);
-		identificadorExpressaoKB.tell(acertos);
-		identificadorExpressaoKB.tell(historico);
-		identificadorExpressaoKB.tell(controlador);
-		identificadorExpressaoKB.tell(respostaErrada);
-		identificadorExpressaoKB.run();
-		identificadorExpressaoKB.flush();
+		ExpressionIdentifierCorrectAnswerKB kb1 = new ExpressionIdentifierCorrectAnswerKB();
+		ExpressionIdentifierWrongAnswerKB kb2 = new ExpressionIdentifierWrongAnswerKB();
+		
+		kb1.tell(historico);
+		kb1.tell(correctAnswer);
+		kb1.run();
+		
+		kb2.tell(historico);
+		kb2.tell(wrongAnswer);
+		kb2.run();
+		
 	}
 
 	public boolean temRespostaErrada(Historic h, ArrayList<WrongAnswer> erros) {

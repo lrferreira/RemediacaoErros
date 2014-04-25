@@ -16,17 +16,23 @@ import entity.MultipleExternalRepresentation;
 import entity.RuleInformation;
 import entity.WrongAnswer;
 
-public class RulesCreator {
+public class RulesFactory {
+	
+	public static void createRules(CorrectAnswer correctAnswer){
+		editFileRule(ConstantesString.FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB, ruleCorrectAnswer(correctAnswer));
+		Main.main(new String[]{ConstantesString.FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB});
+		
+	}
 	
 	public static void createRules(WrongAnswer wrongAnswer, MERFunction merFunction, 
 								MultipleExternalRepresentation mer) {
 	
-		// create for Expressions Identifier
+		// create rule for Expressions Identifier
 
 		editFileRule(ConstantesString.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB, ruleWrongAnswer(wrongAnswer));
 		Main.main(new String[]{ConstantesString.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB});
 		
-		// create for Error Sorter AND create for MER Function Sorter
+		// create rules for Error Sorter AND MER Function Sorter
 
 		switch (wrongAnswer.getTipo()){
 			case Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA:
@@ -65,7 +71,7 @@ public class RulesCreator {
 		Main.main(new String[]{ConstantesString.FILE_MERFUNCTION_SORTER_KB});
 		
 		
-		// create for MER Manager
+		// create rule for MER Manager
 		editFileRule(ConstantesString.FILE_MER_MANAGER_KB, ruleMER(wrongAnswer, merFunction, mer));
 		Main.main(new String[]{ConstantesString.FILE_MER_MANAGER_KB});
 		
@@ -261,7 +267,7 @@ public class RulesCreator {
 				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
-				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+				"wrongAnswer.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
 		});
 		r.setActions(new String[] {
 				"System.out.println(\"Erro classificado como Diretamente Identificável - Deficiência na Regra\");",		
@@ -281,7 +287,7 @@ public class RulesCreator {
 				"WrongAnswer wrongAnswer;"
 		});
 		r.setConditions(new String[] {
-				"wrongAnwser.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
+				"wrongAnswer.getDescricao().equalsIgnoreCase(\""+wrongAnswer.getDescricao()+"\");"		
 		});
 		r.setActions(new String[] {
 				"System.out.println(\"Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador\");",		
@@ -465,7 +471,7 @@ public class RulesCreator {
 
 	public static RuleInformation ruleMER(WrongAnswer wrongAnswer, MERFunction merFunction, MultipleExternalRepresentation mer) {
 		RuleInformation r = new RuleInformation();
-		r.setRuleName("ruleMRE01_");
+		r.setRuleName("ruleMRE_");
 		r.setDeclarations(new String[] {
 				//"Historic h;", 
 				"WrongAnswer wrongAnswer;",
@@ -476,7 +482,7 @@ public class RulesCreator {
 				"wrongAnswer.getTipo() == " + wrongAnswer.getTipo() + ";"
 		});
 		r.setActions(new String[] {
-				"System.out.println(\"Exibição de MRE " + mer.getId() +  "\");",		
+				"System.out.println(\"Exibição de MRE " + mer.getId() + " - " + mer.getDescricao() + "\");",		
 				"flush();"
 		});
 		

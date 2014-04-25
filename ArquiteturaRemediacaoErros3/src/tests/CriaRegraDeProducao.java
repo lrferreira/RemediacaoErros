@@ -6,10 +6,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
-import util.Constantes;
 import jeops.compiler.Main;
-import module.creation.rules.RulesCreator;
+import module.creation.rules.RulesFactory;
+import util.Constantes;
+import entity.CorrectAnswer;
 import entity.MERFunction;
 import entity.MultipleExternalRepresentation;
 import entity.WrongAnswer;
@@ -17,10 +19,39 @@ import entity.WrongAnswer;
 public class CriaRegraDeProducao {
 
 	public static void main(String[] args){
-		RulesCreator.createRules(
+		RulesFactory.createRules(new CorrectAnswer("6"));
+		
+		RulesFactory.createRules(
 				new WrongAnswer("123", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(1, "representação teste"));
+				new MultipleExternalRepresentation(1, "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"));
+
+		RulesFactory.createRules(
+				new WrongAnswer("456", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
+				new MERFunction(), 
+				new MultipleExternalRepresentation(2, "Figura procurando mostrar que Helena possui mais laranjas que Pedro"));
+
+		RulesFactory.createRules(
+				new WrongAnswer("789", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA), 
+				new MERFunction(), 
+				new MultipleExternalRepresentation(3, "Figura apresentando a quantidade de laranjas que cada pessoa possui"));
+
+		RulesFactory.createRules(
+				new WrongAnswer("4", Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL), 
+				new MERFunction(), 
+				new MultipleExternalRepresentation(4, "Figura destacando que Helena possui mais laranjas que o indicado no cesto"));
+
+		RulesFactory.createRules(
+				new WrongAnswer("3", Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA), 
+				new MERFunction(), 
+				new MultipleExternalRepresentation(5, "Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui"));
+
+		RulesFactory.createRules(
+				new WrongAnswer("1", Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
+				new MERFunction(), 
+				new MultipleExternalRepresentation(6, "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"));
+
+
 	}
 		
 	public static void teste(){	
