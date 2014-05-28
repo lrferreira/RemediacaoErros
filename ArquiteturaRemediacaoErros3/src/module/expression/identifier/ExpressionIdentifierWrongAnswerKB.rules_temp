@@ -1,0 +1,124 @@
+package module.expression.identifier;
+
+import entity.Historic;
+import entity.WrongAnswer;
+import java.util.ArrayList;
+import module.error.sorter.ClassificadorErroControlador;
+
+
+ruleBase ExpressionIdentifierWrongAnswerKB {
+
+
+
+	rule wrongAnswer_0 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("123");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setDescricao(h.getResposta().getDescricao());
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_1 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("456");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setDescricao(h.getResposta().getDescricao());
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_2 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("789");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setDescricao(h.getResposta().getDescricao());
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_3 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("4");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setDescricao(h.getResposta().getDescricao());
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_4 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("1");
+
+		actions
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setDescricao(h.getResposta().getDescricao());
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+// end_rules
+	
+}

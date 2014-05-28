@@ -1,0 +1,127 @@
+package module.error.sorter;
+
+import entity.WrongAnswer;
+import util.Constantes;
+
+
+ruleBase ErrorSorterKB {
+	
+
+
+	rule directlyIdentifiableDeficiencyDomain_0 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getDescricao().equalsIgnoreCase("123");
+
+		actions
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyOperatorChoice_1 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getDescricao().equalsIgnoreCase("456");
+
+		actions
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyRule_2 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getDescricao().equalsIgnoreCase("789");
+
+		actions
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Regra");
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA);
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule indirectlyIdentifiable_3 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getDescricao().equalsIgnoreCase("4");
+
+		actions
+			System.out.println("Erro classificado como Indiretamente Identificável");
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+
+	rule misinterpretation_4 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getDescricao().equalsIgnoreCase("3");
+
+		actions
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
+			modified(wrongAnswer);
+			flush();
+
+	}
+
+// end_rules
+
+// rule necessary by default
+
+
+	rule solutionNonCategorizable {
+		declarations
+			WrongAnswer wrongAnswer;
+			
+		localdecl
+				
+		conditions
+			wrongAnswer.getDescricao() == null;
+		actions
+			System.out.println("Erro classificado como SoluÃ§Ã£o NÃ£o CategorizÃ¡vel");		
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(wrongAnswer);
+			flush();			
+	}
+
+
+	
+}

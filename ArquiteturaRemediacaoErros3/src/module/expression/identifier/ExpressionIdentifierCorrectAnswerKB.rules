@@ -1,0 +1,34 @@
+package module.expression.identifier;
+
+import entity.Historic;
+import entity.CorrectAnswer;
+import java.util.ArrayList;
+import module.error.sorter.ClassificadorErroControlador;
+
+
+ruleBase ExpressionIdentifierCorrectAnswerKB {
+	
+
+
+	rule correctAnswer_0 {
+
+		declarations
+			Historic h;
+			CorrectAnswer correctAnswer;
+
+		localdecl
+
+		conditions
+			h.getResposta().getDescricao().equalsIgnoreCase("6");
+
+		actions
+			System.out.println("Resposta Correta (1) detectada");
+			correctAnswer.setDescricao(h.getResposta().getDescricao());
+			modified(correctAnswer);
+			flush();
+
+	}
+
+// end_rules
+	
+}
