@@ -1,9 +1,10 @@
 package module.expression.identifier;
 
-import entity.Historic;
-import entity.CorrectAnswer;
+import module.entity.Historic;
+import module.entity.CorrectAnswer;
+import module.entity.RuleToHuman;
 import java.util.ArrayList;
-import module.error.sorter.ClassificadorErroControlador;
+import module.error.sorter.ErrorSorterController;
 
 
  class Jeops_RuleBase_ExpressionIdentifierCorrectAnswerKB extends jeops.AbstractRuleBase {
@@ -16,7 +17,8 @@ import module.error.sorter.ClassificadorErroControlador;
      */
     private String[] identifiers_correctAnswer_0 = {
         "h",
-        "correctAnswer"
+        "correctAnswer",
+        "ruleToHuman"
     };
 
     /**
@@ -38,8 +40,9 @@ import module.error.sorter.ClassificadorErroControlador;
      */
     private String getDeclaredClassName_correctAnswer_0(int index) {
         switch (index) {
-            case 0: return "entity.Historic";
-            case 1: return "entity.CorrectAnswer";
+            case 0: return "module.entity.Historic";
+            case 1: return "module.entity.CorrectAnswer";
+            case 2: return "module.entity.RuleToHuman";
             default: return null;
         }
     }
@@ -52,8 +55,9 @@ import module.error.sorter.ClassificadorErroControlador;
      */
     private Class getDeclaredClass_correctAnswer_0(int index) {
         switch (index) {
-            case 0: return entity.Historic.class;
-            case 1: return entity.CorrectAnswer.class;
+            case 0: return module.entity.Historic.class;
+            case 1: return module.entity.CorrectAnswer.class;
+            case 2: return module.entity.RuleToHuman.class;
             default: return null;
         }
     }
@@ -66,8 +70,9 @@ import module.error.sorter.ClassificadorErroControlador;
      */
     private void setObject_correctAnswer_0(int index, Object value) {
         switch (index) {
-            case 0: this.entity_Historic_1 = (entity.Historic) value; break;
-            case 1: this.entity_CorrectAnswer_1 = (entity.CorrectAnswer) value; break;
+            case 0: this.module_entity_Historic_1 = (module.entity.Historic) value; break;
+            case 1: this.module_entity_CorrectAnswer_1 = (module.entity.CorrectAnswer) value; break;
+            case 2: this.module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) value; break;
         }
     }
 
@@ -79,8 +84,9 @@ import module.error.sorter.ClassificadorErroControlador;
      */
     private Object getObject_correctAnswer_0(int index) {
         switch (index) {
-            case 0: return entity_Historic_1;
-            case 1: return entity_CorrectAnswer_1;
+            case 0: return module_entity_Historic_1;
+            case 1: return module_entity_CorrectAnswer_1;
+            case 2: return module_entity_RuleToHuman_1;
             default: return null;
         }
     }
@@ -94,8 +100,9 @@ import module.error.sorter.ClassificadorErroControlador;
      */
     private Object[] getObjects_correctAnswer_0() {
         return new Object[] {
-                            entity_Historic_1,
-                            entity_CorrectAnswer_1
+                            module_entity_Historic_1,
+                            module_entity_CorrectAnswer_1,
+                            module_entity_RuleToHuman_1
                             };
     }
 
@@ -107,20 +114,45 @@ import module.error.sorter.ClassificadorErroControlador;
      *          declarations of this rule.
      */
     private void setObjects_correctAnswer_0(Object[] objects) {
-        entity_Historic_1 = (entity.Historic) objects[0];
-        entity_CorrectAnswer_1 = (entity.CorrectAnswer) objects[1];
+        module_entity_Historic_1 = (module.entity.Historic) objects[0];
+        module_entity_CorrectAnswer_1 = (module.entity.CorrectAnswer) objects[1];
+        module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
     }
 
     /**
      * Condition 0 of rule correctAnswer_0.<p>
      * The original expression was:<br>
-     * <code>h.getResposta().getDescricao().equalsIgnoreCase("6")</code>
+     * <code>h.getResposta().getAnswers()[0].equalsIgnoreCase("6")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_0_cond_0() {
-        return (entity_Historic_1.getResposta().getDescricao().equalsIgnoreCase("6"));
+        return (module_entity_Historic_1.getResposta().getAnswers()[0].equalsIgnoreCase("6"));
+    }
+
+    /**
+     * Condition 1 of rule correctAnswer_0.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getAnswers()[1].equalsIgnoreCase("10")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean correctAnswer_0_cond_1() {
+        return (module_entity_Historic_1.getResposta().getAnswers()[1].equalsIgnoreCase("10"));
+    }
+
+    /**
+     * Condition 2 of rule correctAnswer_0.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getAnswers()[2].equalsIgnoreCase("16")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean correctAnswer_0_cond_2() {
+        return (module_entity_Historic_1.getResposta().getAnswers()[2].equalsIgnoreCase("16"));
     }
 
     /**
@@ -133,6 +165,8 @@ import module.error.sorter.ClassificadorErroControlador;
     private boolean correctAnswer_0_cond(int index) {
         switch (index) {
             case 0: return correctAnswer_0_cond_0();
+            case 1: return correctAnswer_0_cond_1();
+            case 2: return correctAnswer_0_cond_2();
             default: return false;
         }
     }
@@ -149,8 +183,12 @@ import module.error.sorter.ClassificadorErroControlador;
         switch (declIndex) {
             case 0:
                 if (!correctAnswer_0_cond_0()) return false;
+                if (!correctAnswer_0_cond_1()) return false;
+                if (!correctAnswer_0_cond_2()) return false;
                 return true;
             case 1:
+                return true;
+            case 2:
                 return true;
             default: return false;
         }
@@ -172,6 +210,8 @@ import module.error.sorter.ClassificadorErroControlador;
                 return true;
             case 1:
                 return true;
+            case 2:
+                return true;
             default: return false;
         }
     }
@@ -180,9 +220,240 @@ import module.error.sorter.ClassificadorErroControlador;
      * Executes the action part of the rule correctAnswer_0
      */
     private void correctAnswer_0() {
-			System.out.println("Resposta Correta (1) detectada");
-			entity_CorrectAnswer_1.setDescricao(entity_Historic_1.getResposta().getDescricao());
-			modified(entity_CorrectAnswer_1);
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para resposta correta: correctAnswer_ \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condições:  \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo 0 = 6\n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo 1 = 10\n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo 2 = 16\n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			module_entity_CorrectAnswer_1.setAnswers(module_entity_Historic_1.getResposta().getAnswers());
+			modified(module_entity_CorrectAnswer_1);
+			modified(module_entity_RuleToHuman_1);
+			flush();
+
+	    }
+
+
+
+
+	
+    /**
+     * Identifiers of rule correctAnswer_1
+     */
+    private String[] identifiers_correctAnswer_1 = {
+        "h",
+        "correctAnswer",
+        "ruleToHuman"
+    };
+
+    /**
+     * Returns the identifiers declared in rule correctAnswer_1
+     *
+     * @return the identifiers declared in rule correctAnswer_1
+     */
+    private String[] getDeclaredIdentifiers_correctAnswer_1() {
+         return identifiers_correctAnswer_1;
+    }
+
+    /**
+     * Returns the name of the class of one declared object for
+     * rule correctAnswer_1.
+     *
+     * @param index the index of the declaration
+     * @return the name of the class of the declared objects for
+     *          this rule.
+     */
+    private String getDeclaredClassName_correctAnswer_1(int index) {
+        switch (index) {
+            case 0: return "module.entity.Historic";
+            case 1: return "module.entity.CorrectAnswer";
+            case 2: return "module.entity.RuleToHuman";
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns the class of one declared object for rule correctAnswer_1.
+     *
+     * @param index the index of the declaration
+     * @return the class of the declared objects for this rule.
+     */
+    private Class getDeclaredClass_correctAnswer_1(int index) {
+        switch (index) {
+            case 0: return module.entity.Historic.class;
+            case 1: return module.entity.CorrectAnswer.class;
+            case 2: return module.entity.RuleToHuman.class;
+            default: return null;
+        }
+    }
+
+    /**
+     * Sets an object declared in the rule correctAnswer_1.
+     *
+     * @param index the index of the declared object
+     * @param value the value of the object being set.
+     */
+    private void setObject_correctAnswer_1(int index, Object value) {
+        switch (index) {
+            case 0: this.module_entity_Historic_1 = (module.entity.Historic) value; break;
+            case 1: this.module_entity_CorrectAnswer_1 = (module.entity.CorrectAnswer) value; break;
+            case 2: this.module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) value; break;
+        }
+    }
+
+    /**
+     * Returns an object declared in the rule correctAnswer_1.
+     *
+     * @param index the index of the declared object
+     * @return the value of the corresponding object.
+     */
+    private Object getObject_correctAnswer_1(int index) {
+        switch (index) {
+            case 0: return module_entity_Historic_1;
+            case 1: return module_entity_CorrectAnswer_1;
+            case 2: return module_entity_RuleToHuman_1;
+            default: return null;
+        }
+    }
+
+    /**
+     * Returns all variables bound to the declarations 
+     * of rule correctAnswer_1
+     *
+     * @return an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private Object[] getObjects_correctAnswer_1() {
+        return new Object[] {
+                            module_entity_Historic_1,
+                            module_entity_CorrectAnswer_1,
+                            module_entity_RuleToHuman_1
+                            };
+    }
+
+    /**
+     * Defines all variables bound to the declarations 
+     * of rule correctAnswer_1
+     *
+     * @param objects an object array of the variables bound to the
+     *          declarations of this rule.
+     */
+    private void setObjects_correctAnswer_1(Object[] objects) {
+        module_entity_Historic_1 = (module.entity.Historic) objects[0];
+        module_entity_CorrectAnswer_1 = (module.entity.CorrectAnswer) objects[1];
+        module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
+    }
+
+    /**
+     * Condition 0 of rule correctAnswer_1.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getAnswers()[0].equalsIgnoreCase("10")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean correctAnswer_1_cond_0() {
+        return (module_entity_Historic_1.getResposta().getAnswers()[0].equalsIgnoreCase("10"));
+    }
+
+    /**
+     * Condition 1 of rule correctAnswer_1.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getAnswers()[1].equalsIgnoreCase("6")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean correctAnswer_1_cond_1() {
+        return (module_entity_Historic_1.getResposta().getAnswers()[1].equalsIgnoreCase("6"));
+    }
+
+    /**
+     * Condition 2 of rule correctAnswer_1.<p>
+     * The original expression was:<br>
+     * <code>h.getResposta().getAnswers()[2].equalsIgnoreCase("16")</code>
+     *
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean correctAnswer_1_cond_2() {
+        return (module_entity_Historic_1.getResposta().getAnswers()[2].equalsIgnoreCase("16"));
+    }
+
+    /**
+     * Checks whether some conditions of rule correctAnswer_1 is satisfied.
+     *
+     * @param index the index of the condition to be checked.
+     * @return <code>true</code> if the condition is satisfied;
+     *          <code>false</code> otherwise.
+     */
+    private boolean correctAnswer_1_cond(int index) {
+        switch (index) {
+            case 0: return correctAnswer_1_cond_0();
+            case 1: return correctAnswer_1_cond_1();
+            case 2: return correctAnswer_1_cond_2();
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all conditions of rule correctAnswer_1 that depend only on
+     * the given object are satisfied.
+     *
+     * @param declIndex the index of the declaration to be checked
+     * @return <code>true</code> if all corresponding conditions for
+     *          this rule are satisfied; <code>false</code> otherwise.
+     */
+    private boolean checkConditionsOnlyOf_correctAnswer_1(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                if (!correctAnswer_1_cond_0()) return false;
+                if (!correctAnswer_1_cond_1()) return false;
+                if (!correctAnswer_1_cond_2()) return false;
+                return true;
+            case 1:
+                return true;
+            case 2:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Checks whether all the conditions of a rule which
+     * reference some declared element of the declarations are
+     * true.
+     *
+     * @param declIndex the index of the declared element.
+     * @return <code>true</code> if the conditions that reference
+     *          up to the given declaration are true;
+     *          <code>false</code> otherwise.
+     */
+    private boolean checkCondForDeclaration_correctAnswer_1(int declIndex) {
+        switch (declIndex) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            case 2:
+                return true;
+            default: return false;
+        }
+    }
+
+    /**
+     * Executes the action part of the rule correctAnswer_1
+     */
+    private void correctAnswer_1() {
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para resposta correta: correctAnswer_ \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condições:  \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo 0 = 10\n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo 1 = 6\n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo 2 = 16\n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			module_entity_CorrectAnswer_1.setAnswers(module_entity_Historic_1.getResposta().getAnswers());
+			modified(module_entity_CorrectAnswer_1);
+			modified(module_entity_RuleToHuman_1);
 			flush();
 
 	    }
@@ -196,7 +467,8 @@ import module.error.sorter.ClassificadorErroControlador;
      * The names of the rules in this class file
      */
     private static final String[] File_ruleNames = {
-        "correctAnswer_0"
+        "correctAnswer_0",
+        "correctAnswer_1"
     };
 
     /**
@@ -212,7 +484,8 @@ import module.error.sorter.ClassificadorErroControlador;
      * The number of declarations of the rules in this class file.
      */
     private static final int[] File_numberOfDeclarations = {
-        2
+        3,
+        3
     };
 
     /**
@@ -228,7 +501,8 @@ import module.error.sorter.ClassificadorErroControlador;
      * The number of conditions of the rules in this class file.
      */
     private static final int[] File_numberOfConditions = {
-        1
+        3,
+        3
     };
 
     /**
@@ -251,6 +525,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public boolean checkCondition(int ruleIndex, int condIndex) {
         switch (ruleIndex) {
             case 0: return correctAnswer_0_cond(condIndex);
+            case 1: return correctAnswer_1_cond(condIndex);
             default: return false;
         }
     }
@@ -268,6 +543,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public boolean checkConditionsOnlyOf(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
             case 0: return checkConditionsOnlyOf_correctAnswer_0(declIndex);
+            case 1: return checkConditionsOnlyOf_correctAnswer_1(declIndex);
             default: return false;
         }
     }
@@ -286,6 +562,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public boolean checkCondForDeclaration(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
             case 0: return checkCondForDeclaration_correctAnswer_0(declIndex);
+            case 1: return checkCondForDeclaration_correctAnswer_1(declIndex);
             default: return false;
         }
     }
@@ -300,6 +577,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public String getDeclaredClassName(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
             case 0: return getDeclaredClassName_correctAnswer_0(declIndex);
+            case 1: return getDeclaredClassName_correctAnswer_1(declIndex);
             default: return null;
         }
     }
@@ -314,6 +592,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public Class getDeclaredClass(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
             case 0: return getDeclaredClass_correctAnswer_0(declIndex);
+            case 1: return getDeclaredClass_correctAnswer_1(declIndex);
             default: return null;
         }
     }
@@ -326,6 +605,7 @@ import module.error.sorter.ClassificadorErroControlador;
     protected void internalFireRule(int ruleIndex) {
         switch (ruleIndex) {
             case 0: correctAnswer_0(); break;
+            case 1: correctAnswer_1(); break;
         }
     }
 
@@ -335,7 +615,7 @@ import module.error.sorter.ClassificadorErroControlador;
      * @return the number of rules.
      */
     public int getNumberOfRules() {
-        return 1;
+        return 2;
     }
 
     /**
@@ -347,6 +627,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public String[] getDeclaredIdentifiers(int ruleIndex) {
         switch (ruleIndex) {
             case 0: return getDeclaredIdentifiers_correctAnswer_0();
+            case 1: return getDeclaredIdentifiers_correctAnswer_1();
             default: return new String[0];
         }
     }
@@ -361,6 +642,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public void setObject(int ruleIndex, int declIndex, Object value) {
         switch (ruleIndex) {
             case 0: setObject_correctAnswer_0(declIndex, value); break;
+            case 1: setObject_correctAnswer_1(declIndex, value); break;
         }
     }
 
@@ -374,6 +656,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public Object getObject(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
             case 0: return getObject_correctAnswer_0(declIndex);
+            case 1: return getObject_correctAnswer_1(declIndex);
             default: return null;
         }
     }
@@ -389,6 +672,7 @@ import module.error.sorter.ClassificadorErroControlador;
     public Object[] getObjects(int ruleIndex) {
         switch (ruleIndex) {
             case 0: return getObjects_correctAnswer_0();
+            case 1: return getObjects_correctAnswer_1();
             default: return null;
         }
     }
@@ -403,14 +687,16 @@ import module.error.sorter.ClassificadorErroControlador;
     public void setObjects(int ruleIndex, Object[] objects) {
         switch (ruleIndex) {
             case 0: setObjects_correctAnswer_0(objects); break;
+            case 1: setObjects_correctAnswer_1(objects); break;
         }
     }
 
     /*
      * The variables declared in the rules.
      */
-    private entity.Historic entity_Historic_1;
-    private entity.CorrectAnswer entity_CorrectAnswer_1;
+    private module.entity.Historic module_entity_Historic_1;
+    private module.entity.CorrectAnswer module_entity_CorrectAnswer_1;
+    private module.entity.RuleToHuman module_entity_RuleToHuman_1;
 
     /**
      * Class constructor.
@@ -426,7 +712,7 @@ import module.error.sorter.ClassificadorErroControlador;
 /**
  * Knowledge base created by JEOPS from file ExpressionIdentifierCorrectAnswerKB.rules
  *
- * @version 28/05/2014
+ * @version 15/07/2014
  */
 public class ExpressionIdentifierCorrectAnswerKB extends jeops.AbstractKnowledgeBase {
 

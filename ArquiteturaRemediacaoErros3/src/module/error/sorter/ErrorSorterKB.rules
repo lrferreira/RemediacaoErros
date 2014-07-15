@@ -1,7 +1,9 @@
 package module.error.sorter;
 
-import entity.WrongAnswer;
-import util.Constantes;
+import module.entity.WrongAnswer;
+import module.entity.Historic;
+import module.entity.RuleToHuman;
+import util.Constants;
 
 
 ruleBase ErrorSorterKB {
@@ -11,93 +13,277 @@ ruleBase ErrorSorterKB {
 	rule directlyIdentifiableDeficiencyDomain_0 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getDescricao().equalsIgnoreCase("123");
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("10");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("16");
 
 		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
 			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
-			wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
 			modified(wrongAnswer);
+			modified(ruleToHuman);
 			flush();
 
 	}
 
 
-	rule directlyIdentifiableDeficiencyOperatorChoice_1 {
+	rule directlyIdentifiableDeficiencyDomain_1 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getDescricao().equalsIgnoreCase("456");
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("6");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("16");
 
 		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_2 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("10");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_3 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("6");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyOperatorChoice_4 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyOperatorChoice_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 4\n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
 			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
-			wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
+			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
 			modified(wrongAnswer);
+			modified(ruleToHuman);
 			flush();
 
 	}
 
 
-	rule directlyIdentifiableDeficiencyRule_2 {
+	rule directlyIdentifiableDeficiencyRule_5 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getDescricao().equalsIgnoreCase("789");
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
 
 		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyRule_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
 			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Regra");
-			wrongAnswer.setTipo(Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA);
+			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA);
 			modified(wrongAnswer);
+			modified(ruleToHuman);
 			flush();
 
 	}
 
 
-	rule indirectlyIdentifiable_3 {
+	rule indirectlyIdentifiable_6 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getDescricao().equalsIgnoreCase("4");
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("6");
 
 		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: indirectlyIdentifiable_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 6\n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
 			System.out.println("Erro classificado como Indiretamente Identificável");
-			wrongAnswer.setTipo(Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
+			wrongAnswer.setType(Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
 			modified(wrongAnswer);
+			modified(ruleToHuman);
 			flush();
 
 	}
 
 
-	rule misinterpretation_4 {
+	rule misinterpretation_7 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getDescricao().equalsIgnoreCase("3");
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
 
 		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: misinterpretation_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
 			System.out.println("Erro classificado como Interpretação Equivocada");
-			wrongAnswer.setTipo(Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
+			wrongAnswer.setType(Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
 			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_8 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getAnswers()[0].equalsIgnoreCase("1");
+			wrongAnswer.getAnswers()[1].equalsIgnoreCase("1");
+			wrongAnswer.getAnswers()[2].equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 1\n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			wrongAnswer.setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(wrongAnswer);
+			modified(ruleToHuman);
 			flush();
 
 	}
@@ -109,15 +295,23 @@ ruleBase ErrorSorterKB {
 
 	rule solutionNonCategorizable {
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
 			
 		localdecl
 				
 		conditions
-			wrongAnswer.getDescricao() == null;
+			wrongAnswer.getAnswers() == null;
 		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_ ");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  ");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Usuário não informou nenhuma resposta (campos nulos)");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
 			System.out.println("Erro classificado como SoluÃ§Ã£o NÃ£o CategorizÃ¡vel");		
-			wrongAnswer.setTipo(Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			wrongAnswer.setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
 			modified(wrongAnswer);
 			flush();			
 	}

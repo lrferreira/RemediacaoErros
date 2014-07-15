@@ -1,9 +1,10 @@
 package module.merfunction.sorter;
-import entity.Historic;
-import entity.WrongAnswer;
-import util.Constantes;
-import entity.MERFunction;
-import module.mer.manager.GerenciadorMREControlador;
+import module.entity.Historic;
+import module.entity.WrongAnswer;
+import module.entity.RuleToHuman;
+import util.Constants;
+import module.entity.MERFunction;
+import module.mer.manager.MERManagerController;
 
 
 ruleBase MERFunctionSorterKB {
@@ -13,78 +14,250 @@ ruleBase MERFunctionSorterKB {
 	rule constrainInterpretation01_0 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
 			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
+			wrongAnswer.getType() == Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
 
 		actions
-			merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constrainInterpretation01_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificável - Deficiência no Domínio \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
 			modified(merFunction);
+			modified(ruleToHuman);
 			System.out.println("Função MRE: Restrição Interpretação");
 			flush();
 
 	}
 
 
-	rule constructDeeperUnderstanding02_1 {
+	rule constrainInterpretation01_1 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
 			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;
+			wrongAnswer.getType() == Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
 
 		actions
-			merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constrainInterpretation01_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificável - Deficiência no Domínio \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
 			modified(merFunction);
+			modified(ruleToHuman);
+			System.out.println("Função MRE: Restrição Interpretação");
+			flush();
+
+	}
+
+
+	rule constrainInterpretation01_2 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getType() == Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constrainInterpretation01_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificável - Deficiência no Domínio \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			modified(merFunction);
+			modified(ruleToHuman);
+			System.out.println("Função MRE: Restrição Interpretação");
+			flush();
+
+	}
+
+
+	rule constrainInterpretation01_3 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getType() == Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constrainInterpretation01_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificável - Deficiência no Domínio \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			modified(merFunction);
+			modified(ruleToHuman);
+			System.out.println("Função MRE: Restrição Interpretação");
+			flush();
+
+	}
+
+
+	rule constructDeeperUnderstanding02_4 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getType() == Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constructDeeperUnderstanding02_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificável - Deficiência na Escolha do Operador \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
+			modified(merFunction);
+			modified(ruleToHuman);
 			System.out.println("Função MRE: Compreensão Mais Aprofundada");
 			flush();
 
 	}
 
 
-	rule constrainInterpretation02_2 {
+	rule constructDeeperUnderstanding01_5 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
 			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getTipo() == Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL;
+			wrongAnswer.getType() == Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA;
 
 		actions
-			merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constructDeeperUnderstanding01_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificável - Deficiência na Regra \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
 			modified(merFunction);
+			modified(ruleToHuman);
+			System.out.println("Função MRE: Compreensão Mais Aprofundada");
+			flush();
+
+	}
+
+
+	rule constrainInterpretation02_6 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getType() == Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constrainInterpretation02_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Indiretamente Identificável \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			modified(merFunction);
+			modified(ruleToHuman);
 			System.out.println("Função MRE: Restrição Interpretação");
 			flush();
 
 	}
 
 
-	rule complementaryRoles_3 {
+	rule complementaryRoles_7 {
 
 		declarations
+			Historic h;
 			WrongAnswer wrongAnswer;
 			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getTipo() == Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA;
+			wrongAnswer.getType() == Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA;
 
 		actions
-			merFunction.setTipo(Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: complementaryRoles_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Interpretação Equivocada \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES);
 			modified(merFunction);
+			modified(ruleToHuman);
 			System.out.println("Função MRE: Papéis Complementares");
+			flush();
+
+	}
+
+
+	rule constructDeeperUnderstanding03_8 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			wrongAnswer.getType() == Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: constructDeeperUnderstanding03_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Solução Não Categorizável \n");
+			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
+			modified(h);
+			merFunction.setType(Constants.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
+			modified(merFunction);
+			modified(ruleToHuman);
+			System.out.println("Função MRE: Compreensão Mais Aprofundada");
 			flush();
 
 	}

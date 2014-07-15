@@ -6,52 +6,135 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import jeops.compiler.Main;
 import module.creation.rules.RulesFactory;
-import util.Constantes;
-import entity.CorrectAnswer;
-import entity.MERFunction;
-import entity.MultipleExternalRepresentation;
-import entity.WrongAnswer;
+import module.entity.CorrectAnswer;
+import module.entity.MERFunction;
+import module.entity.MultipleExternalRepresentation;
+import module.entity.WrongAnswer;
+import util.Constants;
+import util.StringConstants;
 
 public class CriaRegraDeProducao {
 
 	public static void main(String[] args){
-		RulesFactory.createRules(new CorrectAnswer("6"));
+			
+			int i = 0;
+
+			RulesFactory.createRules(new CorrectAnswer(new String[]{"6", "10","16"}));
+			RulesFactory.createRules(new CorrectAnswer(new String[]{"10", "6","16"}));
+
+			// O aprendiz não consegue identificar que Helena possui uma quantidade maior.
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"10","10","16"}, Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+					-1);
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"6","6","16"}, Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+					-1);
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"10","10",""}, Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+					-1);
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"6","6",""}, Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+					-1);
+
+	// criar mecanismo neste caso para identificar todas as respostas erradas quando o aluno informa mesmo valor para as parcelas
+	// criar mecanismo estilo "independente da resposta
+			
+			
+			//A estratégia do aprendiz apresenta a seguinte solução: 10 - 6 = ?
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"10","6","4"}, Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_escolha_operador.png", "Figura procurando mostrar que Helena possui mais laranjas que Pedro"),
+					-1);
+
+			
+			//O aprendiz ainda não se apropriou da parte conceitual, quando não consegue
+			//identificar cada personagem com suas respectivas quantidades.
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"", "", ""}, Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_regra.png", "Figura apresentando a quantidade de laranjas que cada pessoa possui"),
+					2);
+
+			
+			//O aprendiz não consegue perceber que a quantidade de laranjas de Helena é maior que a de Pedro.
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"10", "6", "6"}, Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "indiretamente_identificavel.png", "Figura destacando que Helena possui mais laranjas que o indicado no cesto"),
+					2);
+
+			
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"", "", ""}, Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "interpretacao_equivocada.png", "Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui"),
+					2);
+
+			//Caso o erro cometido não esteja contemplado em nenhuma classificação acima, o
+			//erro será incluído nesta seção até ser analisada a necessidade de uma nova categoria.
+			RulesFactory.createRules(
+					new WrongAnswer(new String[]{"1", "1", "1"}, Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
+					new MERFunction(), 
+					new MultipleExternalRepresentation(++i, "compreensao_aprofundada", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+					-1);
+
+			String filePath = new File("").getAbsolutePath();
+	        System.out.println (filePath);
+	        filePath = filePath.replace("\\bin", "\\src");
+	        //filePath = filePath + "\\src"; 
+			Main.main(new String[]{filePath+StringConstants.FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB});
+			Main.main(new String[]{filePath+StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB});
+			Main.main(new String[]{filePath+StringConstants.FILE_ERROR_SORTER_KB});
+			Main.main(new String[]{filePath+StringConstants.FILE_MERFUNCTION_SORTER_KB});
+			Main.main(new String[]{filePath+StringConstants.FILE_MER_MANAGER_KB});
+			
+
+		/*
+		RulesFactory.createRules(new CorrectAnswer("16"));
 		
 		RulesFactory.createRules(
-				new WrongAnswer("123", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
+				new WrongAnswer("123", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(1, "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"));
+				new MultipleExternalRepresentation(1, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"));
 
 		RulesFactory.createRules(
-				new WrongAnswer("456", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
+				new WrongAnswer("456", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(2, "Figura procurando mostrar que Helena possui mais laranjas que Pedro"));
+				new MultipleExternalRepresentation(2, "diretamente_identificavel_deficiencia_escolha_operador.png", "Figura procurando mostrar que Helena possui mais laranjas que Pedro"));
 
 		RulesFactory.createRules(
-				new WrongAnswer("789", Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA), 
+				new WrongAnswer("789", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(3, "Figura apresentando a quantidade de laranjas que cada pessoa possui"));
+				new MultipleExternalRepresentation(3, "diretamente_identificavel_deficiencia_regra.png", "Figura apresentando a quantidade de laranjas que cada pessoa possui"));
 
 		RulesFactory.createRules(
-				new WrongAnswer("4", Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL), 
+				new WrongAnswer("4", Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(4, "Figura destacando que Helena possui mais laranjas que o indicado no cesto"));
+				new MultipleExternalRepresentation(4, "indiretamente_identificavel.png", "Figura destacando que Helena possui mais laranjas que o indicado no cesto"));
 
 		RulesFactory.createRules(
-				new WrongAnswer("3", Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA), 
+				new WrongAnswer("3", Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(5, "Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui"));
+				new MultipleExternalRepresentation(5, "interpretacao_equivocada.png", "Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui"));
 
 		RulesFactory.createRules(
-				new WrongAnswer("1", Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
+				new WrongAnswer("1", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(6, "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"));
+				new MultipleExternalRepresentation(6, "", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"));
 
-
+*/
 	}
 		
 	public static void teste(){	
@@ -123,11 +206,11 @@ public class CriaRegraDeProducao {
 /*
 			out.write("package tests;\n");
 
-			out.write("import entity.Historic;\n");
-	       out.write("import entity.WrongAnswer;\n");
+			out.write("import module.entity.Historic;\n");
+	       out.write("import module.entity.WrongAnswer;\n");
 	       out.write("import java.util.ArrayList;\n");
-	       out.write("import module.error.sorter.ClassificadorErroControlador;\n");
-		   out.write("import module.expression.identifier.IdentificadorExpressaoControlador;\n");
+	       out.write("import module.error.sorter.ErrorSorterController;\n");
+		   out.write("import module.expression.identifier.ExpressionIdentifierController;\n");
 		   
 
 		   out.write("ruleBase TesteCriaRegrasBaseRegras {\n");
@@ -137,7 +220,7 @@ public class CriaRegraDeProducao {
 		   out.write("Historic historico;\n");
 		   out.write("ArrayList erros;\n");
 		   out.write("ArrayList acertos;\n");
-		   out.write("IdentificadorExpressaoControlador expressaoControlador;\n");
+		   out.write("ExpressionIdentifierController expressaoControlador;\n");
 		   out.write("WrongAnswer respostaErrada;\n");
 		   out.write("localdecl\n");
 						
