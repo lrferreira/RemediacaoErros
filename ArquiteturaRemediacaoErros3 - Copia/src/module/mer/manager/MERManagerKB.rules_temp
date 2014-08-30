@@ -1,0 +1,90 @@
+package module.mer.manager;
+import entity.Historic;
+import entity.WrongAnswer;
+import util.Constantes;
+import entity.MERFunction;
+import java.util.ArrayList;
+
+ruleBase MERManagerKB {
+
+
+
+
+	rule ruleMRE_0 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+
+		localdecl
+
+		conditions
+			merFunction.getTipo() == 12;
+			wrongAnswer.getTipo() == 2;
+
+		actions
+			System.out.println("Exibição de MRE 1 - Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			flush();
+
+	}
+
+
+	rule ruleMRE_1 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+
+		localdecl
+
+		conditions
+			merFunction.getTipo() == 13;
+			wrongAnswer.getTipo() == 4;
+
+		actions
+			System.out.println("Exibição de MRE 2 - Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			flush();
+
+	}
+
+
+	rule ruleMRE_2 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+
+		localdecl
+
+		conditions
+			merFunction.getTipo() == 11;
+			wrongAnswer.getTipo() == 1;
+
+		actions
+			System.out.println("Exibição de MRE 5 - Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			flush();
+
+	}
+
+
+	rule ruleMRE_3 {
+
+		declarations
+			WrongAnswer wrongAnswer;
+			MERFunction merFunction;
+
+		localdecl
+
+		conditions
+			merFunction.getTipo() == 13;
+			wrongAnswer.getTipo() == 6;
+
+		actions
+			System.out.println("Exibição de MRE 6 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+// end_rules
+	
+}

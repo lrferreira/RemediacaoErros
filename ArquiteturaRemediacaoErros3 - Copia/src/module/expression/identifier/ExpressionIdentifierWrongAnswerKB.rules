@@ -1,0 +1,14 @@
+package module.expression.identifier;
+
+import entity.Historic;
+import entity.WrongAnswer;
+import java.util.ArrayList;
+import module.error.sorter.ClassificadorErroControlador;
+
+
+ruleBase ExpressionIdentifierWrongAnswerKB {
+
+
+// end_rules
+	
+}

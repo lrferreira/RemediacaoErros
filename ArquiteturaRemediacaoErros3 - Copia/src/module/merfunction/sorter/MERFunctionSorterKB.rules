@@ -1,0 +1,14 @@
+package module.merfunction.sorter;
+import entity.Historic;
+import entity.WrongAnswer;
+import util.Constantes;
+import entity.MERFunction;
+import module.mer.manager.GerenciadorMREControlador;
+
+
+ruleBase MERFunctionSorterKB {
+
+
+// end_rules
+	
+}

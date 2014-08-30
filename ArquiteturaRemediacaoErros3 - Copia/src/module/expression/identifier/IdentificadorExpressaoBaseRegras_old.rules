@@ -1,0 +1,84 @@
+package module.expression.identifier;
+
+import entity.Historic;
+import entity.WrongAnswer;
+import java.util.ArrayList;
+import module.error.sorter.ClassificadorErroControlador;
+
+
+ruleBase IdentificadorExpressaoBaseRegras {
+
+	rule respostaErrada_1 {
+		declarations
+			Historico historico;
+			ArrayList erros;
+			ArrayList acertos;
+			IdentificadorExpressaoControlador expressaoControlador;
+			RespostaErrada respostaErrada;
+		localdecl
+			
+		conditions
+			expressaoControlador.temRespostaErrada(historico, erros);
+		actions
+			historico.setNumeroTentativas(historico.getNumeroTentativas() + 1);
+			modified(historico);
+			System.out.println("Resposta Errada (1) detectada");
+			respostaErrada.setDescricao(historico.getResposta().getDescricao());
+			modified(respostaErrada);
+			retract(historico);
+			retract(erros);
+			retract(acertos);
+			retract(expressaoControlador);
+			retract(respostaErrada);
+	}
+
+
+	rule respostaErrada_2 {
+		declarations
+			Historico historico;
+			ArrayList erros;
+			ArrayList acertos;
+			IdentificadorExpressaoControlador expressaoControlador;
+			RespostaErrada respostaErrada;
+		localdecl
+			
+		conditions
+			!expressaoControlador.temRespostaCerta(historico, acertos);
+		actions
+			historico.setNumeroTentativas(historico.getNumeroTentativas() + 1);
+			modified(historico);
+			respostaErrada.setDescricao(historico.getResposta().getDescricao());
+			modified(respostaErrada);
+			
+			System.out.println("Resposta Errada (2) detectada. Redirecionando para o classificador do erro");
+			retract(historico);
+			retract(erros);
+			retract(acertos);
+			retract(expressaoControlador);
+			retract(respostaErrada);
+	}
+	
+	rule respostaCerta {
+		declarations
+			Historico historico;
+			ArrayList erros;
+			ArrayList acertos;
+			IdentificadorExpressaoControlador c;
+			RespostaErrada r;
+		localdecl
+			
+		conditions
+			c.temRespostaCerta(historico, acertos);
+		actions
+			System.out.println("Não há erros");
+			retract(historico);
+			retract(erros);
+			retract(acertos);
+			retract(c);		
+			retract(r);	
+			
+	}
+	
+	
+	
+}

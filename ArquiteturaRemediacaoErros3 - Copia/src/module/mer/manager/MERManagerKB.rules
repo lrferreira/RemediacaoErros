@@ -1,0 +1,13 @@
+package module.mer.manager;
+import entity.Historic;
+import entity.WrongAnswer;
+import util.Constantes;
+import entity.MERFunction;
+import java.util.ArrayList;
+
+ruleBase MERManagerKB {
+
+
+// end_rules
+	
+}

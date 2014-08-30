@@ -1,0 +1,34 @@
+package module.error.sorter;
+
+import entity.WrongAnswer;
+import util.Constantes;
+
+
+ruleBase ErrorSorterKB {
+	
+
+
+
+// end_rules
+
+// rule necessary by default
+
+
+	rule solutionNonCategorizable {
+		declarations
+			WrongAnswer wrongAnswer;
+			
+		localdecl
+				
+		conditions
+			wrongAnswer.getDescricao() == null;
+		actions
+			System.out.println("Erro classificado como Solução Não Categorizável");		
+			wrongAnswer.setTipo(Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(wrongAnswer);
+			flush();			
+	}
+
+
+	
+}

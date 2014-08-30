@@ -1,0 +1,121 @@
+package module.merfunction.sorter;
+import entity.Historic;
+import entity.WrongAnswer;
+import util.Constantes;
+import entity.MERFunction;
+import module.mer.manager.GerenciadorMREControlador;
+
+
+ruleBase ClassificadorFuncaoMREBaseRegras {
+	
+	//PAGINA 55 tese Maici
+	
+	rule papeisComplementares {
+		declarations
+			Historico h;
+			RespostaErrada e;
+			FuncaoMRE funcaoMRE;
+		localdecl
+		
+		conditions
+			e.getTipo() == Constantes.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA;
+		actions
+			funcaoMRE.setTipo(Constantes.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES);
+			modified(funcaoMRE);
+			System.out.println("Fun��o MRE: Pap�is Complementares");
+
+			retract(h);
+			retract(e);
+			retract(funcaoMRE);	
+	}
+	
+	rule restricaoInterpretacao1 {
+		declarations
+			Historico h;
+			RespostaErrada e;
+			FuncaoMRE funcaoMRE;
+		localdecl
+		
+		conditions		
+			e.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO;
+		actions
+			funcaoMRE.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			modified(funcaoMRE);
+			System.out.println("Fun��o MRE: Restri��o Interpreta��o");		
+			retract(h);
+			retract(e);
+			retract(funcaoMRE);	
+	}
+
+	rule restricaoInterpretacao2 {
+		declarations
+			Historico h;
+			RespostaErrada e;
+			FuncaoMRE funcaoMRE;
+		localdecl
+		
+		conditions		
+			e.getTipo() == Constantes.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL;
+		actions
+			funcaoMRE.setTipo(Constantes.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO);
+			modified(funcaoMRE);
+			System.out.println("Fun��o MRE: Restri��o Interpreta��o");
+			retract(h);
+			retract(e);
+			retract(funcaoMRE);	
+	}
+	
+	rule compreensaoMaisAprofundada1 {
+		declarations
+			Historico h;
+			RespostaErrada e;
+			FuncaoMRE funcaoMRE;
+		localdecl
+		
+		conditions
+			e.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA;
+		actions
+			funcaoMRE.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
+			modified(funcaoMRE);
+			System.out.println("Fun��o MRE: Compreens�o Mais Aprofundada");
+			retract(h);
+			retract(e);
+			retract(funcaoMRE);	
+	}
+	
+	rule compreensaoMaisAprofundada2 {
+		declarations
+			Historico h;
+			RespostaErrada e;
+			FuncaoMRE funcaoMRE;
+		localdecl
+		
+		conditions
+			e.getTipo() == Constantes.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR;
+		actions
+			funcaoMRE.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
+			modified(funcaoMRE);
+			System.out.println("Fun��o MRE: Compreens�o Mais Aprofundada");
+			retract(h);
+			retract(e);
+			retract(funcaoMRE);	
+	}
+	
+	rule compreensaoMaisAprofundada3 {
+		declarations
+			Historico h;
+			RespostaErrada e;
+			FuncaoMRE funcaoMRE;
+		localdecl
+		
+		conditions
+			e.getTipo() == Constantes.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL;
+		actions
+			funcaoMRE.setTipo(Constantes.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA);
+			modified(funcaoMRE);
+			System.out.println("Fun��o MRE: Compreens�o Mais Aprofundada");
+			retract(h);
+			retract(e);
+			retract(funcaoMRE);	
+	}
+}

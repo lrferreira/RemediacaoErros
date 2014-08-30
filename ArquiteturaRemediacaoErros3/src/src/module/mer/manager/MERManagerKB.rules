@@ -1,0 +1,876 @@
+package module.mer.manager;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import util.Constants;
+import module.entity.MERFunction;
+import module.entity.MultipleExternalRepresentation;
+import module.entity.RuleToHuman;
+import java.util.ArrayList;
+
+ruleBase MERManagerKB {
+
+
+
+	rule ruleMER_PATH_1_GOAL_1_COMPONENT_txtParcela1_0 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			((WrongAnswer)action.getAnswer()).getType() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência no Domínio\n");
+			mer.setId(1);
+			mer.setDescricao("Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			mer.setImageName("diretamente_identificavel_deficiencia_dominio.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 1 - Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_1_COMPONENT_txtParcela1_1 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 11;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			((WrongAnswer)action.getAnswer()).getType() == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Papéis Complementares\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Interpretação Equivocada\n");
+			mer.setId(2);
+			mer.setDescricao("Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			mer.setImageName("interpretacao_equivocada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 2 - Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_1_COMPONENT_txtParcela1_2 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(3);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 3 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_2_COMPONENT_txtOp_3 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			((WrongAnswer)action.getAnswer()).getType() == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência na Escolha do Operador\n");
+			mer.setId(4);
+			mer.setDescricao("Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			mer.setImageName("diretamente_identificavel_deficiencia_escolha_operador.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 4 - Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_2_COMPONENT_txtOp_4 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			((WrongAnswer)action.getAnswer()).getType() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência no Domínio\n");
+			mer.setId(5);
+			mer.setDescricao("");
+			mer.setImageName("diretamente_identificavel_deficiencia_dominio.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 5 - ");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_2_COMPONENT_txtOp_5 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(6);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 6 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_3_COMPONENT_txtParcela2_6 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			((WrongAnswer)action.getAnswer()).getType() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência no Domínio\n");
+			mer.setId(7);
+			mer.setDescricao("Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			mer.setImageName("diretamente_identificavel_deficiencia_dominio.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 7 - Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_3_COMPONENT_txtParcela2_7 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			((WrongAnswer)action.getAnswer()).getType() == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Indiretamente Identificável\n");
+			mer.setId(8);
+			mer.setDescricao("");
+			mer.setImageName("indiretamente_identificavel.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 8 - ");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_3_COMPONENT_txtParcela2_8 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(9);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 9 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_9 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência na Escolha do Operador\n");
+			mer.setId(10);
+			mer.setDescricao("Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			mer.setImageName("diretamente_identificavel_deficiencia_escolha_operador.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 10 - Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_10 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 11;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Papéis Complementares\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Interpretação Equivocada\n");
+			mer.setId(11);
+			mer.setDescricao("Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			mer.setImageName("interpretacao_equivocada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 11 - Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_11 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Indiretamente Identificável\n");
+			mer.setId(12);
+			mer.setDescricao("Figura destacando que Helena possui mais laranjas que o indicado no cesto");
+			mer.setImageName("indiretamente_identificavel.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 12 - Figura destacando que Helena possui mais laranjas que o indicado no cesto");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_12 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(13);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 13 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_5_COMPONENT_txtParcela1_13 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			((WrongAnswer)action.getAnswer()).getType() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência no Domínio\n");
+			mer.setId(14);
+			mer.setDescricao("Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			mer.setImageName("diretamente_identificavel_deficiencia_dominio.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 14 - Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_5_COMPONENT_txtParcela1_14 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 11;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			((WrongAnswer)action.getAnswer()).getType() == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Papéis Complementares\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Interpretação Equivocada\n");
+			mer.setId(15);
+			mer.setDescricao("Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			mer.setImageName("interpretacao_equivocada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 15 - Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_5_COMPONENT_txtParcela1_15 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(16);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 16 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_6_COMPONENT_txtOp_16 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			((WrongAnswer)action.getAnswer()).getType() == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência na Escolha do Operador\n");
+			mer.setId(17);
+			mer.setDescricao("Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			mer.setImageName("diretamente_identificavel_deficiencia_escolha_operador.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 17 - Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_6_COMPONENT_txtOp_17 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			((WrongAnswer)action.getAnswer()).getType() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência no Domínio\n");
+			mer.setId(18);
+			mer.setDescricao("");
+			mer.setImageName("diretamente_identificavel_deficiencia_dominio.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 18 - ");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_6_COMPONENT_txtOp_18 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(19);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 19 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_7_COMPONENT_txtParcela2_19 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			((WrongAnswer)action.getAnswer()).getType() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência no Domínio\n");
+			mer.setId(20);
+			mer.setDescricao("Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			mer.setImageName("diretamente_identificavel_deficiencia_dominio.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 20 - Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_7_COMPONENT_txtParcela2_20 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			((WrongAnswer)action.getAnswer()).getType() == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Indiretamente Identificável\n");
+			mer.setId(21);
+			mer.setDescricao("");
+			mer.setImageName("indiretamente_identificavel.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 21 - ");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_7_COMPONENT_txtParcela2_21 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(22);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 22 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_22 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Diretamente Identificável - Deficiência na Escolha do Operador\n");
+			mer.setId(23);
+			mer.setDescricao("Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			mer.setImageName("diretamente_identificavel_deficiencia_escolha_operador.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 23 - Figura procurando mostrar que Helena possui mais laranjas que Pedro");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_23 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 11;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Papéis Complementares\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Interpretação Equivocada\n");
+			mer.setId(24);
+			mer.setDescricao("Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			mer.setImageName("interpretacao_equivocada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 24 - Figura enumerando as laranjas extras que Helena possui, para o aluno poder identificar a quantidade exata de laranjas que ela possui");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_24 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 12;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Restrição de Interpretação\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Indiretamente Identificável\n");
+			mer.setId(25);
+			mer.setDescricao("Figura destacando que Helena possui mais laranjas que o indicado no cesto");
+			mer.setImageName("indiretamente_identificavel.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 25 - Figura destacando que Helena possui mais laranjas que o indicado no cesto");
+			flush();
+
+	}
+
+
+	rule ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_25 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getType() == 13;
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			((WrongAnswer)action.getAnswer()).getType() == 6;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Função de MRE = Compreensão Mais Aprofundada\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = Solução Não Categorizável\n");
+			mer.setId(26);
+			mer.setDescricao("Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			mer.setImageName("compreensao_aprofundada.png");
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibição de MRE 26 - Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz");
+			flush();
+
+	}
+
+// end_rules
+	
+}
