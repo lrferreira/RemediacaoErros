@@ -13,6 +13,11 @@ public class Constants {
 	public static final int TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO = 12;
 	public static final int TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA = 13;
 	
-	
+	public static final int TIPO_MRE_TEXTO = 1;
+	public static final int TIPO_MRE_GRAFICO = 2;
+	public static final int TIPO_MRE_TABELA = 3;
+	public static final int TIPO_MRE_VIDEO = 4;
+	public static final int TIPO_MRE_IMAGEM = 5;
+	public static final int TIPO_MRE_EQUACAO = 6;
 	
 }

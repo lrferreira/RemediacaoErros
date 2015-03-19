@@ -2,14 +2,14 @@ package module.entity;
 
 public class WrongAnswer extends Answer{
 	
-	private int type;
+	private Integer type;
 
-	public WrongAnswer(String [] answers) {
-		super(answers);
+	public WrongAnswer(String answer) {
+		super(answer);
 	}
 
-	public WrongAnswer(String [] answers, int type) {
-		super(answers);
+	public WrongAnswer(String answer, Integer type) {
+		super(answer);
 		this.type = type;
 	}
 	
@@ -17,11 +17,11 @@ public class WrongAnswer extends Answer{
 
 	}
 
-	public int getType() {
+	public Integer getType() {
 		return type;
 	}
 
-	public void setType(int type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 

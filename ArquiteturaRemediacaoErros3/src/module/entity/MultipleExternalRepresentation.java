@@ -1,14 +1,6 @@
 package module.entity;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import java.util.ArrayList;
 
 public class MultipleExternalRepresentation {
 
@@ -19,7 +11,13 @@ public class MultipleExternalRepresentation {
 	private String [] tags;
 	
 	private String imageName;
-
+	
+	private Integer complexity;
+	
+	private ArrayList<MERFunction> merFunctions;
+	
+	private ArrayList<TypeMER> typeMers;
+	
 	public MultipleExternalRepresentation(int id, String imageName, String descricao) {
 		this.id = id;
 		this.setDescricao(descricao);
@@ -76,6 +74,42 @@ public class MultipleExternalRepresentation {
 
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
+	}
+
+
+
+	public Integer getComplexity() {
+		return complexity;
+	}
+
+
+
+	public void setComplexity(Integer complexity) {
+		this.complexity = complexity;
+	}
+
+
+
+	public ArrayList<MERFunction> getMerFunctions() {
+		return merFunctions;
+	}
+
+
+
+	public void setMerFunctions(ArrayList<MERFunction> merFunctions) {
+		this.merFunctions = merFunctions;
+	}
+
+
+
+	public ArrayList<TypeMER> getTypeMers() {
+		return typeMers;
+	}
+
+
+
+	public void setTypeMers(ArrayList<TypeMER> typeMers) {
+		this.typeMers = typeMers;
 	}
 
 	

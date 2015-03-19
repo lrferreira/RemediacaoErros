@@ -1,16 +1,15 @@
 package module.error.sorter;
 
-import module.entity.Historic;
+import module.entity.Action;
 import module.entity.RuleToHuman;
 import module.entity.WrongAnswer;
 
 public class ErrorSorterController {
 
 
-	public static void classificarErro(Historic h, RuleToHuman ruleToHuman, WrongAnswer erro) {
+	public static void classificarErro(Action action, RuleToHuman ruleToHuman) {
 		ErrorSorterKB classificadorErroKB = new ErrorSorterKB();
-		classificadorErroKB.tell(h);
-		classificadorErroKB.tell(erro);
+		classificadorErroKB.tell(action);
 		classificadorErroKB.tell(ruleToHuman);
 		classificadorErroKB.run();
 		

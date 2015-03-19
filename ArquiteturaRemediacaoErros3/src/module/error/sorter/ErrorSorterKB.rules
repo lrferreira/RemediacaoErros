@@ -1,288 +1,686 @@
-package module.error.sorter;
+package src.module.error.sorter;
 
+import javax.swing.JComponent;
+import module.entity.Goal;
 import module.entity.WrongAnswer;
-import module.entity.Historic;
+import module.entity.Action;
 import module.entity.RuleToHuman;
 import util.Constants;
 
 
 ruleBase ErrorSorterKB {
-	
 
 
-	rule directlyIdentifiableDeficiencyDomain_0 {
+	rule directlyIdentifiableDeficiencyDomain_PATH_1_GOAL_1_COMPONENT_txtParcela1_0 {
 
 		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
+			Action action;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("10");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("16");
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("9");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 9\n");
 			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
-			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
-			modified(wrongAnswer);
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
 			modified(ruleToHuman);
 			flush();
 
 	}
 
 
-	rule directlyIdentifiableDeficiencyDomain_1 {
+	rule misinterpretation_PATH_1_GOAL_1_COMPONENT_txtParcela1_1 {
 
 		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
+			Action action;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("6");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("16");
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: misinterpretation_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
-			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
-			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
-			modified(wrongAnswer);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule directlyIdentifiableDeficiencyDomain_2 {
-
-		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("10");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
-			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
-			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
-			modified(wrongAnswer);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule directlyIdentifiableDeficiencyDomain_3 {
-
-		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("6");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
-			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
-			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
-			modified(wrongAnswer);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule directlyIdentifiableDeficiencyOperatorChoice_4 {
-
-		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("4");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyOperatorChoice_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 4\n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
-			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
-			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
-			modified(wrongAnswer);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule directlyIdentifiableDeficiencyRule_5 {
-
-		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyRule_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
-			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Regra");
-			wrongAnswer.setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA);
-			modified(wrongAnswer);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule indirectlyIdentifiable_6 {
-
-		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("10");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("6");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("6");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: indirectlyIdentifiable_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 6\n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
-			System.out.println("Erro classificado como Indiretamente Identificável");
-			wrongAnswer.setType(Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
-			modified(wrongAnswer);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule misinterpretation_7 {
-
-		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: misinterpretation_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
 			System.out.println("Erro classificado como Interpretação Equivocada");
-			wrongAnswer.setType(Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
-			modified(wrongAnswer);
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
 			modified(ruleToHuman);
 			flush();
 
 	}
 
 
-	rule solutionNonCategorizable_8 {
+	rule solutionNonCategorizable_PATH_1_GOAL_1_COMPONENT_txtParcela1_2 {
 
 		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
+			Action action;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			wrongAnswer.getAnswers()[0].equalsIgnoreCase("1");
-			wrongAnswer.getAnswers()[1].equalsIgnoreCase("1");
-			wrongAnswer.getAnswers()[2].equalsIgnoreCase("1");
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 1\n");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
 			System.out.println("Erro classificado como Solução Não Categorizável");
-			wrongAnswer.setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
-			modified(wrongAnswer);
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyOperatorChoice_PATH_1_GOAL_2_COMPONENT_txtOp_3 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("-");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyOperatorChoice_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_PATH_1_GOAL_2_COMPONENT_txtOp_4 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_1_GOAL_2_COMPONENT_txtOp_5 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_PATH_1_GOAL_3_COMPONENT_txtParcela2_6 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule indirectlyIdentifiable_PATH_1_GOAL_3_COMPONENT_txtParcela2_7 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: indirectlyIdentifiable_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Indiretamente Identificável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_1_GOAL_3_COMPONENT_txtParcela2_8 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyOperatorChoice_PATH_1_GOAL_4_COMPONENT_txtResp_9 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyOperatorChoice_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule misinterpretation_PATH_1_GOAL_4_COMPONENT_txtResp_10 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("10");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: misinterpretation_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 10\n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule indirectlyIdentifiable_PATH_1_GOAL_4_COMPONENT_txtResp_11 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: indirectlyIdentifiable_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 6\n");
+			System.out.println("Erro classificado como Indiretamente Identificável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_1_GOAL_4_COMPONENT_txtResp_12 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_PATH_2_GOAL_5_COMPONENT_txtParcela1_13 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("9");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 9\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule misinterpretation_PATH_2_GOAL_5_COMPONENT_txtParcela1_14 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: misinterpretation_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_2_GOAL_5_COMPONENT_txtParcela1_15 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyOperatorChoice_PATH_2_GOAL_6_COMPONENT_txtOp_16 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("-");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyOperatorChoice_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_PATH_2_GOAL_6_COMPONENT_txtOp_17 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_2_GOAL_6_COMPONENT_txtOp_18 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyDomain_PATH_2_GOAL_7_COMPONENT_txtParcela2_19 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyDomain_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência no Domínio");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule indirectlyIdentifiable_PATH_2_GOAL_7_COMPONENT_txtParcela2_20 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: indirectlyIdentifiable_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Indiretamente Identificável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_2_GOAL_7_COMPONENT_txtParcela2_21 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule directlyIdentifiableDeficiencyOperatorChoice_PATH_2_GOAL_8_COMPONENT_txtResp_22 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: directlyIdentifiableDeficiencyOperatorChoice_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Diretamente Identificável - Deficiência na Escolha do Operador");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule misinterpretation_PATH_2_GOAL_8_COMPONENT_txtResp_23 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("10");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: misinterpretation_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 10\n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INTERPRETACAO_EQUIVOCADA);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule indirectlyIdentifiable_PATH_2_GOAL_8_COMPONENT_txtResp_24 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: indirectlyIdentifiable_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 6\n");
+			System.out.println("Erro classificado como Indiretamente Identificável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule solutionNonCategorizable_PATH_2_GOAL_8_COMPONENT_txtResp_25 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Erro classificado como Solução Não Categorizável");
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
 			modified(ruleToHuman);
 			flush();
 
@@ -295,24 +693,23 @@ ruleBase ErrorSorterKB {
 
 	rule solutionNonCategorizable {
 		declarations
-			Historic h;
-			WrongAnswer wrongAnswer;
+			Action action;
 			RuleToHuman ruleToHuman;
 			
 		localdecl
 				
 		conditions
-			wrongAnswer.getAnswers() == null;
+			//wrongAnswer.getValue() == null;
 		actions
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_ ");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  ");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Usuário não informou nenhuma resposta (campos nulos)");
-			h.setNumeroTentativas(h.getNumeroTentativas() + 1);
-			modified(h);
+			//action.setAttempts(action.getAttempts() + 1);
+			//modified(action);
 			System.out.println("Erro classificado como SoluÃ§Ã£o NÃ£o CategorizÃ¡vel");		
-			wrongAnswer.setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
+			((WrongAnswer)action.getAnswer()).setType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL);
 			modified(ruleToHuman);
-			modified(wrongAnswer);
+			modified(action);
 			flush();			
 	}
 

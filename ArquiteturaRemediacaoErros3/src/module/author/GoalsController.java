@@ -9,7 +9,6 @@ import javax.swing.JTextPane;
 
 import module.entity.Action;
 import module.entity.Answer;
-import module.entity.CorrectAnswer;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.RuleToHuman;

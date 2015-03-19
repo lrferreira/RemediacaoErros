@@ -1,19 +1,5 @@
 package tests;
 
-import module.entity.Action;
-import module.entity.Answer;
-import module.entity.CorrectAnswer;
-import module.entity.Historic;
-import module.entity.MERFunction;
-import module.entity.MultipleExternalRepresentation;
-import module.entity.Student;
-import module.entity.WrongAnswer;
-import module.error.sorter.ErrorSorterController;
-import module.expression.identifier.ExpressionIdentifierController;
-import module.mer.manager.MERManagerController;
-import module.merfunction.sorter.MERFunctionSorterController;
-import br.ufpr.c3sl.condigital.virtualkeyboard.communication.KeyBoardComunication;
-import br.ufpr.c3sl.condigital.virtualkeyboard.main.VirtualKeyBoardMain;
 
 
 public class Principal {

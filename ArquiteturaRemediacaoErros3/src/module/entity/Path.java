@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Path {
 	
-	private int id;
+	private Integer id;
 	private String description;
 	private ArrayList<Goal> goals;
 	
 	
-	public Path(int id, String description) {
+	public Path(Integer id, String description) {
 		this.id = id;
 		this.description = description;
 		
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getDescription() {
@@ -32,7 +32,6 @@ public class Path {
 	public void setGoals(ArrayList<Goal> goals) {
 		this.goals = goals;
 	}
-	
-	
+
 
 }

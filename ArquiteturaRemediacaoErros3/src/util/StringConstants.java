@@ -15,10 +15,19 @@ public class StringConstants {
 
 	public static final String END_RULES = "// end_rules"; 
 	
+	public static final String FILE_GOALS_KB = "\\module\\author\\GoalsKB.rules";
 	public static final String FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB = "\\module\\expression\\identifier\\ExpressionIdentifierCorrectAnswerKB.rules";
 	public static final String FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB = "\\module\\expression\\identifier\\ExpressionIdentifierWrongAnswerKB.rules";
 	public static final String FILE_ERROR_SORTER_KB = "\\module\\error\\sorter\\ErrorSorterKB.rules";
 	public static final String FILE_MERFUNCTION_SORTER_KB = "\\module\\merfunction\\sorter\\MERFunctionSorterKB.rules";
 	public static final String FILE_MER_MANAGER_KB = "\\module\\mer\\manager\\MERManagerKB.rules";
+	
+	public static final String CRITERION_MER_SPECIFIC_FOR_ERROR = "MRE específica para o erro";
+	public static final String CRITERION_SUCCESS_MER_FUNCTION_PRIOR = "Sucesso na Função da MRE anterior";
+	public static final String CRITERION_ALTERNATE_AMONG_MER_FUNCTIONS = "Alternar entre funções das MREs";
+	public static final String CRITERION_ALTERNATE_AMONG_MERS = "Alternar entre as MREs da mesma função";
+	public static final String CRITERION_SUCCESS_MER_PRIOR = "Sucesso da MRE anterior";
+	public static final String CRITERION_ALTERNATE_TYPE_MER = "Alternar entre os tipos das MREs";
+	public static final String CRITERION_COMPLEXITY = "Alternar entre complexidades das MREs";
 	
 }

@@ -48,7 +48,7 @@ public class CriaRegraDeProducao {
 					-1);
 
 	// criar mecanismo neste caso para identificar todas as respostas erradas quando o aluno informa mesmo valor para as parcelas
-	// criar mecanismo estilo "independente da resposta
+	// criar mecanismo estilo independente da resposta
 			
 			
 			//A estratégia do aprendiz apresenta a seguinte solução: 10 - 6 = ?

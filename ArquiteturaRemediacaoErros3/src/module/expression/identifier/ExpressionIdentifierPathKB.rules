@@ -1,4 +1,4 @@
-package module.expression.identifier;
+package src.module.expression.identifier;
 
 import javax.swing.JComponent;
 import module.entity.Goal;
