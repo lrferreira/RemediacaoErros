@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merFunctions>
+	<merFunction>
+		<id>1</id>
+		<description>Papéis Complementares</description>
+	</merFunction>
+	<merFunction>
+		<id>2</id>
+		<description>Restrição de Interpretação</description>
+	</merFunction>
+	<merFunction>
+		<id>3</id>
+		<description>Interpretação Equivocada</description>
+	</merFunction>
+</merFunctions>

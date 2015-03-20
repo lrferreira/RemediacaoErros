@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<errorTypes>
+	<errorType id="1">
+		<description>Interpretação Equivocada</description>
+	</errorType>
+	<errorType id="2">
+		<description>Diretamente Identificável</description>
+		<subErrorTypes>
+			<subErrorType id="1">
+				<description>Deficiência Na Escolha do Domínio</description>
+			</subErrorType>
+			<subErrorType id="2">
+				<description>Deficiência Na Regra</description>
+			</subErrorType>
+			<subErrorType id="3">
+				<description>Deficiência Na Escolha do Operador</description>
+			</subErrorType>	
+		</subErrorTypes>
+	</errorType>
+	<errorType id="3">
+		<description>Indiretamente Identificável</description>
+		<subErrorTypes></subErrorTypes>
+	</errorType>
+	<errorType id="4">
+		<description>Solução Não Categorizável</description>
+		<subErrorTypes></subErrorTypes>
+	</errorType>
+</errorTypes>

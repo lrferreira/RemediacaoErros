@@ -1,0 +1,775 @@
+package src.module.expression.identifier;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import module.entity.RuleToHuman;
+import java.util.ArrayList;
+import module.error.sorter.ErrorSorterController;
+
+
+ruleBase ExpressionIdentifierWrongAnswerKB {
+
+
+
+	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txtParcela1_0 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("9");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 9\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txtParcela1_1 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txtParcela1_2 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_2_COMPONENT_txtOp_3 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("-");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_2_COMPONENT_txtOp_4 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_2_COMPONENT_txtOp_5 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_2_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_3_COMPONENT_txtParcela2_6 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_3_COMPONENT_txtParcela2_7 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+			action.getAttempt() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_3_COMPONENT_txtParcela2_8 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(3);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_3_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_9 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_10 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("10");
+			action.getAttempt() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 10\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_11 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+			action.getAttempt() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 6\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_12 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(4);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_4_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_5_COMPONENT_txtParcela1_13 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("9");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 9\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_5_COMPONENT_txtParcela1_14 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_5_COMPONENT_txtParcela1_15 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(5);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela1");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_5_COMPONENT_txtParcela1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_6_COMPONENT_txtOp_16 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("-");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_6_COMPONENT_txtOp_17 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_6_COMPONENT_txtOp_18 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(6);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtOp");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_6_COMPONENT_txtOp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_7_COMPONENT_txtParcela2_19 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 16\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_7_COMPONENT_txtParcela2_20 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+			action.getAttempt() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_7_COMPONENT_txtParcela2_21 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(7);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtParcela2");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_7_COMPONENT_txtParcela2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_22 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_23 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("10");
+			action.getAttempt() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 10\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_24 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+			action.getAttempt() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 6\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_25 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(2);
+			action.getGoal().getId().equals(8);
+			action.getGoal().getComponent().getName().equalsIgnoreCase("txtResp");
+			action.getAnswer().getValue().equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_2_GOAL_8_COMPONENT_txtResp_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+// end_rules
+
+// rule necessary by default
+
+	rule wrongAnswer_default {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getCorrect() == null;
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_default \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condição: não estar prevista no cadastro de erros  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = " + action.getAnswer().getValue() + "\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}	
+}

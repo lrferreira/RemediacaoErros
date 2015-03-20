@@ -1,0 +1,73 @@
+package module.expression.identifier;
+
+import module.entity.Historic;
+import module.entity.CorrectAnswer;
+import module.entity.RuleToHuman;
+import java.util.ArrayList;
+import module.error.sorter.ErrorSorterController;
+
+
+ruleBase ExpressionIdentifierCorrectAnswerKB {
+	
+
+
+	rule correctAnswer_0 {
+
+		declarations
+			Historic h;
+			CorrectAnswer correctAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			correctAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(correctAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule correctAnswer_1 {
+
+		declarations
+			Historic h;
+			CorrectAnswer correctAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			correctAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(correctAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+// end_rules
+	
+}

@@ -12,8 +12,9 @@ public class Path {
 	public Path(Integer id, String description) {
 		this.id = id;
 		this.description = description;
-		
+		this.goals = new ArrayList<Goal>();
 	}
+	
 	public Integer getId() {
 		return id;
 	}

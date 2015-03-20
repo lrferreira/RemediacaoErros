@@ -1,0 +1,279 @@
+package module.expression.identifier;
+
+import module.entity.Historic;
+import module.entity.WrongAnswer;
+import module.entity.RuleToHuman;
+import java.util.ArrayList;
+import module.error.sorter.ErrorSorterController;
+
+
+ruleBase ExpressionIdentifierWrongAnswerKB {
+
+
+
+	rule wrongAnswer_0 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_1 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("16");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 16\n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_2 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_3 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_4 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_5 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("");
+			h.getNumeroTentativas() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_6 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("10");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("6");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("6");
+			h.getNumeroTentativas() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 10\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 6\n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_7 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("");
+			h.getNumeroTentativas() >= 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = \n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+
+	rule wrongAnswer_8 {
+
+		declarations
+			Historic h;
+			WrongAnswer wrongAnswer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			h.getResposta().getAnswers()[0].equalsIgnoreCase("1");
+			h.getResposta().getAnswers()[1].equalsIgnoreCase("1");
+			h.getResposta().getAnswers()[2].equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 0 = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 1 = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo 2 = 1\n");
+			System.out.println("Resposta Errada (1) detectada");
+			wrongAnswer.setAnswers(h.getResposta().getAnswers());
+			modified(wrongAnswer);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
+// end_rules
+	
+}
