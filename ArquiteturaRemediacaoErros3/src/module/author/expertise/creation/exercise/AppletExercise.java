@@ -26,6 +26,7 @@ import module.author.expertise.creation.exercise.graph.State;
 import module.entity.CorrectAnswer;
 import module.entity.Goal;
 import module.entity.Path;
+import module.entity.WrongAnswer;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
@@ -34,7 +35,8 @@ import com.mxgraph.view.mxStylesheet;
 
 public class AppletExercise extends JApplet {
 	protected static mxGraph graph = new mxGraph();
-	protected static HashMap m = new HashMap();
+	protected static HashMap mapEstadosGrafo = new HashMap();
+	protected static HashMap mapMetasGrafo = new HashMap();
 	private mxGraphComponent graphComponent;
 	private Path path; 
 	private JTextField texto;
@@ -145,7 +147,34 @@ public class AppletExercise extends JApplet {
 		frameGraph.setVisible(true);
 		*/
 		
-		graphComponent = new mxGraphComponent(graph);
+		graphComponent = new mxGraphComponent(graph){
+			@Override
+			protected void installDoubleClickHandler()
+			{
+				graphControl.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseReleased(MouseEvent e)
+						{
+							if (!e.isConsumed() && isEditEvent(e)){
+								Object cell = getCellAt(e.getX(), e.getY(), false);
+								if (cell != null && getGraph().isCellEditable(cell))
+								{
+									Object val = graph.getModel().getValue(cell);
+									//System.out.println("double-clicked on " + graph.getLabel(cell));
+									if (graph.getLabel(cell).startsWith("Meta")){
+										System.out.println("double-clicked on " + graph.getLabel(cell));
+										addRemediacao(cell);
+									}
+										
+									}
+								}
+						}
+					});
+				}
+			};
+		
+		
 		graphComponent.getGraphControl().setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		graphComponent.setBounds(346, 0, 543, 485);
 		graphComponent.setPreferredSize(new Dimension(670, 380));
@@ -180,7 +209,7 @@ public class AppletExercise extends JApplet {
         		getGraph().getModel().beginUpdate();
         		Object parent = getGraph().getDefaultParent(); 
         		Object v1 = getGraph().insertVertex(parent, null, texto.getText(), 330, 30, 50, 50, "shape=doubleEllipse;fillColor=green");
-        		getM().put(texto.getText(), v1);
+        		getMapEstadosGrafo().put(texto.getText(), v1);
         		getGraph().getModel().endUpdate();
         		texto.setText("");
             }
@@ -194,8 +223,8 @@ public class AppletExercise extends JApplet {
             
             public void actionPerformed(ActionEvent e) {
         		Object parent = getGraph().getDefaultParent();
-        		Object v1 = getM().get(JOptionPane.showInputDialog("Digite o grafo 1:"));
-                Object v2 = getM().get(JOptionPane.showInputDialog("Digite o grafo 2:"));
+        		Object v1 = getMapEstadosGrafo().get(JOptionPane.showInputDialog("Digite o grafo 1:"));
+                Object v2 = getMapEstadosGrafo().get(JOptionPane.showInputDialog("Digite o grafo 2:"));
                 String nome = JOptionPane.showInputDialog("Digite o nome da linha:");
                 getGraph().insertEdge(parent, null, nome, v1, v2);            	
             }
@@ -220,7 +249,7 @@ public class AppletExercise extends JApplet {
         									+ "txt7 = " + txt7.getText() + "\n"
         									+ "txt8 = " + txt8.getText() + "\n", 
         				30, 30, 100, 160, "MyStyleRectangle");
-        		getM().put(i, v1);
+        		getMapEstadosGrafo().put(i, v1);
         		
         		states = new ArrayList<State>();
         		State state = new State(i);
@@ -239,61 +268,9 @@ public class AppletExercise extends JApplet {
 		JButton btnNovoEstado = new JButton("Novo Estado");
 		btnNovoEstado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Object parent = getGraph().getDefaultParent();
-				i++;
-				//criar nodo para estado
-        		Object v2 = getGraph().insertVertex(parent, null, 
-        				"Estado " + i + "\n" 
-        									+ "txt0 = " + txt0.getText() + "\n"
-        									+ "txt1 = " + txt1.getText() + "\n"
-        									+ "txt2 = " + txt2.getText() + "\n"
-        									+ "txt3 = " + txt3.getText() + "\n"
-        									+ "txt4 = " + txt4.getText() + "\n"
-        									+ "txt5 = " + txt5.getText() + "\n"
-        									+ "txt6 = " + txt6.getText() + "\n"
-        									+ "txt7 = " + txt7.getText() + "\n"
-        									+ "txt8 = " + txt8.getText() + "\n", 
-        				getGraph().getCellBounds(getM().get(i-1)).getX()+ 300, 30, 100, 160, "MyStyleRectangle");
-        		getM().put(i, v2);
-
-        		State state = new State(i);
-        		state.getMap().put(txt0.getName(), txt0.getText()+"");state.getMap().put(txt1.getName(), txt1.getText()+"");state.getMap().put(txt2.getName(), txt2.getText()+"");
-        		state.getMap().put(txt3.getName(), txt3.getText()+"");state.getMap().put(txt4.getName(), txt4.getText()+"");state.getMap().put(txt5.getName(), txt5.getText()+"");
-        		state.getMap().put(txt6.getName(), txt6.getText()+"");state.getMap().put(txt7.getName(), txt7.getText()+"");state.getMap().put(txt8.getName(), txt8.getText()+"");
-        		states.add(state);
-        		State statePrior = states.get(i-1);
-        		JTextField textGoal = null;
-        		int j = 0;
-        		for (j=0;j<state.getMap().size();j++){
-        			System.out.println(state.getMap().get("txt"+j) + "= " + state.getMap().get("txt"+j) + " - "
-        					+ statePrior.getMap().get("txt"+j) + "= " + statePrior.getMap().get("txt"+j));
-        			if (!state.getMap().get("txt"+j).equals(statePrior.getMap().get("txt"+j))){
-        				textGoal = (JTextField) getComponentByName("txt"+j);
-        				break;
-        			}
-        		}
-        		
-				// criar nodo para meta
-        		Goal goalLast = null;
-        		if (path.getGoals().size() > 0)
-        			goalLast = path.getGoals().get(path.getGoals().size()-1);
-        		Goal goalAt = new Goal(i, path, false, textGoal, new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
-        		path.getGoals().add(goalAt);
-				Object v1 = getGraph().insertVertex(parent, null, 
-						"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
-						"\nno campo " + goalAt.getComponent().getName(), 
-						getGraph().getCellBounds(getM().get(i-1)).getX() + 150, 30, 100, 100, "MyStyleEllipse");
-        		
-        		
-        		//Object v1 = getM().get(JOptionPane.showInputDialog("Digite o grafo 1:"));
-                //Object v2 = getM().get(JOptionPane.showInputDialog("Digite o grafo 2:"));
-                //String nome = JOptionPane.showInputDialog("Digite o nome da linha:");
-				Object v0 = getM().get(i-1);
-				
-				getGraph().insertEdge(parent, null, "", v0, v1);
-                getGraph().insertEdge(parent, null, "", v1, v2);
-			}
-		});
+					addEstado();
+				}
+			});
 		btnNovoEstado.setBounds(205, 189, 130, 23);
 		panel.add(btnNovoEstado);
 		
@@ -344,6 +321,15 @@ public Component getComponentByName(String name) {
 	    stylesheet.putCellStyle("MyStyleEllipse", style);
 
 	    style = new Hashtable<String, Object>();
+	    style.put(mxConstants.STYLE_SHAPE,          mxConstants.SHAPE_ELLIPSE);
+	    style.put(mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_MIDDLE);
+	    //style.put(mxConstants.STYLE_FONTFAMILY,     editorFont);
+	    style.put(mxConstants.STYLE_FILLCOLOR,      "#FF1919");
+	    style.put(mxConstants.STYLE_FONTCOLOR,      "#000000");
+
+	    stylesheet.putCellStyle("MyStyleEllipseRem", style);
+	    
+	    style = new Hashtable<String, Object>();
 	    style.put(mxConstants.STYLE_SHAPE,          mxConstants.SHAPE_RECTANGLE);
 	    style.put(mxConstants.STYLE_ROUNDED,        true);
 	    style.put(mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_MIDDLE);
@@ -366,6 +352,89 @@ public Component getComponentByName(String name) {
 		graph.setStylesheet(stylesheet);
 
 	}
+	
+	public void addEstado(){
+		Object parent = getGraph().getDefaultParent();
+		i++;
+		//criar nodo para estado
+		Object v2 = getGraph().insertVertex(parent, null, 
+				"Estado " + i + "\n" 
+									+ "txt0 = " + txt0.getText() + "\n"
+									+ "txt1 = " + txt1.getText() + "\n"
+									+ "txt2 = " + txt2.getText() + "\n"
+									+ "txt3 = " + txt3.getText() + "\n"
+									+ "txt4 = " + txt4.getText() + "\n"
+									+ "txt5 = " + txt5.getText() + "\n"
+									+ "txt6 = " + txt6.getText() + "\n"
+									+ "txt7 = " + txt7.getText() + "\n"
+									+ "txt8 = " + txt8.getText() + "\n", 
+				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX()+ 300, 30, 100, 160, "MyStyleRectangle");
+		getMapEstadosGrafo().put(i, v2);
+
+		State state = new State(i);
+		state.getMap().put(txt0.getName(), txt0.getText()+"");state.getMap().put(txt1.getName(), txt1.getText()+"");state.getMap().put(txt2.getName(), txt2.getText()+"");
+		state.getMap().put(txt3.getName(), txt3.getText()+"");state.getMap().put(txt4.getName(), txt4.getText()+"");state.getMap().put(txt5.getName(), txt5.getText()+"");
+		state.getMap().put(txt6.getName(), txt6.getText()+"");state.getMap().put(txt7.getName(), txt7.getText()+"");state.getMap().put(txt8.getName(), txt8.getText()+"");
+		states.add(state);
+		State statePrior = states.get(i-1);
+		JTextField textGoal = null;
+		int j = 0;
+		for (j=0;j<state.getMap().size();j++){
+			System.out.println(state.getMap().get("txt"+j) + "= " + state.getMap().get("txt"+j) + " - "
+					+ statePrior.getMap().get("txt"+j) + "= " + statePrior.getMap().get("txt"+j));
+			if (!state.getMap().get("txt"+j).equals(statePrior.getMap().get("txt"+j))){
+				textGoal = (JTextField) getComponentByName("txt"+j);
+				break;
+			}
+		}
+		
+		// criar nodo para meta
+		Goal goalLast = null;
+		if (path.getGoals().size() > 0)
+			goalLast = path.getGoals().get(path.getGoals().size()-1);
+		Goal goalAt = new Goal(i, path, false, textGoal, new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
+		path.getGoals().add(goalAt);
+		Object v1 = getGraph().insertVertex(parent, null, 
+				"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
+				"\nno campo " + goalAt.getComponent().getName(), 
+				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX() + 150, 30, 100, 100, "MyStyleEllipse");
+		
+		getMapMetasGrafo().put(i,v1);
+		//Object v1 = getMapEstadosGrafo().get(JOptionPane.showInputDialog("Digite o grafo 1:"));
+        //Object v2 = getMapEstadosGrafo().get(JOptionPane.showInputDialog("Digite o grafo 2:"));
+        //String nome = JOptionPane.showInputDialog("Digite o nome da linha:");
+		Object v0 = getMapEstadosGrafo().get(i-1);
+		
+		getGraph().insertEdge(parent, null, "", v0, v1);
+        getGraph().insertEdge(parent, null, "", v1, v2);
+
+	}
+
+	public void addRemediacao(Object cell){
+		Object parent = getGraph().getDefaultParent();
+		int i = (int) getKey(getMapMetasGrafo(), cell);
+		Goal goal = path.getGoals().get(i-1);
+		WrongAnswer wrongAnswer = new WrongAnswer();
+		wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
+		Object v2 = getGraph().insertVertex(parent, null, "Remediação \npara a meta nº " + goal.getId() + ": \nestudante informou " 
+					+ wrongAnswer.getValue() + " \nno campo " + goal.getComponent().getName(), 
+				getGraph().getCellBounds(cell).getX(), 
+				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight(),
+				100, 160, "MyStyleEllipseRem");
+			
+		getGraph().insertEdge(parent, null, "", cell, v2);
+        
+
+	}
+	
+	private Object getKey(HashMap m, Object value){
+	    for(Object key : m.keySet()){
+	        if(m.get(key).equals(value)){
+	            return key; //return the first found
+	        }
+	    }
+	    return null;
+	}
 
 	public mxGraph getGraph() {
 		return graph;
@@ -384,16 +453,6 @@ public Component getComponentByName(String name) {
 
 	public void setGraphComponent(mxGraphComponent graphComponent) {
 		this.graphComponent = graphComponent;
-	}
-
-
-	public static HashMap getM() {
-		return m;
-	}
-
-
-	public static void setM(HashMap m) {
-		AppletExercise.m = m;
 	}
 
 
@@ -574,5 +633,25 @@ public Component getComponentByName(String name) {
 
 	public void setI(int i) {
 		this.i = i;
+	}
+
+
+	public static HashMap getMapEstadosGrafo() {
+		return mapEstadosGrafo;
+	}
+
+
+	public static void setMapEstadosGrafo(HashMap mapEstadosGrafo) {
+		AppletExercise.mapEstadosGrafo = mapEstadosGrafo;
+	}
+
+
+	public static HashMap getMapMetasGrafo() {
+		return mapMetasGrafo;
+	}
+
+
+	public static void setMapMetasGrafo(HashMap mapMetasGrafo) {
+		AppletExercise.mapMetasGrafo = mapMetasGrafo;
 	}
 }
