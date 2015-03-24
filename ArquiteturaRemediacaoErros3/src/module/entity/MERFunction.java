@@ -2,6 +2,11 @@ package module.entity;
 
 public class MERFunction {
 	
+	public MERFunction(int type) {
+		super();
+		this.type = type;
+	}
+
 	private int type;
 
 	public int getType() {

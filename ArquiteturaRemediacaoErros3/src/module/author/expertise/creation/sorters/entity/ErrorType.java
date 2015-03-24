@@ -21,9 +21,6 @@ public class ErrorType implements Serializable{
 		this.subErrorTypes = subErrorTypes;
 	}
 	
-	public ErrorType() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public Long getId() {
 		return id;

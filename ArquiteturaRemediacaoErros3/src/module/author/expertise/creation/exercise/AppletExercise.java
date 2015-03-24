@@ -27,10 +27,13 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import module.author.expertise.creation.exercise.graph.State;
+import module.author.expertise.creation.sorters.entity.ErrorType;
 import module.author.expertise.creation.sorters.entity.ItemSorter;
 import module.author.expertise.creation.sorters.entity.Sorter;
+import module.author.expertise.creation.sorters.entity.SubErrorType;
 import module.entity.CorrectAnswer;
 import module.entity.Goal;
+import module.entity.MERFunction;
 import module.entity.Path;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -122,7 +125,7 @@ public class AppletExercise extends JApplet {
 		frameGraph.setVisible(true);
 		*/
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0, 0, 1200, 650);
 		getContentPane().add(tabbedPane);
 		
@@ -192,7 +195,7 @@ public class AppletExercise extends JApplet {
 		separator.setBounds(62, 229, 132, 2);
 		panel_exerc.add(separator);
 		
-		JButton btnEstadoInicial = new JButton("Estado Inicial");
+		final JButton btnEstadoInicial = new JButton("Estado Inicial");
 		btnEstadoInicial.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 				path = new Path(1, "caminho de resolução nº 1");
@@ -270,12 +273,8 @@ public class AppletExercise extends JApplet {
 												lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
 																currentGoal.getComponent().getName() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
 												
-												sorters = new ArrayList<Sorter>();
-												sorters.add(new Sorter(1L, "Classificador de Leite", 
-														new ArrayList<ItemSorter>() 
-														.add(new ItemSorter(1L, new ErrorType(), new MERFunction(), "", ""))
-														.add
-														));
+												
+												
 											}
 												
 											}
@@ -426,7 +425,6 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(label_12);
 				                
 				                cmbSorter = new JComboBox();
-				                cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"Classificador desenvolvido por Leite"}));
 				                cmbSorter.setBounds(166, 134, 254, 20);
 				                panel_remed.add(cmbSorter);
 				                
@@ -620,6 +618,33 @@ public Component getComponentByName(String name) {
 		getMapMetasRemediacoesGrafo().put(i, v2);
 		getMapRemediacoesGrafo().put(j, v2);
 		
+	}
+	
+	public Sorter cadSorterTeste(){
+		//cad classificadores
+		sorters = new ArrayList<Sorter>();
+		Sorter s = new Sorter(1L, "Classificador teste1", new ArrayList<ItemSorter>());
+		
+		ErrorType et = new ErrorType(1L, "Tipo Erro teste1", new ArrayList<SubErrorType>());
+		SubErrorType set1 = new SubErrorType(1L, "Subtipo Erro testea", et);
+		SubErrorType set2 = new SubErrorType(2L, "Subtipo Erro testeb", et);
+		et.getSubErrorTypes().add(set1);
+		et.getSubErrorTypes().add(set2);
+		
+		MERFunction mf = new MERFunction(1);
+		
+		ItemSorter is = new ItemSorter(1L, et, mf, "erro informado 1", "proposta de remediação 1");
+		s.getItensSorter().add(is);
+
+		et = new ErrorType(2L, "Tipo Erro teste2", new ArrayList<SubErrorType>());
+		set1 = new SubErrorType(3L, "Subtipo Erro testea", et);
+		et.getSubErrorTypes().add(set1);
+		mf = new MERFunction(2);
+		is = new ItemSorter(2L, et, mf, "erro informado 2", "proposta de remediação 2");
+		
+		s.getItensSorter().add(is);
+		
+		return s;
 	}
 	
 	private Object getKey(HashMap m, Object value){
