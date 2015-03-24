@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class Sorter implements Serializable{
 
 
+
+
 	/**
 	 * 
 	 */
@@ -16,6 +18,14 @@ public class Sorter implements Serializable{
 	private String description;
 	
 	private ArrayList<ItemSorter> itensSorter;
+	
+	
+	public Sorter(Long id, String description, ArrayList<ItemSorter> itensSorter) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.itensSorter = itensSorter;
+	}	
 
 	public ArrayList<ItemSorter> getItensSorter() {
 		return itensSorter;

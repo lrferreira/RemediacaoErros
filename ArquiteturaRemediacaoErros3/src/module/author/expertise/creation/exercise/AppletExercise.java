@@ -3,6 +3,7 @@ package module.author.expertise.creation.exercise;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -12,31 +13,30 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JApplet;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import module.author.expertise.creation.exercise.graph.State;
+import module.author.expertise.creation.sorters.entity.ItemSorter;
+import module.author.expertise.creation.sorters.entity.Sorter;
 import module.entity.CorrectAnswer;
 import module.entity.Goal;
 import module.entity.Path;
-import module.entity.WrongAnswer;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
-import javax.swing.JTabbedPane;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.DefaultComboBoxModel;
 
 public class AppletExercise extends JApplet {
 	
@@ -44,6 +44,8 @@ public class AppletExercise extends JApplet {
 	protected static mxGraph graph = new mxGraph();
 	protected static HashMap mapEstadosGrafo = new HashMap();
 	protected static HashMap mapMetasGrafo = new HashMap();
+	protected static HashMap mapMetasRemediacoesGrafo = new HashMap();
+	protected static HashMap mapRemediacoesGrafo = new HashMap();
 	private mxGraphComponent graphComponent;
 	private Path path; 
 	private JTextField texto;
@@ -66,7 +68,37 @@ public class AppletExercise extends JApplet {
 	private ArrayList<State> states;
 	private HashMap componentMap;
 	public JPanel panel_exerc;
-	private JTextField textField;
+	
+	public JPanel panel_remed;
+	private Goal currentGoal;
+	private JTextField txtWrongAnswer;
+	private JComboBox cmbWrongAnswer;
+	private JLabel lblCaminho;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JLabel label_4;
+	private JComboBox cmbErrorType;
+	private JLabel label_5;
+	private JLabel label_6;
+	private Component label_7;
+	private JComboBox comboBox_2;
+	private JLabel label_8;
+	private Component label_9;
+	private Component label_10;
+	private Component label_11;
+	private JComboBox cmbSubErrorType;
+	private JLabel label_12;
+	private JComboBox cmbSorter;
+	private JLabel lblMeta;
+	private JLabel label_15;
+	private JLabel lblMerFunction;
+	private JLabel lblExercicio;
+	private JButton button;
+	private JComboBox comboBox_5;
+	private JLabel label_18;
+	private JLabel lblEspecificarResposta;
+	
+	private ArrayList<Sorter> sorters;
 	
 	
 	
@@ -160,12 +192,12 @@ public class AppletExercise extends JApplet {
 		separator.setBounds(62, 229, 132, 2);
 		panel_exerc.add(separator);
 		
-				JButton btnEstadoInicial = new JButton("Estado Inicial");
-				btnEstadoInicial.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						path = new Path(1, "caminho de resolução nº 1");
-						i = 0;
-						//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
+		JButton btnEstadoInicial = new JButton("Estado Inicial");
+		btnEstadoInicial.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+				path = new Path(1, "caminho de resolução nº 1");
+				i = 0;
+				//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
         		getGraph().getModel().beginUpdate();
         		Object parent = getGraph().getDefaultParent(); 
         		Object v1 = getGraph().insertVertex(parent, null, 
@@ -189,7 +221,7 @@ public class AppletExercise extends JApplet {
         		states.add(state);
         		
         		getGraph().getModel().endUpdate();
-        		btnEstadoInicial.setEnabled(true);				
+        		btnEstadoInicial.setEnabled(false);				
 					}
 				});
 				btnEstadoInicial.setBounds(205, 152, 130, 23);
@@ -225,7 +257,25 @@ public class AppletExercise extends JApplet {
 											//System.out.println("double-clicked on " + graph.getLabel(cell));
 											if (graph.getLabel(cell).startsWith("Meta")){
 												System.out.println("double-clicked on " + graph.getLabel(cell));
-												addRemediacao(cell);
+												addRemediacao(cell);	
+											}
+											else if (graph.getLabel(cell).startsWith("Remediação")){
+												//currentGoal = path.getGoals().get(arg0) 
+												
+												currentGoal = path.getGoalById((int) getKey(getMapMetasRemediacoesGrafo(), cell));
+												tabbedPane.setSelectedIndex(1);
+												
+												lblExercicio.setText("EXERCÍCIO: " + 1);
+												lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
+												lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
+																currentGoal.getComponent().getName() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+												
+												sorters = new ArrayList<Sorter>();
+												sorters.add(new Sorter(1L, "Classificador de Leite", 
+														new ArrayList<ItemSorter>() 
+														.add(new ItemSorter(1L, new ErrorType(), new MERFunction(), "", ""))
+														.add
+														));
 											}
 												
 											}
@@ -238,18 +288,20 @@ public class AppletExercise extends JApplet {
 				panel_exerc.add(graphComponent);
 				
 				
-				graphComponent.getGraphControl().setBorder(new LineBorder(new Color(0, 0, 0), 4));
+				graphComponent.getGraphControl().setBorder(new LineBorder(new Color(0, 1, 0), 4));
 				graphComponent.setPreferredSize(new Dimension(670, 380));
 				
-				botaoDel = new JButton("Deletar");
-				botaoDel.setBounds(1055, 588, 130, 23);
-				panel_exerc.add(botaoDel);
 				
+
+/*				
 				texto = new JTextField();
 				texto.setBounds(370, 587, 100, 25);
 				panel_exerc.add(texto);
 				texto.setPreferredSize(new Dimension(420, 21));
-				
+
+				botaoDel = new JButton("Deletar");
+				botaoDel.setBounds(1055, 588, 130, 23);
+				panel_exerc.add(botaoDel);
 				        botaoAdd = new JButton("Adicionar");
 				        botaoAdd.setBounds(675, 588, 130, 23);
 				        panel_exerc.add(botaoAdd);
@@ -286,8 +338,8 @@ public class AppletExercise extends JApplet {
 				
 			}
 		});
-				
-				        graphComponent.getGraphControl().addMouseListener(new MouseAdapter()
+*/				
+					graphComponent.getGraphControl().addMouseListener(new MouseAdapter()
 						{
 						
 							public void mouseReleased(MouseEvent e)
@@ -295,128 +347,125 @@ public class AppletExercise extends JApplet {
 								cell = graphComponent.getCellAt(e.getX(), e.getY());		
 							}
 						});
-				                
-				                JPanel panel_remed = new JPanel();
+				   
+					
+// Panel REMEDIAÇÃO
+				                panel_remed = new JPanel();
 				                tabbedPane.addTab("Remedia\u00E7\u00E3o", null, panel_remed, null);
 				                panel_remed.setLayout(null);
 				                
-				                textField = new JTextField();
-				                textField.setText("0");
-				                textField.setColumns(10);
-				                textField.setBounds(290, 191, 58, 30);
-				                panel_remed.add(textField);
+				                cmbWrongAnswer = new JComboBox();
+				                cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta espec\u00EDfica", "Estudante cometeu um erro (n\u00E3o importa a resposta)"}));
+				                cmbWrongAnswer.setToolTipText("");
+				                cmbWrongAnswer.setBounds(10, 196, 272, 20);
+				                panel_remed.add(cmbWrongAnswer);
 				                
-				                JComboBox comboBox = new JComboBox();
-				                comboBox.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou a resposta", "Estudante cometeu um erro (n\u00E3o importa a resposta)"}));
-				                comboBox.setToolTipText("");
-				                comboBox.setBounds(10, 196, 272, 20);
-				                panel_remed.add(comboBox);
+				                lblCaminho = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
+				                lblCaminho.setBounds(10, 73, 179, 14);
+				                panel_remed.add(lblCaminho);
 				                
-				                JLabel label = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
-				                label.setBounds(10, 73, 179, 14);
-				                panel_remed.add(label);
-				                
-				                JLabel label_1 = new JLabel("META:");
-				                label_1.setBounds(10, 98, 46, 14);
-				                panel_remed.add(label_1);
-				                
-				                JLabel label_2 = new JLabel("ADICIONAR REMEDIA\u00C7\u00C3O DE ERRO");
+				                label_2 = new JLabel("ADICIONAR REMEDIA\u00C7\u00C3O DE ERRO");
 				                label_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				                label_2.setBounds(10, 10, 272, 14);
 				                panel_remed.add(label_2);
 				                
-				                JLabel label_3 = new JLabel("Se");
+				                label_3 = new JLabel("Se");
 				                label_3.setBounds(10, 171, 46, 14);
 				                panel_remed.add(label_3);
 				                
-				                JLabel label_4 = new JLabel("Ent\u00E3o");
+				                label_4 = new JLabel("Ent\u00E3o");
 				                label_4.setBounds(10, 237, 46, 14);
 				                panel_remed.add(label_4);
 				                
-				                JComboBox comboBox_1 = new JComboBox();
-				                comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Interpreta\u00E7\u00E3o Equivocada", "Diretamente Identific\u00E1vel", "Indiretamente Identific\u00E1vel", "Solu\u00E7\u00E3o N\u00E3o Categoriz\u00E1vel"}));
-				                comboBox_1.setBounds(241, 262, 221, 20);
-				                panel_remed.add(comboBox_1);
+				                cmbErrorType = new JComboBox();
+				                cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"Interpreta\u00E7\u00E3o Equivocada", "Diretamente Identific\u00E1vel", "Indiretamente Identific\u00E1vel", "Solu\u00E7\u00E3o N\u00E3o Categoriz\u00E1vel"}));
+				                cmbErrorType.setBounds(241, 262, 221, 20);
+				                panel_remed.add(cmbErrorType);
 				                
-				                JLabel label_5 = new JLabel("E");
+				                label_5 = new JLabel("E");
 				                label_5.setBounds(10, 367, 46, 14);
 				                panel_remed.add(label_5);
 				                
-				                JLabel label_6 = new JLabel("Especificar MRE:");
+				                label_6 = new JLabel("Especificar MRE:");
 				                label_6.setBounds(544, 26, 146, 14);
 				                panel_remed.add(label_6);
 				                
-				                JLabel label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
+				                label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
 				                label_7.setBounds(10, 446, 146, 14);
 				                panel_remed.add(label_7);
 				                
-				                JComboBox comboBox_2 = new JComboBox();
+				                comboBox_2 = new JComboBox();
 				                comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"MER espec\u00EDfica para o erro", "Persist\u00EAncia no erro", "Alternar entre MRES", "Complexidade", "Sucessos anteriores com a MRE"}));
 				                comboBox_2.setSelectedIndex(1);
 				                comboBox_2.setBounds(241, 443, 221, 20);
 				                panel_remed.add(comboBox_2);
 				                
-				                JLabel label_8 = new JLabel("Classifique o Tipo de Erro como");
+				                label_8 = new JLabel("Classifique o Tipo de Erro como");
 				                label_8.setBounds(10, 265, 228, 14);
 				                panel_remed.add(label_8);
 				                
-				                JLabel label_9 = new JLabel("Com este tipo de erro");
+				                label_9 = new JLabel("Com este tipo de erro");
 				                label_9.setBounds(10, 395, 228, 14);
 				                panel_remed.add(label_9);
 				                
-				                JLabel label_10 = new JLabel("E");
+				                label_10 = new JLabel("E");
 				                label_10.setBounds(10, 301, 46, 14);
 				                panel_remed.add(label_10);
 				                
-				                JLabel label_11 = new JLabel("Classifique o Subtipo de Erro como");
+				                label_11 = new JLabel("Classifique o Subtipo de Erro como");
 				                label_11.setBounds(10, 326, 212, 14);
 				                panel_remed.add(label_11);
 				                
-				                JComboBox comboBox_3 = new JComboBox();
-				                comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"-", "Defici\u00EAncia no Dom\u00EDnio", "Defici\u00EAncia na Regra", "Defici\u00EAncia na Escolha do Operador"}));
-				                comboBox_3.setBounds(241, 323, 221, 20);
-				                panel_remed.add(comboBox_3);
+				                cmbSubErrorType = new JComboBox();
+				                cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-", "Defici\u00EAncia no Dom\u00EDnio", "Defici\u00EAncia na Regra", "Defici\u00EAncia na Escolha do Operador"}));
+				                cmbSubErrorType.setBounds(241, 323, 221, 20);
+				                panel_remed.add(cmbSubErrorType);
 				                
-				                JLabel label_12 = new JLabel("Classificador de Erro:");
+				                label_12 = new JLabel("Classificador de Erro:");
 				                label_12.setBounds(10, 137, 146, 14);
 				                panel_remed.add(label_12);
 				                
-				                JComboBox comboBox_4 = new JComboBox();
-				                comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"Classificador desenvolvido por Leite"}));
-				                comboBox_4.setBounds(166, 134, 254, 20);
-				                panel_remed.add(comboBox_4);
+				                cmbSorter = new JComboBox();
+				                cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"Classificador desenvolvido por Leite"}));
+				                cmbSorter.setBounds(166, 134, 254, 20);
+				                panel_remed.add(cmbSorter);
 				                
-				                JLabel label_13 = new JLabel("1");
-				                label_13.setBounds(176, 73, 46, 14);
-				                panel_remed.add(label_13);
+				                lblMeta = new JLabel("META:    n\u00BA 1 -> adicionar no campo \"txt8\" o valor \"6\"");
+				                lblMeta.setBounds(10, 98, 392, 14);
+				                panel_remed.add(lblMeta);
 				                
-				                JLabel label_14 = new JLabel("n\u00BA 1 -> adicionar no campo \"txt8\" o valor \"6\"");
-				                label_14.setBounds(54, 98, 348, 14);
-				                panel_remed.add(label_14);
-				                
-				                JLabel label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
+				                label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
 				                label_15.setBounds(10, 409, 179, 14);
 				                panel_remed.add(label_15);
 				                
-				                JLabel label_16 = new JLabel("Pap\u00E9is Complementares");
-				                label_16.setBounds(245, 409, 146, 14);
-				                panel_remed.add(label_16);
+				                lblMerFunction = new JLabel("Pap\u00E9is Complementares");
+				                lblMerFunction.setBounds(245, 409, 146, 14);
+				                panel_remed.add(lblMerFunction);
 				                
-				                JLabel label_17 = new JLabel("EXERC\u00CDCIO: 1");
-				                label_17.setBounds(10, 48, 112, 14);
-				                panel_remed.add(label_17);
+				                lblExercicio = new JLabel("EXERC\u00CDCIO: 1");
+				                lblExercicio.setBounds(10, 48, 112, 14);
+				                panel_remed.add(lblExercicio);
 				                
-				                JButton button = new JButton("Salvar Remedia\u00E7\u00E3o");
+				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
 				                button.setBounds(474, 482, 179, 23);
 				                panel_remed.add(button);
 				                
-				                JComboBox comboBox_5 = new JComboBox();
+				                comboBox_5 = new JComboBox();
 				                comboBox_5.setBounds(544, 45, 331, 20);
 				                panel_remed.add(comboBox_5);
 				                
-				                JLabel label_18 = new JLabel("Visualiza\u00E7\u00E3o");
+				                label_18 = new JLabel("Visualiza\u00E7\u00E3o");
 				                label_18.setBounds(544, 88, 95, 14);
 				                panel_remed.add(label_18);
+				                
+				                lblEspecificarResposta = new JLabel("Especificar resposta");
+				                lblEspecificarResposta.setBounds(316, 168, 146, 20);
+				                panel_remed.add(lblEspecificarResposta);
+				                
+				                txtWrongAnswer = new JTextField();
+				                txtWrongAnswer.setBounds(316, 196, 86, 20);
+				                panel_remed.add(txtWrongAnswer);
+				                txtWrongAnswer.setColumns(10);
         
         createComponentMap();
         
@@ -544,18 +593,33 @@ public Component getComponentByName(String name) {
 	public void addRemediacao(Object cell){
 		Object parent = getGraph().getDefaultParent();
 		int i = (int) getKey(getMapMetasGrafo(), cell);
+		int j = (int) getMapRemediacoesGrafo().size() + 1;
 		Goal goal = path.getGoals().get(i-1);
-		WrongAnswer wrongAnswer = new WrongAnswer();
-		wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
-		Object v2 = getGraph().insertVertex(parent, null, "Remediação \npara a meta nº " + goal.getId() + ": \nestudante informou " 
-					+ wrongAnswer.getValue() + " \nno campo " + goal.getComponent().getName(), 
+		//WrongAnswer wrongAnswer = new WrongAnswer();
+		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
+		Object v2 = getGraph().insertVertex(parent, null, "Remediação nº " + j + " \npara a meta nº " + goal.getId() + ":\n " + 
+					"campo " + goal.getComponent().getName(), 
 				getGraph().getCellBounds(cell).getX(), 
-				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight(),
-				100, 160, "MyStyleEllipseRem");
-			
+				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight()+ 100,
+				120, 140, "MyStyleEllipseRem");
+		
+	    Map<String, Object> edgeStyle = new HashMap<String, Object>();
+		//edgeStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+		edgeStyle.put(mxConstants.STYLE_SHAPE,    mxConstants.SHAPE_CONNECTOR);
+		edgeStyle.put(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_CLASSIC);
+		edgeStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+		edgeStyle.put(mxConstants.STYLE_STROKECOLOR, "#FF0000");
+		edgeStyle.put(mxConstants.STYLE_FONTCOLOR, "#000000");
+		edgeStyle.put(mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, "#ffffff");
+	
+		graph.getStylesheet().setDefaultEdgeStyle(edgeStyle);
+		
+
 		getGraph().insertEdge(parent, null, "", cell, v2);
         
-
+		getMapMetasRemediacoesGrafo().put(i, v2);
+		getMapRemediacoesGrafo().put(j, v2);
+		
 	}
 	
 	private Object getKey(HashMap m, Object value){
@@ -784,5 +848,45 @@ public Component getComponentByName(String name) {
 
 	public static void setMapMetasGrafo(HashMap mapMetasGrafo) {
 		AppletExercise.mapMetasGrafo = mapMetasGrafo;
+	}
+
+
+	public Goal getCurrentGoal() {
+		return currentGoal;
+	}
+
+
+	public void setCurrentGoal(Goal currentGoal) {
+		this.currentGoal = currentGoal;
+	}
+
+
+	public static HashMap getMapMetasRemediacoesGrafo() {
+		return mapMetasRemediacoesGrafo;
+	}
+
+
+	public static void setMapMetasRemediacoesGrafo(HashMap mapMetasRemediacoesGrafo) {
+		AppletExercise.mapMetasRemediacoesGrafo = mapMetasRemediacoesGrafo;
+	}
+
+
+	public static HashMap getMapRemediacoesGrafo() {
+		return mapRemediacoesGrafo;
+	}
+
+
+	public static void setMapRemediacoesGrafo(HashMap mapRemediacoesGrafo) {
+		AppletExercise.mapRemediacoesGrafo = mapRemediacoesGrafo;
+	}
+
+
+	public ArrayList<Sorter> getSorters() {
+		return sorters;
+	}
+
+
+	public void setSorters(ArrayList<Sorter> sorters) {
+		this.sorters = sorters;
 	}
 }

@@ -18,6 +18,8 @@ public class Goal {
 	
 	private ArrayList<Action> actions;
 	
+	private ArrayList<Remediation> remediations;
+	
 
 	public Goal(){
 		setSatisfied(false);
@@ -105,6 +107,14 @@ public class Goal {
 
 	public void setPath(Path path) {
 		this.path = path;
+	}
+
+	public ArrayList<Remediation> getRemediations() {
+		return remediations;
+	}
+
+	public void setRemediations(ArrayList<Remediation> remediations) {
+		this.remediations = remediations;
 	}
 
 }

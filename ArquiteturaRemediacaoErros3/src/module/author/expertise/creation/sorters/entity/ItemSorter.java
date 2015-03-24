@@ -14,7 +14,17 @@ public class ItemSorter implements Serializable{
 	private ErrorType errorType;
 	private MERFunction merFunction;
 	private String statedError;
-	private Remediation remediation;
+	private String remediation;
+	
+	public ItemSorter(Long id, ErrorType errorType, MERFunction merFunction,
+			String statedError, String remediation) {
+		super();
+		this.id = id;
+		this.errorType = errorType;
+		this.merFunction = merFunction;
+		this.statedError = statedError;
+		this.remediation = remediation;
+	}
 	
 	public ErrorType getErrorType() {
 		return errorType;
@@ -28,10 +38,10 @@ public class ItemSorter implements Serializable{
 	public void setMerFunction(MERFunction merFunction) {
 		this.merFunction = merFunction;
 	}
-	public Remediation getRemediation() {
+	public String getRemediation() {
 		return remediation;
 	}
-	public void setRemediation(Remediation remediation) {
+	public void setRemediation(String remediation) {
 		this.remediation = remediation;
 	}
 	public Long getId() {

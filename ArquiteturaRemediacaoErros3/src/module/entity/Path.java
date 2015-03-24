@@ -34,5 +34,12 @@ public class Path {
 		this.goals = goals;
 	}
 
+	public Goal getGoalById(Integer id){
+		for (Goal g: goals){
+			if (id == g.getId())
+				return g;
+		}
+		return null;
+	}
 
 }
