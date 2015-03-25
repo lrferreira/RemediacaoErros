@@ -26,7 +26,6 @@ import module.entity.Student;
 import module.entity.WrongAnswer;
 import util.Constants;
 import util.StringConstants;
-import javax.swing.ImageIcon;
 
 public class ExemploApplet extends JApplet {
 	/**
@@ -115,13 +114,13 @@ public class ExemploApplet extends JApplet {
 		RulesFactory.createRules(goal7);
 		RulesFactory.createRules(goal8);
 
-		// O aprendiz não consegue identificar que Helena possui uma quantidade maior.
+		// O aprendiz nï¿½o consegue identificar que Helena possui uma quantidade maior.
 
 		RulesFactory.createRules(
 				goal1,
 				new WrongAnswer("9", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogaï¿½ï¿½o e o esqueleto da operaï¿½ï¿½o que se espera do aluno"),
 				-1);
 		RulesFactory.createRules(
 				goal1,
@@ -134,10 +133,10 @@ public class ExemploApplet extends JApplet {
 				goal1,
 				new WrongAnswer("1", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 
-		//A estratégia do aprendiz apresenta a seguinte solução: 10 - 6 = ?
+		//A estratï¿½gia do aprendiz apresenta a seguinte soluï¿½ï¿½o: 10 - 6 = ?
 		RulesFactory.createRules(
 				goal2,
 				new WrongAnswer("-", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
@@ -156,14 +155,14 @@ public class ExemploApplet extends JApplet {
 				goal2,
 				new WrongAnswer("1", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 		
 		RulesFactory.createRules(
 				goal3,
 				new WrongAnswer("16", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogaï¿½ï¿½o e o esqueleto da operaï¿½ï¿½o que se espera do aluno"),
 				-1);
 		
 		RulesFactory.createRules(
@@ -177,10 +176,10 @@ public class ExemploApplet extends JApplet {
 				goal3,
 				new WrongAnswer("", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 		
-		//A estratégia do aprendiz apresenta a seguinte solução: 10 - 6 = ?
+		//A estratï¿½gia do aprendiz apresenta a seguinte soluï¿½ï¿½o: 10 - 6 = ?
 		RulesFactory.createRules(
 				goal4,
 				new WrongAnswer("4", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
@@ -206,7 +205,7 @@ public class ExemploApplet extends JApplet {
 				goal4,
 				new WrongAnswer("", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 
 		
@@ -214,7 +213,7 @@ public class ExemploApplet extends JApplet {
 				goal5,
 				new WrongAnswer("9", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogaï¿½ï¿½o e o esqueleto da operaï¿½ï¿½o que se espera do aluno"),
 				-1);
 		RulesFactory.createRules(
 				goal5,
@@ -227,10 +226,10 @@ public class ExemploApplet extends JApplet {
 				goal5,
 				new WrongAnswer("1", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 
-		//A estratégia do aprendiz apresenta a seguinte solução: 10 - 6 = ?
+		//A estratï¿½gia do aprendiz apresenta a seguinte soluï¿½ï¿½o: 10 - 6 = ?
 		RulesFactory.createRules(
 				goal6,
 				new WrongAnswer("-", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
@@ -249,14 +248,14 @@ public class ExemploApplet extends JApplet {
 				goal6,
 				new WrongAnswer("1", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 		
 		RulesFactory.createRules(
 				goal7,
 				new WrongAnswer("16", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogação e o esqueleto da operação que se espera do aluno"),
+				new MultipleExternalRepresentation(++i, "diretamente_identificavel_deficiencia_dominio.png", "Figura de Pedro e Helena mostrando pontos de interrogaï¿½ï¿½o e o esqueleto da operaï¿½ï¿½o que se espera do aluno"),
 				-1);
 		
 		RulesFactory.createRules(
@@ -270,10 +269,10 @@ public class ExemploApplet extends JApplet {
 				goal7,
 				new WrongAnswer("", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 		
-		//A estratégia do aprendiz apresenta a seguinte solução: 10 - 6 = ?
+		//A estratï¿½gia do aprendiz apresenta a seguinte soluï¿½ï¿½o: 10 - 6 = ?
 		RulesFactory.createRules(
 				goal8,
 				new WrongAnswer("4", Constants.TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR), 
@@ -299,7 +298,7 @@ public class ExemploApplet extends JApplet {
 				goal8,
 				new WrongAnswer("", Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL), 
 				new MERFunction(), 
-				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritméticos para retomar a base conceitual do aprendiz"),
+				new MultipleExternalRepresentation(++i, "compreensao_aprofundada.png", "Texto exibindo os principais conceitos aritmï¿½ticos para retomar a base conceitual do aprendiz"),
 				-1);
 		
 		String filePath = new File("").getAbsolutePath();

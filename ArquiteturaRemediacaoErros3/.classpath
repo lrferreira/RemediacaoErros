@@ -5,7 +5,6 @@
 	<classpathentry kind="lib" path="C:/eclipse/JEOPS_TELL/JEOPS.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/JEOPS_TELL/JeopsRE.jar"/>
 	<classpathentry kind="lib" path="libs/ShellController.jar"/>
-	<classpathentry kind="src" path="/OAExemploPedroHelena"/>
 	<classpathentry kind="lib" path="libs/jgraphx/lib/jgraphx.jar"/>
 	<classpathentry kind="lib" path="libs/xstream/xstream-1.4.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
