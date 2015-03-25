@@ -198,7 +198,7 @@ public class AppletExercise extends JApplet {
 		final JButton btnEstadoInicial = new JButton("Estado Inicial");
 		btnEstadoInicial.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-				path = new Path(1, "caminho de resolução nº 1");
+				path = new Path(1, "caminho de resoluï¿½ï¿½o nï¿½ 1");
 				i = 0;
 				//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
         		getGraph().getModel().beginUpdate();
@@ -262,18 +262,19 @@ public class AppletExercise extends JApplet {
 												System.out.println("double-clicked on " + graph.getLabel(cell));
 												addRemediacao(cell);	
 											}
-											else if (graph.getLabel(cell).startsWith("Remediação")){
+											else if (graph.getLabel(cell).startsWith("Remediaï¿½ï¿½o")){
 												//currentGoal = path.getGoals().get(arg0) 
 												
 												currentGoal = path.getGoalById((int) getKey(getMapMetasRemediacoesGrafo(), cell));
 												tabbedPane.setSelectedIndex(1);
 												
-												lblExercicio.setText("EXERCÍCIO: " + 1);
-												lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
-												lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
+												lblExercicio.setText("EXERCï¿½CIO: " + 1);
+												lblCaminho.setText("CAMINHO DE RESOLUï¿½ï¿½O: " + currentGoal.getPath().getId());
+												lblMeta.setText("META:    nï¿½ \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
 																currentGoal.getComponent().getName() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
 												
-												
+												Sorter s = cadSorterTeste();
+												cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"-", ""+ s.getId() + " - " + s.getDescription()}));
 												
 											}
 												
@@ -348,7 +349,7 @@ public class AppletExercise extends JApplet {
 						});
 				   
 					
-// Panel REMEDIAÇÃO
+// Panel REMEDIAï¿½ï¿½O
 				                panel_remed = new JPanel();
 				                tabbedPane.addTab("Remedia\u00E7\u00E3o", null, panel_remed, null);
 				                panel_remed.setLayout(null);
@@ -573,7 +574,7 @@ public Component getComponentByName(String name) {
 		Goal goalAt = new Goal(i, path, false, textGoal, new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
 		path.getGoals().add(goalAt);
 		Object v1 = getGraph().insertVertex(parent, null, 
-				"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
+				"Meta nï¿½ " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
 				"\nno campo " + goalAt.getComponent().getName(), 
 				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX() + 150, 30, 100, 100, "MyStyleEllipse");
 		
@@ -594,8 +595,8 @@ public Component getComponentByName(String name) {
 		int j = (int) getMapRemediacoesGrafo().size() + 1;
 		Goal goal = path.getGoals().get(i-1);
 		//WrongAnswer wrongAnswer = new WrongAnswer();
-		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
-		Object v2 = getGraph().insertVertex(parent, null, "Remediação nº " + j + " \npara a meta nº " + goal.getId() + ":\n " + 
+		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possï¿½vel valor de erro do estudante:"));
+		Object v2 = getGraph().insertVertex(parent, null, "Remediaï¿½ï¿½o nï¿½ " + j + " \npara a meta nï¿½ " + goal.getId() + ":\n " + 
 					"campo " + goal.getComponent().getName(), 
 				getGraph().getCellBounds(cell).getX(), 
 				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight()+ 100,
@@ -633,14 +634,14 @@ public Component getComponentByName(String name) {
 		
 		MERFunction mf = new MERFunction(1);
 		
-		ItemSorter is = new ItemSorter(1L, et, mf, "erro informado 1", "proposta de remediação 1");
+		ItemSorter is = new ItemSorter(1L, et, mf, "erro informado 1", "proposta de remediaï¿½ï¿½o 1");
 		s.getItensSorter().add(is);
 
 		et = new ErrorType(2L, "Tipo Erro teste2", new ArrayList<SubErrorType>());
 		set1 = new SubErrorType(3L, "Subtipo Erro testea", et);
 		et.getSubErrorTypes().add(set1);
 		mf = new MERFunction(2);
-		is = new ItemSorter(2L, et, mf, "erro informado 2", "proposta de remediação 2");
+		is = new ItemSorter(2L, et, mf, "erro informado 2", "proposta de remediaï¿½ï¿½o 2");
 		
 		s.getItensSorter().add(is);
 		
