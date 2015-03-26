@@ -2,10 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/eclipse/JEOPS_TELL/JEOPS.jar"/>
-	<classpathentry kind="lib" path="C:/eclipse/JEOPS_TELL/JeopsRE.jar"/>
 	<classpathentry kind="lib" path="libs/ShellController.jar"/>
 	<classpathentry kind="lib" path="libs/jgraphx/lib/jgraphx.jar"/>
 	<classpathentry kind="lib" path="libs/xstream/xstream-1.4.7.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/git/RemediacaoErros/ArquiteturaRemediacaoErros3/libs/sqlite-jdbc-3.8.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

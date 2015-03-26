@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -19,20 +22,35 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import module.author.expertise.creation.sorters.entity.ErrorType;
+import module.author.expertise.creation.sorters.entity.ItemSorter;
 import module.author.expertise.creation.sorters.entity.Sorter;
+import module.author.expertise.creation.sorters.entity.SubErrorType;
+import module.entity.DBConnect;
 import module.entity.MERFunction;
 
 import org.xml.sax.SAXException;
-import javax.swing.JButton;
+
+import javax.swing.JScrollPane;
 
 public class AppletSorters extends JApplet {
 	
+	public static int COL_TIPOERRO = 0;
+	public static int COL_SUBTIPOERRO = 1;
+	public static int COL_FUNCAOMRE = 2;
+	public static int COL_REMEDIACAO = 3;
 	public Sorter sorter;
 	public ArrayList<ErrorType> errorTypes;
 	public ArrayList<MERFunction> merFunctions;
 	private JTable table;
+	private DBConnect dbCon;
 	
 	public AppletSorters() {
+		
+		try {
+			setDbCon(new DBConnect("C:\\eclipse\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		initComponents();
 	}
 	
@@ -102,12 +120,25 @@ public class AppletSorters extends JApplet {
 		});
 		mnClassificador.add(mntmSalvar);
 		
+		JButton btnSalvarClassificador = new JButton("Salvar Classificador");
+		btnSalvarClassificador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Sorter s = readSorter(new Sorter(null, "classificador Maici", new ArrayList<ItemSorter>()), table);
+				dbCon.insert(s);
+			}
+		});
+		btnSalvarClassificador.setBounds(286, 394, 168, 23);
+		panel.add(btnSalvarClassificador);
+		
+		JComboBox cmbClassificador = new JComboBox();
+		cmbClassificador.setBounds(10, 39, 231, 20);
+		panel.add(cmbClassificador);
+		
 		table = new JTable();
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Tipo de Erro", "Subtipo do Erro", "Fun\u00E7\u00E3o da MRE", "Remedia\u00E7\u00E3o"},
 				{"Interpreta\u00E7\u00E3o Equivocada", "-", "Pap\u00E9is Complementares", "Propor outras formas de apresentar o problema com a possibilidade de o aprendiz fazer uma releitura a partir de uma simboliza\u00E7\u00E3o matem\u00E1tica."},
 				{"Diretamente Identific\u00E1veis", "Defici\u00EAncia em rela\u00E7\u00E3o ao dom\u00EDnio ou uso inadequado de dados", "Fun\u00E7\u00F5es de Restri\u00E7\u00E3o de Interpreta\u00E7\u00E3o", "Mostrar que, embora a estrat\u00E9gia possa estar correta, a defici\u00EAncia se encontra no uso das informa\u00E7\u00F5es."},
 				{null, "Defici\u00EAncia de regra, teorema ou defini\u00E7\u00E3o", "Compreens\u00E3o mais aprofundada", "Apresentar a regra ou teorema, com o prop\u00F3sito de o aprendiz reorganizar conceito ou generalizar."},
@@ -128,11 +159,32 @@ public class AppletSorters extends JApplet {
 		});
 		table.getColumnModel().getColumn(1).setPreferredWidth(91);
 		table.getColumnModel().getColumn(2).setPreferredWidth(90);
-		table.setBounds(10, 63, 865, 309);
+		table.setBounds(10, 100, 865, 272);
 		panel.add(table);
+	}
+
+	protected Sorter readSorter(Sorter sorter, JTable table) {
 		
-		JButton btnSalvarClassificador = new JButton("Salvar Classificador");
-		btnSalvarClassificador.setBounds(286, 394, 168, 23);
-		panel.add(btnSalvarClassificador);
+		for (int i = 0; i < table.getRowCount(); i++){
+			ErrorType errorType = new ErrorType(null, (String)table.getValueAt(i, COL_TIPOERRO), null);
+			ItemSorter itemSorter = new ItemSorter(null, 
+					errorType, 
+					new SubErrorType(null, (String)table.getValueAt(i, COL_SUBTIPOERRO), errorType),
+					new MERFunction(null, (String)table.getValueAt(i, COL_FUNCAOMRE)),
+					"", (String) table.getValueAt(i, COL_REMEDIACAO));
+			
+			sorter.getItensSorter().add(itemSorter);
+			
+		}
+		return sorter;
+		
+	}
+
+	public DBConnect getDbCon() {
+		return dbCon;
+	}
+
+	public void setDbCon(DBConnect dbCon) {
+		this.dbCon = dbCon;
 	}
 }

@@ -275,7 +275,8 @@ public class AppletExercise extends JApplet {
 												
 												
 												Sorter s = cadSorterTeste();
-												cmbSorter.add(s.getDescription());
+												cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"-", "" + s.getId() + " - " + s.getDescription()}));
+												
 											}
 												
 											}

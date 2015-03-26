@@ -2,19 +2,30 @@ package module.entity;
 
 public class MERFunction {
 	
-	public MERFunction(int type) {
+	private Long id;
+	private String description;
+	
+	
+	public MERFunction(Long id, String description) {
 		super();
-		this.type = type;
+		this.id = id;
+		this.description = description;
 	}
-
-	private int type;
-
-	public int getType() {
-		return type;
+	
+	
+	public Long getId() {
+		return id;
 	}
-
-	public void setType(int type) {
-		this.type = type;
+	public void setId(Long id) {
+		this.id = id;
 	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
 	
 }
