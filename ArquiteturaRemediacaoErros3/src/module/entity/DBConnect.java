@@ -51,15 +51,17 @@ public class DBConnect {
 		try {
 			this.stm = this.conn.createStatement();
 			if (subErrorType.getId() == null) {
-				ResultSet rs = this.stm.executeQuery("select * from subErrorType WHERE id_errortype = " + subErrorType.getErrorType().getId() + " AND "
-						+ "description = \"" + subErrorType.getDescription() + "\"");
-				if (!rs.next()) {
-					rs = this.stm.executeQuery("select max(id) FROM subErrorType");
-					subErrorType.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
-					this.stm.executeUpdate("INSERT INTO suberrortype VALUES ("
-							+ subErrorType.getId() + ","
-							+ "\""+subErrorType.getDescription() +"\"," 
-							+ subErrorType.getErrorType().getId() + ")");
+				if (subErrorType.getDescription() != null || subErrorType.getDescription().equals("") || subErrorType.getDescription().equals(" - ")){
+					ResultSet rs = this.stm.executeQuery("select * from subErrorType WHERE id_errortype = " + subErrorType.getErrorType().getId() + " AND "
+							+ "description = \"" + subErrorType.getDescription() + "\"");
+					if (!rs.next()) {
+						rs = this.stm.executeQuery("select max(id) FROM subErrorType");
+						subErrorType.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+						this.stm.executeUpdate("INSERT INTO suberrortype VALUES ("
+								+ subErrorType.getId() + ","
+								+ "\""+subErrorType.getDescription() +"\"," 
+								+ subErrorType.getErrorType().getId() + ")");
+					}
 				}
 			}
 
@@ -120,7 +122,6 @@ public class DBConnect {
 							+ itemSorter.getId() + ","
 							+ itemSorter.getErrorType().getId() + ","
 							+ itemSorter.getMerFunction().getId() + ","
-							+ "\"" + itemSorter.getStatedError() + "\"," 
 							+ "\"" + itemSorter.getRemediation() + "\"" + ")");
 				}
 			}

@@ -47,7 +47,7 @@ public class AppletSorters extends JApplet {
 	public AppletSorters() {
 		
 		try {
-			setDbCon(new DBConnect("C:\\eclipse\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			setDbCon(new DBConnect("C:\\Users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -171,7 +171,7 @@ public class AppletSorters extends JApplet {
 					errorType, 
 					new SubErrorType(null, (String)table.getValueAt(i, COL_SUBTIPOERRO), errorType),
 					new MERFunction(null, (String)table.getValueAt(i, COL_FUNCAOMRE)),
-					"", (String) table.getValueAt(i, COL_REMEDIACAO));
+					 (String) table.getValueAt(i, COL_REMEDIACAO));
 			
 			sorter.getItensSorter().add(itemSorter);
 			
