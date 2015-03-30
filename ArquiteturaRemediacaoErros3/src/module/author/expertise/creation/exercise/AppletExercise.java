@@ -37,7 +37,6 @@ import module.author.expertise.creation.sorters.entity.SubErrorType;
 import module.entity.CorrectAnswer;
 import module.entity.DBConnect;
 import module.entity.Goal;
-import module.entity.MERFunction;
 import module.entity.Path;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -108,13 +107,16 @@ public class AppletExercise extends JApplet {
 	private ArrayList<Sorter> sorters;
 	private DBConnect dbCon;
 	
-	
+	Sorter sorter;
+	ItemSorter itemSorter;
+	private JLabel lblRemediacao;
+	private JTextArea textAreaErroRelatado;
 	
 	public AppletExercise() {
 		
 		try {
-			//setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
-			setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			//setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -206,7 +208,7 @@ public class AppletExercise extends JApplet {
 		separator = new JSeparator();
 		separator.setBounds(62, 229, 132, 2);
 		panel_exerc.add(separator);
-		Sorter sorter;
+		
 		
 		final JButton btnEstadoInicial = new JButton("Estado Inicial");
 		btnEstadoInicial.addActionListener(new ActionListener() {
@@ -371,7 +373,7 @@ public class AppletExercise extends JApplet {
 				                cmbWrongAnswer = new JComboBox();
 				                cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta espec\u00EDfica", "Estudante cometeu um erro (n\u00E3o importa a resposta)"}));
 				                cmbWrongAnswer.setToolTipText("");
-				                cmbWrongAnswer.setBounds(10, 196, 272, 20);
+				                cmbWrongAnswer.setBounds(10, 271, 272, 20);
 				                panel_remed.add(cmbWrongAnswer);
 				                
 				                lblCaminho = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
@@ -384,89 +386,115 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(label_2);
 				                
 				                label_3 = new JLabel("Se");
-				                label_3.setBounds(10, 171, 46, 14);
+				                label_3.setBounds(10, 246, 46, 14);
 				                panel_remed.add(label_3);
 				                
 				                label_4 = new JLabel("Ent\u00E3o");
-				                label_4.setBounds(10, 237, 46, 14);
+				                label_4.setBounds(10, 312, 46, 14);
 				                panel_remed.add(label_4);
 				                
 				                cmbErrorType = new JComboBox();
-				                cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"Interpreta\u00E7\u00E3o Equivocada", "Diretamente Identific\u00E1vel", "Indiretamente Identific\u00E1vel", "Solu\u00E7\u00E3o N\u00E3o Categoriz\u00E1vel"}));
-				                cmbErrorType.setBounds(241, 262, 221, 20);
+				                cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
+				                cmbErrorType.setBounds(190, 337, 272, 20);
 				                panel_remed.add(cmbErrorType);
 				                
 				                label_5 = new JLabel("E");
-				                label_5.setBounds(10, 367, 46, 14);
+				                label_5.setBounds(10, 442, 46, 14);
 				                panel_remed.add(label_5);
 				                
 				                label_6 = new JLabel("Especificar MRE:");
-				                label_6.setBounds(544, 26, 146, 14);
+				                label_6.setBounds(540, 48, 146, 14);
 				                panel_remed.add(label_6);
 				                
 				                label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
-				                label_7.setBounds(10, 446, 146, 14);
+				                label_7.setBounds(540, 12, 146, 14);
 				                panel_remed.add(label_7);
 				                
 				                comboBox_2 = new JComboBox();
 				                comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"MER espec\u00EDfica para o erro", "Persist\u00EAncia no erro", "Alternar entre MRES", "Complexidade", "Sucessos anteriores com a MRE"}));
 				                comboBox_2.setSelectedIndex(1);
-				                comboBox_2.setBounds(241, 443, 221, 20);
+				                comboBox_2.setBounds(761, 10, 221, 20);
 				                panel_remed.add(comboBox_2);
 				                
 				                label_8 = new JLabel("Classifique o Tipo de Erro como");
-				                label_8.setBounds(10, 265, 228, 14);
+				                label_8.setBounds(10, 340, 179, 14);
 				                panel_remed.add(label_8);
 				                
 				                label_9 = new JLabel("Com este tipo de erro");
-				                label_9.setBounds(10, 395, 228, 14);
+				                label_9.setBounds(10, 470, 179, 14);
 				                panel_remed.add(label_9);
 				                
 				                label_10 = new JLabel("E");
-				                label_10.setBounds(10, 301, 46, 14);
+				                label_10.setBounds(10, 376, 46, 14);
 				                panel_remed.add(label_10);
 				                
 				                label_11 = new JLabel("Classifique o Subtipo de Erro como");
-				                label_11.setBounds(10, 326, 212, 14);
+				                label_11.setBounds(10, 401, 179, 14);
 				                panel_remed.add(label_11);
 				                
 				                cmbSubErrorType = new JComboBox();
-				                cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-", "Defici\u00EAncia no Dom\u00EDnio", "Defici\u00EAncia na Regra", "Defici\u00EAncia na Escolha do Operador"}));
-				                cmbSubErrorType.setBounds(241, 323, 221, 20);
+				                cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
+				                cmbSubErrorType.setBounds(190, 398, 272, 20);
 				                panel_remed.add(cmbSubErrorType);
 				                
 				                label_12 = new JLabel("Classificador de Erro:");
-				                label_12.setBounds(10, 137, 146, 14);
+				                label_12.setBounds(10, 212, 146, 14);
 				                panel_remed.add(label_12);
 				                
 				                cmbSorter = new JComboBox();
 				                cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
-				                cmbSorter.setBounds(166, 134, 254, 20);
+				                cmbSorter.setBounds(190, 209, 272, 20);
 				                panel_remed.add(cmbSorter);
 				                
 				                cmbSorter.addItemListener(new ItemListener() {
 				        			@Override
 				        			public void itemStateChanged(ItemEvent arg0) {
-				        				Sorter sorter = dbCon.getSorter(Long.valueOf(cmbSorter.getSelectedIndex()));
-				        				for (ItemSorter is : sorter.getItensSorter()){
-				        					cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(is.getErrorType())));
-				        					
+				        				Sorter sorter = dbCon.getSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				
+				        				cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(sorter.getId()))));
+				        
 				        				}
-				        			}
 				        	    });
 				                
+				                cmbErrorType.addItemListener(new ItemListener() {
+				        			@Override
+				        			public void itemStateChanged(ItemEvent arg0) {
+				        				ErrorType errorType = dbCon.getErrorType(Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				
+				        				cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
+				        
+				        				if (cmbSubErrorType.getItemCount() == 1) {
+				        					itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
+    												Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
+    												null);
+				        					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
+				        					lblRemediacao.setText(itemSorter.getRemediation());
+				        				}
+				        			}
+				        	    });				                
+
+				                cmbSubErrorType.addItemListener(new ItemListener() {
+				        			@Override
+				        			public void itemStateChanged(ItemEvent arg0) {
+				        				itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
+				        												Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
+				        												Long.valueOf(cmbSubErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
+				        				//cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
+				        				lblRemediacao.setText(itemSorter.getRemediation());
+				        				}
+				        	    });
 				                
-				                
-				                lblMeta = new JLabel("META:    n\u00BA 1 -> adicionar no campo \"txt8\" o valor \"6\"");
+				                lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
 				                lblMeta.setBounds(10, 98, 392, 14);
 				                panel_remed.add(lblMeta);
 				                
 				                label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
-				                label_15.setBounds(10, 409, 179, 14);
+				                label_15.setBounds(10, 484, 179, 14);
 				                panel_remed.add(label_15);
 				                
-				                lblMerFunction = new JLabel("Pap\u00E9is Complementares");
-				                lblMerFunction.setBounds(245, 409, 146, 14);
+				                lblMerFunction = new JLabel("");
+				                lblMerFunction.setBounds(190, 484, 272, 14);
 				                panel_remed.add(lblMerFunction);
 				                
 				                lblExercicio = new JLabel("EXERC\u00CDCIO: 1");
@@ -474,33 +502,41 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(lblExercicio);
 				                
 				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
-				                button.setBounds(421, 541, 179, 23);
+				                button.setBounds(692, 540, 179, 23);
 				                panel_remed.add(button);
 				                
 				                comboBox_5 = new JComboBox();
-				                comboBox_5.setBounds(544, 45, 331, 20);
+				                comboBox_5.setBounds(540, 67, 331, 20);
 				                panel_remed.add(comboBox_5);
 				                
 				                label_18 = new JLabel("Visualiza\u00E7\u00E3o");
-				                label_18.setBounds(544, 88, 95, 14);
+				                label_18.setBounds(540, 110, 95, 14);
 				                panel_remed.add(label_18);
 				                
 				                lblEspecificarResposta = new JLabel("Especificar resposta");
-				                lblEspecificarResposta.setBounds(316, 168, 146, 20);
+				                lblEspecificarResposta.setBounds(316, 243, 146, 20);
 				                panel_remed.add(lblEspecificarResposta);
 				                
 				                txtWrongAnswer = new JTextField();
-				                txtWrongAnswer.setBounds(316, 196, 86, 20);
+				                txtWrongAnswer.setBounds(316, 271, 86, 20);
 				                panel_remed.add(txtWrongAnswer);
 				                txtWrongAnswer.setColumns(10);
 				                
 				                JLabel lblErroRelatado = new JLabel("Erro relatado:");
-				                lblErroRelatado.setBounds(544, 425, 95, 14);
+				                lblErroRelatado.setBounds(10, 123, 95, 14);
 				                panel_remed.add(lblErroRelatado);
 				                
-				                JTextArea textAreaErroRelatado = new JTextArea();
-				                textAreaErroRelatado.setBounds(544, 446, 331, 43);
+				                textAreaErroRelatado = new JTextArea();
+				                textAreaErroRelatado.setBounds(10, 144, 331, 43);
 				                panel_remed.add(textAreaErroRelatado);
+				                
+				                JLabel lblRemediao = new JLabel("Remediação esperada");
+				                lblRemediao.setBounds(10, 526, 132, 14);
+				                panel_remed.add(lblRemediao);
+				                
+				                lblRemediacao = new JLabel("");
+				                lblRemediacao.setBounds(10, 551, 452, 43);
+				                panel_remed.add(lblRemediacao);
         
         createComponentMap();
         
@@ -519,17 +555,26 @@ public class AppletExercise extends JApplet {
 		
 	}
 	
-	private String[] putErrorTypeOnForm(ArrayList<ErrorType> errortypes) {
+	private String[] putErrorTypeOnForm(ArrayList<ErrorType> errorTypes) {
 		  
-         String[] model = new String[errortypes.size() + 1];
+         String[] model = new String[errorTypes.size() + 1];
          model[0] = "-";
-         for (int i = 1; i < errortypes.size() + 1; i++){
-         	model[i] = "" + errortypes.get(i-1).getId() + "-" + errortypes.get(i-1).getDescription();
+         for (int i = 1; i < errorTypes.size() + 1; i++){
+         	model[i] = "" + errorTypes.get(i-1).getId() + "-" + errorTypes.get(i-1).getDescription();
          }
          return model;
 	}
 
-
+	private String[] putSubErrorTypeOnForm(ArrayList<SubErrorType> subErrorTypes) {
+		  
+        String[] model = new String[subErrorTypes.size() + 1];
+        model[0] = "-";
+        for (int i = 1; i < subErrorTypes.size() + 1; i++){
+        	model[i] = "" + subErrorTypes.get(i-1).getId() + "-" + subErrorTypes.get(i-1).getDescription();
+        }
+        return model;
+	}
+	
 	private void createComponentMap() {
         componentMap = new HashMap<String,Component>();
         Component[] components = panel_exerc.getComponents();
@@ -680,9 +725,6 @@ public Component getComponentByName(String name) {
 		
 	}
 	
-	public void putSorterOnform(Sorter sorter){
-		
-	}
 	
 	/*
 	public Sorter cadSorterTeste(){

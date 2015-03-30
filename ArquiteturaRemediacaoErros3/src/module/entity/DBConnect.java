@@ -251,4 +251,58 @@ public class DBConnect {
 		}
 		return mf;
 	}
+	
+	public ItemSorter getItemSorter(Long id_sorter, Long id_errortype, Long id_suberrortype){
+		ItemSorter is = null;
+		ResultSet rs;
+		try {
+			this.stm = this.conn.createStatement();
+			String strAux = (id_suberrortype == null) ? " id_suberrortype is null " : " id_suberrortype = " + id_suberrortype; 
+			rs = this.stm.executeQuery("select * from itemsorter WHERE id_sorter = " + id_sorter +
+										" AND id_errortype = " + id_errortype + 
+										" AND " + strAux);
+			if (rs.next()){
+				is = new ItemSorter(rs.getLong("id"), getSorter(rs.getLong("id_sorter")), getErrorType(rs.getLong("id_errortype")),
+									getSubErrorType(rs.getLong("id_suberrortype")), getMERFunction(rs.getLong("id_merfunction")), rs.getString("remediation"));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return is;
+	}
+	
+		
+	
+	public ArrayList<ErrorType> getErrorsTypesBySorter(Long id_sorter){
+		ResultSet rs;
+		ArrayList<ErrorType> ets = new ArrayList<ErrorType>();
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("SELECT a.id_errortype, b.description from itemsorter a join errortype b on a.id_errortype = b.id where a.id_sorter = " 
+										+ id_sorter + " group by a.id_errortype, b.description");
+			while (rs.next()){
+				ets.add(new ErrorType(rs.getLong("id_errortype"), rs.getString("description"), null));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return ets;
+
+	}
+	
+	public ArrayList<SubErrorType> getSubErrorsTypesByErrorType(Long id_errortype){
+		ResultSet rs;
+		ArrayList<SubErrorType> sets = new ArrayList<SubErrorType>();
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("SELECT * FROM suberrortype WHERE id_errortype = " + id_errortype); 
+			while (rs.next()){
+				sets.add(new SubErrorType(rs.getLong("id"), rs.getString("description"), null));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return sets;
+
+	}
 }
