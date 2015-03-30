@@ -6,8 +6,11 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -32,6 +35,7 @@ import module.author.expertise.creation.sorters.entity.ItemSorter;
 import module.author.expertise.creation.sorters.entity.Sorter;
 import module.author.expertise.creation.sorters.entity.SubErrorType;
 import module.entity.CorrectAnswer;
+import module.entity.DBConnect;
 import module.entity.Goal;
 import module.entity.MERFunction;
 import module.entity.Path;
@@ -102,10 +106,18 @@ public class AppletExercise extends JApplet {
 	private JLabel lblEspecificarResposta;
 	
 	private ArrayList<Sorter> sorters;
+	private DBConnect dbCon;
 	
 	
 	
 	public AppletExercise() {
+		
+		try {
+			//setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		
 		initComponents();
 		
@@ -194,6 +206,7 @@ public class AppletExercise extends JApplet {
 		separator = new JSeparator();
 		separator.setBounds(62, 229, 132, 2);
 		panel_exerc.add(separator);
+		Sorter sorter;
 		
 		final JButton btnEstadoInicial = new JButton("Estado Inicial");
 		btnEstadoInicial.addActionListener(new ActionListener() {
@@ -274,8 +287,8 @@ public class AppletExercise extends JApplet {
 																currentGoal.getComponent().getName() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
 												
 												
-												Sorter s = cadSorterTeste();
-												cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"-", "" + s.getId() + " - " + s.getDescription()}));
+												//Sorter s = cadSorterTeste();
+												//cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"-", "" + s.getId() + " - " + s.getDescription()}));
 												
 											}
 												
@@ -427,8 +440,22 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(label_12);
 				                
 				                cmbSorter = new JComboBox();
+				                cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
 				                cmbSorter.setBounds(166, 134, 254, 20);
 				                panel_remed.add(cmbSorter);
+				                
+				                cmbSorter.addItemListener(new ItemListener() {
+				        			@Override
+				        			public void itemStateChanged(ItemEvent arg0) {
+				        				Sorter sorter = dbCon.getSorter(Long.valueOf(cmbSorter.getSelectedIndex()));
+				        				for (ItemSorter is : sorter.getItensSorter()){
+				        					cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(is.getErrorType())));
+				        					
+				        				}
+				        			}
+				        	    });
+				                
+				                
 				                
 				                lblMeta = new JLabel("META:    n\u00BA 1 -> adicionar no campo \"txt8\" o valor \"6\"");
 				                lblMeta.setBounds(10, 98, 392, 14);
@@ -447,7 +474,7 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(lblExercicio);
 				                
 				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
-				                button.setBounds(474, 482, 179, 23);
+				                button.setBounds(421, 541, 179, 23);
 				                panel_remed.add(button);
 				                
 				                comboBox_5 = new JComboBox();
@@ -466,11 +493,42 @@ public class AppletExercise extends JApplet {
 				                txtWrongAnswer.setBounds(316, 196, 86, 20);
 				                panel_remed.add(txtWrongAnswer);
 				                txtWrongAnswer.setColumns(10);
+				                
+				                JLabel lblErroRelatado = new JLabel("Erro relatado:");
+				                lblErroRelatado.setBounds(544, 425, 95, 14);
+				                panel_remed.add(lblErroRelatado);
+				                
+				                JTextArea textAreaErroRelatado = new JTextArea();
+				                textAreaErroRelatado.setBounds(544, 446, 331, 43);
+				                panel_remed.add(textAreaErroRelatado);
         
         createComponentMap();
         
 		
 	}
+
+	private String[] putSorterOnForm() {
+		 
+		 ArrayList<Sorter> sorters = dbCon.getSorters(); 
+         String[] model = new String[sorters.size() + 1];
+         model[0] = "-";
+         for (int i = 1; i < sorters.size() + 1; i++){
+         	model[i] = "" + sorters.get(i-1).getId() + "-" + sorters.get(i-1).getDescription();
+         }
+         return model;
+		
+	}
+	
+	private String[] putErrorTypeOnForm(ArrayList<ErrorType> errortypes) {
+		  
+         String[] model = new String[errortypes.size() + 1];
+         model[0] = "-";
+         for (int i = 1; i < errortypes.size() + 1; i++){
+         	model[i] = "" + errortypes.get(i-1).getId() + "-" + errortypes.get(i-1).getDescription();
+         }
+         return model;
+	}
+
 
 	private void createComponentMap() {
         componentMap = new HashMap<String,Component>();
@@ -622,6 +680,11 @@ public Component getComponentByName(String name) {
 		
 	}
 	
+	public void putSorterOnform(Sorter sorter){
+		
+	}
+	
+	/*
 	public Sorter cadSorterTeste(){
 		//cad classificadores
 		sorters = new ArrayList<Sorter>();
@@ -648,6 +711,7 @@ public Component getComponentByName(String name) {
 		
 		return s;
 	}
+	*/
 	
 	private Object getKey(HashMap m, Object value){
 	    for(Object key : m.keySet()){
@@ -915,5 +979,15 @@ public Component getComponentByName(String name) {
 
 	public void setSorters(ArrayList<Sorter> sorters) {
 		this.sorters = sorters;
+	}
+
+
+	public DBConnect getDbCon() {
+		return dbCon;
+	}
+
+
+	public void setDbCon(DBConnect dbCon) {
+		this.dbCon = dbCon;
 	}
 }

@@ -49,7 +49,8 @@ public class AppletSorters extends JApplet {
 	public AppletSorters() {
 		
 		try {
-			setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			//setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -60,7 +61,7 @@ public class AppletSorters extends JApplet {
 		getContentPane().setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 890, 482);
+		tabbedPane.setBounds(0, 0, 1290, 605);
 		getContentPane().add(tabbedPane);
 		
 		JPanel panel = new JPanel();
@@ -132,7 +133,7 @@ public class AppletSorters extends JApplet {
 		btnSalvarClassificador.setBounds(286, 394, 168, 23);
 		panel.add(btnSalvarClassificador);
 		
-		JComboBox cmbClassificador = new JComboBox();
+		final JComboBox cmbClassificador = new JComboBox();
 		cmbClassificador.setBounds(10, 39, 231, 20);
 		cmbClassificador.addItem("-");
 		panel.add(cmbClassificador);
@@ -148,7 +149,7 @@ public class AppletSorters extends JApplet {
 		putSorterOnCombo(cmbClassificador);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 100, 885, 454);
+		scrollPane.setBounds(10, 100, 1265, 457);
 		panel.add(scrollPane);
 		
 		table = new JTable();
