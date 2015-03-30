@@ -11,13 +11,14 @@ public class ItemSorter implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private Long id;
+	private Sorter sorter;
 	private ErrorType errorType;
 	private SubErrorType subErrorType;
 	private MERFunction merFunction;
 	
 	private String remediation;
 	
-	public ItemSorter(Long id, ErrorType errorType, SubErrorType subErrorType, MERFunction merFunction,
+	public ItemSorter(Long id, Sorter sorter, ErrorType errorType, SubErrorType subErrorType, MERFunction merFunction,
 			 String remediation) {
 		super();
 		this.id = id;
@@ -58,6 +59,14 @@ public class ItemSorter implements Serializable{
 
 	public void setSubErrorType(SubErrorType subErrorType) {
 		this.subErrorType = subErrorType;
+	}
+
+	public Sorter getSorter() {
+		return sorter;
+	}
+
+	public void setSorter(Sorter sorter) {
+		this.sorter = sorter;
 	}
 	
 	

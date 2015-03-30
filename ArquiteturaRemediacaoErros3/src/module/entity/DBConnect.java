@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import module.author.expertise.creation.sorters.entity.ErrorType;
 import module.author.expertise.creation.sorters.entity.ItemSorter;
@@ -136,6 +137,8 @@ public class DBConnect {
 							+ itemSorter.getId() + ","
 							+ itemSorter.getErrorType().getId() + ","
 							+ itemSorter.getMerFunction().getId() + ","
+							+ itemSorter.getSubErrorType().getId() + ","
+							+ itemSorter.getSorter().getId() + ","
 							+ "\"" + itemSorter.getRemediation() + "\"" + ")");
 				}
 				else
@@ -146,6 +149,106 @@ public class DBConnect {
 			e.printStackTrace();
 			}
 	}
-
 	
+	public ArrayList<Sorter> getSorters(){
+		ArrayList<Sorter> sorters = new ArrayList<Sorter>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from sorter");
+			if (rs.next()){
+				sorters.add(new Sorter(rs.getLong("id"), rs.getString("description"), null));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return sorters;
+	}
+
+	public Sorter getSorter(Long id) {
+		Sorter s = new Sorter(null, null, new ArrayList<ItemSorter>());
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from sorter WHERE id = " + id);
+			if (rs.next()){
+				s = new Sorter(rs.getLong("id"), rs.getString("description"), null);
+				s.setItensSorter(getItensSorter(s));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		return s;
+	}
+	
+	public ArrayList<ItemSorter> getItensSorter(Sorter sorter){
+		ArrayList<ItemSorter> it = new ArrayList<ItemSorter>();
+		ResultSet rs1;
+		try {
+			this.stm = this.conn.createStatement();
+			rs1 = this.stm.executeQuery("select * from itemsorter WHERE id_sorter = " + sorter.getId());
+			while (rs1.next()){
+				it.add(new ItemSorter(rs1.getLong("id"), 
+						sorter, 
+						getErrorType(rs1.getLong("id_errortype")), 
+						getSubErrorType(rs1.getLong("id_suberrortype")), 
+						getMERFunction(rs1.getLong("id_merfunction")),
+						rs1.getString("remediation")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return it;
+	}
+	
+	public ErrorType getErrorType(Long id_errortype){
+		ErrorType e = null;
+		ResultSet rs;
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("select * from errortype WHERE id = " + id_errortype);
+			if (rs.next()){
+				e = new ErrorType(rs.getLong("id"), rs.getString("description"), null);
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return e;
+	}
+	
+	public SubErrorType getSubErrorType(Long id_suberrortype){
+		SubErrorType se = null;
+		ResultSet rs, rs1;
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("select * from suberrortype WHERE id = " + id_suberrortype);
+			if (rs.next()){
+				this.stm = this.conn.createStatement();
+				rs1 = this.stm.executeQuery("select * from errortype WHERE id = " + rs.getLong("id_errortype"));
+				se = new SubErrorType(rs.getLong("id"), rs.getString("description"), (rs1.next())? new ErrorType(rs1.getLong("id"), rs1.getString("description"), null) : null);
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return se;
+	}
+
+	public MERFunction getMERFunction(Long id_merfunction){
+		MERFunction mf = null;
+		ResultSet rs;
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("select * from merfunction WHERE id = " + id_merfunction);
+			if (rs.next()){
+				mf = new MERFunction(rs.getLong("id"), rs.getString("description"));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return mf;
+	}
 }
