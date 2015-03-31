@@ -23,6 +23,24 @@ import util.Constants;
 
 public class MERCadApplet extends JApplet {
 	private JTextField textField;
+	private JTextPane txtDescription;
+	private JRadioButton rb1;
+	private JRadioButton rb2;
+	private JRadioButton rb3;
+	private JRadioButton rb4;
+	private JRadioButton rb5;
+	private JLabel lblComplexidade;
+	private JLabel lblFunofunes;
+	private JCheckBox cbPapeisComplementares;
+	private JCheckBox cbRestricaoDeInterpretacao;
+	private JCheckBox cbCompreensaoMaisAprofundada;
+	private JCheckBox cbTexto;
+	private JCheckBox cbGrafico;
+	private JCheckBox cbTabela;
+	private JCheckBox cbImagem;
+	private JCheckBox cbVideo;
+	private JLabel lblTipos;
+	private JCheckBox chckbxEquao;
 	public MERCadApplet() {
 		getContentPane().setLayout(null);
 		
@@ -35,75 +53,75 @@ public class MERCadApplet extends JApplet {
 		lblDescrio.setBounds(30, 48, 60, 14);
 		panel.add(lblDescrio);
 		
-		JTextPane txtDescription = new JTextPane();
+		txtDescription = new JTextPane();
 		txtDescription.setBounds(30, 73, 244, 63);
 		panel.add(txtDescription);
 		
-		JRadioButton rb1 = new JRadioButton("1");
+		rb1 = new JRadioButton("1");
 		rb1.setBounds(32, 205, 40, 23);
 		panel.add(rb1);
 		
-		JRadioButton rb2 = new JRadioButton("2");
+		rb2 = new JRadioButton("2");
 		rb2.setBounds(74, 205, 40, 23);
 		panel.add(rb2);
 		
-		JRadioButton rb3 = new JRadioButton("3");
+		rb3 = new JRadioButton("3");
 		rb3.setBounds(116, 205, 40, 23);
 		panel.add(rb3);
 		
-		JRadioButton rb4 = new JRadioButton("4");
+		rb4 = new JRadioButton("4");
 		rb4.setBounds(158, 205, 40, 23);
 		panel.add(rb4);
 		
-		JRadioButton rb5 = new JRadioButton("5");
+		rb5 = new JRadioButton("5");
 		rb5.setBounds(200, 205, 40, 23);
 		panel.add(rb5);
 		
-		JLabel lblComplexidade = new JLabel("Complexidade");
+		lblComplexidade = new JLabel("Complexidade");
 		lblComplexidade.setBounds(30, 173, 113, 14);
 		panel.add(lblComplexidade);
 		
-		JLabel lblFunofunes = new JLabel("Fun\u00E7\u00E3o/Fun\u00E7\u00F5es");
+		lblFunofunes = new JLabel("Fun\u00E7\u00E3o/Fun\u00E7\u00F5es");
 		lblFunofunes.setBounds(30, 256, 113, 14);
 		panel.add(lblFunofunes);
 		
-		JCheckBox cbPapeisComplementares = new JCheckBox("Pap\u00E9is Complementares");
+		cbPapeisComplementares = new JCheckBox("Pap\u00E9is Complementares");
 		cbPapeisComplementares.setBounds(52, 290, 166, 23);
 		panel.add(cbPapeisComplementares);
 		
-		JCheckBox cbRestricaoDeInterpretacao = new JCheckBox("Restrição de Interpretação");
+		cbRestricaoDeInterpretacao = new JCheckBox("Restrição de Interpretação");
 		cbRestricaoDeInterpretacao.setBounds(52, 328, 166, 23);
 		panel.add(cbRestricaoDeInterpretacao);
 		
-		JCheckBox cbCompreensaoMaisAprofundada = new JCheckBox("Compreens\u00E3o Mais Aprofundada");
+		cbCompreensaoMaisAprofundada = new JCheckBox("Compreens\u00E3o Mais Aprofundada");
 		cbCompreensaoMaisAprofundada.setBounds(52, 366, 222, 23);
 		panel.add(cbCompreensaoMaisAprofundada);
 		
-		JCheckBox cbTexto = new JCheckBox("TEXTO");
+		cbTexto = new JCheckBox("TEXTO");
 		cbTexto.setBounds(378, 78, 97, 23);
 		panel.add(cbTexto);
 		
-		JCheckBox cbGrafico = new JCheckBox("GR\u00C1FICO");
+		cbGrafico = new JCheckBox("GR\u00C1FICO");
 		cbGrafico.setBounds(653, 131, 86, 23);
 		panel.add(cbGrafico);
 		
-		JCheckBox cbTabela = new JCheckBox("TABELA");
+		cbTabela = new JCheckBox("TABELA");
 		cbTabela.setBounds(653, 78, 86, 23);
 		panel.add(cbTabela);
 		
-		JCheckBox cbImagem = new JCheckBox("IMAGEM");
+		cbImagem = new JCheckBox("IMAGEM");
 		cbImagem.setBounds(378, 131, 97, 23);
 		panel.add(cbImagem);
 		
-		JCheckBox cbVideo = new JCheckBox("V\u00CDDEO");
+		cbVideo = new JCheckBox("V\u00CDDEO");
 		cbVideo.setBounds(504, 131, 97, 23);
 		panel.add(cbVideo);
 		
-		JLabel lblTipos = new JLabel("Tipo(s)");
+		lblTipos = new JLabel("Tipo(s)");
 		lblTipos.setBounds(378, 48, 46, 14);
 		panel.add(lblTipos);
 		
-		JCheckBox chckbxEquao = new JCheckBox("EQUA\u00C7\u00C3O");
+		chckbxEquao = new JCheckBox("EQUA\u00C7\u00C3O");
 		chckbxEquao.setBounds(504, 78, 97, 23);
 		panel.add(chckbxEquao);
 		
