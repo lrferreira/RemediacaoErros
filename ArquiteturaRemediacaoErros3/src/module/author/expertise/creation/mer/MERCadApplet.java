@@ -1,19 +1,25 @@
 package module.author.expertise.creation.mer;
 
-import javax.swing.JApplet;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
-import javax.swing.JRadioButton;
-import javax.swing.JCheckBox;
-import java.awt.Checkbox;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JApplet;
 import javax.swing.JButton;
-import java.awt.Component;
-import javax.swing.Box;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+
+import module.entity.MERFunction;
+import module.entity.MultipleExternalRepresentation;
+import module.entity.TypeMER;
+import util.Constants;
 
 public class MERCadApplet extends JApplet {
 	private JTextField textField;
@@ -29,29 +35,29 @@ public class MERCadApplet extends JApplet {
 		lblDescrio.setBounds(30, 48, 60, 14);
 		panel.add(lblDescrio);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(30, 73, 244, 63);
-		panel.add(textPane);
+		JTextPane txtDescription = new JTextPane();
+		txtDescription.setBounds(30, 73, 244, 63);
+		panel.add(txtDescription);
 		
-		JRadioButton radioButton = new JRadioButton("1");
-		radioButton.setBounds(32, 205, 40, 23);
-		panel.add(radioButton);
+		JRadioButton rb1 = new JRadioButton("1");
+		rb1.setBounds(32, 205, 40, 23);
+		panel.add(rb1);
 		
-		JRadioButton radioButton_1 = new JRadioButton("2");
-		radioButton_1.setBounds(74, 205, 40, 23);
-		panel.add(radioButton_1);
+		JRadioButton rb2 = new JRadioButton("2");
+		rb2.setBounds(74, 205, 40, 23);
+		panel.add(rb2);
 		
-		JRadioButton radioButton_2 = new JRadioButton("3");
-		radioButton_2.setBounds(116, 205, 40, 23);
-		panel.add(radioButton_2);
+		JRadioButton rb3 = new JRadioButton("3");
+		rb3.setBounds(116, 205, 40, 23);
+		panel.add(rb3);
 		
-		JRadioButton radioButton_3 = new JRadioButton("4");
-		radioButton_3.setBounds(158, 205, 40, 23);
-		panel.add(radioButton_3);
+		JRadioButton rb4 = new JRadioButton("4");
+		rb4.setBounds(158, 205, 40, 23);
+		panel.add(rb4);
 		
-		JRadioButton radioButton_4 = new JRadioButton("5");
-		radioButton_4.setBounds(200, 205, 40, 23);
-		panel.add(radioButton_4);
+		JRadioButton rb5 = new JRadioButton("5");
+		rb5.setBounds(200, 205, 40, 23);
+		panel.add(rb5);
 		
 		JLabel lblComplexidade = new JLabel("Complexidade");
 		lblComplexidade.setBounds(30, 173, 113, 14);
@@ -61,37 +67,37 @@ public class MERCadApplet extends JApplet {
 		lblFunofunes.setBounds(30, 256, 113, 14);
 		panel.add(lblFunofunes);
 		
-		JCheckBox chckbxPapisComplementares = new JCheckBox("Pap\u00E9is Complementares");
-		chckbxPapisComplementares.setBounds(52, 290, 166, 23);
-		panel.add(chckbxPapisComplementares);
+		JCheckBox cbPapeisComplementares = new JCheckBox("Pap\u00E9is Complementares");
+		cbPapeisComplementares.setBounds(52, 290, 166, 23);
+		panel.add(cbPapeisComplementares);
 		
-		JCheckBox chckbxRestrioDeInformao = new JCheckBox("Restri\u00E7\u00E3o de Informa\u00E7\u00E3o");
-		chckbxRestrioDeInformao.setBounds(52, 328, 166, 23);
-		panel.add(chckbxRestrioDeInformao);
+		JCheckBox cbRestricaoDeInterpretacao = new JCheckBox("Restrição de Interpretação");
+		cbRestricaoDeInterpretacao.setBounds(52, 328, 166, 23);
+		panel.add(cbRestricaoDeInterpretacao);
 		
-		JCheckBox chckbxCompreensoMaisAprofundada = new JCheckBox("Compreens\u00E3o Mais Aprofundada");
-		chckbxCompreensoMaisAprofundada.setBounds(52, 366, 222, 23);
-		panel.add(chckbxCompreensoMaisAprofundada);
+		JCheckBox cbCompreensaoMaisAprofundada = new JCheckBox("Compreens\u00E3o Mais Aprofundada");
+		cbCompreensaoMaisAprofundada.setBounds(52, 366, 222, 23);
+		panel.add(cbCompreensaoMaisAprofundada);
 		
-		JCheckBox chckbxTexto = new JCheckBox("TEXTO");
-		chckbxTexto.setBounds(378, 78, 97, 23);
-		panel.add(chckbxTexto);
+		JCheckBox cbTexto = new JCheckBox("TEXTO");
+		cbTexto.setBounds(378, 78, 97, 23);
+		panel.add(cbTexto);
 		
-		JCheckBox chckbxGrfico = new JCheckBox("GR\u00C1FICO");
-		chckbxGrfico.setBounds(653, 131, 86, 23);
-		panel.add(chckbxGrfico);
+		JCheckBox cbGrafico = new JCheckBox("GR\u00C1FICO");
+		cbGrafico.setBounds(653, 131, 86, 23);
+		panel.add(cbGrafico);
 		
-		JCheckBox chckbxTabela = new JCheckBox("TABELA");
-		chckbxTabela.setBounds(653, 78, 86, 23);
-		panel.add(chckbxTabela);
+		JCheckBox cbTabela = new JCheckBox("TABELA");
+		cbTabela.setBounds(653, 78, 86, 23);
+		panel.add(cbTabela);
 		
-		JCheckBox chckbxImagem = new JCheckBox("IMAGEM");
-		chckbxImagem.setBounds(378, 131, 97, 23);
-		panel.add(chckbxImagem);
+		JCheckBox cbImagem = new JCheckBox("IMAGEM");
+		cbImagem.setBounds(378, 131, 97, 23);
+		panel.add(cbImagem);
 		
-		JCheckBox chckbxVdeo = new JCheckBox("V\u00CDDEO");
-		chckbxVdeo.setBounds(504, 131, 97, 23);
-		panel.add(chckbxVdeo);
+		JCheckBox cbVideo = new JCheckBox("V\u00CDDEO");
+		cbVideo.setBounds(504, 131, 97, 23);
+		panel.add(cbVideo);
 		
 		JLabel lblTipos = new JLabel("Tipo(s)");
 		lblTipos.setBounds(378, 48, 46, 14);
@@ -124,6 +130,37 @@ public class MERCadApplet extends JApplet {
 		panel.add(lblVisualizao);
 		
 		JButton btnSalvar = new JButton("Salvar MRE");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				MultipleExternalRepresentation mre = new MultipleExternalRepresentation();
+				
+				mre.setDescription(txtDescription.getText());
+				
+				if (rb1.isSelected())
+					mre.setComplexity(1);
+				if (rb2.isSelected())
+					mre.setComplexity(2);
+				if (rb3.isSelected())
+					mre.setComplexity(3);
+				if (rb4.isSelected())
+					mre.setComplexity(4);
+				if (rb5.isSelected())
+					mre.setComplexity(5);
+				
+				mre.setMerFunctions(new ArrayList<MERFunction>());
+				
+				if (cbPapeisComplementares.isSelected())
+					mre.getMerFunctions().add(new MERFunction(Constants.TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES, "Papéis Complementares"));
+				if (cbRestricaoDeInterpretacao.isSelected())
+					mre.getMerFunctions().add(new MERFunction(Constants.TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO, "Restrição de Interpretação"));
+				if (cbCompreensaoMaisAprofundada.isSelected())
+					mre.getMerFunctions().add(new MERFunction(Constants.TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA, "Compreensão Mais Aprofundada"));
+				
+				mre.setTypeMers(new ArrayList<TypeMER>());
+				
+			}
+		});
 		btnSalvar.setBounds(278, 465, 123, 23);
 		panel.add(btnSalvar);
 		

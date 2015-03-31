@@ -2,22 +2,22 @@ package util;
 
 public class Constants {
 
-	public static final int TIPO_ERRO_INTERPRETACAO_EQUIVOCADA = 1;
-	public static final int TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO = 2;
-	public static final int TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA = 3;
-	public static final int TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR = 4;
-	public static final int TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL = 5;
-	public static final int TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL = 6;
+	public static final Long TIPO_ERRO_INTERPRETACAO_EQUIVOCADA = 1L;
+	public static final Long TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_DOMINIO = 2L;
+	public static final Long TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_REGRA = 3L;
+	public static final Long TIPO_ERRO_DIRETAMENTE_IDENTIFICAVEL_DEFICIENCIA_ESCOLHA_OPERADOR = 4L;
+	public static final Long TIPO_ERRO_INDIRETAMENTE_IDENTIFICAVEL = 5L;
+	public static final Long TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL = 6L;
 	
-	public static final int TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES = 11;
-	public static final int TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO = 12;
-	public static final int TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA = 13;
+	public static final Long TIPO_FUNCAOMRE_PAPEIS_COMPLEMENTARES = 1L;
+	public static final Long TIPO_FUNCAOMRE_RESTRICAO_INTERPRETACAO = 2L;
+	public static final Long TIPO_FUNCAOMRE_COMPREENSAO_MAIS_APROFUNDADA = 3L;
 	
-	public static final int TIPO_MRE_TEXTO = 1;
-	public static final int TIPO_MRE_GRAFICO = 2;
-	public static final int TIPO_MRE_TABELA = 3;
-	public static final int TIPO_MRE_VIDEO = 4;
-	public static final int TIPO_MRE_IMAGEM = 5;
-	public static final int TIPO_MRE_EQUACAO = 6;
+	public static final Long TIPO_MRE_TEXTO = 1L;
+	public static final Long TIPO_MRE_IMAGEM = 2L;
+	public static final Long TIPO_MRE_EQUACAO = 3L;
+	public static final Long TIPO_MRE_VIDEO = 4L;
+	public static final Long TIPO_MRE_TABELA = 5L;
+	public static final Long TIPO_MRE_GRAFICO = 6L;
 	
 }

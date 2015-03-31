@@ -6,11 +6,11 @@ public class MultipleExternalRepresentation {
 
 	private int id;
 	
-	private String descricao;
+	private String description;
 	
 	private String [] tags;
 	
-	private String imageName;
+	private String path;
 	
 	private Integer complexity;
 	
@@ -18,10 +18,10 @@ public class MultipleExternalRepresentation {
 	
 	private ArrayList<TypeMER> typeMers;
 	
-	public MultipleExternalRepresentation(int id, String imageName, String descricao) {
+	public MultipleExternalRepresentation(int id, String path, String descricao) {
 		this.id = id;
-		this.setDescricao(descricao);
-		this.setImageName(imageName);
+		this.setDescription(descricao);
+		this.setPath(path);
 		
 	}
 
@@ -43,14 +43,14 @@ public class MultipleExternalRepresentation {
 
 
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 
 
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 
@@ -64,18 +64,6 @@ public class MultipleExternalRepresentation {
 	public void setTags(String [] tags) {
 		this.tags = tags;
 	}
-
-
-	public String getImageName() {
-		return imageName;
-	}
-
-
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-	}
-
 
 
 	public Integer getComplexity() {
@@ -110,6 +98,18 @@ public class MultipleExternalRepresentation {
 
 	public void setTypeMers(ArrayList<TypeMER> typeMers) {
 		this.typeMers = typeMers;
+	}
+
+
+
+	public String getPath() {
+		return path;
+	}
+
+
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	
