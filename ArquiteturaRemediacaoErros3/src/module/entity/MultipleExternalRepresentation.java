@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MultipleExternalRepresentation {
 
-	private int id;
+	private Long id;
 	
 	private String description;
 	
@@ -18,7 +18,7 @@ public class MultipleExternalRepresentation {
 	
 	private ArrayList<TypeMER> typeMers;
 	
-	public MultipleExternalRepresentation(int id, String path, String descricao) {
+	public MultipleExternalRepresentation(Long id, String path, String descricao) {
 		this.id = id;
 		this.setDescription(descricao);
 		this.setPath(path);
@@ -33,11 +33,11 @@ public class MultipleExternalRepresentation {
 
 
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

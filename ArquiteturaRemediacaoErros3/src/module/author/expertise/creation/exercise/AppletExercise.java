@@ -115,8 +115,8 @@ public class AppletExercise extends JApplet {
 	public AppletExercise() {
 		
 		try {
-			//setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
-			setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			//setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

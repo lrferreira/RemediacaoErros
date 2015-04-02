@@ -305,4 +305,43 @@ public class DBConnect {
 		return sets;
 
 	}
+	
+	public void save(MultipleExternalRepresentation mer){
+		String strDescription = null;
+		try {
+			this.stm = this.conn.createStatement();
+			if (mer.getDescription() == null)
+				strDescription = "null";
+			else
+				strDescription = mer.getDescription();
+			
+			if (mer.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM mer");
+				mer.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			}
+			
+			this.stm.executeUpdate("INSERT INTO mer VALUES (" +
+								mer.getId() + ", " +
+								strDescription + ", " +
+								mer.getComplexity() + "," +
+								mer.getPath() + ")");
+			
+			for (MERFunction mf: mer.getMerFunctions()){
+				this.stm.executeUpdate("INSERT INTO mer_merfunction VALUES (" +
+								mer.getId() + ", " +
+								mf.getId() + ")");
+			}
+			
+			for (TypeMER tm: mer.getTypeMers()){
+				this.stm.executeUpdate("INSERT INTO mer_type VALUES (" +
+								mer.getId() + ", " +
+								tm.getId() + ")");
+			}
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		
+	}
 }
