@@ -1,13 +1,22 @@
 package module.author.expertise.creation.mer;
 
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -48,6 +57,7 @@ public class MERCadApplet extends JApplet {
 	private JLabel lblTipos;
 	private ButtonGroup bg;
 	private DBConnect dbCon;
+	private JLabel lblImage;
 	
 	public MERCadApplet() {
 		getContentPane().setLayout(null);
@@ -162,12 +172,24 @@ public class MERCadApplet extends JApplet {
 			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser file = new JFileChooser(); 
 				file.setFileSelectionMode(JFileChooser.FILES_ONLY); 
-				int i= file.showSaveDialog(null); 
+				//file.addChoosableFileFilter(new FileNameExtensionFilter);
+				int i= file.showOpenDialog(MERCadApplet.this); 
 				if (i==1){ 
 					textField.setText(""); 
 					} else { 
 						File arquivo = file.getSelectedFile(); 
-						textField.setText(arquivo.getPath()); }
+						textField.setText(arquivo.getPath()); 
+						URL imageURL = null;
+						try {
+							imageURL = arquivo.toURI().toURL();
+						} catch (MalformedURLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						Image image = Toolkit.getDefaultToolkit().createImage(imageURL);
+						Image scaled = image.getScaledInstance(100, 150, Image.SCALE_SMOOTH);
+						lblImage.setIcon(new ImageIcon(scaled));
+					}
 
 				}
 		});
@@ -190,7 +212,7 @@ public class MERCadApplet extends JApplet {
 				MultipleExternalRepresentation mre = new MultipleExternalRepresentation();
 				
 				mre.setDescription("\"" + txtDescription.getText() + "\"");
-				mre.setPath("\"" + textField.getText() + "\"");
+				//mre.setPath("\"" + textField.getText() + "\"");
 				
 				if (rb1.isSelected())
 					mre.setComplexity(1);
@@ -227,6 +249,14 @@ public class MERCadApplet extends JApplet {
 				if (cbEquacao.isSelected())
 					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_EQUACAO, null));
 
+				try {
+					mre.setImage(renderByte(textField.getText()));
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
 				dbCon.save(mre);
 										
 			}
@@ -270,9 +300,33 @@ public class MERCadApplet extends JApplet {
 		separator_7.setBounds(749, 39, 20, 190);
 		panel.add(separator_7);
 		
-		JTextPane textPane_1 = new JTextPane();
-		textPane_1.setBounds(365, 262, 377, 184);
-		panel.add(textPane_1);
+		lblImage = new JLabel("");
+		lblImage.setBounds(365, 270, 385, 184);
+		panel.add(lblImage);
+		
+	}
+	
+	private byte[] renderByte(String file) throws FileNotFoundException, IOException {
+
+		File image = new File(file);
+        FileInputStream fis = new FileInputStream(image);
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+
+        try {
+            for (int readNum; (readNum = fis.read(buf)) != -1;)
+            {
+                bos.write(buf, 0, readNum);
+                //no doubt here is 0
+                /*Writes len bytes from the specified byte array starting at offset
+                off to this byte array output stream.*/
+                System.out.println("read " + readNum + " bytes,");
+            }
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return bos.toByteArray();
+
 	}
 
 	public DBConnect getDbCon() {

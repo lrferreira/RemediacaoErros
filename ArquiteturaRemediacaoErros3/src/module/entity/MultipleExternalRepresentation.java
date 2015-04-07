@@ -10,7 +10,7 @@ public class MultipleExternalRepresentation {
 	
 	private String [] tags;
 	
-	private String path;
+	private byte[] image;
 	
 	private Integer complexity;
 	
@@ -18,10 +18,12 @@ public class MultipleExternalRepresentation {
 	
 	private ArrayList<TypeMER> typeMers;
 	
-	public MultipleExternalRepresentation(Long id, String path, String descricao) {
+	public MultipleExternalRepresentation(Long id, byte[] image, String descricao, ArrayList<MERFunction> merFunctions, ArrayList<TypeMER> typeMers) {
 		this.id = id;
 		this.setDescription(descricao);
-		this.setPath(path);
+		this.setImage(image);
+		this.setMerFunctions(merFunctions);
+		this.setTypeMers(typeMers);
 		
 	}
 
@@ -101,15 +103,14 @@ public class MultipleExternalRepresentation {
 	}
 
 
-
-	public String getPath() {
-		return path;
+	public byte[] getImage() {
+		return image;
 	}
 
 
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 
 	

@@ -1,7 +1,10 @@
 package module.entity;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -320,11 +323,28 @@ public class DBConnect {
 				mer.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
 			}
 			
-			this.stm.executeUpdate("INSERT INTO mer VALUES (" +
-								mer.getId() + ", " +
-								strDescription + ", " +
-								mer.getComplexity() + "," +
-								mer.getPath() + ")");
+			//this.stm.executeUpdate("INSERT INTO mer VALUES (" +
+				//				mer.getId() + ", " +
+					//			strDescription + ", " +
+						//		mer.getComplexity() + "," +
+							//	mer.getImage() + ")");
+			
+			PreparedStatement prepStmt = null;
+			try{
+	            prepStmt= conn.prepareStatement("insert into mer VALUES (?,?,?,?)");
+	            prepStmt.setLong(1, mer.getId());
+	            prepStmt.setString(2, strDescription);
+	            prepStmt.setLong(3, mer.getComplexity());
+	            prepStmt.setBytes(4, mer.getImage());
+	            prepStmt.executeUpdate();
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
 			
 			for (MERFunction mf: mer.getMerFunctions()){
 				this.stm.executeUpdate("INSERT INTO mer_merfunction VALUES (" +
@@ -344,4 +364,46 @@ public class DBConnect {
 			}
 		
 	}
+	
+	private MultipleExternalRepresentation getMER(Long id){
+	        MultipleExternalRepresentation mer = null;
+	        
+	        Statement stmt=null;
+	        try{
+	            stmt=conn.createStatement();
+	            ResultSet rs=stmt.executeQuery("select * from mer where id="+id);
+	            if(rs.next()){
+	            	mer = new MultipleExternalRepresentation();
+	                byte[] imgArr=rs.getBytes("image");
+	                //img=Toolkit.getDefaultToolkit().createImage(imgArr);
+	                mer.setId(rs.getLong("id"));
+	                mer.setComplexity(rs.getInt("complexity"));
+	                mer.setDescription(rs.getString("description"));
+	                mer.setMerFunctions(new ArrayList<MERFunction>());
+	                mer.setTypeMers(new ArrayList<TypeMER>());
+	            }
+	            rs.close();
+	            
+	            stmt=conn.createStatement();
+	            rs=stmt.executeQuery("SELECT * FROM mer_merfunction join merfunction on id_merfunction = id where id_mer ="+id);
+	            while(rs.next()){
+	            	mer.getMerFunctions().add(new MERFunction(rs.getLong("id"), rs.getString("description")));
+	            }
+	            rs.close();
+	            
+	            stmt=conn.createStatement();
+	            rs=stmt.executeQuery("SELECT * FROM mer_type join type on id_type = id where id_mer ="+id);
+	            while(rs.next()){
+	            	mer.getTypeMers().add(new TypeMER(rs.getLong("id"), rs.getString("description")));
+	            }
+	            rs.close();
+	            
+	        }catch(Exception e){
+	            e.printStackTrace();
+
+	        }
+	        
+	        return mer;
+	}
+	
 }
