@@ -177,18 +177,7 @@ public class MERCadApplet extends JApplet {
 				if (i==1){ 
 					textField.setText(""); 
 					} else { 
-						File arquivo = file.getSelectedFile(); 
-						textField.setText(arquivo.getPath()); 
-						URL imageURL = null;
-						try {
-							imageURL = arquivo.toURI().toURL();
-						} catch (MalformedURLException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						Image image = Toolkit.getDefaultToolkit().createImage(imageURL);
-						Image scaled = image.getScaledInstance(100, 150, Image.SCALE_SMOOTH);
-						lblImage.setIcon(new ImageIcon(scaled));
+						renderImage(file);
 					}
 
 				}
@@ -327,6 +316,21 @@ public class MERCadApplet extends JApplet {
         }
         return bos.toByteArray();
 
+	}
+	
+	private void renderImage(JFileChooser file){
+		File arquivo = file.getSelectedFile(); 
+		textField.setText(arquivo.getPath()); 
+		URL imageURL = null;
+		try {
+			imageURL = arquivo.toURI().toURL();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Image image = Toolkit.getDefaultToolkit().createImage(imageURL);
+		//Image scaled = image.getScaledInstance(100, 150, Image.SCALE_SMOOTH);
+		lblImage.setIcon(new ImageIcon(image));
 	}
 
 	public DBConnect getDbCon() {
