@@ -365,7 +365,7 @@ public class DBConnect {
 		
 	}
 	
-	private MultipleExternalRepresentation getMER(Long id){
+	public MultipleExternalRepresentation getMER(Long id){
 	        MultipleExternalRepresentation mer = null;
 	        
 	        Statement stmt=null;
@@ -374,7 +374,7 @@ public class DBConnect {
 	            ResultSet rs=stmt.executeQuery("select * from mer where id="+id);
 	            if(rs.next()){
 	            	mer = new MultipleExternalRepresentation();
-	                byte[] imgArr=rs.getBytes("image");
+	                mer.setImage(rs.getBytes("image"));
 	                //img=Toolkit.getDefaultToolkit().createImage(imgArr);
 	                mer.setId(rs.getLong("id"));
 	                mer.setComplexity(rs.getInt("complexity"));
@@ -404,6 +404,25 @@ public class DBConnect {
 	        }
 	        
 	        return mer;
+	}
+	
+	public ArrayList<MultipleExternalRepresentation> getMers(){
+		ArrayList<MultipleExternalRepresentation> mers = new ArrayList<MultipleExternalRepresentation>();
+		Statement stmt=null;
+
+        try {
+			stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select id from mer");
+			while(rs.next()){
+				mers.add(getMER(rs.getLong("id")));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return mers;
 	}
 	
 }

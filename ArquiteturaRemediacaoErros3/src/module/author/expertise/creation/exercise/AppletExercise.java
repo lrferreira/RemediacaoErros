@@ -37,6 +37,7 @@ import module.author.expertise.creation.sorters.entity.SubErrorType;
 import module.entity.CorrectAnswer;
 import module.entity.DBConnect;
 import module.entity.Goal;
+import module.entity.MultipleExternalRepresentation;
 import module.entity.Path;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -100,7 +101,7 @@ public class AppletExercise extends JApplet {
 	private JLabel lblMerFunction;
 	private JLabel lblExercicio;
 	private JButton button;
-	private JComboBox comboBox_5;
+	private JComboBox cmbMre;
 	private JLabel label_18;
 	private JLabel lblEspecificarResposta;
 	
@@ -109,8 +110,18 @@ public class AppletExercise extends JApplet {
 	
 	Sorter sorter;
 	ItemSorter itemSorter;
+	ErrorType errorType;
+	SubErrorType subErrorType;
 	private JLabel lblRemediacao;
 	private JTextArea textAreaErroRelatado;
+	private MultipleExternalRepresentation mer;
+	
+	private HashMap mapCmbSorter = new HashMap();
+	private HashMap mapCmbErrorType = new HashMap();
+	private HashMap mapCmbSubErrorType = new HashMap();
+	private HashMap mapCmbMer = new HashMap();
+	private JLabel lblMer;
+	
 	
 	public AppletExercise() {
 		
@@ -446,11 +457,17 @@ public class AppletExercise extends JApplet {
 				                cmbSorter.setBounds(190, 209, 272, 20);
 				                panel_remed.add(cmbSorter);
 				                
+
+				                cmbMre = new JComboBox();
+				                cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMers())));
+				                cmbMre.setBounds(540, 67, 331, 20);
+				                panel_remed.add(cmbMre);
+				                
 				                cmbSorter.addItemListener(new ItemListener() {
 				        			@Override
 				        			public void itemStateChanged(ItemEvent arg0) {
-				        				Sorter sorter = dbCon.getSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")));
-				        				
+				        				//Sorter sorter = dbCon.getSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				sorter = dbCon.getSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()));
 				        				cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(sorter.getId()))));
 				        
 				        				}
@@ -459,14 +476,17 @@ public class AppletExercise extends JApplet {
 				                cmbErrorType.addItemListener(new ItemListener() {
 				        			@Override
 				        			public void itemStateChanged(ItemEvent arg0) {
-				        				ErrorType errorType = dbCon.getErrorType(Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
-				        				
+				        				//errorType = dbCon.getErrorType(Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				errorType = dbCon.getErrorType((Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()));
 				        				cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
 				        
 				        				if (cmbSubErrorType.getItemCount() == 1) {
-				        					itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
-    												Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
-    												null);
+				        					//itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
+    											//	Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
+    												//null);
+				        					itemSorter = dbCon.getItemSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()),
+				        										(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()),
+				        							null);
 				        					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
 				        					lblRemediacao.setText(itemSorter.getRemediation());
 				        				}
@@ -476,12 +496,27 @@ public class AppletExercise extends JApplet {
 				                cmbSubErrorType.addItemListener(new ItemListener() {
 				        			@Override
 				        			public void itemStateChanged(ItemEvent arg0) {
-				        				itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
-				        												Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
-				        												Long.valueOf(cmbSubErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				//itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
+				        					//							Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
+				        						//						Long.valueOf(cmbSubErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
+				        				itemSorter = dbCon.getItemSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()), 
+				        												(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()), 
+				        												(Long)mapCmbSubErrorType.get(cmbSubErrorType.getSelectedIndex()));
 				        				lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
 				        				//cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
 				        				lblRemediacao.setText(itemSorter.getRemediation());
+				        				}
+				        	    });
+				                
+				                cmbMre.addItemListener(new ItemListener() {
+				        			@Override
+				        			public void itemStateChanged(ItemEvent arg0) {
+				        				
+				        				//setMer(dbCon.getMER(Long.valueOf(cmbMre.getSelectedItem().toString().replaceAll("\\D+",""))));
+				        				setMer(dbCon.getMER((Long)mapCmbMer.get(cmbMre.getSelectedIndex())));
+				        				if (mer != null)
+				        					getMer().renderImage(lblMer);
+				        				
 				        				}
 				        	    });
 				                
@@ -505,9 +540,6 @@ public class AppletExercise extends JApplet {
 				                button.setBounds(692, 540, 179, 23);
 				                panel_remed.add(button);
 				                
-				                comboBox_5 = new JComboBox();
-				                comboBox_5.setBounds(540, 67, 331, 20);
-				                panel_remed.add(comboBox_5);
 				                
 				                label_18 = new JLabel("Visualiza\u00E7\u00E3o");
 				                label_18.setBounds(540, 110, 95, 14);
@@ -537,6 +569,10 @@ public class AppletExercise extends JApplet {
 				                lblRemediacao = new JLabel("");
 				                lblRemediacao.setBounds(10, 551, 452, 43);
 				                panel_remed.add(lblRemediacao);
+				                
+				                lblMer = new JLabel("");
+				                lblMer.setBounds(540, 135, 354, 321);
+				                panel_remed.add(lblMer);
         
         createComponentMap();
         
@@ -550,6 +586,7 @@ public class AppletExercise extends JApplet {
          model[0] = "-";
          for (int i = 1; i < sorters.size() + 1; i++){
          	model[i] = "" + sorters.get(i-1).getId() + "-" + sorters.get(i-1).getDescription();
+         	mapCmbSorter.put(i, sorters.get(i-1).getId());
          }
          return model;
 		
@@ -561,6 +598,7 @@ public class AppletExercise extends JApplet {
          model[0] = "-";
          for (int i = 1; i < errorTypes.size() + 1; i++){
          	model[i] = "" + errorTypes.get(i-1).getId() + "-" + errorTypes.get(i-1).getDescription();
+         	mapCmbErrorType.put(i, errorTypes.get(i-1).getId());
          }
          return model;
 	}
@@ -571,6 +609,18 @@ public class AppletExercise extends JApplet {
         model[0] = "-";
         for (int i = 1; i < subErrorTypes.size() + 1; i++){
         	model[i] = "" + subErrorTypes.get(i-1).getId() + "-" + subErrorTypes.get(i-1).getDescription();
+        	mapCmbSubErrorType.put(i, subErrorTypes.get(i-1).getId());
+        }
+        return model;
+	}
+	
+	private String[] putMerOnForm(ArrayList<MultipleExternalRepresentation> mers) {
+		  
+        String[] model = new String[mers.size() + 1];
+        model[0] = "-";
+        for (int i = 1; i < mers.size() + 1; i++){
+        	model[i] = "" + mers.get(i-1).getId() + "-" + mers.get(i-1).getDescription();
+        	mapCmbMer.put(i, mers.get(i-1).getId());
         }
         return model;
 	}
@@ -1031,5 +1081,15 @@ public Component getComponentByName(String name) {
 
 	public void setDbCon(DBConnect dbCon) {
 		this.dbCon = dbCon;
+	}
+
+
+	public MultipleExternalRepresentation getMer() {
+		return mer;
+	}
+
+
+	public void setMer(MultipleExternalRepresentation mer) {
+		this.mer = mer;
 	}
 }

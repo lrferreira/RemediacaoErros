@@ -1,6 +1,12 @@
 package module.entity;
 
+import java.awt.Image;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class MultipleExternalRepresentation {
 
@@ -111,6 +117,17 @@ public class MultipleExternalRepresentation {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+
+
+	public void renderImage(JLabel lbl) {
+		if (image != null) {
+			InputStream is = new ByteArrayInputStream(image);  
+			Image img = new ImageIcon(image).getImage(); 
+			lbl.setIcon(new ImageIcon(img));
+		}
+		
 	}
 
 	
