@@ -8,17 +8,30 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JComponent;
+
+import module.entity.Action;
+import module.entity.CorrectAnswer;
 import module.entity.Goal;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
-import module.entity.Remediation;
 import module.entity.RuleInformation;
 import module.entity.WrongAnswer;
 import util.Constants;
 import util.StringConstants;
 
-public class RulesFactory {
+public class CopyOfRulesFactory {
 	
+	/*
+	public static void createRules(Goal goal){
+		String filePath = new File("").getAbsolutePath();
+        System.out.println (filePath);
+        filePath = filePath.replace("\\bin", "\\src");
+        //filePath = filePath + "\\src"; 
+		editFileRule(filePath+StringConstants.FILE_GOALS_KB, ruleGoal(goal));
+		
+	}
+	*/
 	public static void createRules(Goal goal){
 		String filePath = new File("").getAbsolutePath();
         System.out.println (filePath);
@@ -27,12 +40,14 @@ public class RulesFactory {
 		
 	}
 	
-	public static void createRules(Remediation remediation) {
+	public static void createRules(Goal goal, WrongAnswer wrongAnswer, MERFunction merFunction, 
+								MultipleExternalRepresentation mer, Integer attempts) {
 
 		String filePath = new File("").getAbsolutePath();
         System.out.println (filePath);
         filePath = filePath.replace("\\bin", "\\src");
-            
+        //filePath = filePath + "\\src";         
+        
 		// create rule for Expressions Identifier
 
 		editFileRule(filePath+StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB, ruleWrongAnswer(goal, wrongAnswer, attempts));

@@ -11,6 +11,8 @@ public class Remediation {
 	private ItemSorter itemSorter;
 		
 	private MultipleExternalRepresentation mer;
+	
+	private Criterion criterion;
 
 	
 	
@@ -44,6 +46,14 @@ public class Remediation {
 
 	public void setItemSorter(ItemSorter itemSorter) {
 		this.itemSorter = itemSorter;
+	}
+
+	public Criterion getCriterion() {
+		return criterion;
+	}
+
+	public void setCriterion(Criterion criterion) {
+		this.criterion = criterion;
 	}
 	
 	

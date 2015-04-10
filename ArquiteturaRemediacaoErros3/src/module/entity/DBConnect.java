@@ -254,7 +254,21 @@ public class DBConnect {
 		}
 		return mf;
 	}
-	
+
+	public Criterion getCriterion(Long id_criterion){
+		Criterion c = null;
+		ResultSet rs;
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("select * from criterion WHERE id = " + id_criterion);
+			if (rs.next()){
+				c = new Criterion(rs.getLong("id"), rs.getString("description"));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return c;
+	}
 	public ItemSorter getItemSorter(Long id_sorter, Long id_errortype, Long id_suberrortype){
 		ItemSorter is = null;
 		ResultSet rs;
@@ -424,5 +438,21 @@ public class DBConnect {
         
         return mers;
 	}
-	
+
+	public ArrayList<Criterion> getCriterions(){
+		ArrayList<Criterion> criterions = new ArrayList<Criterion>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from criterion");
+			if (rs.next()){
+				criterions.add(new Criterion(rs.getLong("id"), rs.getString("description")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return criterions;
+	}
+
 }

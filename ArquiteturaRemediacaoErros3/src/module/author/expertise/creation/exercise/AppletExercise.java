@@ -35,6 +35,7 @@ import module.author.expertise.creation.sorters.entity.ItemSorter;
 import module.author.expertise.creation.sorters.entity.Sorter;
 import module.author.expertise.creation.sorters.entity.SubErrorType;
 import module.entity.CorrectAnswer;
+import module.entity.Criterion;
 import module.entity.DBConnect;
 import module.entity.Goal;
 import module.entity.MultipleExternalRepresentation;
@@ -88,7 +89,7 @@ public class AppletExercise extends JApplet {
 	private JLabel label_5;
 	private JLabel label_6;
 	private Component label_7;
-	private JComboBox comboBox_2;
+	private JComboBox cmbCriterion;
 	private JLabel label_8;
 	private Component label_9;
 	private Component label_10;
@@ -115,11 +116,13 @@ public class AppletExercise extends JApplet {
 	private JLabel lblRemediacao;
 	private JTextArea textAreaErroRelatado;
 	private MultipleExternalRepresentation mer;
+	private Criterion criterion;
 	
 	private HashMap mapCmbSorter = new HashMap();
 	private HashMap mapCmbErrorType = new HashMap();
 	private HashMap mapCmbSubErrorType = new HashMap();
 	private HashMap mapCmbMer = new HashMap();
+	private HashMap mapCmbCriterion = new HashMap();
 	private JLabel lblMer;
 	
 	
@@ -382,7 +385,7 @@ public class AppletExercise extends JApplet {
 				                panel_remed.setLayout(null);
 				                
 				                cmbWrongAnswer = new JComboBox();
-				                cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta espec\u00EDfica", "Estudante cometeu um erro (n\u00E3o importa a resposta)"}));
+				                cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta específica", "Estudante cometeu um erro (não importa a resposta)", "Estudante NÃO informou resposta específica"}));
 				                cmbWrongAnswer.setToolTipText("");
 				                cmbWrongAnswer.setBounds(10, 271, 272, 20);
 				                panel_remed.add(cmbWrongAnswer);
@@ -414,18 +417,18 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(label_5);
 				                
 				                label_6 = new JLabel("Especificar MRE:");
-				                label_6.setBounds(540, 48, 146, 14);
+				                label_6.setBounds(540, 90, 146, 14);
 				                panel_remed.add(label_6);
 				                
 				                label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
 				                label_7.setBounds(540, 12, 146, 14);
 				                panel_remed.add(label_7);
 				                
-				                comboBox_2 = new JComboBox();
-				                comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"MER espec\u00EDfica para o erro", "Persist\u00EAncia no erro", "Alternar entre MRES", "Complexidade", "Sucessos anteriores com a MRE"}));
-				                comboBox_2.setSelectedIndex(1);
-				                comboBox_2.setBounds(761, 10, 221, 20);
-				                panel_remed.add(comboBox_2);
+				                cmbCriterion = new JComboBox();
+				                cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
+				                cmbCriterion.setSelectedIndex(1);
+				                cmbCriterion.setBounds(696, 10, 286, 20);
+				                panel_remed.add(cmbCriterion);
 				                
 				                label_8 = new JLabel("Classifique o Tipo de Erro como");
 				                label_8.setBounds(10, 340, 179, 14);
@@ -460,7 +463,7 @@ public class AppletExercise extends JApplet {
 
 				                cmbMre = new JComboBox();
 				                cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMers())));
-				                cmbMre.setBounds(540, 67, 331, 20);
+				                cmbMre.setBounds(540, 109, 331, 20);
 				                panel_remed.add(cmbMre);
 				                
 				                cmbSorter.addItemListener(new ItemListener() {
@@ -519,7 +522,14 @@ public class AppletExercise extends JApplet {
 				        				
 				        				}
 				        	    });
-				                
+
+				                cmbCriterion.addItemListener(new ItemListener() {
+				        			@Override
+				        			public void itemStateChanged(ItemEvent arg0) {
+
+				        				setCriterion(dbCon.getCriterion((Long)mapCmbCriterion.get(cmbCriterion.getSelectedIndex())));				        				
+				        				}
+				        	    });
 				                lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
 				                lblMeta.setBounds(10, 98, 392, 14);
 				                panel_remed.add(lblMeta);
@@ -537,12 +547,17 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(lblExercicio);
 				                
 				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
+				                button.addActionListener(new ActionListener() {
+				                	public void actionPerformed(ActionEvent arg0) {
+				                		
+				                	}
+				                });
 				                button.setBounds(692, 540, 179, 23);
 				                panel_remed.add(button);
 				                
 				                
 				                label_18 = new JLabel("Visualiza\u00E7\u00E3o");
-				                label_18.setBounds(540, 110, 95, 14);
+				                label_18.setBounds(540, 152, 95, 14);
 				                panel_remed.add(label_18);
 				                
 				                lblEspecificarResposta = new JLabel("Especificar resposta");
@@ -571,7 +586,7 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(lblRemediacao);
 				                
 				                lblMer = new JLabel("");
-				                lblMer.setBounds(540, 135, 354, 321);
+				                lblMer.setBounds(540, 177, 354, 321);
 				                panel_remed.add(lblMer);
         
         createComponentMap();
@@ -589,6 +604,19 @@ public class AppletExercise extends JApplet {
          	mapCmbSorter.put(i, sorters.get(i-1).getId());
          }
          return model;
+		
+	}
+	
+	private String[] putCriterionOnForm() {
+		 
+		 ArrayList<Criterion> criterions = dbCon.getCriterions(); 
+        String[] model = new String[criterions.size() + 1];
+        model[0] = "-";
+        for (int i = 1; i < criterions.size() + 1; i++){
+        	model[i] = "" + criterions.get(i-1).getId() + "-" + criterions.get(i-1).getDescription();
+        	mapCmbCriterion.put(i, criterions.get(i-1).getId());
+        }
+        return model;
 		
 	}
 	
@@ -1092,4 +1120,101 @@ public Component getComponentByName(String name) {
 	public void setMer(MultipleExternalRepresentation mer) {
 		this.mer = mer;
 	}
+
+
+	public HashMap getMapCmbCriterion() {
+		return mapCmbCriterion;
+	}
+
+
+	public void setMapCmbCriterion(HashMap mapCmbCriterion) {
+		this.mapCmbCriterion = mapCmbCriterion;
+	}
+
+
+	public Criterion getCriterion() {
+		return criterion;
+	}
+
+
+	public void setCriterion(Criterion criterion) {
+		this.criterion = criterion;
+	}
 }
+
+/*
+ * Oliveira 2011 p. 48 (critérios para remediação)
+• Números de vezes que o alunos cometeu o mesmo erro (Leite: Persistência no erro);
+• Ordem das MREs baseado na sequˆencias dos tipos de erros identificados;
+• Alternar a MRE para mesmo tipo de erro em situa¸c˜oes distintas que o aluno n˜ao
+teve sucesso na intera¸c˜ao passada (Leite: Alternar entre MRES);
+• Manter a MRE para o mesmo tipo de erro em situa¸c˜oes distintas que o aluno teve
+sucesso na intera¸c˜ao passada (Leite: Sucessos anteriores com a MRE).
+
+Outros:
+MER específica para o erro
+Complexidade
+NÃO UTILIZAR POR ENQUANTO: alternar entre tipos de MREs
+
+
+p. 50
+• Caso o tipo de erro cometido seja X use a a MRE ”Gr´afico 1”;
+• Sempre usar o ”Equa¸c˜ao 1” como primeira remedia¸c˜ao do Tipo de Erro Y;
+• Caso o tipo de erro seja Y n˜ao use a MRE ”Gr´afico 1”;
+• Caso o (tipo de erro seja X) cometido (3 vezes) use a MRE ”V´ıdeo 1”;
+• Se (Erro j´a foi cometido) e (houve sucesso ap´os a remedia¸c˜ao) use a mesma MRE
+utilizada;
+• Se (Erro j´a foi cometido) e (houve falha ap´os a remedia¸c˜ao) use uma MRE diferente da
+utilizada;
+
+p. 51
+Para o uso das regras de produ¸c˜ao sobre MREs baseado no estudo realizado, foram
+desenvolvidos alguns parˆametros que devem ser seguidos no momento da defini¸c˜ao da
+cria¸c˜ao das regras de produ¸c˜ao sobre MREs, s˜ao estas:
+• Fun¸c˜ao que exerce a MRE
+• Complexidade que exerce a MRE
+• N´ıvel de compatibilidade da MRE sobre v´arias situa¸c˜oes (MREs Gerais ou MREs
+Espec´ıficas) EX: Tabela,Figura
+
+p. 53
+• Complexidade que exerce a MRE
+Condi¸c˜ao Se (TipoDeErro == Sub-Generaliza¸c˜ao E
+QuantidadeDeVezes == 0 )
+A¸c˜ao Ent˜ao MostraMREsNivel( 0 )
+Tabela 4.5: Regra 1 Complexidade
+Condi¸c˜ao Se (TipoDeErro == Sub-Generaliza¸c˜ao E
+QuantidadeDeVezes == 1 )
+A¸c˜ao Ent˜ao MostraMREsNivel( 1 )
+Tabela 4.6: Regra 2 Complexidade
+Condi¸c˜ao Se (TipoDeErro == Sub-Generaliza¸c˜ao E
+QuantidadeDeVezes > N )
+A¸c˜ao Ent˜ao AlternarEntreFun¸c˜aoMRE()
+Tabela 4.7: Regra 3 Complexidade
+
+p. 54
+4.2.6.3 N´ıvel de Compatibilidade da MRE sobre V´arias Situa-
+¸c˜oes
+Baseia-se na de escolha de MRE para remedia¸c˜ao conforme sua compatibilidade em diversas
+situa¸c˜oes e seu poder de reutiliza¸c˜ao. Por exemplo considere uma MRE no formato
+de uma figura que apresenta a fun¸c˜ao de restri¸c˜ao de compreens˜ao em um contexto do
+sistema. Necessariamente, isso n˜ao quer dizer que ela pode ser utilizada em exerc´ıcios diferentes
+mesmo que estejam no mesmo objeto de aprendizagem. Pois ela pode apresentar
+fun¸c˜oes diferentes ou nem tratar do assunto abordado pelo exerc´ıcio.
+Contudo uma MRE que ´e uma tabela, que por exemplo, apresenta um formato mais
+gen´erico de representa¸c˜ao dos dados, poderia ser utilizada de forma coerente em outras
+partes do sistema e at´e em exerc´ıcios diferentes. A seguir ´e dado um exemplo de regras
+sobre MRE baseado no seu n´ıvel de compatibilidade.
+O exemplo da regra1 ilustra uma regra utilizada em uma situa¸c˜ao espec´ıfica, sendo a
+mesma utilizada apenas nessa situa¸c˜ao e contexto.
+Condi¸c˜ao Se (TipoDeErro == Sub-Generaliza¸c˜ao E Situa
+¸c˜ao == X )
+A¸c˜ao Ent˜ao MostraMREsEspecificaSitua¸c˜ao( X )
+Tabela 4.8: Regra 1 Situa¸c˜ao
+
+p. 56
+Foram adotados apenas 4 premissas para o modelo de MRE para tentar n˜ao remover a
+liberdade de cria¸c˜ao das MREs, e mesmo assim padronizar o necess´ario para que o m´odulo
+de controle possa analisar as MREs e poder fazer a sua apresenta¸c˜ao quando necess´aria
+na remedia¸c˜ao de algum erro que foi previamente classificado pelo classificador de erros.
+ * */
+ 
