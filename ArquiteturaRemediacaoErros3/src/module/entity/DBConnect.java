@@ -444,7 +444,7 @@ public class DBConnect {
 		try {
 			this.stm = this.conn.createStatement();
 			ResultSet rs = this.stm.executeQuery("select * from criterion");
-			if (rs.next()){
+			while (rs.next()){
 				criterions.add(new Criterion(rs.getLong("id"), rs.getString("description")));
 			}
 				
