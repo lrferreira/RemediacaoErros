@@ -29,17 +29,20 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import util.StringConstants;
 import module.author.expertise.creation.exercise.graph.State;
 import module.author.expertise.creation.sorters.entity.ErrorType;
 import module.author.expertise.creation.sorters.entity.ItemSorter;
 import module.author.expertise.creation.sorters.entity.Sorter;
 import module.author.expertise.creation.sorters.entity.SubErrorType;
+import module.creation.rules.RulesFactory;
 import module.entity.CorrectAnswer;
 import module.entity.Criterion;
 import module.entity.DBConnect;
 import module.entity.Goal;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.Path;
+import module.entity.Remediation;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
@@ -124,6 +127,8 @@ public class AppletExercise extends JApplet {
 	private HashMap mapCmbMer = new HashMap();
 	private HashMap mapCmbCriterion = new HashMap();
 	private JLabel lblMer;
+	private JLabel lblApsNmeroDe;
+	private JTextField txtTentativas;
 	
 	
 	public AppletExercise() {
@@ -321,6 +326,18 @@ public class AppletExercise extends JApplet {
 				graphComponent.getGraphControl().setBorder(new LineBorder(new Color(0, 1, 0), 4));
 				graphComponent.setPreferredSize(new Dimension(670, 380));
 				
+				JButton btnNewButton = new JButton("Salvar Metas");
+				btnNewButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						for (Goal g : path.getGoals()) {
+							RulesFactory.createRules(g);
+						}
+						RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB);
+					}
+				});
+				btnNewButton.setBounds(373, 555, 89, 23);
+				panel_exerc.add(btnNewButton);
+				
 				
 
 /*				
@@ -391,36 +408,42 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(cmbWrongAnswer);
 				                
 				                lblCaminho = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
+				                lblCaminho.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblCaminho.setBounds(10, 73, 179, 14);
 				                panel_remed.add(lblCaminho);
 				                
 				                label_2 = new JLabel("ADICIONAR REMEDIA\u00C7\u00C3O DE ERRO");
-				                label_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+				                label_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 				                label_2.setBounds(10, 10, 272, 14);
 				                panel_remed.add(label_2);
 				                
 				                label_3 = new JLabel("Se");
+				                label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_3.setBounds(10, 246, 46, 14);
 				                panel_remed.add(label_3);
 				                
 				                label_4 = new JLabel("Ent\u00E3o");
+				                label_4.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_4.setBounds(10, 312, 46, 14);
 				                panel_remed.add(label_4);
 				                
 				                cmbErrorType = new JComboBox();
 				                cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
-				                cmbErrorType.setBounds(190, 337, 272, 20);
+				                cmbErrorType.setBounds(10, 337, 452, 20);
 				                panel_remed.add(cmbErrorType);
 				                
 				                label_5 = new JLabel("E");
+				                label_5.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_5.setBounds(10, 442, 46, 14);
 				                panel_remed.add(label_5);
 				                
 				                label_6 = new JLabel("Especificar MRE:");
+				                label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_6.setBounds(540, 90, 146, 14);
 				                panel_remed.add(label_6);
 				                
 				                label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
+				                label_7.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_7.setBounds(540, 12, 146, 14);
 				                panel_remed.add(label_7);
 				                
@@ -431,27 +454,32 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(cmbCriterion);
 				                
 				                label_8 = new JLabel("Classifique o Tipo de Erro como");
-				                label_8.setBounds(10, 340, 179, 14);
+				                label_8.setFont(new Font("Tahoma", Font.BOLD, 11));
+				                label_8.setBounds(66, 312, 179, 14);
 				                panel_remed.add(label_8);
 				                
 				                label_9 = new JLabel("Com este tipo de erro");
-				                label_9.setBounds(10, 470, 179, 14);
+				                label_9.setFont(new Font("Tahoma", Font.BOLD, 11));
+				                label_9.setBounds(66, 442, 179, 14);
 				                panel_remed.add(label_9);
 				                
 				                label_10 = new JLabel("E");
+				                label_10.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_10.setBounds(10, 376, 46, 14);
 				                panel_remed.add(label_10);
 				                
 				                label_11 = new JLabel("Classifique o Subtipo de Erro como");
-				                label_11.setBounds(10, 401, 179, 14);
+				                label_11.setFont(new Font("Tahoma", Font.BOLD, 11));
+				                label_11.setBounds(66, 376, 348, 14);
 				                panel_remed.add(label_11);
 				                
 				                cmbSubErrorType = new JComboBox();
 				                cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
-				                cmbSubErrorType.setBounds(190, 398, 272, 20);
+				                cmbSubErrorType.setBounds(10, 398, 452, 20);
 				                panel_remed.add(cmbSubErrorType);
 				                
 				                label_12 = new JLabel("Classificador de Erro:");
+				                label_12.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_12.setBounds(10, 212, 146, 14);
 				                panel_remed.add(label_12);
 				                
@@ -531,11 +559,13 @@ public class AppletExercise extends JApplet {
 				        				}
 				        	    });
 				                lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
+				                lblMeta.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblMeta.setBounds(10, 98, 392, 14);
 				                panel_remed.add(lblMeta);
 				                
 				                label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
-				                label_15.setBounds(10, 484, 179, 14);
+				                label_15.setFont(new Font("Tahoma", Font.BOLD, 11));
+				                label_15.setBounds(66, 459, 179, 14);
 				                panel_remed.add(label_15);
 				                
 				                lblMerFunction = new JLabel("");
@@ -543,13 +573,15 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(lblMerFunction);
 				                
 				                lblExercicio = new JLabel("EXERC\u00CDCIO: 1");
+				                lblExercicio.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblExercicio.setBounds(10, 48, 112, 14);
 				                panel_remed.add(lblExercicio);
 				                
 				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
 				                button.addActionListener(new ActionListener() {
 				                	public void actionPerformed(ActionEvent arg0) {
-				                		
+				                		Remediation remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText());
+				                		RulesFactory.createRules(remediation, mer);
 				                	}
 				                });
 				                button.setBounds(692, 540, 179, 23);
@@ -557,10 +589,12 @@ public class AppletExercise extends JApplet {
 				                
 				                
 				                label_18 = new JLabel("Visualiza\u00E7\u00E3o");
+				                label_18.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                label_18.setBounds(540, 152, 95, 14);
 				                panel_remed.add(label_18);
 				                
 				                lblEspecificarResposta = new JLabel("Especificar resposta");
+				                lblEspecificarResposta.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblEspecificarResposta.setBounds(316, 243, 146, 20);
 				                panel_remed.add(lblEspecificarResposta);
 				                
@@ -570,6 +604,7 @@ public class AppletExercise extends JApplet {
 				                txtWrongAnswer.setColumns(10);
 				                
 				                JLabel lblErroRelatado = new JLabel("Erro relatado:");
+				                lblErroRelatado.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblErroRelatado.setBounds(10, 123, 95, 14);
 				                panel_remed.add(lblErroRelatado);
 				                
@@ -578,6 +613,7 @@ public class AppletExercise extends JApplet {
 				                panel_remed.add(textAreaErroRelatado);
 				                
 				                JLabel lblRemediao = new JLabel("Remediação esperada");
+				                lblRemediao.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblRemediao.setBounds(10, 526, 132, 14);
 				                panel_remed.add(lblRemediao);
 				                
@@ -588,6 +624,16 @@ public class AppletExercise extends JApplet {
 				                lblMer = new JLabel("");
 				                lblMer.setBounds(540, 177, 354, 321);
 				                panel_remed.add(lblMer);
+				                
+				                lblApsNmeroDe = new JLabel("Após número de tentativas:");
+				                lblApsNmeroDe.setFont(new Font("Tahoma", Font.BOLD, 11));
+				                lblApsNmeroDe.setBounds(540, 48, 179, 14);
+				                panel_remed.add(lblApsNmeroDe);
+				                
+				                txtTentativas = new JTextField();
+				                txtTentativas.setBounds(729, 45, 86, 20);
+				                panel_remed.add(txtTentativas);
+				                txtTentativas.setColumns(10);
         
         createComponentMap();
         

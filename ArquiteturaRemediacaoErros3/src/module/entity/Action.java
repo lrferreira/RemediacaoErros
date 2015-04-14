@@ -1,6 +1,9 @@
 package module.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+
+
 
 public class Action {
 
@@ -20,7 +23,14 @@ MRE a ser apresentado depende desta informac~ao;*/
 	private Boolean correct;
 	
 	private Date date;
+	
+	private  Remediation remediation;
+	
+	private MultipleExternalRepresentation mer;
 
+	private ArrayList<String> regrasAcionadas;
+
+	
 	public Answer getAnswer() {
 		return answer;
 	}
@@ -71,6 +81,30 @@ MRE a ser apresentado depende desta informac~ao;*/
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Remediation getRemediation() {
+		return remediation;
+	}
+
+	public void setRemediation(Remediation remediation) {
+		this.remediation = remediation;
+	}
+
+	public MultipleExternalRepresentation getMer() {
+		return mer;
+	}
+
+	public void setMer(MultipleExternalRepresentation mer) {
+		this.mer = mer;
+	}
+
+	public ArrayList<String> getRegrasAcionadas() {
+		return regrasAcionadas;
+	}
+
+	public void setRegrasAcionadas(ArrayList<String> regrasAcionadas) {
+		this.regrasAcionadas = regrasAcionadas;
 	}
 	
 }

@@ -1,28 +1,30 @@
 package module.entity;
 
+import module.author.expertise.creation.sorters.entity.ErrorType;
+
 public class WrongAnswer extends Answer{
 	
-	private Integer type;
+	private ErrorType errorType;
 
 	public WrongAnswer(String answer) {
 		super(answer);
 	}
 
-	public WrongAnswer(String answer, Integer type) {
+	public WrongAnswer(String answer, ErrorType errorType) {
 		super(answer);
-		this.type = type;
+		this.setErrorType(errorType);
 	}
 	
 	public WrongAnswer() {
 
 	}
 
-	public Integer getType() {
-		return type;
+	public ErrorType getErrorType() {
+		return errorType;
 	}
 
-	public void setType(Integer type) {
-		this.type = type;
+	public void setErrorType(ErrorType errorType) {
+		this.errorType = errorType;
 	}
 
 	

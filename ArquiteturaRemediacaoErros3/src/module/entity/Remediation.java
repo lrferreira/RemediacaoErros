@@ -4,16 +4,33 @@ import module.author.expertise.creation.sorters.entity.ItemSorter;
 
 public class Remediation {
 
+
 	private Integer id;
 	
 	private Goal goal;
 	
 	private ItemSorter itemSorter;
 		
-	private MultipleExternalRepresentation mer;
-	
 	private Criterion criterion;
 
+	private Integer attempts; //se critério = persistência no erro
+	
+	private String wrongAnswer;
+	
+	private String relatedError;
+	
+	
+	public Remediation(Integer id, Goal goal, ItemSorter itemSorter,
+			Criterion criterion, Integer attempts, String wrongAnswer, String relatedError) {
+		super();
+		this.id = id;
+		this.goal = goal;
+		this.itemSorter = itemSorter;
+		this.criterion = criterion;
+		this.attempts = attempts;
+		this.wrongAnswer = wrongAnswer;
+		this.relatedError = relatedError;
+	}
 	
 	
 	public Integer getId() {
@@ -32,14 +49,6 @@ public class Remediation {
 		this.goal = goal;
 	}
 
-	public MultipleExternalRepresentation getMer() {
-		return mer;
-	}
-
-	public void setMer(MultipleExternalRepresentation mer) {
-		this.mer = mer;
-	}
-
 	public ItemSorter getItemSorter() {
 		return itemSorter;
 	}
@@ -54,6 +63,32 @@ public class Remediation {
 
 	public void setCriterion(Criterion criterion) {
 		this.criterion = criterion;
+	}
+
+	public Integer getAttempts() {
+		return attempts;
+	}
+
+	public void setAttempts(Integer attempts) {
+		this.attempts = attempts;
+	}
+
+	public String getWrongAnswer() {
+		return wrongAnswer;
+	}
+
+	public void setWrongAnswer(String wrongAnswer) {
+		this.wrongAnswer = wrongAnswer;
+	}
+
+
+	public String getRelatedError() {
+		return relatedError;
+	}
+
+
+	public void setRelatedError(String relatedError) {
+		this.relatedError = relatedError;
 	}
 	
 	
