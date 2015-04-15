@@ -118,11 +118,11 @@ public class MERCadApplet extends JApplet {
 		panel.add(lblFunofunes);
 		
 		cbPapeisComplementares = new JCheckBox("Pap\u00E9is Complementares");
-		cbPapeisComplementares.setBounds(52, 290, 166, 23);
+		cbPapeisComplementares.setBounds(52, 290, 222, 23);
 		panel.add(cbPapeisComplementares);
 		
 		cbRestricaoDeInterpretacao = new JCheckBox("Restrição de Interpretação");
-		cbRestricaoDeInterpretacao.setBounds(52, 328, 166, 23);
+		cbRestricaoDeInterpretacao.setBounds(52, 328, 244, 23);
 		panel.add(cbRestricaoDeInterpretacao);
 		
 		cbCompreensaoMaisAprofundada = new JCheckBox("Compreens\u00E3o Mais Aprofundada");
