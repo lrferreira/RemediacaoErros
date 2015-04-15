@@ -29,7 +29,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import util.StringConstants;
 import module.author.expertise.creation.exercise.graph.State;
 import module.author.expertise.creation.sorters.entity.ErrorType;
 import module.author.expertise.creation.sorters.entity.ItemSorter;
@@ -43,6 +42,7 @@ import module.entity.Goal;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.Path;
 import module.entity.Remediation;
+import util.StringConstants;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
@@ -134,7 +134,7 @@ public class AppletExercise extends JApplet {
 	public AppletExercise() {
 		
 		try {
-			setDbCon(new DBConnect("C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+			setDbCon(new DBConnect(StringConstants.FILE_DB));
 			//setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

@@ -22,12 +22,15 @@ public class StringConstants {
 	public static final String FILE_MERFUNCTION_SORTER_KB = "\\module\\merfunction\\sorter\\MERFunctionSorterKB.rules";
 	public static final String FILE_MER_MANAGER_KB = "\\module\\mer\\manager\\MERManagerKB.rules";
 	
-	public static final String CRITERION_MER_SPECIFIC_FOR_ERROR = "MRE específica para o erro";
-	public static final String CRITERION_SUCCESS_MER_FUNCTION_PRIOR = "Sucesso na Função da MRE anterior";
-	public static final String CRITERION_ALTERNATE_AMONG_MER_FUNCTIONS = "Alternar entre funções das MREs";
-	public static final String CRITERION_ALTERNATE_AMONG_MERS = "Alternar entre as MREs da mesma função";
+	public static final String CRITERION_MER_SPECIFIC_FOR_ERROR = "MRE especï¿½fica para o erro";
+	public static final String CRITERION_SUCCESS_MER_FUNCTION_PRIOR = "Sucesso na Funï¿½ï¿½o da MRE anterior";
+	public static final String CRITERION_ALTERNATE_AMONG_MER_FUNCTIONS = "Alternar entre funï¿½ï¿½es das MREs";
+	public static final String CRITERION_ALTERNATE_AMONG_MERS = "Alternar entre as MREs da mesma funï¿½ï¿½o";
 	public static final String CRITERION_SUCCESS_MER_PRIOR = "Sucesso da MRE anterior";
 	public static final String CRITERION_ALTERNATE_TYPE_MER = "Alternar entre os tipos das MREs";
 	public static final String CRITERION_COMPLEXITY = "Alternar entre complexidades das MREs";
+	
+	//public static final String FILE_DB = "C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite";
+	public static final String FILE_DB = "C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite";
 	
 }

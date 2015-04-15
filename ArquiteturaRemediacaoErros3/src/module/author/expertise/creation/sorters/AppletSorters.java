@@ -27,6 +27,7 @@ import module.author.expertise.creation.sorters.entity.ErrorType;
 import module.author.expertise.creation.sorters.entity.ItemSorter;
 import module.author.expertise.creation.sorters.entity.Sorter;
 import module.author.expertise.creation.sorters.entity.SubErrorType;
+import module.creation.rules.RulesFactory;
 import module.entity.DBConnect;
 import module.entity.MERFunction;
 
@@ -128,6 +129,7 @@ public class AppletSorters extends JApplet {
 			public void actionPerformed(ActionEvent arg0) {
 				//Sorter s = readSorter(new Sorter(null, "classificador Maici", new ArrayList<ItemSorter>()), table);
 				dbCon.insert(sorter);
+				
 			}
 		});
 		btnSalvarClassificador.setBounds(286, 394, 168, 23);
