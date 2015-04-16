@@ -3,6 +3,7 @@ package oa.exemplo;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import module.author.GoalsController;
 import module.creation.rules.RulesFactory;
 import module.entity.Action;
 import module.entity.CorrectAnswer;
+import module.entity.DBConnect;
 import module.entity.Goal;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
@@ -43,18 +45,25 @@ public class ExemploApplet extends JApplet {
 	private JTextPane textPane;
 	private JTextField txtOp;
 	public Goal goal1, goal2, goal3, goal4, goal5, goal6, goal7, goal8;
-	public Student student = new Student(1, "student test");
+	public Student student;
 	public List<Action> actions = new ArrayList<Action>();
 	public Action currentAction;
-	public Path path1 = new Path(1, "caminho de resposta 1");
-	public Path path2 = new Path(2, "caminho de resposta 2");
-
+	public Path path1;
+	public Path path2;
+	private DBConnect dbCon;
 	
 
 	/**
 	 * Create the applet.
 	 */
 	public ExemploApplet() {
+
+		try {
+			setDbCon(new DBConnect(StringConstants.FILE_DB));
+			//setDbCon(new DBConnect("C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite"));
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 
 		txtParcela1 = new JTextField();
 		txtParcela2 = new JTextField();
@@ -414,5 +423,13 @@ public class ExemploApplet extends JApplet {
 		panel.add(textPane);
 		
 		
+	}
+
+	public DBConnect getDbCon() {
+		return dbCon;
+	}
+
+	public void setDbCon(DBConnect dbCon) {
+		this.dbCon = dbCon;
 	}
 }

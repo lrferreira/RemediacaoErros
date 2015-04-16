@@ -4,21 +4,21 @@ import java.util.ArrayList;
 
 public class Path {
 	
-	private Integer id;
+	private Long id;
 	private String description;
 	private ArrayList<Goal> goals;
 	
 	
-	public Path(Integer id, String description) {
+	public Path(Long id, String description) {
 		this.id = id;
 		this.description = description;
 		this.goals = new ArrayList<Goal>();
 	}
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getDescription() {
@@ -34,7 +34,7 @@ public class Path {
 		this.goals = goals;
 	}
 
-	public Goal getGoalById(Integer id){
+	public Goal getGoalById(Long id){
 		for (Goal g: goals){
 			if (id == g.getId())
 				return g;

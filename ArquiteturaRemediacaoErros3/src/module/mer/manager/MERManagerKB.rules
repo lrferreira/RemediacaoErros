@@ -13,6 +13,120 @@ import java.util.ArrayList;
 ruleBase MERManagerKB {
 
 
+
+	rule ruleMER_null_complexity0 {
+
+		declarations
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			mer.getId() == null;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_complexity \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer.setId(null);
+			mer.setDescription(""mer 1"");
+			mer.setImage([B@69d0b0f5);
+			mer.setComplexity(1);
+			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
+			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE null - "mer 1"");
+			flush();
+
+	}
+
+
+	rule ruleMER_null_complexity1 {
+
+		declarations
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			mer.getComplexity() == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_complexity \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer.setId(null);
+			mer.setDescription(""mer 1"");
+			mer.setImage([B@69d0b0f5);
+			mer.setComplexity(1);
+			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
+			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE null - "mer 1"");
+			flush();
+
+	}
+
+
+	rule ruleMER_null_merfunction2 {
+
+		declarations
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getId().equals(module.entity.MERFunction@625e3df4) ; 
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_merfunction \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer.setId(null);
+			mer.setDescription(""mer 1"");
+			mer.setImage([B@69d0b0f5);
+			mer.setComplexity(1);
+			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
+			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE null - "mer 1"");
+			flush();
+
+	}
+
+
+	rule ruleMER_null_typemer3 {
+
+		declarations
+			TypeMER typeMER;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			typeMER.getId().equals(module.entity.TypeMER@14575191) ; 
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_typemer \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer.setId(null);
+			mer.setDescription(""mer 1"");
+			mer.setImage([B@69d0b0f5);
+			mer.setComplexity(1);
+			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
+			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE null - "mer 1"");
+			flush();
+
+	}
+
 // end_rules
 	
 }

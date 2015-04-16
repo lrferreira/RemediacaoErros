@@ -5,7 +5,9 @@ import module.author.expertise.creation.sorters.entity.ItemSorter;
 public class Remediation {
 
 
-	private Integer id;
+
+
+	private Long id;
 	
 	private Goal goal;
 	
@@ -20,7 +22,13 @@ public class Remediation {
 	private String relatedError;
 	
 	
-	public Remediation(Integer id, Goal goal, ItemSorter itemSorter,
+	public Remediation() {
+		super();
+
+	}
+	
+	
+	public Remediation(Long id, Goal goal, ItemSorter itemSorter,
 			Criterion criterion, Integer attempts, String wrongAnswer, String relatedError) {
 		super();
 		this.id = id;
@@ -33,11 +41,11 @@ public class Remediation {
 	}
 	
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

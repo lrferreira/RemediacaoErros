@@ -30,7 +30,7 @@ public class StringConstants {
 	public static final String CRITERION_ALTERNATE_TYPE_MER = "Alternar entre os tipos das MREs";
 	public static final String CRITERION_COMPLEXITY = "Alternar entre complexidades das MREs";
 	
-	//public static final String FILE_DB = "C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite";
-	public static final String FILE_DB = "C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite";
+	public static final String FILE_DB = "C:\\users\\leandro2\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite";
+	//public static final String FILE_DB = "C:\\users\\UFPR\\git\\RemediacaoErros\\ArquiteturaRemediacaoErros3\\db\\remediacao.sqlite";
 	
 }

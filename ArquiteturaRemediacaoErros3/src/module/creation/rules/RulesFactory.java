@@ -56,18 +56,32 @@ public class RulesFactory {
 		
 		
 		// create rule for MER Manager
-		editFileRule(filePath+StringConstants.FILE_MER_MANAGER_KB, ruleMERTypeMER(mer));
+		//editFileRule(filePath+StringConstants.FILE_MER_MANAGER_KB, ruleMERId(mer));
 		//Main.main(new String[]{filePath+StringConstants.FILE_MER_MANAGER_KB});
 		
 	}
 
+	public static void createRules(MultipleExternalRepresentation mer) {
+
+		String filePath = new File("").getAbsolutePath();
+        System.out.println (filePath);
+        filePath = filePath.replace("\\bin", "\\src");
+            
+		// create rule for MER Manager
+		editFileRule(filePath+StringConstants.FILE_MER_MANAGER_KB, ruleMERId(mer));
+		editFileRule(filePath+StringConstants.FILE_MER_MANAGER_KB, ruleMERComplexity(mer));
+		editFileRule(filePath+StringConstants.FILE_MER_MANAGER_KB, ruleMERMerFunctions(mer));
+		editFileRule(filePath+StringConstants.FILE_MER_MANAGER_KB, ruleMERTypeMER(mer));
+		//Main.main(new String[]{filePath+StringConstants.FILE_MER_MANAGER_KB});
+		
+	}
 	
 	/* Rules for Expression Identifier */
 	
 	public static RuleInformation ruleWrongAnswer(Remediation remediation) {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("wrongAnswer_PATH_"+remediation.getGoal().getPath().getId() +"_GOAL_"+remediation.getGoal().getId()+
-						"_COMPONENT_"+remediation.getGoal().getComponent().getName() + "_REMEDIATION_" + remediation.getId() 
+						"_COMPONENT_"+remediation.getGoal().getComponent() + "_REMEDIATION_" + remediation.getId() 
 						+ "_");
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;");
@@ -78,7 +92,7 @@ public class RulesFactory {
 		
 		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + ");");
 		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + ");");
-		conditions.add("action.getGoal().getComponent().getName().equalsIgnoreCase(\"" + remediation.getGoal().getComponent().getName() + "\");");
+		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 
 		if (remediation.getWrongAnswer() != null){
 			conditions.add("action.getAnswer().getValue().equalsIgnoreCase(\""+remediation.getWrongAnswer()+"\");");		
@@ -119,7 +133,7 @@ public class RulesFactory {
 
 	public static RuleInformation ruleCorrectAnswer(Goal goal) {
 		RuleInformation r = new RuleInformation();
-		r.setRuleName("correctAnswer_PATH_"+goal.getPath().getId()+"_GOAL_"+goal.getId()+"_COMPONENT_"+goal.getComponent().getName() + "_");
+		r.setRuleName("correctAnswer_PATH_"+goal.getPath().getId()+"_GOAL_"+goal.getId()+"_COMPONENT_"+goal.getComponent() + "_");
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
@@ -129,7 +143,7 @@ public class RulesFactory {
 		ArrayList<String> conditions = new ArrayList<String>();
 		conditions.add("action.getGoal().getPath().getId().equals(" + goal.getPath().getId() + ");");
 		conditions.add("action.getGoal().getId().equals(" + goal.getId() + ");");
-		conditions.add("action.getGoal().getComponent().getName().equalsIgnoreCase(\"" + goal.getComponent().getName() + "\");");
+		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + goal.getComponent() + "\");");
 	
 		ArrayList<String> strCondAux = new ArrayList<String>();
 		conditions.add("action.getAnswer().getValue().equalsIgnoreCase(\"" + goal.getAnswer().getValue()+"\");");
@@ -166,7 +180,7 @@ public class RulesFactory {
 								:"") +
 						"_PATH_" + remediation.getGoal().getPath().getId() + 
 						"_GOAL_" + remediation.getGoal().getId() + 
-						"_COMPONENT_" + remediation.getGoal().getComponent().getName() + "_");		
+						"_COMPONENT_" + remediation.getGoal().getComponent() + "_");		
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;"); 
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
@@ -176,7 +190,7 @@ public class RulesFactory {
 
 		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + ");");
 		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + ");");
-		conditions.add("action.getGoal().getComponent().getName().equalsIgnoreCase(\"" + remediation.getGoal().getComponent().getName() + "\");");
+		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 	
 		if (remediation.getWrongAnswer() != null) {
 			conditions.add("action.getAnswer().getValue().equalsIgnoreCase(\""+remediation.getWrongAnswer()+"\");");		
@@ -213,7 +227,7 @@ public class RulesFactory {
 					remediation.getItemSorter().getMerFunction().getId() + 
 					"_PATH_"+remediation.getGoal().getPath().getId()+
 					"_GOAL_"+remediation.getGoal().getId()+
-					"_COMPONENT_"+remediation.getGoal().getComponent().getName() + "_");
+					"_COMPONENT_"+remediation.getGoal().getComponent() + "_");
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;"); 
 		r.getDeclarations().add("MERFunction merFunction;");
@@ -225,7 +239,7 @@ public class RulesFactory {
 			r.getConditions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorType().equals("+ remediation.getItemSorter().getSubErrorType().getId()+");");
 		r.getConditions().add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + ");");
 		r.getConditions().add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + ");");
-		r.getConditions().add("action.getGoal().getComponent().getName().equalsIgnoreCase(\"" + remediation.getGoal().getComponent().getName() + "\");");
+		r.getConditions().add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 
 		
 		r.setActions(new ArrayList<String>());
@@ -250,6 +264,39 @@ public class RulesFactory {
 	
 	/* Rules for MER Manager */
 
+	public static RuleInformation ruleMERId(MultipleExternalRepresentation mer) {
+		RuleInformation r = new RuleInformation();
+		r.setRuleName("ruleMER_"+mer.getId() + "_complexity");		
+		r.setDeclarations(new ArrayList<String>());
+		r.getDeclarations().add("MultipleExternalRepresentation mer;");
+		r.getDeclarations().add("RuleToHuman ruleToHuman;");
+		
+		r.setConditions(new ArrayList<String>());
+		ArrayList<String> strCondAux = new ArrayList<String>();
+		  
+		r.getConditions().add("mer.getId() == " + mer.getId() + ";");
+		
+		r.setActions(new ArrayList<String>());
+		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"Regra acionada para selecionar a MRE: " + r.getRuleName() + " \\n\");");
+		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \" Condi��es:  \\n\");");
+		for (String c : strCondAux)
+			r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"" + c + "\\n\");");		
+		
+		r.getActions().add("mer.setId("+mer.getId()+");");
+		r.getActions().add("mer.setDescription(\""+mer.getDescription()+"\");");
+		r.getActions().add("mer.setImage("+mer.getImage()+");");
+		r.getActions().add("mer.setComplexity("+mer.getComplexity()+");");
+		r.getActions().add("mer.setMerFunctions("+mer.getMerFunctions()+");");
+		r.getActions().add("mer.setTypeMers("+mer.getTypeMers()+");");
+		r.getActions().add("modified(mer);");
+		r.getActions().add("modified(ruleToHuman);");
+		r.getActions().add("System.out.println(\"Exibi��o de MRE " + mer.getId() + " - " + mer.getDescription() + "\");");		
+		r.getActions().add("flush();");
+		
+		
+		return r;
+	}	
+	
 	public static RuleInformation ruleMERComplexity(MultipleExternalRepresentation mer) {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("ruleMER_"+mer.getId() + "_complexity");		

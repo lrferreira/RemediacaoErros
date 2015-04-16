@@ -12,6 +12,9 @@ fato ira permitir uma instruc~ao para o aprendiz (remediac~ao) antes que o pr
 de resoluc~ao nal seja apresentado, ou seja, a etapa da resoluc~ao para o tipo de
 MRE a ser apresentado depende desta informac~ao;*/
 	
+
+	private Long id;
+	
 	private Answer answer;
 	
 	private Integer attempt;
@@ -29,6 +32,30 @@ MRE a ser apresentado depende desta informac~ao;*/
 	private MultipleExternalRepresentation mer;
 
 	private ArrayList<String> regrasAcionadas;
+	
+	
+	public Action() {
+		super();
+		
+	}
+	
+	
+	public Action(Long id, Answer answer, Integer attempt, Student student,
+			Goal goal, Boolean correct, Date date, Remediation remediation,
+			MultipleExternalRepresentation mer,
+			ArrayList<String> regrasAcionadas) {
+		super();
+		this.id = id;
+		this.answer = answer;
+		this.attempt = attempt;
+		this.student = student;
+		this.goal = goal;
+		this.correct = correct;
+		this.date = date;
+		this.remediation = remediation;
+		this.mer = mer;
+		this.regrasAcionadas = regrasAcionadas;
+	}
 
 	
 	public Answer getAnswer() {
@@ -105,6 +132,14 @@ MRE a ser apresentado depende desta informac~ao;*/
 
 	public void setRegrasAcionadas(ArrayList<String> regrasAcionadas) {
 		this.regrasAcionadas = regrasAcionadas;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }

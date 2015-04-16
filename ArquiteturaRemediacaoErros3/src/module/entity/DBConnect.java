@@ -269,6 +269,25 @@ public class DBConnect {
 		}
 		return c;
 	}
+
+	public ItemSorter getItemSorter(Long id_itemsorter){
+		ItemSorter is = null;
+		ResultSet rs;
+		try {
+			this.stm = this.conn.createStatement();
+		 
+			rs = this.stm.executeQuery("select * from itemsorter WHERE id = " + id_itemsorter);
+
+			if (rs.next()){
+				is = new ItemSorter(rs.getLong("id"), getSorter(rs.getLong("id_sorter")), getErrorType(rs.getLong("id_errortype")),
+									getSubErrorType(rs.getLong("id_suberrortype")), getMERFunction(rs.getLong("id_merfunction")), rs.getString("remediation"));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return is;
+	}
+	
 	public ItemSorter getItemSorter(Long id_sorter, Long id_errortype, Long id_suberrortype){
 		ItemSorter is = null;
 		ResultSet rs;
@@ -395,7 +414,7 @@ public class DBConnect {
 	                mer.setDescription(rs.getString("description"));
 	                mer.setMerFunctions(new ArrayList<MERFunction>());
 	                mer.setTypeMers(new ArrayList<TypeMER>());
-	            }
+	            } else return null;
 	            rs.close();
 	            
 	            stmt=conn.createStatement();
@@ -454,5 +473,382 @@ public class DBConnect {
 		}
 		return criterions;
 	}
+	
+	public void save(Action action){
+		String strDescription = null;
+		try {
+			this.stm = this.conn.createStatement();
+			
+			if (action.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM action");
+				action.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			}
+			
+			PreparedStatement prepStmt = null;
+			
+			try{
+	            prepStmt= conn.prepareStatement("insert into action VALUES (?,?,?,?,?,?,?)");
+	            prepStmt.setLong(1, action.getId());
+	            prepStmt.setString(2, action.getAnswer().getValue());
+	            prepStmt.setLong(3, action.getGoal().getId());
+	            prepStmt.setBoolean(4, action.getCorrect());
+	            prepStmt.setDate(5, new java.sql.Date(action.getDate().getTime()));
+	            prepStmt.setLong(6, action.getCorrect()?null:action.getRemediation().getId());
+	            prepStmt.setLong(7, action.getCorrect()?null:action.getMer().getId());
 
+	            prepStmt.executeUpdate();
+	            
+	            
+	            
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
+			
+			for (String r : action.getRegrasAcionadas()){
+				this.stm.executeUpdate("INSERT INTO rule_action VALUES (" +
+								action.getId() + ", " +
+								r + ")");
+			}
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		
+	}
+
+	public void save(Goal goal){
+		String strDescription = null;
+		try {
+			this.stm = this.conn.createStatement();
+			
+			if (goal.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM goal");
+				goal.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			}
+			
+			PreparedStatement prepStmt = null;
+			
+			try{
+	            prepStmt= conn.prepareStatement("insert into goal VALUES (?,?,?,?,?,?,?,?)");
+	            prepStmt.setLong(1, goal.getId());
+	            prepStmt.setString(2, goal.getDescription());
+	            prepStmt.setBoolean(3, goal.getSatisfied());
+	            prepStmt.setLong(4, goal.getSubGoal() == null ? null : goal.getSubGoal().getId());
+	            prepStmt.setLong(5, goal.getSuperGoal() == null ? null : goal.getSuperGoal().getId());
+	            prepStmt.setLong(6, goal.getPath().getId());
+	            prepStmt.setString(7, goal.getAnswer().getValue());
+	            prepStmt.setString(8, goal.getComponent());
+	            
+	            prepStmt.executeUpdate();
+	            
+	            
+	            
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
+			
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		
+	}
+
+	
+	public void save(Remediation remediation){
+		String strDescription = null;
+		try {
+			this.stm = this.conn.createStatement();
+			
+			if (remediation.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM remediation");
+				remediation.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			}
+			
+			PreparedStatement prepStmt = null;
+			
+			try{
+	            prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?)");
+	            prepStmt.setLong(1, remediation.getId());
+	            prepStmt.setLong(2, remediation.getGoal().getId());
+	            prepStmt.setLong(3, remediation.getItemSorter().getId());
+	            prepStmt.setLong(4, remediation.getCriterion().getId());
+	            prepStmt.setInt(5, remediation.getAttempts());
+	            prepStmt.setString(6, remediation.getWrongAnswer());
+	            prepStmt.setString(7, remediation.getRelatedError());
+
+	            prepStmt.executeUpdate();
+	            
+	            
+	            
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
+			
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		
+	}
+
+	
+	public void save(Path path){
+		String strDescription = null;
+		try {
+			this.stm = this.conn.createStatement();
+			
+			if (path.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM path");
+				path.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			}
+			
+			PreparedStatement prepStmt = null;
+			
+			try{
+	            prepStmt= conn.prepareStatement("insert into path VALUES (?,?)");
+	            prepStmt.setLong(1, path.getId());
+	            prepStmt.setString(2, path.getDescription());
+
+	            prepStmt.executeUpdate();
+	            
+	            
+	            
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
+			
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		
+	}
+
+		
+	public ArrayList<Action> getActions(){
+		ArrayList<Action> actions = new ArrayList<Action>();
+		Statement stmt=null;
+
+        try {
+			stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select id from action");
+			while(rs.next()){
+				actions.add(getAction(rs.getLong("id")));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return actions;
+	}
+
+	public Action getAction(Long id){
+        Action action = null;
+        
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from action where id="+id);
+            if(rs.next()){
+            	action = new Action();
+            	action.setId(rs.getLong("id"));
+            	action.setCorrect(rs.getBoolean("correct"));
+            	action.setAnswer(action.getCorrect() ? new CorrectAnswer(rs.getString("answer")) : new WrongAnswer(rs.getString("answer")));
+            	action.setAttempt(rs.getInt("attempt"));
+            	action.setDate(rs.getDate("date"));
+            	action.setGoal(getGoal(rs.getLong("id_goal")));
+            	action.setMer(getMER(rs.getLong("id_mer")));
+            	action.setRegrasAcionadas(new ArrayList<String>());
+            	action.setStudent(getStudent(rs.getLong("id_student")));
+            	action.setRemediation(getRemediation(rs.getLong("id_remediation")));
+            } else return null;
+            rs.close();
+            
+            stmt=conn.createStatement();
+            rs=stmt.executeQuery("SELECT * FROM rule_action where id_action ="+id);
+            while(rs.next()){
+            	action.getRegrasAcionadas().add(rs.getString("rule"));
+            }
+            rs.close();
+            
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+        
+        return action;
+}
+	
+	private Student getStudent(Long id_student) {
+
+		Student student = null;
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from goal where id="+id_student);
+            if(rs.next()){
+            	student = new Student(rs.getLong("id"),rs.getString("name"));
+
+            } else return null;
+            rs.close();
+            
+                        
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+
+		return student;
+	}
+
+	private Path getPath(Long id_path) {
+
+		Path path = null;
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from path where id="+id_path);
+            if(rs.next()){
+            	path = new Path(rs.getLong("id"),rs.getString("description"));
+
+            } else return null;
+            rs.close();
+            
+                        
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+
+		return path;
+	}
+
+	public Goal getGoal(Long id){
+        Goal goal = null;
+        
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from goal where id="+id);
+            if(rs.next()){
+            	goal = new Goal();
+                goal.setId(rs.getLong("id"));
+                goal.setComponent(rs.getString("component"));
+                goal.setPath(getPath(rs.getLong("id_path")));
+                goal.setAnswer(new CorrectAnswer(rs.getString("answer")));
+                goal.setSatisfied(rs.getBoolean("satisfied"));
+                goal.setDescription(rs.getString("description"));
+                goal.setActions(getActionsByGoal(rs.getLong("id")));
+                goal.setSubGoal(getGoal(rs.getLong("id_subgoal")));
+                goal.setSuperGoal(getGoal(rs.getLong("id_supergoal")));
+                goal.setRemediations(getRemediationsByGoal(rs.getLong("id")));
+
+            } else return null;
+            rs.close();
+            
+                        
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+        
+        return goal;
+}
+	
+	private ArrayList<Action> getActionsByGoal(long id_goal) {
+
+		ArrayList<Action> actions = new ArrayList<Action>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from action where id_goal = " + id_goal);
+			while (rs.next()){
+				actions.add(getAction(rs.getLong("id")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return actions;
+
+	}
+
+	private ArrayList<Remediation> getRemediationsByGoal(long id_goal) {
+
+		ArrayList<Remediation> remediations = new ArrayList<Remediation>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from remediation where id_goal = " + id_goal);
+			while (rs.next()){
+				remediations.add(getRemediation(rs.getLong("id")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return remediations;
+
+	}
+
+
+	public Remediation getRemediation(Long id){
+        Remediation remediation = null;
+        
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from remediation where id="+id);
+            if(rs.next()){
+            	remediation = new Remediation();
+                remediation.setId(rs.getLong("id"));
+                remediation.setAttempts(rs.getInt("attempts"));
+                remediation.setCriterion(getCriterion(rs.getLong("id_criterion")));
+                remediation.setGoal(getGoal(rs.getLong("id_goal")));
+                remediation.setItemSorter(getItemSorter(rs.getLong("id_itemsorter")));
+                remediation.setRelatedError(rs.getString("relatederror"));
+                remediation.setWrongAnswer(rs.getString("wronganswer"));
+                
+
+            }
+            rs.close();
+            
+                        
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+        
+        return remediation;
+}
+	
+	
+	
 }

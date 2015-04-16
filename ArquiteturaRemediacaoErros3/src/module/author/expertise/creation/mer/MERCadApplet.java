@@ -29,11 +29,13 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
+import module.creation.rules.RulesFactory;
 import module.entity.DBConnect;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.TypeMER;
 import util.Constants;
+import util.StringConstants;
 
 public class MERCadApplet extends JApplet {
 	private JTextField textField;
@@ -247,7 +249,8 @@ public class MERCadApplet extends JApplet {
 				}
 				
 				dbCon.save(mre);
-										
+				RulesFactory.createRules(mre);
+				RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
 			}
 		});
 		btnSalvar.setBounds(278, 465, 123, 23);

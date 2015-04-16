@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class Student {
 
-	private Integer id;
+	private Long id;
 	
-	private String nome;
+	private String name;
 	
 	private ArrayList<Action> actions;
 
-	public Student(Integer id, String nome){
+	public Student(Long id, String name){
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 	}
 	
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public ArrayList<Action> getActions() {
@@ -31,11 +31,11 @@ public class Student {
 		this.actions = actions;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

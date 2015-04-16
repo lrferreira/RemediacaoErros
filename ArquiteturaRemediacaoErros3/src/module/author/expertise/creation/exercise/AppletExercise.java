@@ -232,7 +232,7 @@ public class AppletExercise extends JApplet {
 		final JButton btnEstadoInicial = new JButton("Estado Inicial");
 		btnEstadoInicial.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-				path = new Path(1, "caminho de resolução nº 1");
+				path = new Path(new Long(1), "caminho de resolução nº 1");
 				i = 0;
 				//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
         		getGraph().getModel().beginUpdate();
@@ -299,13 +299,13 @@ public class AppletExercise extends JApplet {
 											else if (graph.getLabel(cell).startsWith("Remediação")){
 												//currentGoal = path.getGoals().get(arg0) 
 												
-												currentGoal = path.getGoalById((int) getKey(getMapMetasRemediacoesGrafo(), cell));
+												currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasRemediacoesGrafo(), cell)));
 												tabbedPane.setSelectedIndex(1);
 												
 												lblExercicio.setText("EXERCÍCIO: " + 1);
 												lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
 												lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
-																currentGoal.getComponent().getName() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+																currentGoal.getComponent() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
 												
 												
 												//Sorter s = cadSorterTeste();
@@ -331,11 +331,13 @@ public class AppletExercise extends JApplet {
 					public void actionPerformed(ActionEvent arg0) {
 						for (Goal g : path.getGoals()) {
 							RulesFactory.createRules(g);
+							dbCon.save(g);
 						}
 						RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB);
+						dbCon.save(path);
 					}
 				});
-				btnNewButton.setBounds(373, 555, 89, 23);
+				btnNewButton.setBounds(325, 555, 211, 23);
 				panel_exerc.add(btnNewButton);
 				
 				
@@ -582,6 +584,7 @@ public class AppletExercise extends JApplet {
 				                	public void actionPerformed(ActionEvent arg0) {
 				                		Remediation remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText());
 				                		RulesFactory.createRules(remediation, mer);
+				                		dbCon.save(remediation);
 				                	}
 				                });
 				                button.setBounds(692, 540, 179, 23);
@@ -799,11 +802,11 @@ public Component getComponentByName(String name) {
 		Goal goalLast = null;
 		if (path.getGoals().size() > 0)
 			goalLast = path.getGoals().get(path.getGoals().size()-1);
-		Goal goalAt = new Goal(i, path, false, textGoal, new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
+		Goal goalAt = new Goal(new Long(i), path, false, textGoal.getName(), new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
 		path.getGoals().add(goalAt);
 		Object v1 = getGraph().insertVertex(parent, null, 
 				"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
-				"\nno campo " + goalAt.getComponent().getName(), 
+				"\nno campo " + goalAt.getComponent(), 
 				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX() + 150, 30, 100, 100, "MyStyleEllipse");
 		
 		getMapMetasGrafo().put(i,v1);
@@ -825,7 +828,7 @@ public Component getComponentByName(String name) {
 		//WrongAnswer wrongAnswer = new WrongAnswer();
 		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
 		Object v2 = getGraph().insertVertex(parent, null, "Remediação nº " + j + " \npara a meta nº " + goal.getId() + ":\n " + 
-					"campo " + goal.getComponent().getName(), 
+					"campo " + goal.getComponent(), 
 				getGraph().getCellBounds(cell).getX(), 
 				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight()+ 100,
 				120, 140, "MyStyleEllipseRem");

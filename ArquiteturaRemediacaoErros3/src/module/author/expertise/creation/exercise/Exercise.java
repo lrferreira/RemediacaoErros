@@ -34,6 +34,8 @@ public class Exercise {
 	private JTextField txt7;
 	private JTextField txt8;
 	private JSeparator separator;
+	
+	
 	public static mxGraph getGraph() {
 		return graph;
 	}

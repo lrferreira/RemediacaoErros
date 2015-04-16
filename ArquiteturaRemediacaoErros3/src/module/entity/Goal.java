@@ -3,13 +3,11 @@ package module.entity;
 
 import java.util.ArrayList;
 
-import javax.swing.JComponent;
-
 public class Goal {
 	
-	private Integer id;
+	private Long id;
 	private Boolean satisfied;
-	private JComponent component;
+	private String component;
 	private CorrectAnswer answer;
 	private Goal superGoal;
 	private Goal subGoal;
@@ -25,7 +23,7 @@ public class Goal {
 		setSatisfied(false);
 	}
 	
-	public Goal(Integer id, Path path, Boolean satisfied, JComponent component, CorrectAnswer answer, Goal superGoal, Goal subGoal, String description){
+	public Goal(Long id, Path path, Boolean satisfied, String component, CorrectAnswer answer, Goal superGoal, Goal subGoal, String description){
 		this.setId(id);
 		this.setPath(path);
 		this.setSatisfied(satisfied);
@@ -36,11 +34,11 @@ public class Goal {
 		this.setDescription(description);
 	}
 	
-	public JComponent getComponent() {
+	public String getComponent() {
 		return component;
 	}
 
-	public void setComponent(JComponent component) {
+	public void setComponent(String component) {
 		this.component = component;
 	}
 
@@ -85,11 +83,11 @@ public class Goal {
 		this.superGoal = superGoal;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
