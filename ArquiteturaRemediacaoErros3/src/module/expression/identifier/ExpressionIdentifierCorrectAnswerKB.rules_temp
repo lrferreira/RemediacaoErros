@@ -434,6 +434,36 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 
 	}
 
+
+	rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_14 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(1);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 0\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 1 conclu�da!\n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+
 // end_rules
 	
 }

@@ -539,7 +539,8 @@ public class DBConnect {
 	            prepStmt.setLong(1, goal.getId());
 	            prepStmt.setString(2, goal.getDescription());
 	            prepStmt.setBoolean(3, goal.getSatisfied());
-	            prepStmt.setLong(4, goal.getSubGoal() == null ? null : goal.getSubGoal().getId());
+	            if (goal.getSubGoal() != null)
+	            	prepStmt.setLong(4, goal.getSubGoal().getId());
 	            prepStmt.setLong(5, goal.getSuperGoal() == null ? null : goal.getSuperGoal().getId());
 	            prepStmt.setLong(6, goal.getPath().getId());
 	            prepStmt.setString(7, goal.getAnswer().getValue());

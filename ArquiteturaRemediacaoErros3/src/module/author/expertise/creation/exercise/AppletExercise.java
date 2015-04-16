@@ -803,6 +803,7 @@ public Component getComponentByName(String name) {
 		if (path.getGoals().size() > 0)
 			goalLast = path.getGoals().get(path.getGoals().size()-1);
 		Goal goalAt = new Goal(new Long(i), path, false, textGoal.getName(), new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
+		goalLast.setSubGoal(superGoal);
 		path.getGoals().add(goalAt);
 		Object v1 = getGraph().insertVertex(parent, null, 
 				"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
