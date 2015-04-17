@@ -582,9 +582,19 @@ public class AppletExercise extends JApplet {
 				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
 				                button.addActionListener(new ActionListener() {
 				                	public void actionPerformed(ActionEvent arg0) {
-				                		Remediation remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText());
-				                		RulesFactory.createRules(remediation, mer);
-				                		dbCon.save(remediation);
+				                		Remediation remediation = null;
+				                		try{
+				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText());
+				                		} catch (NumberFormatException e) {
+				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText());
+				                		} finally {
+				                			dbCon.save(remediation);
+				                			RulesFactory.createRules(remediation, mer);				    
+				                			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
+				                			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
+				                			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
+				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
+				                		}
 				                	}
 				                });
 				                button.setBounds(692, 540, 179, 23);
@@ -803,7 +813,8 @@ public Component getComponentByName(String name) {
 		if (path.getGoals().size() > 0)
 			goalLast = path.getGoals().get(path.getGoals().size()-1);
 		Goal goalAt = new Goal(new Long(i), path, false, textGoal.getName(), new CorrectAnswer(textGoal.getText()), goalLast, null, "meta " + i);
-		goalLast.setSubGoal(superGoal);
+		if (goalLast != null)
+			goalLast.setSubGoal(goalAt);
 		path.getGoals().add(goalAt);
 		Object v1 = getGraph().insertVertex(parent, null, 
 				"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +

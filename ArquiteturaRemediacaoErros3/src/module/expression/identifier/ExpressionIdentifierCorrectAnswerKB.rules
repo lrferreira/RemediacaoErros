@@ -26,7 +26,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 		conditions
 			action.getGoal().getPath().getId().equals(1);
 			action.getGoal().getId().equals(1);
-			action.getGoal().getComponent().getName().equalsIgnoreCase("txt3");
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
 			action.getAnswer().getValue().equalsIgnoreCase("+");
 
 		actions
@@ -43,6 +43,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 			flush();
 
 	}
+// -rule-end- 
 
 
 	rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt8_1 {
@@ -56,7 +57,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 		conditions
 			action.getGoal().getPath().getId().equals(1);
 			action.getGoal().getId().equals(2);
-			action.getGoal().getComponent().getName().equalsIgnoreCase("txt8");
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
 			action.getAnswer().getValue().equalsIgnoreCase("6");
 
 		actions
@@ -73,6 +74,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 			flush();
 
 	}
+// -rule-end- 
 
 
 	rule correctAnswer_PATH_1_GOAL_3_COMPONENT_txt7_2 {
@@ -86,7 +88,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 		conditions
 			action.getGoal().getPath().getId().equals(1);
 			action.getGoal().getId().equals(3);
-			action.getGoal().getComponent().getName().equalsIgnoreCase("txt7");
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
 			action.getAnswer().getValue().equalsIgnoreCase("1");
 
 		actions
@@ -103,336 +105,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 			flush();
 
 	}
-
-
-	rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_3 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
-			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getAnswer().getValue().equalsIgnoreCase("2");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 2\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 1 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_4 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(2);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getAnswer().getValue().equalsIgnoreCase("3");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 3\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 2 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_3_COMPONENT_txt8_5 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(3);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getAnswer().getValue().equalsIgnoreCase("5");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_3_COMPONENT_txt8_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 3 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_4_COMPONENT_txt7_6 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(4);
-			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			action.getAnswer().getValue().equalsIgnoreCase("1");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_4_COMPONENT_txt7_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 4 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_7 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
-			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getAnswer().getValue().equalsIgnoreCase("0");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 0\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 1 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt1_8 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
-			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getAnswer().getValue().equalsIgnoreCase("1");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_1_COMPONENT_txt1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 1 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_9 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(2);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getAnswer().getValue().equalsIgnoreCase("6");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 2 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_10 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(2);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getAnswer().getValue().equalsIgnoreCase("6");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 2 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_11 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
-			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getAnswer().getValue().equalsIgnoreCase("0");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_1_COMPONENT_txt2_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 0\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 1 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_12 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(2);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getAnswer().getValue().equalsIgnoreCase("6");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_2_COMPONENT_txt5_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 2 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
-
-
-	rule correctAnswer_PATH_1_GOAL_3_COMPONENT_txt3_13 {
-
-		declarations
-			Action action;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(3);
-			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			action.getAnswer().getValue().equalsIgnoreCase("+");
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: correctAnswer_PATH_1_GOAL_3_COMPONENT_txt3_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = +\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Meta n� 3 conclu�da!\n");
-			System.out.println("Resposta Correta (1) detectada\n");
-			action.setCorrect(true);
-			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
-			action.getGoal().setSatisfied(true);
-			modified(action);
-			modified(ruleToHuman);
-			flush();
-
-	}
+// -rule-end- 
 
 // end_rules
 	

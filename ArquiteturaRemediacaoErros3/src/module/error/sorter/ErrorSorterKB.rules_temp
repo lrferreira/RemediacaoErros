@@ -44,6 +44,35 @@ ruleBase ErrorSorterKB {
 	}
 // -rule-end- 
 
+
+	rule errortype_2_suberrortype_3_PATH_1_GOAL_2_COMPONENT_txt8_1 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_3_PATH_1_GOAL_2_COMPONENT_txt8_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 0\n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( new ErrorType(2L,"Diretamente Identificáveis", new ArrayList<SubErrorType>()));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( new SubErrorType(3L,"Deficiência na escolha do operador correto", ((WrongAnswer)action.getAnswer()).getErrorType()));
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 
 // rule necessary by default

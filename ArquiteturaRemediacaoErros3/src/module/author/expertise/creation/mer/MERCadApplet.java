@@ -202,7 +202,7 @@ public class MERCadApplet extends JApplet {
 				
 				MultipleExternalRepresentation mre = new MultipleExternalRepresentation();
 				
-				mre.setDescription("\"" + txtDescription.getText() + "\"");
+				mre.setDescription(txtDescription.getText());
 				//mre.setPath("\"" + textField.getText() + "\"");
 				
 				if (rb1.isSelected())

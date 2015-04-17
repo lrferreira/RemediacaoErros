@@ -36,7 +36,7 @@ public class Path {
 
 	public Goal getGoalById(Long id){
 		for (Goal g: goals){
-			if (id == g.getId())
+			if (id.equals(g.getId()))
 				return g;
 		}
 		return null;

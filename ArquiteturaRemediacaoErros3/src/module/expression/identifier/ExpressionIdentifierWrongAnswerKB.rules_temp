@@ -44,6 +44,35 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 	}
 // -rule-end- 
 
+
+	rule wrongAnswer_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 0\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 
 // rule necessary by default

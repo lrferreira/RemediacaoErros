@@ -47,6 +47,37 @@ ruleBase MERFunctionSorterKB {
 	}
 // -rule-end- 
 
+
+	rule merfunction_3_PATH_1_GOAL_2_COMPONENT_txt8_1 {
+
+		declarations
+			Action action;
+			MERFunction merFunction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3);
+			action.getGoal().getPath().getId().equals(1);
+			action.getGoal().getId().equals(2);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_2_COMPONENT_txt8_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			merFunction = dbCon.getMERFunction(3L);
+			modified(merFunction);
+			modified(ruleToHuman);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 	
 }

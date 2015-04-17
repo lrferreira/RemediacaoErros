@@ -14,6 +14,8 @@ public class StringConstants {
 	public static final String IMPORT_IDENTIFICADOREXPRESSAOCONTROLADOR = "import module.expression.identifier.ExpressionIdentifierController";
 
 	public static final String END_RULES = "// end_rules"; 
+	//public static final String RULE_INIT = "// -rule-init-";
+	public static final String RULE_END = "// -rule-end-"; 
 	
 	public static final String FILE_GOALS_KB = "\\module\\author\\GoalsKB.rules";
 	public static final String FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB = "\\module\\expression\\identifier\\ExpressionIdentifierCorrectAnswerKB.rules";

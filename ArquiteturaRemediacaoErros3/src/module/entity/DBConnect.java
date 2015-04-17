@@ -541,7 +541,8 @@ public class DBConnect {
 	            prepStmt.setBoolean(3, goal.getSatisfied());
 	            if (goal.getSubGoal() != null)
 	            	prepStmt.setLong(4, goal.getSubGoal().getId());
-	            prepStmt.setLong(5, goal.getSuperGoal() == null ? null : goal.getSuperGoal().getId());
+	            if (goal.getSuperGoal() != null)
+	            	prepStmt.setLong(5, goal.getSuperGoal().getId());
 	            prepStmt.setLong(6, goal.getPath().getId());
 	            prepStmt.setString(7, goal.getAnswer().getValue());
 	            prepStmt.setString(8, goal.getComponent());
@@ -552,6 +553,7 @@ public class DBConnect {
 	            
 			}catch(Exception e){
 	            e.printStackTrace();
+	            System.exit(1);
 	        }finally{
 	            try {
 	                prepStmt.close();
@@ -586,7 +588,8 @@ public class DBConnect {
 	            prepStmt.setLong(2, remediation.getGoal().getId());
 	            prepStmt.setLong(3, remediation.getItemSorter().getId());
 	            prepStmt.setLong(4, remediation.getCriterion().getId());
-	            prepStmt.setInt(5, remediation.getAttempts());
+	            if (remediation.getAttempts() != null)
+	            	prepStmt.setInt(5, remediation.getAttempts());
 	            prepStmt.setString(6, remediation.getWrongAnswer());
 	            prepStmt.setString(7, remediation.getRelatedError());
 

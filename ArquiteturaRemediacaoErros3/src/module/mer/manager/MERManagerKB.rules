@@ -1,4 +1,4 @@
-package src.module.mer.manager;
+package module.mer.manager;
 
 import javax.swing.JComponent;
 import module.entity.Goal;
@@ -8,44 +8,44 @@ import util.Constants;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.RuleToHuman;
+import module.entity.TypeMER;
+import module.entity.DBConnect;
 import java.util.ArrayList;
 
 ruleBase MERManagerKB {
 
 
 
-	rule ruleMER_null_complexity0 {
+
+	rule ruleMER_1_0 {
 
 		declarations
 			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			mer.getId() == null;
+			mer.getId().equals(1L);
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_complexity \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			mer.setId(null);
-			mer.setDescription(""mer 1"");
-			mer.setImage([B@69d0b0f5);
-			mer.setComplexity(1);
-			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
-			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			mer = dbCon.getMER(1L);
 			modified(mer);
 			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE null - "mer 1"");
+			System.out.println("Exibi��o de MRE 1 - mer 1");
 			flush();
 
 	}
 
 
-	rule ruleMER_null_complexity1 {
+	rule ruleMER_1_complexity_1_1 {
 
 		declarations
 			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
@@ -54,75 +54,162 @@ ruleBase MERManagerKB {
 			mer.getComplexity() == 1;
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_complexity \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_complexity_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			mer.setId(null);
-			mer.setDescription(""mer 1"");
-			mer.setImage([B@69d0b0f5);
-			mer.setComplexity(1);
-			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
-			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			mer = dbCon.getMER(1L);
 			modified(mer);
 			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE null - "mer 1"");
+			System.out.println("Exibi��o de MRE 1 - mer 1");
 			flush();
 
 	}
 
 
-	rule ruleMER_null_merfunction2 {
+	rule ruleMER_1_merfunction_1_2 {
 
 		declarations
 			MERFunction merFunction;
 			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			merFunction.getId().equals(module.entity.MERFunction@625e3df4) ; 
+			merFunction.getId().equals(1) ; 
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_merfunction \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_merfunction_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			mer.setId(null);
-			mer.setDescription(""mer 1"");
-			mer.setImage([B@69d0b0f5);
-			mer.setComplexity(1);
-			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
-			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			mer = dbCon.getMER(1L);
 			modified(mer);
 			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE null - "mer 1"");
+			System.out.println("Exibi��o de MRE 1 - mer 1");
 			flush();
 
 	}
 
 
-	rule ruleMER_null_typemer3 {
+	rule ruleMER_1_typemer1_3 {
 
 		declarations
 			TypeMER typeMER;
 			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			typeMER.getId().equals(module.entity.TypeMER@14575191) ; 
+			typeMER.getId().equals(1) ; 
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_null_typemer \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_typemer1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			mer.setId(null);
-			mer.setDescription(""mer 1"");
-			mer.setImage([B@69d0b0f5);
-			mer.setComplexity(1);
-			mer.setMerFunctions([module.entity.MERFunction@625e3df4]);
-			mer.setTypeMers([module.entity.TypeMER@14575191]);
+			mer = dbCon.getMER(1L);
 			modified(mer);
 			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE null - "mer 1"");
+			System.out.println("Exibi��o de MRE 1 - mer 1");
+			flush();
+
+	}
+
+
+	rule ruleMER_2_4 {
+
+		declarations
+			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			mer.getId().equals(2L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer = dbCon.getMER(2L);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
+			flush();
+
+	}
+
+
+	rule ruleMER_2_complexity_2_5 {
+
+		declarations
+			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			mer.getComplexity() == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer = dbCon.getMER(2L);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
+			flush();
+
+	}
+
+
+	rule ruleMER_2_merfunction_1_2_6 {
+
+		declarations
+			MERFunction merFunction;
+			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			merFunction.getId().equals(1) || 
+			merFunction.getId().equals(2) ; 
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_merfunction_1_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer = dbCon.getMER(2L);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
+			flush();
+
+	}
+
+
+	rule ruleMER_2_typemer1_2_7 {
+
+		declarations
+			TypeMER typeMER;
+			MultipleExternalRepresentation mer;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			typeMER.getId().equals(1) || 
+			typeMER.getId().equals(2) ; 
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_typemer1_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			mer = dbCon.getMER(2L);
+			modified(mer);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
 			flush();
 
 	}
