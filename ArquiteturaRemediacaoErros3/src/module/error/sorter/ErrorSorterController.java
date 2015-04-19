@@ -1,15 +1,16 @@
 package module.error.sorter;
 
 import module.entity.Action;
+import module.entity.DBConnect;
 import module.entity.RuleToHuman;
-import module.entity.WrongAnswer;
 
 public class ErrorSorterController {
 
 
-	public static void classificarErro(Action action, RuleToHuman ruleToHuman) {
+	public static void classificarErro(Action action, DBConnect dbCon, RuleToHuman ruleToHuman) {
 		ErrorSorterKB classificadorErroKB = new ErrorSorterKB();
 		classificadorErroKB.tell(action);
+		classificadorErroKB.tell(dbCon);
 		classificadorErroKB.tell(ruleToHuman);
 		classificadorErroKB.run();
 		

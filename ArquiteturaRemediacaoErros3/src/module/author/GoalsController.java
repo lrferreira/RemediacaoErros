@@ -1,13 +1,15 @@
 package module.author;
 
 import java.io.File;
+import java.sql.SQLException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
+import util.StringConstants;
 import module.entity.Action;
-import module.entity.Answer;
+import module.entity.DBConnect;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.RuleToHuman;
@@ -30,6 +32,14 @@ public class GoalsController {
 		RuleToHuman ruleToHuman = new RuleToHuman();
 		ruleToHuman.setDescription("");
 		
+		DBConnect dbCon = null;
+		try {
+			dbCon = new DBConnect(StringConstants.FILE_DB);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		ExpressionIdentifierController.identificaExpressao(action, ruleToHuman);
 		
@@ -37,8 +47,6 @@ public class GoalsController {
 			textPane.setText(ruleToHuman.getDescription());
 			if (action.getGoal().getSubGoal() != null){
 				System.out.println("componente pr�xima meta: " + action.getGoal().getSubGoal().getComponent());
-				//action.getGoal().getSubGoal().getComponent().setEnabled(true);
-				//action.getGoal().getSubGoal().getComponent().requestFocusInWindow();
 			}
 			System.out.println("Resposta Correta! Fim!");
 			//System.exit(1);
@@ -46,11 +54,11 @@ public class GoalsController {
 		
 		else{
 
-			ErrorSorterController.classificarErro(action, ruleToHuman);
+			ErrorSorterController.classificarErro(action, dbCon, ruleToHuman);
 			
 			if ( ((WrongAnswer)action.getAnswer()).getErrorType() != null){
 				MERFunction funcaoMRE = new MERFunction();
-				MERFunctionSorterController.classificarFuncaoMRE(action, ruleToHuman, funcaoMRE);
+				MERFunctionSorterController.classificarFuncaoMRE(action, ruleToHuman, dbCon, funcaoMRE);
 				
 				if (funcaoMRE != null){
 					MultipleExternalRepresentation mer = new MultipleExternalRepresentation();

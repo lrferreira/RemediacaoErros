@@ -184,7 +184,8 @@ public class RulesFactory {
 						"_GOAL_" + remediation.getGoal().getId() + 
 						"_COMPONENT_" + remediation.getGoal().getComponent() + "_");		
 		r.setDeclarations(new ArrayList<String>());
-		r.getDeclarations().add("Action action;"); 
+		r.getDeclarations().add("Action action;");
+		r.getDeclarations().add("DBConnect dbCon;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
 
 		ArrayList<String> conditions = new ArrayList<String>();
@@ -208,10 +209,12 @@ public class RulesFactory {
 			r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"" + c + "\\n\");");		
 
 		r.getActions().add("System.out.println(\"Erro classificado como " + remediation.getItemSorter().getErrorType().getDescription() +"\");");
-		r.getActions().add("((WrongAnswer)action.getAnswer()).setErrorType( new ErrorType("+remediation.getItemSorter().getErrorType().getId()+"L,\"" +remediation.getItemSorter().getErrorType().getDescription()+ "\", new ArrayList<SubErrorType>()));");
+		//r.getActions().add("((WrongAnswer)action.getAnswer()).setErrorType( new ErrorType("+remediation.getItemSorter().getErrorType().getId()+"L,\"" +remediation.getItemSorter().getErrorType().getDescription()+ "\", new ArrayList<SubErrorType>()));");
+		r.getActions().add("((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType("+remediation.getItemSorter().getErrorType().getId()+"L));");
 
 		if (remediation.getItemSorter().getSubErrorType() != null)
-			r.getActions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( new SubErrorType("+remediation.getItemSorter().getSubErrorType().getId()+"L,\"" +remediation.getItemSorter().getSubErrorType().getDescription()+ "\", ((WrongAnswer)action.getAnswer()).getErrorType()));");
+			r.getActions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType("+remediation.getItemSorter().getSubErrorType().getId()+"L));");
+			//r.getActions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( new SubErrorType("+remediation.getItemSorter().getSubErrorType().getId()+"L,\"" +remediation.getItemSorter().getSubErrorType().getDescription()+ "\", ((WrongAnswer)action.getAnswer()).getErrorType()));");
 		
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("modified(action);");

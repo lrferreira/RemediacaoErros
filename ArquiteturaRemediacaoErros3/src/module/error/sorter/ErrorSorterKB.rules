@@ -17,10 +17,12 @@ ruleBase ErrorSorterKB {
 
 
 
+
 	rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0 {
 
 		declarations
 			Action action;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
@@ -36,8 +38,8 @@ ruleBase ErrorSorterKB {
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
 			System.out.println("Erro classificado como Diretamente Identificáveis");
-			((WrongAnswer)action.getAnswer()).setErrorType( new ErrorType(2L,"Diretamente Identificáveis", new ArrayList<SubErrorType>()));
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( new SubErrorType(3L,"Deficiência na escolha do operador correto", ((WrongAnswer)action.getAnswer()).getErrorType()));
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(3L));
 			modified(ruleToHuman);
 			modified(action);
 			flush();

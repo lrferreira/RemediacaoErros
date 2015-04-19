@@ -16,6 +16,7 @@ ruleBase MERFunctionSorterKB {
 
 
 
+
 	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0 {
 
 		declarations

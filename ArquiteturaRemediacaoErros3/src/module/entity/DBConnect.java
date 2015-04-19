@@ -213,7 +213,7 @@ public class DBConnect {
 			this.stm = this.conn.createStatement();
 			rs = this.stm.executeQuery("select * from errortype WHERE id = " + id_errortype);
 			if (rs.next()){
-				e = new ErrorType(rs.getLong("id"), rs.getString("description"), null);
+				e = new ErrorType(rs.getLong("id"), rs.getString("description"), new ArrayList<SubErrorType>());
 			}
 		} catch (SQLException e1) {
 			e1.printStackTrace();

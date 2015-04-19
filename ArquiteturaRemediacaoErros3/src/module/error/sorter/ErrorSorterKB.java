@@ -17,12 +17,14 @@ import module.entity.DBConnect;
 
 
 
+
 	
     /**
      * Identifiers of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0
      */
     private String[] identifiers_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0 = {
         "action",
+        "dbCon",
         "ruleToHuman"
     };
 
@@ -46,7 +48,8 @@ import module.entity.DBConnect;
     private String getDeclaredClassName_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0(int index) {
         switch (index) {
             case 0: return "module.entity.Action";
-            case 1: return "module.entity.RuleToHuman";
+            case 1: return "module.entity.DBConnect";
+            case 2: return "module.entity.RuleToHuman";
             default: return null;
         }
     }
@@ -60,7 +63,8 @@ import module.entity.DBConnect;
     private Class getDeclaredClass_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0(int index) {
         switch (index) {
             case 0: return module.entity.Action.class;
-            case 1: return module.entity.RuleToHuman.class;
+            case 1: return module.entity.DBConnect.class;
+            case 2: return module.entity.RuleToHuman.class;
             default: return null;
         }
     }
@@ -74,7 +78,8 @@ import module.entity.DBConnect;
     private void setObject_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0(int index, Object value) {
         switch (index) {
             case 0: this.module_entity_Action_1 = (module.entity.Action) value; break;
-            case 1: this.module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) value; break;
+            case 1: this.module_entity_DBConnect_1 = (module.entity.DBConnect) value; break;
+            case 2: this.module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) value; break;
         }
     }
 
@@ -87,7 +92,8 @@ import module.entity.DBConnect;
     private Object getObject_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0(int index) {
         switch (index) {
             case 0: return module_entity_Action_1;
-            case 1: return module_entity_RuleToHuman_1;
+            case 1: return module_entity_DBConnect_1;
+            case 2: return module_entity_RuleToHuman_1;
             default: return null;
         }
     }
@@ -102,6 +108,7 @@ import module.entity.DBConnect;
     private Object[] getObjects_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0() {
         return new Object[] {
                             module_entity_Action_1,
+                            module_entity_DBConnect_1,
                             module_entity_RuleToHuman_1
                             };
     }
@@ -115,7 +122,8 @@ import module.entity.DBConnect;
      */
     private void setObjects_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0(Object[] objects) {
         module_entity_Action_1 = (module.entity.Action) objects[0];
-        module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[1];
+        module_entity_DBConnect_1 = (module.entity.DBConnect) objects[1];
+        module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
     }
 
     /**
@@ -201,6 +209,8 @@ import module.entity.DBConnect;
                 return true;
             case 1:
                 return true;
+            case 2:
+                return true;
             default: return false;
         }
     }
@@ -221,6 +231,8 @@ import module.entity.DBConnect;
                 return true;
             case 1:
                 return true;
+            case 2:
+                return true;
             default: return false;
         }
     }
@@ -233,8 +245,8 @@ import module.entity.DBConnect;
 			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condi��es:  \n");
 			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo = -\n");
 			System.out.println("Erro classificado como Diretamente Identificáveis");
-			((WrongAnswer)module_entity_Action_1.getAnswer()).setErrorType( new ErrorType(2L,"Diretamente Identificáveis", new ArrayList<SubErrorType>()));
-			((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getSubErrorTypes().add( new SubErrorType(3L,"Deficiência na escolha do operador correto", ((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType()));
+			((WrongAnswer)module_entity_Action_1.getAnswer()).setErrorType( module_entity_DBConnect_1.getErrorType(2L));
+			((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getSubErrorTypes().add( module_entity_DBConnect_1.getSubErrorType(3L));
 			modified(module_entity_RuleToHuman_1);
 			modified(module_entity_Action_1);
 			flush();
@@ -443,7 +455,7 @@ import module.entity.DBConnect;
      * The number of declarations of the rules in this class file.
      */
     private static final int[] File_numberOfDeclarations = {
-        2,
+        3,
         2
     };
 
@@ -654,6 +666,7 @@ import module.entity.DBConnect;
      * The variables declared in the rules.
      */
     private module.entity.Action module_entity_Action_1;
+    private module.entity.DBConnect module_entity_DBConnect_1;
     private module.entity.RuleToHuman module_entity_RuleToHuman_1;
 
     /**
