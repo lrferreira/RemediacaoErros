@@ -1954,7 +1954,7 @@ import java.util.ArrayList;
 /**
  * Knowledge base created by JEOPS from file MERManagerKB.rules
  *
- * @version 16/04/2015
+ * @version 19/04/2015
  */
 public class MERManagerKB extends jeops.AbstractKnowledgeBase {
 

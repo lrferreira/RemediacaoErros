@@ -34,6 +34,10 @@ public class Goal {
 		this.setDescription(description);
 	}
 	
+	public Goal(long id) {
+		this.setId(id);
+	}
+
 	public String getComponent() {
 		return component;
 	}

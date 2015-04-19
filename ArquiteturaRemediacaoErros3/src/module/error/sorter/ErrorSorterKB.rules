@@ -16,6 +16,7 @@ import module.entity.DBConnect;
 ruleBase ErrorSorterKB {
 
 
+
 	rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0 {
 
 		declarations
@@ -25,8 +26,8 @@ ruleBase ErrorSorterKB {
 		localdecl
 
 		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
 			action.getAnswer().getValue().equalsIgnoreCase("-");
 

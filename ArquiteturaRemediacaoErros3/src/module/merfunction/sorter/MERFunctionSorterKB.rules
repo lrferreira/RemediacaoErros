@@ -16,7 +16,6 @@ ruleBase MERFunctionSorterKB {
 
 
 
-
 	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0 {
 
 		declarations
@@ -28,10 +27,10 @@ ruleBase MERFunctionSorterKB {
 		localdecl
 
 		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3);
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
 
 		actions

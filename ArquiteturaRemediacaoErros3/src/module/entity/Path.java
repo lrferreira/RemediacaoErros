@@ -2,12 +2,22 @@ package module.entity;
 
 import java.util.ArrayList;
 
+
 public class Path {
 	
+
 	private Long id;
 	private String description;
+	private Exercise exercise;
 	private ArrayList<Goal> goals;
 	
+	public Path(Long id, Exercise exercise, String description, ArrayList<Goal> goals) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.goals = goals;
+		this.exercise = exercise;
+	}
 	
 	public Path(Long id, String description) {
 		this.id = id;
@@ -40,6 +50,14 @@ public class Path {
 				return g;
 		}
 		return null;
+	}
+
+	public Exercise getExercise() {
+		return exercise;
+	}
+
+	public void setExercise(Exercise exercise) {
+		this.exercise = exercise;
 	}
 
 }

@@ -25,8 +25,8 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 		localdecl
 
 		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
 			action.getAnswer().getValue().equalsIgnoreCase("-");
 

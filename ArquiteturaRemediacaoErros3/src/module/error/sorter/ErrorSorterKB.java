@@ -16,6 +16,7 @@ import module.entity.DBConnect;
  class Jeops_RuleBase_ErrorSorterKB extends jeops.AbstractRuleBase {
 
 
+
 	
     /**
      * Identifiers of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0
@@ -120,25 +121,25 @@ import module.entity.DBConnect;
     /**
      * Condition 0 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1)</code>
+     * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_0() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
      * Condition 1 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(1)</code>
+     * <code>action.getGoal().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_1() {
-        return (module_entity_Action_1.getGoal().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getId().equals(1L));
     }
 
     /**
@@ -669,7 +670,7 @@ import module.entity.DBConnect;
 /**
  * Knowledge base created by JEOPS from file ErrorSorterKB.rules
  *
- * @version 16/04/2015
+ * @version 19/04/2015
  */
 public class ErrorSorterKB extends jeops.AbstractKnowledgeBase {
 

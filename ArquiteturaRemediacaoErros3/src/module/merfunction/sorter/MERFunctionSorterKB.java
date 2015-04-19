@@ -16,7 +16,6 @@ import module.entity.DBConnect;
 
 
 
-
 	
     /**
      * Identifiers of rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0
@@ -135,49 +134,49 @@ import module.entity.DBConnect;
     /**
      * Condition 0 of rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2)</code>
+     * <code>((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_0() {
-        return (((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getId().equals(2));
+        return (((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getId().equals(2L));
     }
 
     /**
      * Condition 1 of rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3)</code>
+     * <code>((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_1() {
-        return (((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3));
+        return (((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L));
     }
 
     /**
      * Condition 2 of rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1)</code>
+     * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_2() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
      * Condition 3 of rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(1)</code>
+     * <code>action.getGoal().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_3() {
-        return (module_entity_Action_1.getGoal().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getId().equals(1L));
     }
 
     /**
@@ -518,7 +517,7 @@ import module.entity.DBConnect;
 /**
  * Knowledge base created by JEOPS from file MERFunctionSorterKB.rules
  *
- * @version 16/04/2015
+ * @version 19/04/2015
  */
 public class MERFunctionSorterKB extends jeops.AbstractKnowledgeBase {
 

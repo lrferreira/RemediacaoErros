@@ -120,25 +120,25 @@ import module.entity.DBConnect;
     /**
      * Condition 0 of rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1)</code>
+     * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
      * Condition 1 of rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(1)</code>
+     * <code>action.getGoal().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1() {
-        return (module_entity_Action_1.getGoal().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getId().equals(1L));
     }
 
     /**
@@ -679,7 +679,7 @@ import module.entity.DBConnect;
 /**
  * Knowledge base created by JEOPS from file ExpressionIdentifierWrongAnswerKB.rules
  *
- * @version 16/04/2015
+ * @version 19/04/2015
  */
 public class ExpressionIdentifierWrongAnswerKB extends jeops.AbstractKnowledgeBase {
 

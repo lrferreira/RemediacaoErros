@@ -1,7 +1,5 @@
 package module.entity;
 
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -628,13 +626,15 @@ public class DBConnect {
 			PreparedStatement prepStmt = null;
 			
 			try{
-	            prepStmt= conn.prepareStatement("insert into path VALUES (?,?)");
+	            prepStmt= conn.prepareStatement("insert into path VALUES (?,?, ?)");
 	            prepStmt.setLong(1, path.getId());
 	            prepStmt.setString(2, path.getDescription());
+	            prepStmt.setLong(3, path.getExercise().getId());
 
 	            prepStmt.executeUpdate();
 	            
-	            
+	            for (Goal g: path.getGoals())
+	            	save(g);
 	            
 			}catch(Exception e){
 	            e.printStackTrace();
@@ -653,7 +653,82 @@ public class DBConnect {
 		
 	}
 
+	public void save(Exercise exercise){
+
+		try {
+			this.stm = this.conn.createStatement();
+			
+			if (exercise.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM exercise");
+				exercise.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			}
+			
+			PreparedStatement prepStmt = null;
+			
+			try{
+	            prepStmt= conn.prepareStatement("insert into exercise VALUES (?,?)");
+	            prepStmt.setLong(1, exercise.getId());
+	            prepStmt.setString(2, exercise.getEnunciate());
+
+
+	            prepStmt.executeUpdate();
+	            
+	            for (Path path : exercise.getPaths())
+	            	save(path);
+	            for (ExerciseInitialState eis: exercise.getInitialState())
+	            	save(eis);
+	            
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
+			
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
 		
+	}
+
+	public void save(ExerciseInitialState eis){
+
+		try {
+			this.stm = this.conn.createStatement();
+			
+			
+			PreparedStatement prepStmt = null;
+			
+			try{
+	            prepStmt= conn.prepareStatement("insert into exercise_initialstate VALUES (?,?,?)");
+	            prepStmt.setLong(1, eis.getExercise().getId());
+	            prepStmt.setString(2, eis.getComponent());
+	            prepStmt.setString(3, eis.getValue());
+
+
+	            prepStmt.executeUpdate();
+	            
+			}catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try {
+	                prepStmt.close();
+	            } catch (Exception e) {
+	            }
+	        }
+			
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		
+	}
+
 	public ArrayList<Action> getActions(){
 		ArrayList<Action> actions = new ArrayList<Action>();
 		Statement stmt=null;
@@ -687,7 +762,7 @@ public class DBConnect {
             	action.setAnswer(action.getCorrect() ? new CorrectAnswer(rs.getString("answer")) : new WrongAnswer(rs.getString("answer")));
             	action.setAttempt(rs.getInt("attempt"));
             	action.setDate(rs.getDate("date"));
-            	action.setGoal(getGoal(rs.getLong("id_goal")));
+            	//action.setGoal(getGoal(rs.getLong("id_goal"), false));
             	action.setMer(getMER(rs.getLong("id_mer")));
             	action.setRegrasAcionadas(new ArrayList<String>());
             	action.setStudent(getStudent(rs.getLong("id_student")));
@@ -710,7 +785,7 @@ public class DBConnect {
         return action;
 }
 	
-	private Student getStudent(Long id_student) {
+	public Student getStudent(Long id_student) {
 
 		Student student = null;
         Statement stmt=null;
@@ -732,7 +807,31 @@ public class DBConnect {
 		return student;
 	}
 
-	private Path getPath(Long id_path) {
+	public Exercise getExercise(Long id_exercise) {
+
+		Exercise exercise = null;
+		
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from exercise where id="+id_exercise);
+            if(rs.next()){
+            	exercise = new Exercise(rs.getLong("id"),rs.getString("enunciate"), getPathsByExercise(id_exercise), null );
+            	for (Path p: exercise.getPaths()) p.setExercise(exercise);
+            	exercise.setInitialState(getInitialState(exercise));
+            } else return null;
+            rs.close();
+            
+                        
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+
+		return exercise;
+	}
+	
+	public Path getPath(Long id_path) {
 
 		Path path = null;
         Statement stmt=null;
@@ -740,8 +839,8 @@ public class DBConnect {
             stmt=conn.createStatement();
             ResultSet rs=stmt.executeQuery("select * from path where id="+id_path);
             if(rs.next()){
-            	path = new Path(rs.getLong("id"),rs.getString("description"));
-
+            	path = new Path(rs.getLong("id"),null, rs.getString("description"), getGoalsByPath(id_path));
+            	for (Goal g : path.getGoals()) g.setPath(path);
             } else return null;
             rs.close();
             
@@ -754,27 +853,42 @@ public class DBConnect {
 		return path;
 	}
 
-	public Goal getGoal(Long id){
+	public Goal getGoal(Long id, boolean bringSubSuper){
         Goal goal = null;
         
         Statement stmt=null;
         try{
             stmt=conn.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from goal where id="+id);
+            ResultSet rs=stmt.executeQuery("select * from goal where id=" + id);
             if(rs.next()){
             	goal = new Goal();
                 goal.setId(rs.getLong("id"));
+                //if (goal.getId().equals(0L)) return null;
                 goal.setComponent(rs.getString("component"));
-                goal.setPath(getPath(rs.getLong("id_path")));
+                //goal.setPath(getPath(rs.getLong("id_path")));
                 goal.setAnswer(new CorrectAnswer(rs.getString("answer")));
                 goal.setSatisfied(rs.getBoolean("satisfied"));
                 goal.setDescription(rs.getString("description"));
                 goal.setActions(getActionsByGoal(rs.getLong("id")));
-                goal.setSubGoal(getGoal(rs.getLong("id_subgoal")));
-                goal.setSuperGoal(getGoal(rs.getLong("id_supergoal")));
-                goal.setRemediations(getRemediationsByGoal(rs.getLong("id")));
+                if (bringSubSuper) {
+                	Long i = rs.getLong("id_subgoal");
+                	if (i.equals(0L)) 
+                		goal.setSubGoal(null); 
+                	else 
+                		goal.setSubGoal(getGoal(i, false));
+                	i = rs.getLong("id_supergoal");
+                	if (i.equals(0L)) 
+                		goal.setSuperGoal(null); 
+                	else 
+                		goal.setSuperGoal(getGoal(i, false));                	
+                } else {
+                	goal.setSubGoal(new Goal(rs.getLong("id_subgoal")));
+                	goal.setSuperGoal(new Goal(rs.getLong("id_supergoal")));
+                }
+                	
+                //goal.setRemediations(getRemediationsByGoal(rs.getLong("id")));
 
-            } else return null;
+            } 
             rs.close();
             
                         
@@ -785,8 +899,9 @@ public class DBConnect {
         
         return goal;
 }
+
 	
-	private ArrayList<Action> getActionsByGoal(long id_goal) {
+	public ArrayList<Action> getActionsByGoal(long id_goal) {
 
 		ArrayList<Action> actions = new ArrayList<Action>();
 		try {
@@ -804,7 +919,61 @@ public class DBConnect {
 
 	}
 
-	private ArrayList<Remediation> getRemediationsByGoal(long id_goal) {
+	public ArrayList<Goal> getGoalsByPath(long id_path) {
+
+		ArrayList<Goal> goals = new ArrayList<Goal>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from goal where id_path = " + id_path);
+			while (rs.next()){
+				goals.add(getGoal(rs.getLong("id"), false));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return goals;
+
+	}
+
+	public ArrayList<Path> getPathsByExercise(long id_exercise) {
+
+		ArrayList<Path> paths = new ArrayList<Path>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from path where id_exercise = " + id_exercise);
+			while (rs.next()){
+				paths.add(getPath(rs.getLong("id")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return paths;
+
+	}
+
+	public ArrayList<ExerciseInitialState> getInitialState(Exercise exercise) {
+
+		ArrayList<ExerciseInitialState> initialState = new ArrayList<ExerciseInitialState>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from exercise_initialstate  where id_exercise = " + exercise.getId());
+			while (rs.next()){
+				initialState.add(new ExerciseInitialState(exercise, rs.getString("component"), rs.getString("value")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return initialState;
+
+	}
+
+	public ArrayList<Remediation> getRemediationsByGoal(long id_goal) {
 
 		ArrayList<Remediation> remediations = new ArrayList<Remediation>();
 		try {
@@ -835,7 +1004,7 @@ public class DBConnect {
                 remediation.setId(rs.getLong("id"));
                 remediation.setAttempts(rs.getInt("attempts"));
                 remediation.setCriterion(getCriterion(rs.getLong("id_criterion")));
-                remediation.setGoal(getGoal(rs.getLong("id_goal")));
+                remediation.setGoal(getGoal(rs.getLong("id_goal"), false));
                 remediation.setItemSorter(getItemSorter(rs.getLong("id_itemsorter")));
                 remediation.setRelatedError(rs.getString("relatederror"));
                 remediation.setWrongAnswer(rs.getString("wronganswer"));

@@ -15,6 +15,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 
 
 
+
 	rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_0 {
 
 		declarations
@@ -24,8 +25,8 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 		localdecl
 
 		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(1);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
 			action.getAnswer().getValue().equalsIgnoreCase("+");
 
@@ -55,8 +56,8 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 		localdecl
 
 		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(2);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
 			action.getAnswer().getValue().equalsIgnoreCase("6");
 
@@ -86,8 +87,8 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 		localdecl
 
 		conditions
-			action.getGoal().getPath().getId().equals(1);
-			action.getGoal().getId().equals(3);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt7");
 			action.getAnswer().getValue().equalsIgnoreCase("1");
 

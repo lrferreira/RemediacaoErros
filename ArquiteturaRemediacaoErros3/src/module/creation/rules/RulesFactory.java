@@ -92,8 +92,8 @@ public class RulesFactory {
 		ArrayList<String> conditions = new ArrayList<String>();
 		ArrayList<String> strCondAux = new ArrayList<String>();
 		
-		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + ");");
-		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + ");");
+		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + "L);");
+		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + "L);");
 		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 
 		if (remediation.getWrongAnswer() != null){
@@ -143,8 +143,8 @@ public class RulesFactory {
 
 		//int numberConditions = correctAnswer.getValue().length;
 		ArrayList<String> conditions = new ArrayList<String>();
-		conditions.add("action.getGoal().getPath().getId().equals(" + goal.getPath().getId() + ");");
-		conditions.add("action.getGoal().getId().equals(" + goal.getId() + ");");
+		conditions.add("action.getGoal().getPath().getId().equals(" + goal.getPath().getId() + "L);");
+		conditions.add("action.getGoal().getId().equals(" + goal.getId() + "L);");
 		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + goal.getComponent() + "\");");
 	
 		ArrayList<String> strCondAux = new ArrayList<String>();
@@ -190,8 +190,8 @@ public class RulesFactory {
 		ArrayList<String> conditions = new ArrayList<String>();
 		ArrayList<String> strCondAux = new ArrayList<String>();
 
-		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + ");");
-		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + ");");
+		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + "L);");
+		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + "L);");
 		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 	
 		if (remediation.getWrongAnswer() != null) {
@@ -238,11 +238,11 @@ public class RulesFactory {
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
 
 		r.setConditions(new ArrayList<String>());
-		r.getConditions().add("((WrongAnswer)action.getAnswer()).getErrorType().getId().equals("+ remediation.getItemSorter().getErrorType().getId()+");");
+		r.getConditions().add("((WrongAnswer)action.getAnswer()).getErrorType().getId().equals("+ remediation.getItemSorter().getErrorType().getId()+"L);");
 		if (remediation.getItemSorter().getSubErrorType() != null)
-			r.getConditions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals("+ remediation.getItemSorter().getSubErrorType().getId()+");");
-		r.getConditions().add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + ");");
-		r.getConditions().add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + ");");
+			r.getConditions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals("+ remediation.getItemSorter().getSubErrorType().getId()+"L);");
+		r.getConditions().add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + "L);");
+		r.getConditions().add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + "L);");
 		r.getConditions().add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 
 		
@@ -343,7 +343,7 @@ public class RulesFactory {
 		  
 
 		for (int i = 0; i < mer.getMerFunctions().size(); i++){
-			String s = "merFunction.getId().equals(" + mer.getMerFunctions().get(i).getId() + ")";
+			String s = "merFunction.getId().equals(" + mer.getMerFunctions().get(i).getId() + "L)";
 			r.setRuleName(r.getRuleName() + mer.getMerFunctions().get(i).getId() + "_");
 			if (i == mer.getMerFunctions().size()-1)
 				s = s + " ; ";
@@ -383,7 +383,7 @@ public class RulesFactory {
 		  
 
 		for (int i = 0; i < mer.getTypeMers().size(); i++){
-			String s = "typeMER.getId().equals(" + mer.getTypeMers().get(i).getId() + ")";
+			String s = "typeMER.getId().equals(" + mer.getTypeMers().get(i).getId() + "L)";
 			r.setRuleName(r.getRuleName() + mer.getTypeMers().get(i).getId() + "_");
 			if (i == mer.getTypeMers().size()-1)
 				s = s + " ; ";

@@ -6,6 +6,11 @@ public class MERFunction {
 	private String description;
 	
 	
+	public MERFunction() {
+		super();
+	}
+	
+	
 	public MERFunction(Long id, String description) {
 		super();
 		this.id = id;

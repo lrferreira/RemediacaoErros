@@ -15,6 +15,7 @@ import javax.swing.*;
 
 
 
+
 	
     /**
      * Identifiers of rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_0
@@ -119,25 +120,25 @@ import javax.swing.*;
     /**
      * Condition 0 of rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1)</code>
+     * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_0() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
      * Condition 1 of rule correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_0.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(1)</code>
+     * <code>action.getGoal().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_0_cond_1() {
-        return (module_entity_Action_1.getGoal().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getId().equals(1L));
     }
 
     /**
@@ -349,25 +350,25 @@ import javax.swing.*;
     /**
      * Condition 0 of rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt8_1.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1)</code>
+     * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_PATH_1_GOAL_2_COMPONENT_txt8_1_cond_0() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
      * Condition 1 of rule correctAnswer_PATH_1_GOAL_2_COMPONENT_txt8_1.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(2)</code>
+     * <code>action.getGoal().getId().equals(2L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_PATH_1_GOAL_2_COMPONENT_txt8_1_cond_1() {
-        return (module_entity_Action_1.getGoal().getId().equals(2));
+        return (module_entity_Action_1.getGoal().getId().equals(2L));
     }
 
     /**
@@ -579,25 +580,25 @@ import javax.swing.*;
     /**
      * Condition 0 of rule correctAnswer_PATH_1_GOAL_3_COMPONENT_txt7_2.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1)</code>
+     * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_PATH_1_GOAL_3_COMPONENT_txt7_2_cond_0() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1));
+        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
      * Condition 1 of rule correctAnswer_PATH_1_GOAL_3_COMPONENT_txt7_2.<p>
      * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(3)</code>
+     * <code>action.getGoal().getId().equals(3L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
     private boolean correctAnswer_PATH_1_GOAL_3_COMPONENT_txt7_2_cond_1() {
-        return (module_entity_Action_1.getGoal().getId().equals(3));
+        return (module_entity_Action_1.getGoal().getId().equals(3L));
     }
 
     /**
@@ -969,7 +970,7 @@ import javax.swing.*;
 /**
  * Knowledge base created by JEOPS from file ExpressionIdentifierCorrectAnswerKB.rules
  *
- * @version 16/04/2015
+ * @version 19/04/2015
  */
 public class ExpressionIdentifierCorrectAnswerKB extends jeops.AbstractKnowledgeBase {
 

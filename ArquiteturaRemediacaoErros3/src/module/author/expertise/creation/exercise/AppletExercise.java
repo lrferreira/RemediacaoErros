@@ -38,6 +38,8 @@ import module.creation.rules.RulesFactory;
 import module.entity.CorrectAnswer;
 import module.entity.Criterion;
 import module.entity.DBConnect;
+import module.entity.Exercise;
+import module.entity.ExerciseInitialState;
 import module.entity.Goal;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.Path;
@@ -49,6 +51,7 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 
+
 public class AppletExercise extends JApplet {
 	
 	
@@ -58,6 +61,7 @@ public class AppletExercise extends JApplet {
 	protected static HashMap mapMetasRemediacoesGrafo = new HashMap();
 	protected static HashMap mapRemediacoesGrafo = new HashMap();
 	private mxGraphComponent graphComponent;
+	private Exercise exercise;
 	private Path path; 
 	private JTextField texto;
 	private JButton botaoAdd;
@@ -158,6 +162,9 @@ public class AppletExercise extends JApplet {
 		frameGraph.setVisible(true);
 		*/
 		
+		exercise = new Exercise(1L, null, new ArrayList<Path>(), new ArrayList<ExerciseInitialState>());
+
+		
 		final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0, 0, 1200, 650);
 		getContentPane().add(tabbedPane);
@@ -233,6 +240,13 @@ public class AppletExercise extends JApplet {
 		btnEstadoInicial.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 				path = new Path(new Long(1), "caminho de resolução nº 1");
+
+				for (Component c : panel_exerc.getComponents()){
+					if (c instanceof JTextField){
+						ExerciseInitialState eis = new ExerciseInitialState(exercise, ((JTextField)c).getName(), ((JTextField) c).getText());
+						exercise.getInitialState().add(eis);
+					}
+				}
 				i = 0;
 				//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
         		getGraph().getModel().beginUpdate();
@@ -326,15 +340,18 @@ public class AppletExercise extends JApplet {
 				graphComponent.getGraphControl().setBorder(new LineBorder(new Color(0, 1, 0), 4));
 				graphComponent.setPreferredSize(new Dimension(670, 380));
 				
-				JButton btnNewButton = new JButton("Salvar Metas");
+				JButton btnNewButton = new JButton("Salvar Exercício");
 				btnNewButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						exercise.setEnunciate(textArea.getText());
+						exercise.getPaths().add(path);
+						path.setExercise(exercise);
 						for (Goal g : path.getGoals()) {
 							RulesFactory.createRules(g);
-							dbCon.save(g);
+							//dbCon.save(g);
 						}
 						RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_CORRECT_ANSWER_KB);
-						dbCon.save(path);
+						dbCon.save(exercise);
 					}
 				});
 				btnNewButton.setBounds(325, 555, 211, 23);
