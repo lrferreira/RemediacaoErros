@@ -82,8 +82,10 @@ public class RulesFactory {
 	
 	public static RuleInformation ruleWrongAnswer(Remediation remediation) {
 		RuleInformation r = new RuleInformation();
-		r.setRuleName("wrongAnswer_PATH_"+remediation.getGoal().getPath().getId() +"_GOAL_"+remediation.getGoal().getId()+
-						"_COMPONENT_"+remediation.getGoal().getComponent() + "_REMEDIATION_" + remediation.getId() 
+		r.setRuleName("wrongAnswer_PATH_"+remediation.getGoal().getPath().getId() 
+						+"_GOAL_"+remediation.getGoal().getId()+
+						"_COMPONENT_"+remediation.getGoal().getComponent() + 
+						"_REMEDIATION_" + remediation.getId() 
 						+ "_");
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;");
@@ -114,6 +116,7 @@ public class RulesFactory {
 		r.getActions().add("System.out.println(\"Resposta Errada (1) detectada\");");
 		r.getActions().add("action.setCorrect(false);");
 		r.getActions().add("action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));");
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		r.getActions().add("modified(action);");
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("flush();");
@@ -164,6 +167,7 @@ public class RulesFactory {
 		r.getActions().add("action.setCorrect(true);");
 		r.getActions().add("action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));");
 		r.getActions().add("action.getGoal().setSatisfied(true);");
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		r.getActions().add("modified(action);");
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("flush();");
@@ -182,7 +186,9 @@ public class RulesFactory {
 								:"") +
 						"_PATH_" + remediation.getGoal().getPath().getId() + 
 						"_GOAL_" + remediation.getGoal().getId() + 
-						"_COMPONENT_" + remediation.getGoal().getComponent() + "_");		
+						"_COMPONENT_" + remediation.getGoal().getComponent() + 
+						"_REMEDIATION_" + remediation.getId() +
+						"_");		
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;");
 		r.getDeclarations().add("DBConnect dbCon;");
@@ -215,6 +221,7 @@ public class RulesFactory {
 		if (remediation.getItemSorter().getSubErrorType() != null)
 			r.getActions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType("+remediation.getItemSorter().getSubErrorType().getId()+"L));");
 			//r.getActions().add("((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( new SubErrorType("+remediation.getItemSorter().getSubErrorType().getId()+"L,\"" +remediation.getItemSorter().getSubErrorType().getDescription()+ "\", ((WrongAnswer)action.getAnswer()).getErrorType()));");
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("modified(action);");
@@ -233,7 +240,9 @@ public class RulesFactory {
 					remediation.getItemSorter().getMerFunction().getId() + 
 					"_PATH_"+remediation.getGoal().getPath().getId()+
 					"_GOAL_"+remediation.getGoal().getId()+
-					"_COMPONENT_"+remediation.getGoal().getComponent() + "_");
+					"_COMPONENT_"+remediation.getGoal().getComponent() + 
+					"_REMEDIATION_" + remediation.getId() +	
+					"_");
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;"); 
 		r.getDeclarations().add("MERFunction merFunction;");
@@ -247,7 +256,7 @@ public class RulesFactory {
 		r.getConditions().add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + "L);");
 		r.getConditions().add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + "L);");
 		r.getConditions().add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
-
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		
 		r.setActions(new ArrayList<String>());
 		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"Regra acionada para classificar a Fun��o da MRE: " + r.getRuleName() + " \\n\");");
@@ -531,7 +540,7 @@ public class RulesFactory {
 		    		System.out.println(str);  
 		    		if (str.contains(ruleName)) {
 		    			//desconsiderar até próxima regra
-		    			while ((str = in.readLine()).contains(StringConstants.RULE_END)){}
+		    			while (!(str = in.readLine()).contains(StringConstants.RULE_END)){}
 		    		}
 		    		out.write(str); out.write("\n");
 		    	}  
@@ -553,6 +562,65 @@ public class RulesFactory {
 			e.printStackTrace();
 		}
 
+	}
+	
+	/**
+	 * Extract an existing rule file, without deleting
+	 * @author leandro
+	 * @param fileName
+	 * @param ruleName
+	 */
+	public static RuleInformation extractFileRule(String fileName, String ruleName){
+		
+		RuleInformation r = null;
+		try {
+			r = new RuleInformation();
+			r.setDeclarations(new ArrayList<String>());
+			r.setConditions(new ArrayList<String>());
+			r.setActions(new ArrayList<String>());
+			r.setLocaldecl(new ArrayList<String>());
+			
+			BufferedReader in;
+			in = new BufferedReader(new FileReader(fileName));
+  
+		   
+			String str;
+		    while ((str = in.readLine()) != null) {  
+		    		System.out.println(str);  
+		    		if (str.contains(ruleName))
+		    			r.setRuleName(ruleName);
+		    			//desconsiderar até próxima regra
+		    			while (!(str = in.readLine()).contains("declarations")){
+		    				
+		    			}
+		    			while (!(str = in.readLine()).contains("localdecl")){
+		    				if (!str.equals(""))
+		    					r.getDeclarations().add(str);
+		    			}
+		    			while (!(str = in.readLine()).contains("conditions")){
+		    				if (!str.equals(""))
+		    					r.getLocaldecl().add(str);
+		    			}
+		    			while (!(str = in.readLine()).contains("actions")){
+		    				if (!str.equals(""))
+		    					r.getConditions().add(str);
+		    			} 
+		    			while (!(str = in.readLine()).contains("}")){
+		    				if (!str.equals(""))
+		    					r.getActions().add(str);
+		    			} 
+		    	}  
+
+		    in.close();
+		 
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+		return r;
 	}
 	
 

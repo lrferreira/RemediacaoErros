@@ -112,6 +112,7 @@ public class AppletExercise extends JApplet {
 	private JComboBox cmbMre;
 	private JLabel label_18;
 	private JLabel lblEspecificarResposta;
+	private JComboBox cmbExercise;
 	
 	private ArrayList<Sorter> sorters;
 	private DBConnect dbCon;
@@ -130,6 +131,7 @@ public class AppletExercise extends JApplet {
 	private HashMap mapCmbSubErrorType = new HashMap();
 	private HashMap mapCmbMer = new HashMap();
 	private HashMap mapCmbCriterion = new HashMap();
+	private HashMap mapCmbExercise = new HashMap();
 	private JLabel lblMer;
 	private JLabel lblApsNmeroDe;
 	private JTextField txtTentativas;
@@ -162,7 +164,7 @@ public class AppletExercise extends JApplet {
 		frameGraph.setVisible(true);
 		*/
 		
-		exercise = new Exercise(1L, null, new ArrayList<Path>(), new ArrayList<ExerciseInitialState>());
+		exercise = new Exercise(null, null, new ArrayList<Path>(), new ArrayList<ExerciseInitialState>());
 
 		
 		final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -174,65 +176,65 @@ public class AppletExercise extends JApplet {
 		panel_exerc.setLayout(null);
 		
 		textArea = new JTextArea();
-		textArea.setBounds(20, 30, 315, 97);
+		textArea.setBounds(21, 128, 315, 97);
 		panel_exerc.add(textArea);
 		
 		txt1 = new JTextField();
-		txt1.setBounds(111, 148, 30, 30);
+		txt1.setBounds(112, 246, 30, 30);
 		panel_exerc.add(txt1);
 		txt1.setColumns(10);
 		txt1.setName("txt1");
 		
 		txt0 = new JTextField();
-		txt0.setBounds(70, 148, 30, 30);
+		txt0.setBounds(71, 246, 30, 30);
 		panel_exerc.add(txt0);
 		txt0.setColumns(10);
 		txt0.setName("txt0");
 		
 		txt2 = new JTextField();
-		txt2.setBounds(149, 148, 30, 30);
+		txt2.setBounds(150, 246, 30, 30);
 		panel_exerc.add(txt2);
 		txt2.setColumns(10);
 		txt2.setName("txt2");
 		
 		txt3 = new JTextField();
-		txt3.setBounds(70, 189, 30, 30);
+		txt3.setBounds(71, 287, 30, 30);
 		panel_exerc.add(txt3);
 		txt3.setColumns(10);
 		txt3.setName("txt3");
 		
 		txt4 = new JTextField();
-		txt4.setBounds(111, 189, 30, 30);
+		txt4.setBounds(112, 287, 30, 30);
 		panel_exerc.add(txt4);
 		txt4.setColumns(10);
 		txt4.setName("txt4");
 		
 		txt5 = new JTextField();
-		txt5.setBounds(149, 189, 30, 30);
+		txt5.setBounds(150, 287, 30, 30);
 		panel_exerc.add(txt5);
 		txt5.setColumns(10);
 		txt5.setName("txt5");
 		
 		txt6 = new JTextField();
-		txt6.setBounds(71, 236, 30, 30);
+		txt6.setBounds(72, 334, 30, 30);
 		panel_exerc.add(txt6);
 		txt6.setColumns(10);
 		txt6.setName("txt6");
 		
 		txt7 = new JTextField();
-		txt7.setBounds(113, 236, 30, 30);
+		txt7.setBounds(114, 334, 30, 30);
 		panel_exerc.add(txt7);
 		txt7.setColumns(10);
 		txt7.setName("txt7");
 		
 		txt8 = new JTextField();
-		txt8.setBounds(153, 236, 30, 30);
+		txt8.setBounds(154, 334, 30, 30);
 		panel_exerc.add(txt8);
 		txt8.setColumns(10);
 		txt8.setName("txt8");
 		
 		separator = new JSeparator();
-		separator.setBounds(62, 229, 132, 2);
+		separator.setBounds(63, 327, 132, 2);
 		panel_exerc.add(separator);
 		
 		
@@ -275,7 +277,7 @@ public class AppletExercise extends JApplet {
         		btnEstadoInicial.setEnabled(false);				
 					}
 				});
-				btnEstadoInicial.setBounds(205, 152, 130, 23);
+				btnEstadoInicial.setBounds(206, 250, 130, 23);
 				panel_exerc.add(btnEstadoInicial);
 				
 				JButton btnNovoEstado = new JButton("Novo Estado");
@@ -284,12 +286,8 @@ public class AppletExercise extends JApplet {
 							addEstado();
 						}
 					});
-				btnNovoEstado.setBounds(205, 189, 130, 23);
+				btnNovoEstado.setBounds(206, 287, 130, 23);
 				panel_exerc.add(btnNovoEstado);
-				
-				JMenuBar menuBar = new JMenuBar();
-				menuBar.setBounds(0, 0, 335, 21);
-				panel_exerc.add(menuBar);
 				
 				graphComponent = new mxGraphComponent(graph){
 					@Override
@@ -356,6 +354,11 @@ public class AppletExercise extends JApplet {
 				});
 				btnNewButton.setBounds(325, 555, 211, 23);
 				panel_exerc.add(btnNewButton);
+				
+				cmbExercise = new JComboBox();
+                cmbExercise.setModel(new DefaultComboBoxModel(putExerciseOnForm()));
+				cmbExercise.setBounds(79, 11, 163, 20);
+				panel_exerc.add(cmbExercise);
 				
 				
 
@@ -577,6 +580,16 @@ public class AppletExercise extends JApplet {
 				        				setCriterion(dbCon.getCriterion((Long)mapCmbCriterion.get(cmbCriterion.getSelectedIndex())));				        				
 				        				}
 				        	    });
+				                
+				                cmbExercise.addItemListener(new ItemListener() {
+				        			@Override
+				        			public void itemStateChanged(ItemEvent arg0) {
+				        				
+				        				setExercise(dbCon.getExercise((Long)mapCmbExercise.get(cmbExercise.getSelectedIndex())));
+				        				loadExercise();				        				
+				        				}
+				        	    });
+				                
 				                lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
 				                lblMeta.setFont(new Font("Tahoma", Font.BOLD, 11));
 				                lblMeta.setBounds(10, 98, 392, 14);
@@ -669,6 +682,23 @@ public class AppletExercise extends JApplet {
         
 		
 	}
+	
+	public void loadExercise(){
+		textArea.setText(exercise.getEnunciate());
+		exercise.getInitialState();
+		rew
+		for (Path path : exercise.getPaths()){
+			for (Goal goal: path.getGoals()){
+				for (Remediation r: goal.getRemediations()){
+					
+				}
+			}
+		}
+		addEstado();
+	
+		textArea.setText(exercise.getEnunciate());
+
+	}
 
 	private String[] putSorterOnForm() {
 		 
@@ -680,6 +710,19 @@ public class AppletExercise extends JApplet {
          	mapCmbSorter.put(i, sorters.get(i-1).getId());
          }
          return model;
+		
+	}
+
+	private String[] putExerciseOnForm() {
+		 
+		ArrayList<Exercise> exercises = dbCon.getExercises(); 
+		String[] model = new String[exercises.size() + 1];
+		model[0] = "-";
+		for (int i = 1; i < exercises.size() + 1; i++){
+			model[i] = "" + exercises.get(i-1).getId();
+       	mapCmbExercise.put(i, exercises.get(i-1).getId());
+       }
+       return model;
 		
 	}
 	
@@ -1217,6 +1260,16 @@ public Component getComponentByName(String name) {
 
 	public void setCriterion(Criterion criterion) {
 		this.criterion = criterion;
+	}
+
+
+	public Exercise getExercise() {
+		return exercise;
+	}
+
+
+	public void setExercise(Exercise exercise) {
+		this.exercise = exercise;
 	}
 }
 

@@ -807,6 +807,22 @@ public class DBConnect {
 		return student;
 	}
 
+	public ArrayList<Exercise> getExercises(){
+		ArrayList<Exercise> exercises = new ArrayList<Exercise>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from exercise");
+			if (rs.next()){
+				exercises.add(getExercise(rs.getLong("id")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return exercises;
+	}
+
 	public Exercise getExercise(Long id_exercise) {
 
 		Exercise exercise = null;

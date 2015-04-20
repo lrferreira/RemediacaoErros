@@ -62,7 +62,7 @@ public class GoalsController {
 				
 				if (funcaoMRE != null){
 					MultipleExternalRepresentation mer = new MultipleExternalRepresentation();
-					MERManagerController.aciona(action, ruleToHuman, funcaoMRE, mer);
+					MERManagerController.aciona(action, dbCon, ruleToHuman, funcaoMRE, mer);
 					String filePath = new File("").getAbsolutePath();
 					
 					String imgPath = filePath+File.separator+mer.getImage();
