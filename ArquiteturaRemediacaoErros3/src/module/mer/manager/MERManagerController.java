@@ -8,11 +8,10 @@ import module.entity.RuleToHuman;
 
 public class MERManagerController {
 
-	public static void aciona(Action action, DBConnect dbCon, RuleToHuman ruleToHuman, MERFunction funcao, MultipleExternalRepresentation mre) {
+	public static void aciona(Action action, DBConnect dbCon, RuleToHuman ruleToHuman, MultipleExternalRepresentation mre) {
 		MERManagerKB gerenciadorMREKB = new MERManagerKB();
 		gerenciadorMREKB.tell(action);
 		gerenciadorMREKB.tell(dbCon);
-		gerenciadorMREKB.tell(funcao);
 		gerenciadorMREKB.tell(mre);
 		gerenciadorMREKB.tell(ruleToHuman);
 				

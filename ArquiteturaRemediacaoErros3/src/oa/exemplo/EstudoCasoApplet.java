@@ -198,7 +198,7 @@ public class EstudoCasoApplet extends Applet {
 		Component[] components = panel.getComponents();
 		for (Component c : components) {
 			if (c instanceof JTextField){
-				JTextField f = (JTextField) c;
+				final JTextField f = (JTextField) c;
 				f.addKeyListener(new KeyAdapter(){
 					public void keyPressed(KeyEvent e)
 				      {

@@ -21,6 +21,8 @@ public class Remediation {
 	
 	private String relatedError;
 	
+	private MultipleExternalRepresentation mer;
+	
 	
 	public Remediation() {
 		super();
@@ -29,7 +31,7 @@ public class Remediation {
 	
 	
 	public Remediation(Long id, Goal goal, ItemSorter itemSorter,
-			Criterion criterion, Integer attempts, String wrongAnswer, String relatedError) {
+			Criterion criterion, Integer attempts, String wrongAnswer, String relatedError, MultipleExternalRepresentation mer) {
 		super();
 		this.id = id;
 		this.goal = goal;
@@ -38,6 +40,7 @@ public class Remediation {
 		this.attempts = attempts;
 		this.wrongAnswer = wrongAnswer;
 		this.relatedError = relatedError;
+		this.mer = mer;
 	}
 	
 	
@@ -97,6 +100,16 @@ public class Remediation {
 
 	public void setRelatedError(String relatedError) {
 		this.relatedError = relatedError;
+	}
+
+
+	public MultipleExternalRepresentation getMer() {
+		return mer;
+	}
+
+
+	public void setMer(MultipleExternalRepresentation mer) {
+		this.mer = mer;
 	}
 	
 	

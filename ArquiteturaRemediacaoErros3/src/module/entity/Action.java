@@ -29,6 +29,8 @@ MRE a ser apresentado depende desta informac~ao;*/
 	
 	private  Remediation remediation;
 	
+	private MERFunction merFunction;
+	
 	private MultipleExternalRepresentation mer;
 
 	private ArrayList<String> regrasAcionadas;
@@ -42,6 +44,7 @@ MRE a ser apresentado depende desta informac~ao;*/
 	
 	public Action(Long id, Answer answer, Integer attempt, Student student,
 			Goal goal, Boolean correct, Date date, Remediation remediation,
+			MERFunction merFunction,
 			MultipleExternalRepresentation mer,
 			ArrayList<String> regrasAcionadas) {
 		super();
@@ -54,6 +57,7 @@ MRE a ser apresentado depende desta informac~ao;*/
 		this.date = date;
 		this.remediation = remediation;
 		this.mer = mer;
+		this.merFunction = merFunction;
 		this.regrasAcionadas = regrasAcionadas;
 	}
 
@@ -140,6 +144,16 @@ MRE a ser apresentado depende desta informac~ao;*/
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+
+	public MERFunction getMerFunction() {
+		return merFunction;
+	}
+
+
+	public void setMerFunction(MERFunction merFunction) {
+		this.merFunction = merFunction;
 	}
 	
 }

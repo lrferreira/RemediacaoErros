@@ -485,7 +485,7 @@ public class DBConnect {
 			PreparedStatement prepStmt = null;
 			
 			try{
-	            prepStmt= conn.prepareStatement("insert into action VALUES (?,?,?,?,?,?,?)");
+	            prepStmt= conn.prepareStatement("insert into action VALUES (?,?,?,?,?,?,?, ?)");
 	            prepStmt.setLong(1, action.getId());
 	            prepStmt.setString(2, action.getAnswer().getValue());
 	            prepStmt.setLong(3, action.getGoal().getId());
@@ -493,6 +493,7 @@ public class DBConnect {
 	            prepStmt.setDate(5, new java.sql.Date(action.getDate().getTime()));
 	            prepStmt.setLong(6, action.getCorrect()?null:action.getRemediation().getId());
 	            prepStmt.setLong(7, action.getCorrect()?null:action.getMer().getId());
+	            prepStmt.setLong(8,  action.getMerFunction().getId());
 
 	            prepStmt.executeUpdate();
 	            
@@ -767,6 +768,7 @@ public class DBConnect {
             	action.setRegrasAcionadas(new ArrayList<String>());
             	action.setStudent(getStudent(rs.getLong("id_student")));
             	action.setRemediation(getRemediation(rs.getLong("id_remediation")));
+            	action.setMerFunction(getMERFunction(rs.getLong("id_merfunction")));
             } else return null;
             rs.close();
             
@@ -1024,6 +1026,7 @@ public class DBConnect {
                 remediation.setItemSorter(getItemSorter(rs.getLong("id_itemsorter")));
                 remediation.setRelatedError(rs.getString("relatederror"));
                 remediation.setWrongAnswer(rs.getString("wronganswer"));
+                remediation.setMer(getMER(rs.getLong("id_mer")));
                 
 
             }
@@ -1038,6 +1041,49 @@ public class DBConnect {
         return remediation;
 }
 	
+	public ArrayList<MultipleExternalRepresentation> getMersByMerFunction(Long id_merfunction){
+		ArrayList<MultipleExternalRepresentation> mers = new ArrayList<MultipleExternalRepresentation>();
+		Statement stmt=null;
+
+        try {
+			stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select id from mer where id_merfunction = " + id_merfunction);
+			while(rs.next()){
+				mers.add(getMER(rs.getLong("id")));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return mers;
+	}
+
+	public ArrayList<MultipleExternalRepresentation> getMersBySuccess(Long id_merfunction){
+		ArrayList<MultipleExternalRepresentation> mers = new ArrayList<MultipleExternalRepresentation>();
+		Statement stmt=null;
+
+        try {
+			stmt=conn.createStatement();
+
+			ResultSet rs=stmt.executeQuery("SELECT b.id, count(a.id) as success FROM mer b left join action a on a.id_mer = b.id " +
+					 " where a.correct = 'true' " +
+			" and id_merfunction = " + id_merfunction +
+					" group by b.id " +
+					" order by success ");
+			
+			while(rs.next()){
+				mers.add(getMER(rs.getLong("b.id")));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return mers;
+	}
 	
 	
 }

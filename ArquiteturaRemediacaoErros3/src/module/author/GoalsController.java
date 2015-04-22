@@ -11,13 +11,13 @@ import module.entity.Action;
 import module.entity.DBConnect;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
-import module.entity.Remediation;
 import module.entity.RuleToHuman;
 import module.entity.WrongAnswer;
 import module.error.sorter.ErrorSorterController;
 import module.expression.identifier.ExpressionIdentifierController;
 import module.mer.manager.MERManagerController;
 import module.merfunction.sorter.MERFunctionSorterController;
+import util.Constants;
 import util.StringConstants;
 
 public class GoalsController {
@@ -58,13 +58,14 @@ public class GoalsController {
 			ErrorSorterController.classificarErro(action, dbCon, ruleToHuman);
 			
 			if ( ((WrongAnswer)action.getAnswer()).getErrorType() != null){
-				MERFunction merFunction = new MERFunction();
-				MERFunctionSorterController.classificarFuncaoMRE(action, ruleToHuman, dbCon, merFunction);
+				MERFunctionSorterController.classificarFuncaoMRE(action, ruleToHuman, dbCon);
 				
-				if (merFunction.getId() != null){
+				if (action.getMerFunction().getId() != null){
+					
+					
 					
 					MultipleExternalRepresentation mer = new MultipleExternalRepresentation();
-					MERManagerController.aciona(action, dbCon, ruleToHuman, merFunction, mer);
+					MERManagerController.aciona(action, dbCon, ruleToHuman, mer);
 					String filePath = new File("").getAbsolutePath();
 					
 					String imgPath = filePath+File.separator+mer.getImage();
@@ -90,5 +91,30 @@ public class GoalsController {
 
 	
 
+	}
+	
+	public void prepareCriterion(Action action, DBConnect dbCon){
+		if (action.getRemediation() != null && action.getRemediation().getId() != null){
+			
+			if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_MRE_ESPECIFICA_ERRO)) {
+				
+			}
+			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_NAO_USAR_MRE_ESPECIFICA)) {
+				
+			}
+			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_PERSISTENCIA_ERRO)) {
+				
+			}
+			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_ALTERNAR_ENTRE_MRE_TIPO_ESPECIFICADO)) {
+				
+			}		
+			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_COMPLEXIDADE)) {
+				
+			}
+			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_SUCESSOS_ANTERIORES_MRE)) {
+				dbCon.getMersBySuccess(action.getMerFunction().getId());
+			}
+			
+		}
 	}
 }

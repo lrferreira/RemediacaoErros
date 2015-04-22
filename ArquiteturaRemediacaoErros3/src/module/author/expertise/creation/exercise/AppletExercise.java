@@ -614,9 +614,9 @@ public class AppletExercise extends JApplet {
 				                	public void actionPerformed(ActionEvent arg0) {
 				                		Remediation remediation = null;
 				                		try{
-				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText());
+				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
 				                		} catch (NumberFormatException e) {
-				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText());
+				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
 				                		} finally {
 				                			dbCon.save(remediation);
 				                			RulesFactory.createRules(remediation, mer);				    

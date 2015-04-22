@@ -23,6 +23,11 @@ public class StringConstants {
 	public static final String FILE_ERROR_SORTER_KB = "\\module\\error\\sorter\\ErrorSorterKB.rules";
 	public static final String FILE_MERFUNCTION_SORTER_KB = "\\module\\merfunction\\sorter\\MERFunctionSorterKB.rules";
 	public static final String FILE_MER_MANAGER_KB = "\\module\\mer\\manager\\MERManagerKB.rules";
+	public static final String FILE_MER_MANAGER_SPECIFIC_MER_KB = "\\module\\mer\\manager\\MERManagerSpecificMERKB.rules";
+	public static final String FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB = "\\module\\mer\\manager\\MERManagerNotSpecificMERKB.rules";
+	public static final String FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB = "\\module\\mer\\manager\\MERManagerSwypeMERFunctionKB.rules";
+	public static final String FILE_MER_MANAGER_COMPLEXITY_KB = "\\module\\mer\\manager\\MERManagerComplexityKB.rules";
+	
 	
 	public static final String CRITERION_MER_SPECIFIC_FOR_ERROR = "MRE espec�fica para o erro";
 	public static final String CRITERION_SUCCESS_MER_FUNCTION_PRIOR = "Sucesso na Fun��o da MRE anterior";

@@ -7,10 +7,9 @@ import module.entity.RuleToHuman;
 
 public class MERFunctionSorterController {
 
-	public static void classificarFuncaoMRE(Action action, RuleToHuman ruleToHuman, DBConnect dbCon, MERFunction merFunction) {
+	public static void classificarFuncaoMRE(Action action, RuleToHuman ruleToHuman, DBConnect dbCon) {
 		MERFunctionSorterKB classificadorFuncaoMREKB = new MERFunctionSorterKB();
 		classificadorFuncaoMREKB.tell(action);
-		classificadorFuncaoMREKB.tell(merFunction);
 		classificadorFuncaoMREKB.tell(dbCon);
 		classificadorFuncaoMREKB.tell(ruleToHuman);
 		classificadorFuncaoMREKB.run();
