@@ -7,17 +7,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
-import util.StringConstants;
 import module.entity.Action;
 import module.entity.DBConnect;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
+import module.entity.Remediation;
 import module.entity.RuleToHuman;
 import module.entity.WrongAnswer;
 import module.error.sorter.ErrorSorterController;
 import module.expression.identifier.ExpressionIdentifierController;
 import module.mer.manager.MERManagerController;
 import module.merfunction.sorter.MERFunctionSorterController;
+import util.StringConstants;
 
 public class GoalsController {
 
@@ -41,7 +42,7 @@ public class GoalsController {
 		}
 		
 		
-		ExpressionIdentifierController.identificaExpressao(action, ruleToHuman);
+		ExpressionIdentifierController.identificaExpressao(action, dbCon, ruleToHuman);
 		
 		if (action.getCorrect() != null && action.isCorrect()) {
 			textPane.setText(ruleToHuman.getDescription());
@@ -57,12 +58,13 @@ public class GoalsController {
 			ErrorSorterController.classificarErro(action, dbCon, ruleToHuman);
 			
 			if ( ((WrongAnswer)action.getAnswer()).getErrorType() != null){
-				MERFunction funcaoMRE = new MERFunction();
-				MERFunctionSorterController.classificarFuncaoMRE(action, ruleToHuman, dbCon, funcaoMRE);
+				MERFunction merFunction = new MERFunction();
+				MERFunctionSorterController.classificarFuncaoMRE(action, ruleToHuman, dbCon, merFunction);
 				
-				if (funcaoMRE != null){
+				if (merFunction.getId() != null){
+					
 					MultipleExternalRepresentation mer = new MultipleExternalRepresentation();
-					MERManagerController.aciona(action, dbCon, ruleToHuman, funcaoMRE, mer);
+					MERManagerController.aciona(action, dbCon, ruleToHuman, merFunction, mer);
 					String filePath = new File("").getAbsolutePath();
 					
 					String imgPath = filePath+File.separator+mer.getImage();
@@ -78,6 +80,7 @@ public class GoalsController {
 					textPane.setText(ruleToHuman.getDescription());
 
 					System.out.println("Ap�s rodada: n� tentativas: " + action.getAttempt());
+					
 					
 				}
 				

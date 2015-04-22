@@ -5,6 +5,8 @@ import module.entity.Goal;
 import module.entity.Action;
 import module.entity.WrongAnswer;
 import module.entity.RuleToHuman;
+import module.entity.Remediation;
+import module.entity.DBConnect;
 import java.util.ArrayList;
 import module.error.sorter.ErrorSorterController;
 import module.entity.DBConnect;
@@ -20,6 +22,7 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 
 		declarations
 			Action action;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
@@ -37,6 +40,9 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 			System.out.println("Resposta Errada (1) detectada");
 			action.setCorrect(false);
 			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			action.getRegrasAcionadas().add("wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
+			Remediation r = dbCon.getRemediation(1L);
+			action.setRemediation(r);
 			modified(action);
 			modified(ruleToHuman);
 			flush();
@@ -45,27 +51,31 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 // -rule-end- 
 
 
-	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_1 {
+	rule wrongAnswer_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1 {
 
 		declarations
 			Action action;
+			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
 			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			action.getAnswer().getValue().equalsIgnoreCase("-");
+			action.getGoal().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 0\n");
 			System.out.println("Resposta Errada (1) detectada");
 			action.setCorrect(false);
 			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			action.getRegrasAcionadas().add("wrongAnswer_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_");
+			Remediation r = dbCon.getRemediation(2L);
+			action.setRemediation(r);
 			modified(action);
 			modified(ruleToHuman);
 			flush();

@@ -89,6 +89,7 @@ public class RulesFactory {
 						+ "_");
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;");
+		r.getDeclarations().add("DBConnect dbCon;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
 		
 		ArrayList<String> conditions = new ArrayList<String>();
@@ -117,6 +118,16 @@ public class RulesFactory {
 		r.getActions().add("action.setCorrect(false);");
 		r.getActions().add("action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));");
 		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
+		r.getActions().add("Remediation r = dbCon.getRemediation(" + remediation.getId() +"L);");
+
+		r.getActions().add("action.setRemediation(r);");
+		/*
+		r.getActions().add("remediation.setAttempts(r.getAttempts());");
+		r.getActions().add("remediation.setGoal(r.getGoal());");
+		r.getActions().add("remediation.setId(r.getId());");
+		r.getActions().add("remediation.setItemSorter(r.getItemSorter());");
+		r.getActions().add("remediation.setWrongAnswer(r.getWrongAnswer());");
+		*/
 		r.getActions().add("modified(action);");
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("flush();");
@@ -124,7 +135,7 @@ public class RulesFactory {
 		return r;
 	}
 
-
+/*
 	public static RuleInformation ruleGoal(Goal goal) {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("goal_");
@@ -135,7 +146,8 @@ public class RulesFactory {
 		return null;
 
 	}
-
+*/
+	
 	public static RuleInformation ruleCorrectAnswer(Goal goal) {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("correctAnswer_PATH_"+goal.getPath().getId()+"_GOAL_"+goal.getId()+"_COMPONENT_"+goal.getComponent() + "_");
@@ -199,6 +211,7 @@ public class RulesFactory {
 
 		conditions.add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + "L);");
 		conditions.add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + "L);");
+		conditions.add("action.getRemediation().getId().equals(" + remediation.getId() + "L);");
 		conditions.add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
 	
 		if (remediation.getWrongAnswer() != null) {
@@ -256,21 +269,25 @@ public class RulesFactory {
 		r.getConditions().add("action.getGoal().getPath().getId().equals(" + remediation.getGoal().getPath().getId() + "L);");
 		r.getConditions().add("action.getGoal().getId().equals(" + remediation.getGoal().getId() + "L);");
 		r.getConditions().add("action.getGoal().getComponent().equalsIgnoreCase(\"" + remediation.getGoal().getComponent() + "\");");
-		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
+		r.getConditions().add("action.getRemediation().getId().equals(" + remediation.getId() + "L);");
 		
 		r.setActions(new ArrayList<String>());
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"Regra acionada para classificar a Fun��o da MRE: " + r.getRuleName() + " \\n\");");
 		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \" Condi��es:  \\n\");");
 		
 		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \" \\t Tipo de Erro = " + remediation.getItemSorter().getErrorType().getDescription() + " \\n\");");		
 		//r.getActions().add("action.setAttempt(action.getAttempt() + 1);");
 		//r.getActions().add("modified(action);");
-		r.getActions().add("merFunction = dbCon.getMERFunction("+remediation.getItemSorter().getMerFunction().getId()+"L);");
-
+		r.getActions().add("MERFunction mf = dbCon.getMERFunction("+remediation.getItemSorter().getMerFunction().getId()+"L);");
+		r.getActions().add("merFunction.setId(mf.getId());");
+		r.getActions().add("merFunction.setDescription(mf.getDescription());");
+		
 		//r.getActions().add("merFunction.setId("+ remediation.getItemSorter().getMerFunction().getId()+"L);");
 		//r.getActions().add("merFunction.setDescription(\""+ remediation.getItemSorter().getMerFunction().getDescription()+"\");");
 		r.getActions().add("modified(merFunction);");
 		r.getActions().add("modified(ruleToHuman);");
+		r.getActions().add("modified(action);");
 		r.getActions().add("System.out.println(\"Fun��o MRE: " + remediation.getItemSorter().getMerFunction().getDescription() + "\");");
 		r.getActions().add("flush();");
 		
@@ -286,8 +303,10 @@ public class RulesFactory {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("ruleMER_"+mer.getId() + "_");		
 		r.setDeclarations(new ArrayList<String>());
-		r.getDeclarations().add("MultipleExternalRepresentation mer;");
+		r.getDeclarations().add("Action action;");
 		r.getDeclarations().add("DBConnect dbCon;");
+		r.getDeclarations().add("MERFunction merFunction;");
+		r.getDeclarations().add("MultipleExternalRepresentation mer;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
 		
 		r.setConditions(new ArrayList<String>());
@@ -296,14 +315,24 @@ public class RulesFactory {
 		r.getConditions().add("mer.getId().equals(" + mer.getId() + "L);");
 		
 		r.setActions(new ArrayList<String>());
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"Regra acionada para selecionar a MRE: " + r.getRuleName() + " \\n\");");
 		r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \" Condi��es:  \\n\");");
 		for (String c : strCondAux)
 			r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"" + c + "\\n\");");		
 		
-		r.getActions().add("mer = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("MultipleExternalRepresentation m = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("mer.setId(m.getId());");
+		r.getActions().add("mer.setDescription(m.getDescription());");
+		r.getActions().add("mer.setComplexity(m.getComplexity());");
+		r.getActions().add("mer.setImage(m.getImage());");
+		r.getActions().add("mer.setMerFunctions(m.getMerFunctions());");
+		r.getActions().add("mer.setTags(m.getTags());");
+		r.getActions().add("mer.setTypeMers(m.getTypeMers());");
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		r.getActions().add("modified(mer);");
 		r.getActions().add("modified(ruleToHuman);");
+		r.getActions().add("modified(action);");
 		r.getActions().add("System.out.println(\"Exibi��o de MRE " + mer.getId() + " - " + mer.getDescription() + "\");");		
 		r.getActions().add("flush();");
 		
@@ -315,9 +344,12 @@ public class RulesFactory {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("ruleMER_"+mer.getId() + "_complexity_" + mer.getComplexity() + "_");		
 		r.setDeclarations(new ArrayList<String>());
-		r.getDeclarations().add("MultipleExternalRepresentation mer;");
+		r.getDeclarations().add("Action action;");
 		r.getDeclarations().add("DBConnect dbCon;");
+		r.getDeclarations().add("MERFunction merFunction;");
+		r.getDeclarations().add("MultipleExternalRepresentation mer;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
+		
 		
 		r.setConditions(new ArrayList<String>());
 		ArrayList<String> strCondAux = new ArrayList<String>();
@@ -330,9 +362,19 @@ public class RulesFactory {
 		for (String c : strCondAux)
 			r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"" + c + "\\n\");");		
 		
-		r.getActions().add("mer = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("MultipleExternalRepresentation m = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("mer.setId(m.getId());");
+		r.getActions().add("mer.setDescription(m.getDescription());");
+		r.getActions().add("mer.setComplexity(m.getComplexity());");
+		r.getActions().add("mer.setImage(m.getImage());");
+		r.getActions().add("mer.setMerFunctions(m.getMerFunctions());");
+		r.getActions().add("mer.setTags(m.getTags());");
+		r.getActions().add("mer.setTypeMers(m.getTypeMers());");
+
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
 		r.getActions().add("modified(mer);");
 		r.getActions().add("modified(ruleToHuman);");
+		r.getActions().add("modified(action);");
 		r.getActions().add("System.out.println(\"Exibi��o de MRE " + mer.getId() + " - " + mer.getDescription() + "\");");		
 		r.getActions().add("flush();");
 		
@@ -345,9 +387,10 @@ public class RulesFactory {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("ruleMER_"+mer.getId() + "_merfunction_");		
 		r.setDeclarations(new ArrayList<String>());
+		r.getDeclarations().add("Action action;");
+		r.getDeclarations().add("DBConnect dbCon;");
 		r.getDeclarations().add("MERFunction merFunction;");
 		r.getDeclarations().add("MultipleExternalRepresentation mer;");
-		r.getDeclarations().add("DBConnect dbCon;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
 		
 		r.setConditions(new ArrayList<String>());
@@ -371,7 +414,17 @@ public class RulesFactory {
 		for (String c : strCondAux)
 			r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"" + c + "\\n\");");		
 		
-		r.getActions().add("mer = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("MultipleExternalRepresentation m = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("mer.setId(m.getId());");
+		r.getActions().add("mer.setDescription(m.getDescription());");
+		r.getActions().add("mer.setComplexity(m.getComplexity());");
+		r.getActions().add("mer.setImage(m.getImage());");
+		r.getActions().add("mer.setMerFunctions(m.getMerFunctions());");
+		r.getActions().add("mer.setTags(m.getTags());");
+		r.getActions().add("mer.setTypeMers(m.getTypeMers());");
+
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
+		r.getActions().add("modified(action);");
 		r.getActions().add("modified(mer);");
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("System.out.println(\"Exibi��o de MRE " + mer.getId() + " - " + mer.getDescription() + "\");");		
@@ -385,9 +438,10 @@ public class RulesFactory {
 		RuleInformation r = new RuleInformation();
 		r.setRuleName("ruleMER_"+mer.getId() + "_typemer");		
 		r.setDeclarations(new ArrayList<String>());
-		r.getDeclarations().add("TypeMER typeMER;");
-		r.getDeclarations().add("MultipleExternalRepresentation mer;");
+		r.getDeclarations().add("Action action;");
 		r.getDeclarations().add("DBConnect dbCon;");
+		r.getDeclarations().add("MERFunction merFunction;");
+		r.getDeclarations().add("MultipleExternalRepresentation mer;");
 		r.getDeclarations().add("RuleToHuman ruleToHuman;");
 		
 		r.setConditions(new ArrayList<String>());
@@ -395,7 +449,7 @@ public class RulesFactory {
 		  
 
 		for (int i = 0; i < mer.getTypeMers().size(); i++){
-			String s = "typeMER.getId().equals(" + mer.getTypeMers().get(i).getId() + "L)";
+			String s = "mer.getTypeMers().contains(new TypeMER(" + mer.getTypeMers().get(i).getId() + "L, \"" + mer.getTypeMers().get(i).getDescription() + "\" ))";
 			r.setRuleName(r.getRuleName() + mer.getTypeMers().get(i).getId() + "_");
 			if (i == mer.getTypeMers().size()-1)
 				s = s + " ; ";
@@ -411,7 +465,17 @@ public class RulesFactory {
 		for (String c : strCondAux)
 			r.getActions().add("ruleToHuman.setDescription(ruleToHuman.getDescription() + \"" + c + "\\n\");");		
 		
-		r.getActions().add("mer = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("MultipleExternalRepresentation m = dbCon.getMER("+mer.getId()+"L);");
+		r.getActions().add("mer.setId(m.getId());");
+		r.getActions().add("mer.setDescription(m.getDescription());");
+		r.getActions().add("mer.setComplexity(m.getComplexity());");
+		r.getActions().add("mer.setImage(m.getImage());");
+		r.getActions().add("mer.setMerFunctions(m.getMerFunctions());");
+		r.getActions().add("mer.setTags(m.getTags());");
+		r.getActions().add("mer.setTypeMers(m.getTypeMers());");
+
+		r.getActions().add("action.getRegrasAcionadas().add(\""+ r.getRuleName()+"\");");
+		r.getActions().add("modified(action);");
 		r.getActions().add("modified(mer);");
 		r.getActions().add("modified(ruleToHuman);");
 		r.getActions().add("System.out.println(\"Exibi��o de MRE " + mer.getId() + " - " + mer.getDescription() + "\");");		

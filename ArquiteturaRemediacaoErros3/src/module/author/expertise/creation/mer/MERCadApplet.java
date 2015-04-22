@@ -228,17 +228,17 @@ public class MERCadApplet extends JApplet {
 				mre.setTypeMers(new ArrayList<TypeMER>());
 				
 				if (cbTexto.isSelected())
-					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_TEXTO, null));
+					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_TEXTO, "Texto"));
 				if (cbGrafico.isSelected())
-					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_GRAFICO, null));
+					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_GRAFICO, "Gráfico"));
 				if (cbTabela.isSelected())
-					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_TABELA, null));
+					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_TABELA, "Tabela"));
 				if (cbImagem.isSelected())
-					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_IMAGEM, null));
+					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_IMAGEM, "Imagem"));
 				if (cbVideo.isSelected())
-					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_VIDEO, null));
+					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_VIDEO, "Vídeo"));
 				if (cbEquacao.isSelected())
-					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_EQUACAO, null));
+					mre.getTypeMers().add(new TypeMER(Constants.TIPO_MRE_EQUACAO, "Equação"));
 
 				try {
 					mre.setImage(renderByte(textField.getText()));

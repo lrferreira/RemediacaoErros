@@ -686,19 +686,29 @@ public class AppletExercise extends JApplet {
 	public void loadExercise(){
 		textArea.setText(exercise.getEnunciate());
 		exercise.getInitialState();
-		rew
+		
+		for (ExerciseInitialState eis: exercise.getInitialState()){
+			JTextField f = (JTextField) getComponentByName(eis.getComponent());
+			f.setText(eis.getValue());
+			
+		}
+		
 		for (Path path : exercise.getPaths()){
 			for (Goal goal: path.getGoals()){
+				((JTextField)getComponentByName(goal.getComponent())).setText(goal.getAnswer().getValue());
+
+				addEstado();
 				for (Remediation r: goal.getRemediations()){
 					
 				}
 			}
 		}
-		addEstado();
 	
 		textArea.setText(exercise.getEnunciate());
 
 	}
+	
+	
 
 	private String[] putSorterOnForm() {
 		 
@@ -776,6 +786,7 @@ public class AppletExercise extends JApplet {
         componentMap = new HashMap<String,Component>();
         Component[] components = panel_exerc.getComponents();
         for (int i=0; i < components.length; i++) {
+        	if (components[i] instanceof JTextField)
                 componentMap.put(components[i].getName(), components[i]);
         }
 }

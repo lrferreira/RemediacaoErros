@@ -236,6 +236,7 @@ import javax.swing.*;
 			module_entity_Action_1.setCorrect(true);
 			module_entity_Action_1.setAnswer(new CorrectAnswer(module_entity_Action_1.getAnswer().getValue()));
 			module_entity_Action_1.getGoal().setSatisfied(true);
+			module_entity_Action_1.getRegrasAcionadas().add("correctAnswer_PATH_1_GOAL_1_COMPONENT_txt3_");
 			modified(module_entity_Action_1);
 			modified(module_entity_RuleToHuman_1);
 			flush();
@@ -466,6 +467,7 @@ import javax.swing.*;
 			module_entity_Action_1.setCorrect(true);
 			module_entity_Action_1.setAnswer(new CorrectAnswer(module_entity_Action_1.getAnswer().getValue()));
 			module_entity_Action_1.getGoal().setSatisfied(true);
+			module_entity_Action_1.getRegrasAcionadas().add("correctAnswer_PATH_1_GOAL_2_COMPONENT_txt8_");
 			modified(module_entity_Action_1);
 			modified(module_entity_RuleToHuman_1);
 			flush();
@@ -696,6 +698,7 @@ import javax.swing.*;
 			module_entity_Action_1.setCorrect(true);
 			module_entity_Action_1.setAnswer(new CorrectAnswer(module_entity_Action_1.getAnswer().getValue()));
 			module_entity_Action_1.getGoal().setSatisfied(true);
+			module_entity_Action_1.getRegrasAcionadas().add("correctAnswer_PATH_1_GOAL_3_COMPONENT_txt7_");
 			modified(module_entity_Action_1);
 			modified(module_entity_RuleToHuman_1);
 			flush();
@@ -970,7 +973,7 @@ import javax.swing.*;
 /**
  * Knowledge base created by JEOPS from file ExpressionIdentifierCorrectAnswerKB.rules
  *
- * @version 19/04/2015
+ * @version 21/04/2015
  */
 public class ExpressionIdentifierCorrectAnswerKB extends jeops.AbstractKnowledgeBase {
 

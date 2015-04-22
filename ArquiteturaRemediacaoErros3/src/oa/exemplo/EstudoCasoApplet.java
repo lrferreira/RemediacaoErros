@@ -5,12 +5,14 @@ import java.awt.Component;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -24,7 +26,6 @@ import module.entity.Goal;
 import module.entity.Path;
 import module.entity.Student;
 import util.StringConstants;
-import javax.swing.JTextArea;
 
 public class EstudoCasoApplet extends Applet {
 	/**
@@ -210,12 +211,14 @@ public class EstudoCasoApplet extends Applet {
 				        	action.setGoal(goal);
 				        	action.setStudent(student);
 				        	action.setMer(null);
-				        	action.setRegrasAcionadas(null);
+				        	action.setRegrasAcionadas(new ArrayList<String>());
 				        	action.setRemediation(null);
 				        	
 							GoalsController.run(action, textPane, lblMer);
 							if (action.getCorrect())
 								prepareNextGoal();
+							else
+								attempt++;
 							
 				        }
 				      }

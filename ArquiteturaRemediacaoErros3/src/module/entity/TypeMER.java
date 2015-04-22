@@ -11,6 +11,16 @@ public class TypeMER {
 		this.description = description;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+	    if (obj == null) {
+	        return false;
+	    } else if (!this.getId().equals(((TypeMER)obj).getId())) {
+	    	return false;
+	    }
+	    return true;
+	}
+	
 	public Long getId() {
 		return id;
 	}
