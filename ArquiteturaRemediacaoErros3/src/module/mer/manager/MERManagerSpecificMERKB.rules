@@ -5,301 +5,41 @@ import module.entity.Goal;
 import module.entity.Action;
 import module.entity.WrongAnswer;
 import util.Constants;
-import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.RuleToHuman;
 import module.entity.TypeMER;
 import module.entity.DBConnect;
 import java.util.ArrayList;
 
-ruleBase MERManagerKB {
+ruleBase MERManagerSpecificMERKB {
 
 
 
 
-	rule ruleMER_1_0 {
+
+
+	rule ruleMER_2_remediation_1_criterion_1_0 {
 
 		declarations
 			Action action;
 			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			mer.getId().equals(1L);
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
 
 		actions
-			action.getRegrasAcionadas().add("ruleMER_1_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_");
-			modified(mer);
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_1_complexity_1_1 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			mer.getComplexity() == 1;
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_complexity_1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_complexity_1_");
-			modified(mer);
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_1_merfunction_1_2 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			merFunction.getId().equals(1L) ; 
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_merfunction_1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_merfunction_1_");
-			modified(action);
-			modified(mer);
-			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_1_typemer1_3 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			mer.getTypeMers().contains(new TypeMER(1L, "Texto" )) ; 
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_typemer1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_typemer1_");
-			modified(action);
-			modified(mer);
-			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_2_4 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			mer.getId().equals(2L);
-
-		actions
-			action.getRegrasAcionadas().add("ruleMER_2_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_ \n");
+			action.getRegrasAcionadas().add("ruleMER_2_remediation_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_remediation_1_criterion_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
 			MultipleExternalRepresentation m = dbCon.getMER(2L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_2_");
-			modified(mer);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_2_remediation_1_criterion_1_");
 			modified(ruleToHuman);
 			modified(action);
-			System.out.println("Exibi��o de MRE 2 - mer 2");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_2_complexity_2_5 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			mer.getComplexity() == 2;
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_complexity_2_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(2L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_2_complexity_2_");
-			modified(mer);
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Exibi��o de MRE 2 - mer 2");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_2_merfunction_2_6 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			merFunction.getId().equals(2L) ; 
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_merfunction_2_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(2L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_2_merfunction_2_");
-			modified(action);
-			modified(mer);
-			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE 2 - mer 2");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_2_typemer2_7 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			mer.getTypeMers().contains(new TypeMER(2L, "Imagem" )) ; 
-
-		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_typemer2_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			MultipleExternalRepresentation m = dbCon.getMER(2L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_2_typemer2_");
-			modified(action);
-			modified(mer);
-			modified(ruleToHuman);
 			System.out.println("Exibi��o de MRE 2 - mer 2");
 			flush();
 

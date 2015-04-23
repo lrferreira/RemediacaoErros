@@ -20,34 +20,35 @@ import module.entity.DBConnect;
 
 
 
+
 	
     /**
-     * Identifiers of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
+     * Identifiers of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
      */
-    private String[] identifiers_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 = {
+    private String[] identifiers_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 = {
         "action",
         "dbCon",
         "ruleToHuman"
     };
 
     /**
-     * Returns the identifiers declared in rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
+     * Returns the identifiers declared in rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
      *
-     * @return the identifiers declared in rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
+     * @return the identifiers declared in rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
      */
-    private String[] getDeclaredIdentifiers_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0() {
-         return identifiers_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0;
+    private String[] getDeclaredIdentifiers_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0() {
+         return identifiers_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0;
     }
 
     /**
      * Returns the name of the class of one declared object for
-     * rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
+     * rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
      *
      * @param index the index of the declaration
      * @return the name of the class of the declared objects for
      *          this rule.
      */
-    private String getDeclaredClassName_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index) {
+    private String getDeclaredClassName_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index) {
         switch (index) {
             case 0: return "module.entity.Action";
             case 1: return "module.entity.DBConnect";
@@ -57,12 +58,12 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Returns the class of one declared object for rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
+     * Returns the class of one declared object for rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
      *
      * @param index the index of the declaration
      * @return the class of the declared objects for this rule.
      */
-    private Class getDeclaredClass_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index) {
+    private Class getDeclaredClass_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index) {
         switch (index) {
             case 0: return module.entity.Action.class;
             case 1: return module.entity.DBConnect.class;
@@ -72,12 +73,12 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Sets an object declared in the rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
+     * Sets an object declared in the rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
      *
      * @param index the index of the declared object
      * @param value the value of the object being set.
      */
-    private void setObject_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index, Object value) {
+    private void setObject_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index, Object value) {
         switch (index) {
             case 0: this.module_entity_Action_1 = (module.entity.Action) value; break;
             case 1: this.module_entity_DBConnect_1 = (module.entity.DBConnect) value; break;
@@ -86,12 +87,12 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Returns an object declared in the rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
+     * Returns an object declared in the rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.
      *
      * @param index the index of the declared object
      * @return the value of the corresponding object.
      */
-    private Object getObject_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index) {
+    private Object getObject_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int index) {
         switch (index) {
             case 0: return module_entity_Action_1;
             case 1: return module_entity_DBConnect_1;
@@ -102,12 +103,12 @@ import module.entity.DBConnect;
 
     /**
      * Returns all variables bound to the declarations 
-     * of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
+     * of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
      *
      * @return an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private Object[] getObjects_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0() {
+    private Object[] getObjects_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0() {
         return new Object[] {
                             module_entity_Action_1,
                             module_entity_DBConnect_1,
@@ -117,111 +118,111 @@ import module.entity.DBConnect;
 
     /**
      * Defines all variables bound to the declarations 
-     * of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
+     * of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
      *
      * @param objects an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private void setObjects_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(Object[] objects) {
+    private void setObjects_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(Object[] objects) {
         module_entity_Action_1 = (module.entity.Action) objects[0];
         module_entity_DBConnect_1 = (module.entity.DBConnect) objects[1];
         module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
     }
 
     /**
-     * Condition 0 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
+     * Condition 0 of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
      * <code>action.getGoal().getPath().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0() {
+    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0() {
         return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
     }
 
     /**
-     * Condition 1 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
+     * Condition 1 of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
      * <code>action.getGoal().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1() {
+    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1() {
         return (module_entity_Action_1.getGoal().getId().equals(1L));
     }
 
     /**
-     * Condition 2 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
+     * Condition 2 of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
      * <code>action.getRemediation().getId().equals(1L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_2() {
+    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_2() {
         return (module_entity_Action_1.getRemediation().getId().equals(1L));
     }
 
     /**
-     * Condition 3 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
+     * Condition 3 of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt3")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_3() {
+    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_3() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt3"));
     }
 
     /**
-     * Condition 4 of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
+     * Condition 4 of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("-")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_4() {
+    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_4() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("-"));
     }
 
     /**
-     * Checks whether some conditions of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 is satisfied.
+     * Checks whether some conditions of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 is satisfied.
      *
      * @param index the index of the condition to be checked.
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond(int index) {
+    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond(int index) {
         switch (index) {
-            case 0: return errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0();
-            case 1: return errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1();
-            case 2: return errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_2();
-            case 3: return errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_3();
-            case 4: return errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_4();
+            case 0: return errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0();
+            case 1: return errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1();
+            case 2: return errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_2();
+            case 3: return errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_3();
+            case 4: return errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_4();
             default: return false;
         }
     }
 
     /**
-     * Checks whether all conditions of rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 that depend only on
+     * Checks whether all conditions of rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 that depend only on
      * the given object are satisfied.
      *
      * @param declIndex the index of the declaration to be checked
      * @return <code>true</code> if all corresponding conditions for
      *          this rule are satisfied; <code>false</code> otherwise.
      */
-    private boolean checkConditionsOnlyOf_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int declIndex) {
+    private boolean checkConditionsOnlyOf_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int declIndex) {
         switch (declIndex) {
             case 0:
-                if (!errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0()) return false;
-                if (!errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1()) return false;
-                if (!errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_2()) return false;
-                if (!errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_3()) return false;
-                if (!errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_4()) return false;
+                if (!errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_0()) return false;
+                if (!errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_1()) return false;
+                if (!errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_2()) return false;
+                if (!errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_3()) return false;
+                if (!errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -241,7 +242,7 @@ import module.entity.DBConnect;
      *          up to the given declaration are true;
      *          <code>false</code> otherwise.
      */
-    private boolean checkCondForDeclaration_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int declIndex) {
+    private boolean checkCondForDeclaration_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(int declIndex) {
         switch (declIndex) {
             case 0:
                 return true;
@@ -254,270 +255,16 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Executes the action part of the rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
+     * Executes the action part of the rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0
      */
-    private void errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0() {
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
+    private void errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0() {
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
 			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condi��es:  \n");
 			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo = -\n");
 			System.out.println("Erro classificado como Diretamente Identificáveis");
 			((WrongAnswer)module_entity_Action_1.getAnswer()).setErrorType( module_entity_DBConnect_1.getErrorType(2L));
-			((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getSubErrorTypes().add( module_entity_DBConnect_1.getSubErrorType(3L));
-			module_entity_Action_1.getRegrasAcionadas().add("errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
-			modified(module_entity_RuleToHuman_1);
-			modified(module_entity_Action_1);
-			flush();
-
-	    }
-
-
-// -rule-end- 
-
-
-	
-    /**
-     * Identifiers of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1
-     */
-    private String[] identifiers_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1 = {
-        "action",
-        "dbCon",
-        "ruleToHuman"
-    };
-
-    /**
-     * Returns the identifiers declared in rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1
-     *
-     * @return the identifiers declared in rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1
-     */
-    private String[] getDeclaredIdentifiers_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1() {
-         return identifiers_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1;
-    }
-
-    /**
-     * Returns the name of the class of one declared object for
-     * rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.
-     *
-     * @param index the index of the declaration
-     * @return the name of the class of the declared objects for
-     *          this rule.
-     */
-    private String getDeclaredClassName_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(int index) {
-        switch (index) {
-            case 0: return "module.entity.Action";
-            case 1: return "module.entity.DBConnect";
-            case 2: return "module.entity.RuleToHuman";
-            default: return null;
-        }
-    }
-
-    /**
-     * Returns the class of one declared object for rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.
-     *
-     * @param index the index of the declaration
-     * @return the class of the declared objects for this rule.
-     */
-    private Class getDeclaredClass_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(int index) {
-        switch (index) {
-            case 0: return module.entity.Action.class;
-            case 1: return module.entity.DBConnect.class;
-            case 2: return module.entity.RuleToHuman.class;
-            default: return null;
-        }
-    }
-
-    /**
-     * Sets an object declared in the rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.
-     *
-     * @param index the index of the declared object
-     * @param value the value of the object being set.
-     */
-    private void setObject_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(int index, Object value) {
-        switch (index) {
-            case 0: this.module_entity_Action_1 = (module.entity.Action) value; break;
-            case 1: this.module_entity_DBConnect_1 = (module.entity.DBConnect) value; break;
-            case 2: this.module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) value; break;
-        }
-    }
-
-    /**
-     * Returns an object declared in the rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.
-     *
-     * @param index the index of the declared object
-     * @return the value of the corresponding object.
-     */
-    private Object getObject_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(int index) {
-        switch (index) {
-            case 0: return module_entity_Action_1;
-            case 1: return module_entity_DBConnect_1;
-            case 2: return module_entity_RuleToHuman_1;
-            default: return null;
-        }
-    }
-
-    /**
-     * Returns all variables bound to the declarations 
-     * of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1
-     *
-     * @return an object array of the variables bound to the
-     *          declarations of this rule.
-     */
-    private Object[] getObjects_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1() {
-        return new Object[] {
-                            module_entity_Action_1,
-                            module_entity_DBConnect_1,
-                            module_entity_RuleToHuman_1
-                            };
-    }
-
-    /**
-     * Defines all variables bound to the declarations 
-     * of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1
-     *
-     * @param objects an object array of the variables bound to the
-     *          declarations of this rule.
-     */
-    private void setObjects_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(Object[] objects) {
-        module_entity_Action_1 = (module.entity.Action) objects[0];
-        module_entity_DBConnect_1 = (module.entity.DBConnect) objects[1];
-        module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
-    }
-
-    /**
-     * Condition 0 of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getGoal().getPath().getId().equals(1L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_0() {
-        return (module_entity_Action_1.getGoal().getPath().getId().equals(1L));
-    }
-
-    /**
-     * Condition 1 of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getGoal().getId().equals(2L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_1() {
-        return (module_entity_Action_1.getGoal().getId().equals(2L));
-    }
-
-    /**
-     * Condition 2 of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(2L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(2L));
-    }
-
-    /**
-     * Condition 3 of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getGoal().getComponent().equalsIgnoreCase("txt8")</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_3() {
-        return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt8"));
-    }
-
-    /**
-     * Condition 4 of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getAnswer().getValue().equalsIgnoreCase("0")</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_4() {
-        return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("0"));
-    }
-
-    /**
-     * Checks whether some conditions of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1 is satisfied.
-     *
-     * @param index the index of the condition to be checked.
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond(int index) {
-        switch (index) {
-            case 0: return errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_0();
-            case 1: return errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_1();
-            case 2: return errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_2();
-            case 3: return errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_3();
-            case 4: return errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_4();
-            default: return false;
-        }
-    }
-
-    /**
-     * Checks whether all conditions of rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1 that depend only on
-     * the given object are satisfied.
-     *
-     * @param declIndex the index of the declaration to be checked
-     * @return <code>true</code> if all corresponding conditions for
-     *          this rule are satisfied; <code>false</code> otherwise.
-     */
-    private boolean checkConditionsOnlyOf_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(int declIndex) {
-        switch (declIndex) {
-            case 0:
-                if (!errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_0()) return false;
-                if (!errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_1()) return false;
-                if (!errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_2()) return false;
-                if (!errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_3()) return false;
-                if (!errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond_4()) return false;
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default: return false;
-        }
-    }
-
-    /**
-     * Checks whether all the conditions of a rule which
-     * reference some declared element of the declarations are
-     * true.
-     *
-     * @param declIndex the index of the declared element.
-     * @return <code>true</code> if the conditions that reference
-     *          up to the given declaration are true;
-     *          <code>false</code> otherwise.
-     */
-    private boolean checkCondForDeclaration_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(int declIndex) {
-        switch (declIndex) {
-            case 0:
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default: return false;
-        }
-    }
-
-    /**
-     * Executes the action part of the rule errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1
-     */
-    private void errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1() {
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_ \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condi��es:  \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tResposta campo = 0\n");
-			System.out.println("Erro classificado como Diretamente Identificáveis");
-			((WrongAnswer)module_entity_Action_1.getAnswer()).setErrorType( module_entity_DBConnect_1.getErrorType(2L));
 			((WrongAnswer)module_entity_Action_1.getAnswer()).getErrorType().getSubErrorTypes().add( module_entity_DBConnect_1.getSubErrorType(1L));
-			module_entity_Action_1.getRegrasAcionadas().add("errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_");
+			module_entity_Action_1.getRegrasAcionadas().add("errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
 			modified(module_entity_RuleToHuman_1);
 			modified(module_entity_Action_1);
 			flush();
@@ -709,8 +456,7 @@ import module.entity.DBConnect;
      * The names of the rules in this class file
      */
     private static final String[] File_ruleNames = {
-        "errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0",
-        "errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1",
+        "errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0",
         "solutionNonCategorizable"
     };
 
@@ -728,7 +474,6 @@ import module.entity.DBConnect;
      */
     private static final int[] File_numberOfDeclarations = {
         3,
-        3,
         2
     };
 
@@ -745,7 +490,6 @@ import module.entity.DBConnect;
      * The number of conditions of the rules in this class file.
      */
     private static final int[] File_numberOfConditions = {
-        5,
         5,
         0
     };
@@ -769,9 +513,8 @@ import module.entity.DBConnect;
      */
     public boolean checkCondition(int ruleIndex, int condIndex) {
         switch (ruleIndex) {
-            case 0: return errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond(condIndex);
-            case 1: return errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1_cond(condIndex);
-            case 2: return solutionNonCategorizable_cond(condIndex);
+            case 0: return errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0_cond(condIndex);
+            case 1: return solutionNonCategorizable_cond(condIndex);
             default: return false;
         }
     }
@@ -788,9 +531,8 @@ import module.entity.DBConnect;
      */
     public boolean checkConditionsOnlyOf(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkConditionsOnlyOf_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
-            case 1: return checkConditionsOnlyOf_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(declIndex);
-            case 2: return checkConditionsOnlyOf_solutionNonCategorizable(declIndex);
+            case 0: return checkConditionsOnlyOf_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
+            case 1: return checkConditionsOnlyOf_solutionNonCategorizable(declIndex);
             default: return false;
         }
     }
@@ -808,9 +550,8 @@ import module.entity.DBConnect;
      */
     public boolean checkCondForDeclaration(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkCondForDeclaration_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
-            case 1: return checkCondForDeclaration_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(declIndex);
-            case 2: return checkCondForDeclaration_solutionNonCategorizable(declIndex);
+            case 0: return checkCondForDeclaration_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
+            case 1: return checkCondForDeclaration_solutionNonCategorizable(declIndex);
             default: return false;
         }
     }
@@ -824,9 +565,8 @@ import module.entity.DBConnect;
      */
     public String getDeclaredClassName(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClassName_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
-            case 1: return getDeclaredClassName_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(declIndex);
-            case 2: return getDeclaredClassName_solutionNonCategorizable(declIndex);
+            case 0: return getDeclaredClassName_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
+            case 1: return getDeclaredClassName_solutionNonCategorizable(declIndex);
             default: return null;
         }
     }
@@ -840,9 +580,8 @@ import module.entity.DBConnect;
      */
     public Class getDeclaredClass(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClass_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
-            case 1: return getDeclaredClass_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(declIndex);
-            case 2: return getDeclaredClass_solutionNonCategorizable(declIndex);
+            case 0: return getDeclaredClass_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
+            case 1: return getDeclaredClass_solutionNonCategorizable(declIndex);
             default: return null;
         }
     }
@@ -854,9 +593,8 @@ import module.entity.DBConnect;
      */
     protected void internalFireRule(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(); break;
-            case 1: errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(); break;
-            case 2: solutionNonCategorizable(); break;
+            case 0: errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(); break;
+            case 1: solutionNonCategorizable(); break;
         }
     }
 
@@ -866,7 +604,7 @@ import module.entity.DBConnect;
      * @return the number of rules.
      */
     public int getNumberOfRules() {
-        return 3;
+        return 2;
     }
 
     /**
@@ -877,9 +615,8 @@ import module.entity.DBConnect;
      */
     public String[] getDeclaredIdentifiers(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredIdentifiers_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0();
-            case 1: return getDeclaredIdentifiers_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1();
-            case 2: return getDeclaredIdentifiers_solutionNonCategorizable();
+            case 0: return getDeclaredIdentifiers_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0();
+            case 1: return getDeclaredIdentifiers_solutionNonCategorizable();
             default: return new String[0];
         }
     }
@@ -893,9 +630,8 @@ import module.entity.DBConnect;
      */
     public void setObject(int ruleIndex, int declIndex, Object value) {
         switch (ruleIndex) {
-            case 0: setObject_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex, value); break;
-            case 1: setObject_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(declIndex, value); break;
-            case 2: setObject_solutionNonCategorizable(declIndex, value); break;
+            case 0: setObject_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex, value); break;
+            case 1: setObject_solutionNonCategorizable(declIndex, value); break;
         }
     }
 
@@ -908,9 +644,8 @@ import module.entity.DBConnect;
      */
     public Object getObject(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getObject_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
-            case 1: return getObject_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(declIndex);
-            case 2: return getObject_solutionNonCategorizable(declIndex);
+            case 0: return getObject_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(declIndex);
+            case 1: return getObject_solutionNonCategorizable(declIndex);
             default: return null;
         }
     }
@@ -925,9 +660,8 @@ import module.entity.DBConnect;
      */
     public Object[] getObjects(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getObjects_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0();
-            case 1: return getObjects_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1();
-            case 2: return getObjects_solutionNonCategorizable();
+            case 0: return getObjects_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0();
+            case 1: return getObjects_solutionNonCategorizable();
             default: return null;
         }
     }
@@ -941,9 +675,8 @@ import module.entity.DBConnect;
      */
     public void setObjects(int ruleIndex, Object[] objects) {
         switch (ruleIndex) {
-            case 0: setObjects_errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(objects); break;
-            case 1: setObjects_errortype_2_suberrortype_1_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1(objects); break;
-            case 2: setObjects_solutionNonCategorizable(objects); break;
+            case 0: setObjects_errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0(objects); break;
+            case 1: setObjects_solutionNonCategorizable(objects); break;
         }
     }
 
@@ -968,7 +701,7 @@ import module.entity.DBConnect;
 /**
  * Knowledge base created by JEOPS from file ErrorSorterKB.rules
  *
- * @version 21/04/2015
+ * @version 22/04/2015
  */
 public class ErrorSorterKB extends jeops.AbstractKnowledgeBase {
 

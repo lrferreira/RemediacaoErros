@@ -1,0 +1,57 @@
+package module.mer.manager;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import util.Constants;
+import module.entity.MultipleExternalRepresentation;
+import module.entity.RuleToHuman;
+import module.entity.TypeMER;
+import module.entity.DBConnect;
+import java.util.ArrayList;
+
+ruleBase MERManagerSpecificMERKB {
+
+
+
+
+	rule ruleMER_2_criterion_1_0 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			MultipleExternalRepresentation mer;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			mer.setId(m.getId());
+			mer.setDescription(m.getDescription());
+			mer.setComplexity(m.getComplexity());
+			mer.setImage(m.getImage());
+			mer.setMerFunctions(m.getMerFunctions());
+			mer.setTags(m.getTags());
+			mer.setTypeMers(m.getTypeMers());
+			action.getRegrasAcionadas().add("ruleMER_2_criterion_1_");
+			modified(mer);
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
+			flush();
+
+	}
+// -rule-end- 
+
+// end_rules
+	
+}

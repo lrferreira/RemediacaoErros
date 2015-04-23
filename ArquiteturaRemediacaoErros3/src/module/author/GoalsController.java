@@ -64,18 +64,17 @@ public class GoalsController {
 					
 					
 					
-					MultipleExternalRepresentation mer = new MultipleExternalRepresentation();
-					MERManagerController.aciona(action, dbCon, ruleToHuman, mer);
+					MERManagerController.aciona(action, dbCon, ruleToHuman);
 					String filePath = new File("").getAbsolutePath();
 					
-					String imgPath = filePath+File.separator+mer.getImage();
+					String imgPath = filePath+File.separator+action.getMer().getImage();
 					imgPath = imgPath.replace("bin", "images");
 					
-					System.out.println("Id = " + mer.getId());
-					System.out.println(" Descri��o = " + mer.getDescription());
-					System.out.println(" Image name: " + mer.getImage());
+					System.out.println("Id = " + action.getMer().getId());
+					System.out.println(" Descri��o = " + action.getMer().getDescription());
+					System.out.println(" Image name: " + action.getMer().getImage());
 					
-					lblImg.setIcon(new ImageIcon(mer.getImage()));
+					lblImg.setIcon(new ImageIcon(action.getMer().getImage()));
 					lblImg.repaint();
 
 					textPane.setText(ruleToHuman.getDescription());
@@ -89,7 +88,7 @@ public class GoalsController {
 			
 		}
 
-	
+	dbCon.save(action);
 
 	}
 	

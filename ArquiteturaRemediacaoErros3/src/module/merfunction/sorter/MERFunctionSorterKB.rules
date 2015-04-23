@@ -15,48 +15,14 @@ ruleBase MERFunctionSorterKB {
 
 
 
-
-	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 {
-
-		declarations
-			Action action;
-			MERFunction merFunction;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			action.getRemediation().getId().equals(1L);
-
-		actions
-			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
-			MERFunction mf = dbCon.getMERFunction(3L);
-			merFunction.setId(mf.getId());
-			merFunction.setDescription(mf.getDescription());
-			modified(merFunction);
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
+ 
 
 
-	rule merfunction_2_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_1 {
+
+	rule merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 {
 
 		declarations
 			Action action;
-			MERFunction merFunction;
 			DBConnect dbCon;
 			RuleToHuman ruleToHuman;
 
@@ -66,19 +32,16 @@ ruleBase MERFunctionSorterKB {
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(2L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(2L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(1L);
 
 		actions
-			action.getRegrasAcionadas().add("merfunction_2_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_2_PATH_1_GOAL_2_COMPONENT_txt8_REMEDIATION_2_ \n");
+			action.getRegrasAcionadas().add("merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
-			MERFunction mf = dbCon.getMERFunction(2L);
-			merFunction.setId(mf.getId());
-			merFunction.setDescription(mf.getDescription());
-			modified(merFunction);
+			action.setMerFunction( dbCon.getMERFunction(2L));
 			modified(ruleToHuman);
 			modified(action);
 			System.out.println("Fun��o MRE: Restrição de Interpretação");

@@ -16,12 +16,10 @@ import javax.xml.transform.stream.StreamResult;
 
 import module.author.expertise.creation.sorters.entity.ErrorType;
 import module.author.expertise.creation.sorters.entity.ItemSorter;
-import module.author.expertise.creation.sorters.entity.Remediation;
 import module.author.expertise.creation.sorters.entity.Sorter;
 import module.author.expertise.creation.sorters.entity.SubErrorType;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
-import module.entity.Tag;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -46,7 +44,7 @@ public class XMLManager {
 
          Document document = builder.parse(file);
 //         List<Sorter> sorters = new ArrayList<Sorter>();
-         Sorter sorter = new Sorter();
+         Sorter sorter = new Sorter(null, null, null);
 
          NodeList nodeList = document.getDocumentElement().getChildNodes();
 
@@ -77,14 +75,14 @@ public class XMLManager {
                   for (int j = 0; j < nodeListItens.getLength(); j++){
                 	  Node nodeItem = nodeListItens.item(j);
                 	  if (nodeItem.getNodeType() == Node.ELEMENT_NODE) {
-                		  ItemSorter item = new ItemSorter();
+                		  ItemSorter item = new ItemSorter(idSorter, sorter, null, null, null, descriptionSorter);
                 		  
                           Element elemItem = (Element) nodeItem;
                           Long idItem = Long.parseLong(elemItem.getElementsByTagName("id").item(0).getChildNodes().item(0).getNodeValue());
                           String statedError = elemItem.getElementsByTagName("statedError").item(0).getChildNodes().item(0).getNodeValue();
                           
                           item.setId(idItem);
-                          item.setStatedError(statedError);
+                          //item.getRemediation().setStatedError(statedError);
                           
                           Node nodeErrorType = elemItem.getElementsByTagName("errorType").item(0);
                           Element elemErrorType = (Element) nodeErrorType;
@@ -113,7 +111,7 @@ public class XMLManager {
                           Long idRemediation = Long.parseLong(elemRemediation.getElementsByTagName("id").item(0).getChildNodes().item(0).getNodeValue());
                           String descriptionRemediation = elemRemediation.getElementsByTagName("description").item(0).getChildNodes().item(0).getNodeValue();
                           
-                          item.setRemediation(new Remediation(idRemediation, descriptionRemediation, new ArrayList<MultipleExternalRepresentation>()));
+                          //item.setRemediation(new Remediation(idRemediation, descriptionRemediation, new ArrayList<MultipleExternalRepresentation>()));
 
                           
                           NodeList nodeListMers = elemItem.getElementsByTagName("mers").item(0).getChildNodes(); 
@@ -125,8 +123,8 @@ public class XMLManager {
                                   String descriptionMer = elemMer.getElementsByTagName("description").item(0).getChildNodes().item(0).getNodeValue();
                                   String imageNameMer = elemMer.getElementsByTagName("imageName").item(0).getChildNodes().item(0).getNodeValue();
                                   
-                                  MultipleExternalRepresentation mer = new MultipleExternalRepresentation(idMer, descriptionMer, imageNameMer);
-                                  mer.setTags(new ArrayList<Tag>());
+                                  MultipleExternalRepresentation mer = new MultipleExternalRepresentation();
+                                  //mer.setTags(new ArrayList<String>());
                                   
                                   NodeList nodeListTags = elemMer.getElementsByTagName("tags").item(0).getChildNodes();
                                   for (int l = 0; l < nodeListTags.getLength(); l++){
@@ -134,12 +132,12 @@ public class XMLManager {
                                 	  if (nodeTag.getNodeType() == Node.ELEMENT_NODE) {
                                 		  Element elemTag = (Element) nodeTag;
                                           String nameTag = elemTag.getElementsByTagName("name").item(0).getChildNodes().item(0).getNodeValue();
-                                          Tag tag = new Tag(nameTag);
-                                          mer.getTags().add(tag);
+                                          //Tag tag = new Tag(nameTag);
+                                          //mer.getTags().add(tag);
                                 	  }
                                   }
                                   
-                                  item.getRemediation().getMers().add(mer);
+                                  //item.getRemediation().getMers().add(mer);
                         	  }
                           }
                           sorter.getItensSorter().add(item);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/ShellController.jar"/>
+	<classpathentry kind="lib" path="libs/jgraphx/lib/jgraphx.jar"/>
+	<classpathentry kind="lib" path="libs/xstream/xstream-1.4.7.jar"/>
+	<classpathentry kind="lib" path="libs/sqlite-jdbc-3.8.7.jar"/>
+	<classpathentry kind="lib" path="libs/JEOPS.jar" sourcepath="libs/JEOPS.jar"/>
+	<classpathentry kind="lib" path="libs/JeopsRE.jar" sourcepath="libs/JeopsRE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

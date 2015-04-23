@@ -485,15 +485,20 @@ public class DBConnect {
 			PreparedStatement prepStmt = null;
 			
 			try{
-	            prepStmt= conn.prepareStatement("insert into action VALUES (?,?,?,?,?,?,?, ?)");
+	            prepStmt= conn.prepareStatement("insert into action VALUES (?,?,?,?,?,?,?,?,?,?)");
 	            prepStmt.setLong(1, action.getId());
 	            prepStmt.setString(2, action.getAnswer().getValue());
 	            prepStmt.setLong(3, action.getGoal().getId());
 	            prepStmt.setBoolean(4, action.getCorrect());
 	            prepStmt.setDate(5, new java.sql.Date(action.getDate().getTime()));
-	            prepStmt.setLong(6, action.getCorrect()?null:action.getRemediation().getId());
-	            prepStmt.setLong(7, action.getCorrect()?null:action.getMer().getId());
-	            prepStmt.setLong(8,  action.getMerFunction().getId());
+	            if (action.getRemediation() != null)
+	            	prepStmt.setLong(6, action.getRemediation().getId());
+	            if (action.getMer() != null)
+	            	prepStmt.setLong(7, action.getMer().getId());
+	            prepStmt.setLong(8, action.getStudent().getId());
+	            prepStmt.setInt(9, action.getAttempt());
+	            if (action.getMerFunction() != null)
+	            	prepStmt.setLong(10,  action.getMerFunction().getId());
 
 	            prepStmt.executeUpdate();
 	            
@@ -510,8 +515,8 @@ public class DBConnect {
 			
 			for (String r : action.getRegrasAcionadas()){
 				this.stm.executeUpdate("INSERT INTO rule_action VALUES (" +
-								action.getId() + ", " +
-								r + ")");
+								action.getId() + ", \"" +
+								r + "\")");
 			}
 			
 
@@ -582,7 +587,7 @@ public class DBConnect {
 			PreparedStatement prepStmt = null;
 			
 			try{
-	            prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?)");
+	            prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?)");
 	            prepStmt.setLong(1, remediation.getId());
 	            prepStmt.setLong(2, remediation.getGoal().getId());
 	            prepStmt.setLong(3, remediation.getItemSorter().getId());
@@ -591,6 +596,8 @@ public class DBConnect {
 	            	prepStmt.setInt(5, remediation.getAttempts());
 	            prepStmt.setString(6, remediation.getWrongAnswer());
 	            prepStmt.setString(7, remediation.getRelatedError());
+	            if (remediation.getMer() != null)
+	            	prepStmt.setLong(8, remediation.getMer().getId());
 
 	            prepStmt.executeUpdate();
 	            
@@ -763,7 +770,7 @@ public class DBConnect {
             	action.setAnswer(action.getCorrect() ? new CorrectAnswer(rs.getString("answer")) : new WrongAnswer(rs.getString("answer")));
             	action.setAttempt(rs.getInt("attempt"));
             	action.setDate(rs.getDate("date"));
-            	//action.setGoal(getGoal(rs.getLong("id_goal"), false));
+            	action.setGoal(getGoal(rs.getLong("id_goal"), false));
             	action.setMer(getMER(rs.getLong("id_mer")));
             	action.setRegrasAcionadas(new ArrayList<String>());
             	action.setStudent(getStudent(rs.getLong("id_student")));
@@ -887,7 +894,7 @@ public class DBConnect {
                 goal.setAnswer(new CorrectAnswer(rs.getString("answer")));
                 goal.setSatisfied(rs.getBoolean("satisfied"));
                 goal.setDescription(rs.getString("description"));
-                goal.setActions(getActionsByGoal(rs.getLong("id")));
+                //goal.setActions(getActionsByGoal(rs.getLong("id")));
                 if (bringSubSuper) {
                 	Long i = rs.getLong("id_subgoal");
                 	if (i.equals(0L)) 
@@ -1047,9 +1054,9 @@ public class DBConnect {
 
         try {
 			stmt=conn.createStatement();
-			ResultSet rs=stmt.executeQuery("select id from mer where id_merfunction = " + id_merfunction);
+			ResultSet rs=stmt.executeQuery("select id_mer from mer_merfunction where id_merfunction = " + id_merfunction);
 			while(rs.next()){
-				mers.add(getMER(rs.getLong("id")));
+				mers.add(getMER(rs.getLong("id_mer")));
 			}
 			rs.close();
 		} catch (SQLException e) {

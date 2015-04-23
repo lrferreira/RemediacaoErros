@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sorters>
+<sorter id="1">
+	<description>Classificação de Erros Matemáticos para Aritmética proposta por Maici</description>
+	<itensSorter>
+		<itemSorter>
+			<id>1</id>
+			<statedError>O aprendiz não consegue avançar em nenhuma estratégia porque pode estar com dificuldade de passar o problema da linguagem verbal para a matemática.</statedError>
+			<errorType>
+				<id>1</id>
+				<description>Interpretação Equivocada</description>
+				<subErrorType>
+				</subErrorType>
+			</errorType>
+			<merFunction>
+				<id>1</id>
+				<description>Papéis Complementares</description>
+			</merFunction>
+			<remediation>
+				<id>1</id>
+				<description>figura 1 de Pedro e Helena</description>
+				<mers>
+					<multipleExternalRepresentation>
+						<id>1</id>
+						<description>figura 1 de Pedro e Helena</description>
+						<imageName>/images/interpretacao_equivocada.png</imageName>
+						<tags>
+						</tags>
+					</multipleExternalRepresentation>
+				</mers>
+			</remediation>
+		</itemSorter>
+		<itemSorter>
+			<id>2</id>
+			<statedError>O aprendiz não consegue identificar que Helena possui uma quantidade maior.</statedError>
+			<errorType>
+				<id>2</id>
+				<description>Diretamente Identificável</description>
+				<subErrorType>
+					<id>1</id>
+					<description>Deficiência no Domínio</description>
+				</subErrorType>
+			</errorType>
+			<merFunction>
+				<id>2</id>
+				<description>Restrição de Interpretação</description>
+			</merFunction>
+			<remediation>
+				<id>2</id>
+				<description>figura 2 de Pedro e Helena</description>
+				<mers>
+					<multipleExternalRepresentation>
+						<id>2</id>
+						<description>figura 2 de Pedro e Helena</description>
+						<imageName>/images/diretamente_identificavel_deficiencia_dominio.png</imageName>
+						<tags>
+						</tags>
+					</multipleExternalRepresentation>
+				</mers>
+			</remediation>
+		</itemSorter>
+		
+	</itensSorter>
+</sorter>
+</sorters>
