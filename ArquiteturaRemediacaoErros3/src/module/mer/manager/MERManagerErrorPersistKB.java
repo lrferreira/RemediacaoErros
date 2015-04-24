@@ -5,13 +5,14 @@ import module.entity.Goal;
 import module.entity.Action;
 import module.entity.WrongAnswer;
 import util.Constants;
+import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.RuleToHuman;
 import module.entity.TypeMER;
 import module.entity.DBConnect;
 import java.util.ArrayList;
 
- class Jeops_RuleBase_MERManagerSpecificMERKB extends jeops.AbstractRuleBase {
+ class Jeops_RuleBase_MERManagerErrorPersistKB extends jeops.AbstractRuleBase {
 
 
 
@@ -19,32 +20,32 @@ import java.util.ArrayList;
 
 	
     /**
-     * Identifiers of rule ruleMER_10_remediation_1_criterion_1_0
+     * Identifiers of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0
      */
-    private String[] identifiers_ruleMER_10_remediation_1_criterion_1_0 = {
+    private String[] identifiers_ruleMER_14_remediation_3_criterionerrorpersist_3_0 = {
         "action",
         "dbCon",
         "ruleToHuman"
     };
 
     /**
-     * Returns the identifiers declared in rule ruleMER_10_remediation_1_criterion_1_0
+     * Returns the identifiers declared in rule ruleMER_14_remediation_3_criterionerrorpersist_3_0
      *
-     * @return the identifiers declared in rule ruleMER_10_remediation_1_criterion_1_0
+     * @return the identifiers declared in rule ruleMER_14_remediation_3_criterionerrorpersist_3_0
      */
-    private String[] getDeclaredIdentifiers_ruleMER_10_remediation_1_criterion_1_0() {
-         return identifiers_ruleMER_10_remediation_1_criterion_1_0;
+    private String[] getDeclaredIdentifiers_ruleMER_14_remediation_3_criterionerrorpersist_3_0() {
+         return identifiers_ruleMER_14_remediation_3_criterionerrorpersist_3_0;
     }
 
     /**
      * Returns the name of the class of one declared object for
-     * rule ruleMER_10_remediation_1_criterion_1_0.
+     * rule ruleMER_14_remediation_3_criterionerrorpersist_3_0.
      *
      * @param index the index of the declaration
      * @return the name of the class of the declared objects for
      *          this rule.
      */
-    private String getDeclaredClassName_ruleMER_10_remediation_1_criterion_1_0(int index) {
+    private String getDeclaredClassName_ruleMER_14_remediation_3_criterionerrorpersist_3_0(int index) {
         switch (index) {
             case 0: return "module.entity.Action";
             case 1: return "module.entity.DBConnect";
@@ -54,12 +55,12 @@ import java.util.ArrayList;
     }
 
     /**
-     * Returns the class of one declared object for rule ruleMER_10_remediation_1_criterion_1_0.
+     * Returns the class of one declared object for rule ruleMER_14_remediation_3_criterionerrorpersist_3_0.
      *
      * @param index the index of the declaration
      * @return the class of the declared objects for this rule.
      */
-    private Class getDeclaredClass_ruleMER_10_remediation_1_criterion_1_0(int index) {
+    private Class getDeclaredClass_ruleMER_14_remediation_3_criterionerrorpersist_3_0(int index) {
         switch (index) {
             case 0: return module.entity.Action.class;
             case 1: return module.entity.DBConnect.class;
@@ -69,12 +70,12 @@ import java.util.ArrayList;
     }
 
     /**
-     * Sets an object declared in the rule ruleMER_10_remediation_1_criterion_1_0.
+     * Sets an object declared in the rule ruleMER_14_remediation_3_criterionerrorpersist_3_0.
      *
      * @param index the index of the declared object
      * @param value the value of the object being set.
      */
-    private void setObject_ruleMER_10_remediation_1_criterion_1_0(int index, Object value) {
+    private void setObject_ruleMER_14_remediation_3_criterionerrorpersist_3_0(int index, Object value) {
         switch (index) {
             case 0: this.module_entity_Action_1 = (module.entity.Action) value; break;
             case 1: this.module_entity_DBConnect_1 = (module.entity.DBConnect) value; break;
@@ -83,12 +84,12 @@ import java.util.ArrayList;
     }
 
     /**
-     * Returns an object declared in the rule ruleMER_10_remediation_1_criterion_1_0.
+     * Returns an object declared in the rule ruleMER_14_remediation_3_criterionerrorpersist_3_0.
      *
      * @param index the index of the declared object
      * @return the value of the corresponding object.
      */
-    private Object getObject_ruleMER_10_remediation_1_criterion_1_0(int index) {
+    private Object getObject_ruleMER_14_remediation_3_criterionerrorpersist_3_0(int index) {
         switch (index) {
             case 0: return module_entity_Action_1;
             case 1: return module_entity_DBConnect_1;
@@ -99,12 +100,12 @@ import java.util.ArrayList;
 
     /**
      * Returns all variables bound to the declarations 
-     * of rule ruleMER_10_remediation_1_criterion_1_0
+     * of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0
      *
      * @return an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private Object[] getObjects_ruleMER_10_remediation_1_criterion_1_0() {
+    private Object[] getObjects_ruleMER_14_remediation_3_criterionerrorpersist_3_0() {
         return new Object[] {
                             module_entity_Action_1,
                             module_entity_DBConnect_1,
@@ -114,69 +115,69 @@ import java.util.ArrayList;
 
     /**
      * Defines all variables bound to the declarations 
-     * of rule ruleMER_10_remediation_1_criterion_1_0
+     * of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0
      *
      * @param objects an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private void setObjects_ruleMER_10_remediation_1_criterion_1_0(Object[] objects) {
+    private void setObjects_ruleMER_14_remediation_3_criterionerrorpersist_3_0(Object[] objects) {
         module_entity_Action_1 = (module.entity.Action) objects[0];
         module_entity_DBConnect_1 = (module.entity.DBConnect) objects[1];
         module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
     }
 
     /**
-     * Condition 0 of rule ruleMER_10_remediation_1_criterion_1_0.<p>
+     * Condition 0 of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getMer().getId().equals(10L)</code>
+     * <code>action.getRemediation().getCriterion().getId().equals(3L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean ruleMER_10_remediation_1_criterion_1_0_cond_0() {
-        return (module_entity_Action_1.getRemediation().getMer().getId().equals(10L));
+    private boolean ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond_0() {
+        return (module_entity_Action_1.getRemediation().getCriterion().getId().equals(3L));
     }
 
     /**
-     * Condition 1 of rule ruleMER_10_remediation_1_criterion_1_0.<p>
+     * Condition 1 of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getCriterion().getId().equals(1L)</code>
+     * <code>action.getAttempt() == 3</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean ruleMER_10_remediation_1_criterion_1_0_cond_1() {
-        return (module_entity_Action_1.getRemediation().getCriterion().getId().equals(1L));
+    private boolean ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond_1() {
+        return (module_entity_Action_1.getAttempt() == 3);
     }
 
     /**
-     * Checks whether some conditions of rule ruleMER_10_remediation_1_criterion_1_0 is satisfied.
+     * Checks whether some conditions of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0 is satisfied.
      *
      * @param index the index of the condition to be checked.
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean ruleMER_10_remediation_1_criterion_1_0_cond(int index) {
+    private boolean ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond(int index) {
         switch (index) {
-            case 0: return ruleMER_10_remediation_1_criterion_1_0_cond_0();
-            case 1: return ruleMER_10_remediation_1_criterion_1_0_cond_1();
+            case 0: return ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond_0();
+            case 1: return ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond_1();
             default: return false;
         }
     }
 
     /**
-     * Checks whether all conditions of rule ruleMER_10_remediation_1_criterion_1_0 that depend only on
+     * Checks whether all conditions of rule ruleMER_14_remediation_3_criterionerrorpersist_3_0 that depend only on
      * the given object are satisfied.
      *
      * @param declIndex the index of the declaration to be checked
      * @return <code>true</code> if all corresponding conditions for
      *          this rule are satisfied; <code>false</code> otherwise.
      */
-    private boolean checkConditionsOnlyOf_ruleMER_10_remediation_1_criterion_1_0(int declIndex) {
+    private boolean checkConditionsOnlyOf_ruleMER_14_remediation_3_criterionerrorpersist_3_0(int declIndex) {
         switch (declIndex) {
             case 0:
-                if (!ruleMER_10_remediation_1_criterion_1_0_cond_0()) return false;
-                if (!ruleMER_10_remediation_1_criterion_1_0_cond_1()) return false;
+                if (!ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond_0()) return false;
+                if (!ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond_1()) return false;
                 return true;
             case 1:
                 return true;
@@ -196,7 +197,7 @@ import java.util.ArrayList;
      *          up to the given declaration are true;
      *          <code>false</code> otherwise.
      */
-    private boolean checkCondForDeclaration_ruleMER_10_remediation_1_criterion_1_0(int declIndex) {
+    private boolean checkCondForDeclaration_ruleMER_14_remediation_3_criterionerrorpersist_3_0(int declIndex) {
         switch (declIndex) {
             case 0:
                 return true;
@@ -209,20 +210,20 @@ import java.util.ArrayList;
     }
 
     /**
-     * Executes the action part of the rule ruleMER_10_remediation_1_criterion_1_0
+     * Executes the action part of the rule ruleMER_14_remediation_3_criterionerrorpersist_3_0
      */
-    private void ruleMER_10_remediation_1_criterion_1_0() {
-			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_10_remediation_1_criterion_1_");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_1_criterion_1_ \n");
+    private void ruleMER_14_remediation_3_criterionerrorpersist_3_0() {
+			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_14_remediation_3_criterionerrorpersist_3_");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_14_remediation_3_criterionerrorpersist_3_ \n");
 			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condi��es:  \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "action.getRemediation().getCriterion().getId().equals(1L);\n");
-			MultipleExternalRepresentation m = module_entity_DBConnect_1.getMER(10L);
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "action.getAttempt() == 3);\n");
+			MultipleExternalRepresentation m = module_entity_DBConnect_1.getMER(14L);
 			module_entity_Action_1.setMer(m);
-			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_10_remediation_1_criterion_1_");
+			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_14_remediation_3_criterionerrorpersist_3_");
 			modified(module_entity_RuleToHuman_1);
 			modified(module_entity_Action_1);
-			System.out.println("Exibi��o de MRE 10 - mer 10");
+			System.out.println("Exibi��o de MRE 14 - mer 14");
 			flush();
 
 	    }
@@ -237,7 +238,7 @@ import java.util.ArrayList;
      * The names of the rules in this class file
      */
     private static final String[] File_ruleNames = {
-        "ruleMER_10_remediation_1_criterion_1_0"
+        "ruleMER_14_remediation_3_criterionerrorpersist_3_0"
     };
 
     /**
@@ -291,7 +292,7 @@ import java.util.ArrayList;
      */
     public boolean checkCondition(int ruleIndex, int condIndex) {
         switch (ruleIndex) {
-            case 0: return ruleMER_10_remediation_1_criterion_1_0_cond(condIndex);
+            case 0: return ruleMER_14_remediation_3_criterionerrorpersist_3_0_cond(condIndex);
             default: return false;
         }
     }
@@ -308,7 +309,7 @@ import java.util.ArrayList;
      */
     public boolean checkConditionsOnlyOf(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkConditionsOnlyOf_ruleMER_10_remediation_1_criterion_1_0(declIndex);
+            case 0: return checkConditionsOnlyOf_ruleMER_14_remediation_3_criterionerrorpersist_3_0(declIndex);
             default: return false;
         }
     }
@@ -326,7 +327,7 @@ import java.util.ArrayList;
      */
     public boolean checkCondForDeclaration(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkCondForDeclaration_ruleMER_10_remediation_1_criterion_1_0(declIndex);
+            case 0: return checkCondForDeclaration_ruleMER_14_remediation_3_criterionerrorpersist_3_0(declIndex);
             default: return false;
         }
     }
@@ -340,7 +341,7 @@ import java.util.ArrayList;
      */
     public String getDeclaredClassName(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClassName_ruleMER_10_remediation_1_criterion_1_0(declIndex);
+            case 0: return getDeclaredClassName_ruleMER_14_remediation_3_criterionerrorpersist_3_0(declIndex);
             default: return null;
         }
     }
@@ -354,7 +355,7 @@ import java.util.ArrayList;
      */
     public Class getDeclaredClass(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClass_ruleMER_10_remediation_1_criterion_1_0(declIndex);
+            case 0: return getDeclaredClass_ruleMER_14_remediation_3_criterionerrorpersist_3_0(declIndex);
             default: return null;
         }
     }
@@ -366,7 +367,7 @@ import java.util.ArrayList;
      */
     protected void internalFireRule(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: ruleMER_10_remediation_1_criterion_1_0(); break;
+            case 0: ruleMER_14_remediation_3_criterionerrorpersist_3_0(); break;
         }
     }
 
@@ -387,7 +388,7 @@ import java.util.ArrayList;
      */
     public String[] getDeclaredIdentifiers(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredIdentifiers_ruleMER_10_remediation_1_criterion_1_0();
+            case 0: return getDeclaredIdentifiers_ruleMER_14_remediation_3_criterionerrorpersist_3_0();
             default: return new String[0];
         }
     }
@@ -401,7 +402,7 @@ import java.util.ArrayList;
      */
     public void setObject(int ruleIndex, int declIndex, Object value) {
         switch (ruleIndex) {
-            case 0: setObject_ruleMER_10_remediation_1_criterion_1_0(declIndex, value); break;
+            case 0: setObject_ruleMER_14_remediation_3_criterionerrorpersist_3_0(declIndex, value); break;
         }
     }
 
@@ -414,7 +415,7 @@ import java.util.ArrayList;
      */
     public Object getObject(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getObject_ruleMER_10_remediation_1_criterion_1_0(declIndex);
+            case 0: return getObject_ruleMER_14_remediation_3_criterionerrorpersist_3_0(declIndex);
             default: return null;
         }
     }
@@ -429,7 +430,7 @@ import java.util.ArrayList;
      */
     public Object[] getObjects(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getObjects_ruleMER_10_remediation_1_criterion_1_0();
+            case 0: return getObjects_ruleMER_14_remediation_3_criterionerrorpersist_3_0();
             default: return null;
         }
     }
@@ -443,7 +444,7 @@ import java.util.ArrayList;
      */
     public void setObjects(int ruleIndex, Object[] objects) {
         switch (ruleIndex) {
-            case 0: setObjects_ruleMER_10_remediation_1_criterion_1_0(objects); break;
+            case 0: setObjects_ruleMER_14_remediation_3_criterionerrorpersist_3_0(objects); break;
         }
     }
 
@@ -459,18 +460,18 @@ import java.util.ArrayList;
      *
      * @param knowledgeBase the knowledge base that contains this rule base.
      */
-    public Jeops_RuleBase_MERManagerSpecificMERKB(jeops.AbstractKnowledgeBase knowledgeBase) {
+    public Jeops_RuleBase_MERManagerErrorPersistKB(jeops.AbstractKnowledgeBase knowledgeBase) {
         super(knowledgeBase);
     }
 
 }
 
 /**
- * Knowledge base created by JEOPS from file MERManagerSpecificMERKB.rules
+ * Knowledge base created by JEOPS from file MERManagerErrorPersistKB.rules
  *
  * @version 23/04/2015
  */
-public class MERManagerSpecificMERKB extends jeops.AbstractKnowledgeBase {
+public class MERManagerErrorPersistKB extends jeops.AbstractKnowledgeBase {
 
     /**
      * Creates a new knowledge base with the specified conflict set with the
@@ -478,7 +479,7 @@ public class MERManagerSpecificMERKB extends jeops.AbstractKnowledgeBase {
      *
      * @param conflictSet a conflict set with the desired resolution policy
      */
-    public MERManagerSpecificMERKB(jeops.conflict.ConflictSet conflictSet) {
+    public MERManagerErrorPersistKB(jeops.conflict.ConflictSet conflictSet) {
         super(conflictSet);
     }
 
@@ -486,7 +487,7 @@ public class MERManagerSpecificMERKB extends jeops.AbstractKnowledgeBase {
      * Creates a new knowledge base, using the default conflict resolution
      * policy.
      */
-    public MERManagerSpecificMERKB() {
+    public MERManagerErrorPersistKB() {
         this(new jeops.conflict.DefaultConflictSet());
     }
 
@@ -494,7 +495,7 @@ public class MERManagerSpecificMERKB extends jeops.AbstractKnowledgeBase {
      * Factory method used to instantiate the rule base.
      */
     protected jeops.AbstractRuleBase createRuleBase() {
-        return new Jeops_RuleBase_MERManagerSpecificMERKB(this);
+        return new Jeops_RuleBase_MERManagerErrorPersistKB(this);
     }
 
 }

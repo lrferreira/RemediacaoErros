@@ -19,9 +19,7 @@ ruleBase ErrorSorterKB {
 
 
 
-
-
-	rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 {
+	rule errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 {
 
 		declarations
 			Action action;
@@ -38,13 +36,108 @@ ruleBase ErrorSorterKB {
 			action.getAnswer().getValue().equalsIgnoreCase("-");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = -\n");
 			System.out.println("Erro classificado como Diretamente Identificáveis");
 			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
-			action.getRegrasAcionadas().add("errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(3L));
+			action.getRegrasAcionadas().add("errortype_2_suberrortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule errortype_2_suberrortype_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_2_1 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 0\n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
+			action.getRegrasAcionadas().add("errortype_2_suberrortype_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_2_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule errortype_2_suberrortype_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_3_2 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 1\n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
+			action.getRegrasAcionadas().add("errortype_2_suberrortype_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_3_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule errortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_4_3 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(4L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 6\n");
+			System.out.println("Erro classificado como Indiretamente identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(3L));
+			action.getRegrasAcionadas().add("errortype_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_4_");
 			modified(ruleToHuman);
 			modified(action);
 			flush();

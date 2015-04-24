@@ -214,7 +214,7 @@ public class EstudoCasoApplet extends Applet {
 				        	action.setRegrasAcionadas(new ArrayList<String>());
 				        	action.setRemediation(null);
 				        	
-							GoalsController.run(action, textPane, lblMer);
+							GoalsController.run(action, textPane, lblMer, dbCon);
 							if (action.getCorrect())
 								prepareNextGoal();
 							else

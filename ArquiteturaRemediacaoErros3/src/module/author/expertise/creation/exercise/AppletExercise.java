@@ -631,7 +631,8 @@ public class AppletExercise extends JApplet {
 				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
 				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
 				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
-
+				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
+				                			
 				                			//RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
 				                		}
 				                	}

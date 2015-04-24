@@ -2,6 +2,7 @@ package module.author;
 
 import java.io.File;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -9,8 +10,7 @@ import javax.swing.JTextPane;
 
 import module.entity.Action;
 import module.entity.DBConnect;
-import module.entity.MERFunction;
-import module.entity.MultipleExternalRepresentation;
+import module.entity.Goal;
 import module.entity.RuleToHuman;
 import module.entity.WrongAnswer;
 import module.error.sorter.ErrorSorterController;
@@ -22,7 +22,9 @@ import util.StringConstants;
 
 public class GoalsController {
 
-	public static void run(Action action, JTextPane textPane, JLabel lblImg){
+	public static ArrayList<Action> historicActions = new ArrayList<Action>();
+	
+	public static void run(Action action, JTextPane textPane, JLabel lblImg, DBConnect dbCon){
 		//action.setAnswer(new Answer(action.getGoal().getComponent()));
 		
 
@@ -33,13 +35,7 @@ public class GoalsController {
 		RuleToHuman ruleToHuman = new RuleToHuman();
 		ruleToHuman.setDescription("");
 		
-		DBConnect dbCon = null;
-		try {
-			dbCon = new DBConnect(StringConstants.FILE_DB);
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 		
 		ExpressionIdentifierController.identificaExpressao(action, dbCon, ruleToHuman);
@@ -64,21 +60,25 @@ public class GoalsController {
 					
 					
 					
-					MERManagerController.aciona(action, dbCon, ruleToHuman);
+					MERManagerController.aciona(action, historicActions, dbCon, ruleToHuman);
 					String filePath = new File("").getAbsolutePath();
 					
-					String imgPath = filePath+File.separator+action.getMer().getImage();
-					imgPath = imgPath.replace("bin", "images");
-					
-					System.out.println("Id = " + action.getMer().getId());
-					System.out.println(" Descri��o = " + action.getMer().getDescription());
-					System.out.println(" Image name: " + action.getMer().getImage());
-					
-					lblImg.setIcon(new ImageIcon(action.getMer().getImage()));
-					lblImg.repaint();
+					if (action.getMer() != null) {
+						
+						String imgPath = filePath+File.separator+action.getMer().getImage();
+						imgPath = imgPath.replace("bin", "images");
+						
+						System.out.println("Id = " + action.getMer().getId());
+						System.out.println(" Descri��o = " + action.getMer().getDescription());
+						System.out.println(" Image name: " + action.getMer().getImage());
+						
+						lblImg.setIcon(new ImageIcon(action.getMer().getImage()));
+						lblImg.repaint();
+						
+					}
 
 					textPane.setText(ruleToHuman.getDescription());
-
+					
 					System.out.println("Ap�s rodada: n� tentativas: " + action.getAttempt());
 					
 					
@@ -89,6 +89,7 @@ public class GoalsController {
 		}
 
 	dbCon.save(action);
+	historicActions.add(action);
 
 	}
 	

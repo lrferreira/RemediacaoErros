@@ -27,6 +27,7 @@ public class StringConstants {
 	public static final String FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB = "\\module\\mer\\manager\\MERManagerNotSpecificMERKB.rules";
 	public static final String FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB = "\\module\\mer\\manager\\MERManagerSwypeMERFunctionKB.rules";
 	public static final String FILE_MER_MANAGER_COMPLEXITY_KB = "\\module\\mer\\manager\\MERManagerComplexityKB.rules";
+	public static final String FILE_MER_MANAGER_ERROR_PERSIST_KB = "\\module\\mer\\manager\\MERManagerErrorPersistKB.rules";
 	
 	
 	public static final String CRITERION_MER_SPECIFIC_FOR_ERROR = "MRE espec�fica para o erro";

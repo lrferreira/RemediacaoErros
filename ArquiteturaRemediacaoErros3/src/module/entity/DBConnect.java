@@ -502,6 +502,13 @@ public class DBConnect {
 
 	            prepStmt.executeUpdate();
 	            
+	            for (String r : action.getRegrasAcionadas()){
+	            	PreparedStatement prepStmt2 = conn.prepareStatement("insert into rule_action values (?,?)");
+	            	prepStmt2.setLong(1, action.getId());
+	            	prepStmt2.setString(2, r);
+	            	prepStmt2.executeUpdate();
+	            	prepStmt2.close();
+	            }
 	            
 	            
 			}catch(Exception e){
@@ -512,12 +519,8 @@ public class DBConnect {
 	            } catch (Exception e) {
 	            }
 	        }
+
 			
-			for (String r : action.getRegrasAcionadas()){
-				this.stm.executeUpdate("INSERT INTO rule_action VALUES (" +
-								action.getId() + ", \"" +
-								r + "\")");
-			}
 			
 
 		} catch (SQLException e) {

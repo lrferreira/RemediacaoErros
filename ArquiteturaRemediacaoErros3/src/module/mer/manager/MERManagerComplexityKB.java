@@ -237,7 +237,7 @@ import java.util.ArrayList;
 /**
  * Knowledge base created by JEOPS from file MERManagerComplexityKB.rules
  *
- * @version 22/04/2015
+ * @version 23/04/2015
  */
 public class MERManagerComplexityKB extends jeops.AbstractKnowledgeBase {
 

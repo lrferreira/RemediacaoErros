@@ -973,7 +973,7 @@ import javax.swing.*;
 /**
  * Knowledge base created by JEOPS from file ExpressionIdentifierCorrectAnswerKB.rules
  *
- * @version 21/04/2015
+ * @version 23/04/2015
  */
 public class ExpressionIdentifierCorrectAnswerKB extends jeops.AbstractKnowledgeBase {
 

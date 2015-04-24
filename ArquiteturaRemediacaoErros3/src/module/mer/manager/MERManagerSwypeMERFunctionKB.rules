@@ -16,6 +16,237 @@ ruleBase MERManagerSwypeMERFunctionKB {
 
 
 
+
+	rule ruleMER_criterion_4_swypemersmerfunction_20 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(6L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(6L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 6 - mer 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_criterion_4_swypemersmerfunction_21 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(7L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(7L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(7L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 7 - mer 7");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_criterion_4_swypemersmerfunction_22 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(8L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(8L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(8L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 8 - mer 8");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_criterion_4_swypemersmerfunction_23 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(9L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(9L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(9L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 9 - mer 9");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_criterion_4_swypemersmerfunction_24 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(10L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(10L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(10L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 10 - mer 10");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_criterion_4_swypemersmerfunction_25 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(13L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(13L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(13L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 13 - mer 13");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_criterion_4_swypemersmerfunction_26 {
+
+		declarations
+			Action action;
+			Action lastAction;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMerFunction().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(4L);
+			!lastAction.getMer().getId().equals(14L);
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_criterion_4_swypemersmerfunction_2 \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(2L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(4);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "!lastAction.getMer().getId().equals(14L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(14L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_criterion_4_swypemersmerfunction_2");
+			modified(action);
+			modified(ruleToHuman);
+			System.out.println("Exibi��o de MRE 14 - mer 14");
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 	
 }
