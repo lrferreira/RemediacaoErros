@@ -22,30 +22,21 @@ ruleBase MERManagerKB {
 		declarations
 			Action action;
 			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			mer.getId().equals(1L);
+			action.getMer().getId().equals(1L);
 
 		actions
 			action.getRegrasAcionadas().add("ruleMER_1_");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "mer.getId().equals(1L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(1L);\n");
 			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
+			action.setMer(m);
 			action.getRegrasAcionadas().add("ruleMER_1_");
-			modified(mer);
 			modified(ruleToHuman);
 			modified(action);
 			System.out.println("Exibi��o de MRE 1 - mer 1");
@@ -55,110 +46,406 @@ ruleBase MERManagerKB {
 // -rule-end- 
 
 
-	rule ruleMER_1_complexity_1_1 {
+	rule ruleMER_2_1 {
 
 		declarations
 			Action action;
 			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			mer.getComplexity() == 1;
+			action.getMer().getId().equals(2L);
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_complexity_1_ \n");
+			action.getRegrasAcionadas().add("ruleMER_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "mer.getComplexity() == 1;\n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_complexity_1_");
-			modified(mer);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(2L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_2_");
 			modified(ruleToHuman);
 			modified(action);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
+			System.out.println("Exibi��o de MRE 2 - mer 2");
 			flush();
 
 	}
 // -rule-end- 
 
 
-	rule ruleMER_1_merfunction_1_2 {
+	rule ruleMER_3_2 {
 
 		declarations
 			Action action;
 			DBConnect dbCon;
-			MultipleExternalRepresentation mer;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			action.getMerFunction().getId().equals(1L) ; 
+			action.getMer().getId().equals(3L);
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_merfunction_1_ \n");
+			action.getRegrasAcionadas().add("ruleMER_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_3_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMerFunction().getId().equals(1L) ; \n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_merfunction_1_");
-			modified(action);
-			modified(mer);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(3L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(3L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_3_");
 			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
+			modified(action);
+			System.out.println("Exibi��o de MRE 3 - mer 3");
 			flush();
 
 	}
 // -rule-end- 
 
 
-	rule ruleMER_1_typemer_1_1_3 {
+	rule ruleMER_4_3 {
 
 		declarations
 			Action action;
 			DBConnect dbCon;
-			MERFunction merFunction;
-			MultipleExternalRepresentation mer;
 			RuleToHuman ruleToHuman;
 
 		localdecl
 
 		conditions
-			mer.getTypeMers().contains(new TypeMER(1L, null )) ; 
+			action.getMer().getId().equals(4L);
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_typemer_1_1_ \n");
+			action.getRegrasAcionadas().add("ruleMER_4_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_4_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "mer.getTypeMers().contains(new TypeMER(1L, null )) ; \n");
-			MultipleExternalRepresentation m = dbCon.getMER(1L);
-			mer.setId(m.getId());
-			mer.setDescription(m.getDescription());
-			mer.setComplexity(m.getComplexity());
-			mer.setImage(m.getImage());
-			mer.setMerFunctions(m.getMerFunctions());
-			mer.setTags(m.getTags());
-			mer.setTypeMers(m.getTypeMers());
-			action.getRegrasAcionadas().add("ruleMER_1_typemer_1_1_");
-			modified(action);
-			modified(mer);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(4L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_4_");
 			modified(ruleToHuman);
-			System.out.println("Exibi��o de MRE 1 - mer 1");
+			modified(action);
+			System.out.println("Exibi��o de MRE 4 - mer 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_5_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(5L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_5_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(5L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 5 - mer 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_6_5 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(6L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_6_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_6_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(6L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_6_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 6 - mer 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_7_6 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(7L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_7_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_7_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(7L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(7L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_7_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 7 - mer 7");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_8_7 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(8L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_8_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_8_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(8L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(8L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_8_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 8 - mer 8");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_9_8 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(9L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_9_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_9_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(9L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(9L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_9_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 9 - mer 9");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_9 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(10L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_10_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(10L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(10L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 10 - mer 10");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_11_10 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(11L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_11_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_11_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(11L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(11L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_11_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 11 - mer 11");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_12_11 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(12L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_12_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_12_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(12L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(12L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_12_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 12 - mer 12");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_13_12 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(13L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_13_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_13_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(13L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(13L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_13_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 13 - mer 13");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_14_13 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(14L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_14_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_14_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(14L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(14L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_14_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 14 - mer 14");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_15_14 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getMer().getId().equals(15L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_15_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_15_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getMer().getId().equals(15L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(15L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_15_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 15 - mer 15");
 			flush();
 
 	}

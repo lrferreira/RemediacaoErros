@@ -145,6 +145,100 @@ ruleBase ErrorSorterKB {
 	}
 // -rule-end- 
 
+
+	rule errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
+			action.getRegrasAcionadas().add("errortype_2_suberrortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule errortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_5 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(1L));
+			action.getRegrasAcionadas().add("errortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule errortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_6 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: errortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(1L));
+			action.getRegrasAcionadas().add("errortype_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 
 // rule necessary by default

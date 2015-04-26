@@ -149,6 +149,105 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 	}
 // -rule-end- 
 
+
+	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			action.getRegrasAcionadas().add("wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			Remediation r = dbCon.getRemediation(5L);
+			action.setRemediation(r);
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_5 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			action.getRegrasAcionadas().add("wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			Remediation r = dbCon.getRemediation(5L);
+			action.setRemediation(r);
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_6 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = 4\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			action.getRegrasAcionadas().add("wrongAnswer_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			Remediation r = dbCon.getRemediation(5L);
+			action.setRemediation(r);
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 
 // rule necessary by default

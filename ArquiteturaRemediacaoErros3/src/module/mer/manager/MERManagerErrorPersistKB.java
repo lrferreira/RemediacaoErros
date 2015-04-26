@@ -469,7 +469,7 @@ import java.util.ArrayList;
 /**
  * Knowledge base created by JEOPS from file MERManagerErrorPersistKB.rules
  *
- * @version 23/04/2015
+ * @version 24/04/2015
  */
 public class MERManagerErrorPersistKB extends jeops.AbstractKnowledgeBase {
 

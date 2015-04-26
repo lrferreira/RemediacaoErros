@@ -16,6 +16,878 @@ ruleBase MERManagerComplexityKB {
 
 
 
+
+
+
+	rule ruleMER_1_complexity_1_0 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_1_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 1 - mer 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_2_complexity_2_1 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 2;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_2_complexity_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_3_complexity_3_2 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_3_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(3L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_3_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 3 - mer 3");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_4_complexity_4_3 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_4_complexity_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 4;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_4_complexity_4_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 4 - mer 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_5_complexity_5_4 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_5_complexity_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 5;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_5_complexity_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 5 - mer 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_6_complexity_1_5 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_6_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_6_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 6 - mer 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_7_complexity_2_6 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_7_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 2;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(7L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_7_complexity_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 7 - mer 7");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_8_complexity_3_7 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_8_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(8L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_8_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 8 - mer 8");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_9_complexity_4_8 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_9_complexity_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 4;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(9L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_9_complexity_4_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 9 - mer 9");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_complexity_5_9 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_complexity_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 5;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(10L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_complexity_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 10 - mer 10");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_11_complexity_5_10 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_11_complexity_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 5;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(11L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_11_complexity_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 11 - mer 11");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_12_complexity_3_11 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_12_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(12L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_12_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 12 - mer 12");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_13_complexity_3_12 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_13_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(13L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_13_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 13 - mer 13");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_14_complexity_2_13 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_14_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 2;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(14L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_14_complexity_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 14 - mer 14");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_15_complexity_1_14 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_15_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(15L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_15_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 15 - mer 15");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_1_complexity_1_15 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_1_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 1 - mer 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_2_complexity_2_16 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 2;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_2_complexity_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 2 - mer 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_3_complexity_3_17 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_3_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(3L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_3_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 3 - mer 3");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_4_complexity_4_18 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_4_complexity_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 4;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_4_complexity_4_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 4 - mer 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_5_complexity_5_19 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_5_complexity_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 5;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_5_complexity_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 5 - mer 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_6_complexity_1_20 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_6_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_6_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 6 - mer 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_7_complexity_2_21 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_7_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 2;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(7L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_7_complexity_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 7 - mer 7");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_8_complexity_3_22 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_8_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(8L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_8_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 8 - mer 8");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_9_complexity_4_23 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 4;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_9_complexity_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 4;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(9L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_9_complexity_4_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 9 - mer 9");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_complexity_5_24 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_complexity_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 5;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(10L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_complexity_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 10 - mer 10");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_11_complexity_5_25 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 5;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_11_complexity_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 5;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(11L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_11_complexity_5_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 11 - mer 11");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_12_complexity_3_26 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_12_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(12L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_12_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 12 - mer 12");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_13_complexity_3_27 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_13_complexity_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(13L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_13_complexity_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 13 - mer 13");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_14_complexity_2_28 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_14_complexity_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 2;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(14L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_14_complexity_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 14 - mer 14");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_15_complexity_1_29 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_15_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(15L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_15_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 15 - mer 15");
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 	
 }

@@ -93,28 +93,5 @@ public class GoalsController {
 
 	}
 	
-	public void prepareCriterion(Action action, DBConnect dbCon){
-		if (action.getRemediation() != null && action.getRemediation().getId() != null){
-			
-			if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_MRE_ESPECIFICA_ERRO)) {
-				
-			}
-			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_NAO_USAR_MRE_ESPECIFICA)) {
-				
-			}
-			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_PERSISTENCIA_ERRO)) {
-				
-			}
-			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_ALTERNAR_ENTRE_MRE_TIPO_ESPECIFICADO)) {
-				
-			}		
-			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_COMPLEXIDADE)) {
-				
-			}
-			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_SUCESSOS_ANTERIORES_MRE)) {
-				dbCon.getMersBySuccess(action.getMerFunction().getId());
-			}
-			
-		}
-	}
+
 }

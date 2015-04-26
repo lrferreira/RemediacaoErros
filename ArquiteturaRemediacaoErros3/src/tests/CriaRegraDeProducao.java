@@ -6,10 +6,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import jeops.compiler.Main;
 import module.creation.rules.RulesFactory;
 import module.entity.CorrectAnswer;
+import module.entity.DBConnect;
 import module.entity.MERFunction;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.WrongAnswer;
@@ -21,6 +23,19 @@ public class CriaRegraDeProducao {
 	public static void main(String[] args){
 			
 			int i = 0;
+			DBConnect dbCon = null;
+			try {
+				dbCon = new DBConnect(StringConstants.FILE_DB);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			for (MultipleExternalRepresentation mre : dbCon.getMers()) {
+				
+				RulesFactory.createRules(mre);
+			}
+			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
 /*
 			RulesFactory.createRules(new CorrectAnswer(new String[]{"6", "10","16"}));
 			RulesFactory.createRules(new CorrectAnswer(new String[]{"10", "6","16"}));
