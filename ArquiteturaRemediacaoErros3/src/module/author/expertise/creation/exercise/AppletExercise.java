@@ -87,7 +87,7 @@ public class AppletExercise extends JApplet {
 	private JTabbedPane tabbedPane;
 	public JPanel panel_exerc;
 	
-	public JPanel panel_remed;
+	public static JPanel panel_remed;
 	private Goal currentGoal;
 	private JTextField txtWrongAnswer;
 	private JComboBox cmbWrongAnswer;
@@ -121,7 +121,7 @@ public class AppletExercise extends JApplet {
 	private DBConnect dbCon;
 	
 	Sorter sorter;
-	ItemSorter itemSorter;
+	static ItemSorter itemSorter;
 	ErrorType errorType;
 	SubErrorType subErrorType;
 	private JLabel lblRemediacao;
@@ -138,7 +138,7 @@ public class AppletExercise extends JApplet {
 	private JLabel lblMer;
 	private JLabel lblApsNmeroDe;
 	private JTextField txtTentativas;
-	
+	private Remediation currentRemediation;
 
 	
 	
@@ -365,275 +365,8 @@ public class AppletExercise extends JApplet {
 				   
 					
 // Panel REMEDIAÇÃO
-				                panel_remed = new JPanel();
-				                tabbedPane.addTab("Remedia\u00E7\u00E3o", null, panel_remed, null);
-				                panel_remed.setLayout(null);
-				                
-				                cmbWrongAnswer = new JComboBox();
-				                cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta específica", "Estudante cometeu um erro (não importa a resposta)", "Estudante NÃO informou resposta específica"}));
-				                cmbWrongAnswer.setToolTipText("");
-				                cmbWrongAnswer.setBounds(10, 271, 272, 20);
-				                panel_remed.add(cmbWrongAnswer);
-				                
-				                lblCaminho = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
-				                lblCaminho.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblCaminho.setBounds(10, 73, 179, 14);
-				                panel_remed.add(lblCaminho);
-				                
-				                label_2 = new JLabel("ADICIONAR REMEDIA\u00C7\u00C3O DE ERRO");
-				                label_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-				                label_2.setBounds(10, 10, 272, 14);
-				                panel_remed.add(label_2);
-				                
-				                label_3 = new JLabel("Se");
-				                label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_3.setBounds(10, 246, 46, 14);
-				                panel_remed.add(label_3);
-				                
-				                label_4 = new JLabel("Ent\u00E3o");
-				                label_4.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_4.setBounds(10, 312, 46, 14);
-				                panel_remed.add(label_4);
-				                
-				                cmbErrorType = new JComboBox();
-				                cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
-				                cmbErrorType.setBounds(10, 337, 452, 20);
-				                panel_remed.add(cmbErrorType);
-				                
-				                label_5 = new JLabel("E");
-				                label_5.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_5.setBounds(10, 442, 46, 14);
-				                panel_remed.add(label_5);
-				                
-				                label_6 = new JLabel("Especificar MRE:");
-				                label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_6.setBounds(540, 90, 146, 14);
-				                panel_remed.add(label_6);
-				                
-				                label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
-				                label_7.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_7.setBounds(540, 12, 146, 14);
-				                panel_remed.add(label_7);
-				                
-				                cmbCriterion = new JComboBox();
-				                cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
-				                //cmbCriterion.setSelectedIndex(1);
-				                cmbCriterion.setBounds(696, 10, 286, 20);
-				                panel_remed.add(cmbCriterion);
-				                
-				                label_8 = new JLabel("Classifique o Tipo de Erro como");
-				                label_8.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_8.setBounds(66, 312, 179, 14);
-				                panel_remed.add(label_8);
-				                
-				                label_9 = new JLabel("Com este tipo de erro");
-				                label_9.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_9.setBounds(66, 442, 179, 14);
-				                panel_remed.add(label_9);
-				                
-				                label_10 = new JLabel("E");
-				                label_10.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_10.setBounds(10, 376, 46, 14);
-				                panel_remed.add(label_10);
-				                
-				                label_11 = new JLabel("Classifique o Subtipo de Erro como");
-				                label_11.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_11.setBounds(66, 376, 348, 14);
-				                panel_remed.add(label_11);
-				                
-				                cmbSubErrorType = new JComboBox();
-				                cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
-				                cmbSubErrorType.setBounds(10, 398, 452, 20);
-				                panel_remed.add(cmbSubErrorType);
-				                
-				                label_12 = new JLabel("Classificador de Erro:");
-				                label_12.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_12.setBounds(10, 212, 146, 14);
-				                panel_remed.add(label_12);
-				                
-				                cmbSorter = new JComboBox();
-				                cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
-				                cmbSorter.setBounds(190, 209, 272, 20);
-				                panel_remed.add(cmbSorter);
-				                
+		loadPanelInicRemediacao();
 
-				                cmbMre = new JComboBox();
-				                cmbMre.setBounds(540, 109, 331, 20);
-				                panel_remed.add(cmbMre);
-				                
-				                cmbSorter.addItemListener(new ItemListener() {
-				        			@Override
-				        			public void itemStateChanged(ItemEvent arg0) {
-				        				//Sorter sorter = dbCon.getSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")));
-				        				sorter = dbCon.getSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()));
-				        				cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(sorter.getId()))));
-				        
-				        				}
-				        	    });
-				                
-				                cmbErrorType.addItemListener(new ItemListener() {
-				        			@Override
-				        			public void itemStateChanged(ItemEvent arg0) {
-				        				//errorType = dbCon.getErrorType(Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
-				        				errorType = dbCon.getErrorType((Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()));
-				        				cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
-				        
-				        				if (cmbSubErrorType.getItemCount() == 1) {
-				        					//itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
-    											//	Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
-    												//null);
-				        					itemSorter = dbCon.getItemSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()),
-				        										(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()),
-				        							null);
-				        					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
-				        					lblRemediacao.setText(itemSorter.getRemediation());
-							                cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
-
-				        				}
-				        			}
-				        	    });				                
-
-				                cmbSubErrorType.addItemListener(new ItemListener() {
-				        			@Override
-				        			public void itemStateChanged(ItemEvent arg0) {
-				        				//itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
-				        					//							Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
-				        						//						Long.valueOf(cmbSubErrorType.getSelectedItem().toString().replaceAll("\\D+","")));
-				        				itemSorter = dbCon.getItemSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()), 
-				        												(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()), 
-				        												(Long)mapCmbSubErrorType.get(cmbSubErrorType.getSelectedIndex()));
-				        				lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
-				        				//cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
-				        				lblRemediacao.setText(itemSorter.getRemediation());
-						                cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
-				        				
-				        				}
-				        	    });
-				                
-				                cmbMre.addItemListener(new ItemListener() {
-				        			@Override
-				        			public void itemStateChanged(ItemEvent arg0) {
-				        				
-				        				//setMer(dbCon.getMER(Long.valueOf(cmbMre.getSelectedItem().toString().replaceAll("\\D+",""))));
-				        				setMer(dbCon.getMER((Long)mapCmbMer.get(cmbMre.getSelectedIndex())));
-				        				if (mer != null)
-				        					getMer().renderImage(lblMer);
-				        				
-				        				}
-				        	    });
-
-				                cmbCriterion.addItemListener(new ItemListener() {
-				        			@Override
-				        			public void itemStateChanged(ItemEvent arg0) {
-
-				        				setCriterion(dbCon.getCriterion((Long)mapCmbCriterion.get(cmbCriterion.getSelectedIndex())));				        				
-				        				}
-				        	    });
-				                
-				                cmbExercise.addItemListener(new ItemListener() {
-				        			@Override
-				        			public void itemStateChanged(ItemEvent arg0) {
-				        				
-				        				setExercise(dbCon.getExercise((Long)mapCmbExercise.get(cmbExercise.getSelectedIndex())));
-				        				loadExercise();				        				
-				        				}
-				        	    });
-				                
-				                lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
-				                lblMeta.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblMeta.setBounds(10, 98, 392, 14);
-				                panel_remed.add(lblMeta);
-				                
-				                label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
-				                label_15.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_15.setBounds(66, 459, 179, 14);
-				                panel_remed.add(label_15);
-				                
-				                lblMerFunction = new JLabel("");
-				                lblMerFunction.setBounds(190, 484, 272, 14);
-				                panel_remed.add(lblMerFunction);
-				                
-				                lblExercicio = new JLabel("EXERC\u00CDCIO: 1");
-				                lblExercicio.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblExercicio.setBounds(10, 48, 112, 14);
-				                panel_remed.add(lblExercicio);
-				                
-				                button = new JButton("Salvar Remedia\u00E7\u00E3o");
-				                button.addActionListener(new ActionListener() {
-				                	public void actionPerformed(ActionEvent arg0) {
-				                		Remediation remediation = null;
-				                		try{
-				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
-				                		} catch (NumberFormatException e) {
-				                			remediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
-				                		} finally {
-				                			dbCon.save(remediation);
-				                			RulesFactory.createRules(remediation, mer);				    
-				                			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
-				                			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
-				                			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
-				                			
-				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
-				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
-				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
-				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
-				                			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
-				                			
-				                			//RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
-				                		}
-				                	}
-				                });
-				                button.setBounds(692, 540, 179, 23);
-				                panel_remed.add(button);
-				                
-				                
-				                label_18 = new JLabel("Visualiza\u00E7\u00E3o");
-				                label_18.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                label_18.setBounds(540, 152, 95, 14);
-				                panel_remed.add(label_18);
-				                
-				                lblEspecificarResposta = new JLabel("Especificar resposta");
-				                lblEspecificarResposta.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblEspecificarResposta.setBounds(316, 243, 146, 20);
-				                panel_remed.add(lblEspecificarResposta);
-				                
-				                txtWrongAnswer = new JTextField();
-				                txtWrongAnswer.setBounds(316, 271, 86, 20);
-				                panel_remed.add(txtWrongAnswer);
-				                txtWrongAnswer.setColumns(10);
-				                
-				                JLabel lblErroRelatado = new JLabel("Erro relatado:");
-				                lblErroRelatado.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblErroRelatado.setBounds(10, 123, 95, 14);
-				                panel_remed.add(lblErroRelatado);
-				                
-				                textAreaErroRelatado = new JTextArea();
-				                textAreaErroRelatado.setBounds(10, 144, 331, 43);
-				                panel_remed.add(textAreaErroRelatado);
-				                
-				                JLabel lblRemediao = new JLabel("Remediação esperada");
-				                lblRemediao.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblRemediao.setBounds(10, 526, 132, 14);
-				                panel_remed.add(lblRemediao);
-				                
-				                lblRemediacao = new JLabel("");
-				                lblRemediacao.setBounds(10, 551, 452, 43);
-				                panel_remed.add(lblRemediacao);
-				                
-				                lblMer = new JLabel("");
-				                lblMer.setBounds(540, 177, 354, 321);
-				                panel_remed.add(lblMer);
-				                
-				                lblApsNmeroDe = new JLabel("Após número de tentativas:");
-				                lblApsNmeroDe.setFont(new Font("Tahoma", Font.BOLD, 11));
-				                lblApsNmeroDe.setBounds(540, 48, 179, 14);
-				                panel_remed.add(lblApsNmeroDe);
-				                
-				                txtTentativas = new JTextField();
-				                txtTentativas.setBounds(729, 45, 86, 20);
-				                panel_remed.add(txtTentativas);
-				                txtTentativas.setColumns(10);
-        
         createComponentMap();
         
 		
@@ -664,7 +397,6 @@ public class AppletExercise extends JApplet {
 			}
 		}
 	
-		textArea.setText(exercise.getEnunciate());
 
 	}
 	
@@ -947,14 +679,21 @@ public Component getComponentByName(String name) {
 			}
 			else if (graph.getLabel(cell).startsWith("Remediação")){
 				//se o grafo é vermelho (remediação), focar na tela de cadastro de remediação
-				
-				//nova remediação
-				tabbedPane.setSelectedIndex(1);
-				
-				lblExercicio.setText("EXERCÍCIO: " + currentGoal.getPath().getExercise().getId());
-				lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
-				lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
-								currentGoal.getComponent() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+				loadPanelInicRemediacao();
+			
+				if (exercise.getId() != null) {
+					//nova remediação
+					
+					tabbedPane.setSelectedIndex(1);
+					
+					lblExercicio.setText("EXERCÍCIO: " + exercise.getId());
+					lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
+					lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
+									currentGoal.getComponent() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+				} else {
+					currentRemediation = currentGoal.getRemediations().get((int) getKey(getMapRemediacoesGrafo(), cell) - 1);
+					loadRemediacao(currentRemediation);
+				}
 														
 			}
 				
@@ -997,6 +736,314 @@ public Component getComponentByName(String name) {
 	        }
 	    }
 	    return null;
+	}
+	
+	public void loadPanelInicRemediacao(){
+        panel_remed = new JPanel();
+        tabbedPane.addTab("Remedia\u00E7\u00E3o", null, panel_remed, null);
+        panel_remed.setLayout(null);
+        
+        cmbWrongAnswer = new JComboBox();
+        cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta específica", "Estudante cometeu um erro (não importa a resposta)", "Estudante NÃO informou resposta específica"}));
+        cmbWrongAnswer.setToolTipText("");
+        cmbWrongAnswer.setBounds(10, 271, 272, 20);
+        panel_remed.add(cmbWrongAnswer);
+        
+        lblCaminho = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
+        lblCaminho.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblCaminho.setBounds(10, 73, 179, 14);
+        panel_remed.add(lblCaminho);
+        
+        label_2 = new JLabel("ADICIONAR REMEDIA\u00C7\u00C3O DE ERRO");
+        label_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+        label_2.setBounds(10, 10, 272, 14);
+        panel_remed.add(label_2);
+        
+        label_3 = new JLabel("Se");
+        label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_3.setBounds(10, 246, 46, 14);
+        panel_remed.add(label_3);
+        
+        label_4 = new JLabel("Ent\u00E3o");
+        label_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_4.setBounds(10, 312, 46, 14);
+        panel_remed.add(label_4);
+        
+        cmbErrorType = new JComboBox();
+        cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
+        cmbErrorType.setBounds(10, 337, 452, 20);
+        panel_remed.add(cmbErrorType);
+        
+        label_5 = new JLabel("E");
+        label_5.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_5.setBounds(10, 442, 46, 14);
+        panel_remed.add(label_5);
+        
+        label_6 = new JLabel("Especificar MRE:");
+        label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_6.setBounds(540, 90, 146, 14);
+        panel_remed.add(label_6);
+        
+        label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
+        label_7.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_7.setBounds(540, 12, 146, 14);
+        panel_remed.add(label_7);
+        
+        cmbCriterion = new JComboBox();
+        cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
+        //cmbCriterion.setSelectedIndex(1);
+        cmbCriterion.setBounds(696, 10, 286, 20);
+        panel_remed.add(cmbCriterion);
+        
+        label_8 = new JLabel("Classifique o Tipo de Erro como");
+        label_8.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_8.setBounds(66, 312, 179, 14);
+        panel_remed.add(label_8);
+        
+        label_9 = new JLabel("Com este tipo de erro");
+        label_9.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_9.setBounds(66, 442, 179, 14);
+        panel_remed.add(label_9);
+        
+        label_10 = new JLabel("E");
+        label_10.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_10.setBounds(10, 376, 46, 14);
+        panel_remed.add(label_10);
+        
+        label_11 = new JLabel("Classifique o Subtipo de Erro como");
+        label_11.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_11.setBounds(66, 376, 348, 14);
+        panel_remed.add(label_11);
+        
+        cmbSubErrorType = new JComboBox();
+        cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
+        cmbSubErrorType.setBounds(10, 398, 452, 20);
+        panel_remed.add(cmbSubErrorType);
+        
+        label_12 = new JLabel("Classificador de Erro:");
+        label_12.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_12.setBounds(10, 212, 146, 14);
+        panel_remed.add(label_12);
+        
+        cmbSorter = new JComboBox();
+        cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
+        cmbSorter.setBounds(190, 209, 272, 20);
+        panel_remed.add(cmbSorter);
+        
+
+        cmbMre = new JComboBox();
+        cmbMre.setBounds(540, 109, 331, 20);
+        panel_remed.add(cmbMre);
+        
+        cmbSorter.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					
+						sorter = dbCon.getSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()));
+						cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(sorter.getId()))));
+					}
+
+				}
+	    });
+        
+        cmbErrorType.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					
+    				errorType = dbCon.getErrorType((Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()));
+    				cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
+    
+    				if (cmbSubErrorType.getItemCount() == 1) {
+    					//itemSorter = dbCon.getItemSorter(Long.valueOf(cmbSorter.getSelectedItem().toString().replaceAll("\\D+","")),
+							//	Long.valueOf(cmbErrorType.getSelectedItem().toString().replaceAll("\\D+","")),
+								//null);
+    					itemSorter = dbCon.getItemSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()),
+    										(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()),
+    							null);
+    					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
+    					lblRemediacao.setText(itemSorter.getRemediation());
+    					cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
+				}
+
+				}
+			}
+	    });				                
+
+        cmbSubErrorType.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					
+					itemSorter = dbCon.getItemSorter((Long)mapCmbSorter.get(cmbSorter.getSelectedIndex()), 
+							(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()), 
+							(Long)mapCmbSubErrorType.get(cmbSubErrorType.getSelectedIndex()));
+					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
+					//cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
+					lblRemediacao.setText(itemSorter.getRemediation());
+					cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
+				}
+				
+				}
+	    });
+        
+        cmbMre.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+    					setMer(dbCon.getMER((Long)mapCmbMer.get(cmbMre.getSelectedIndex())));
+    					if (mer != null)
+    						getMer().renderImage(lblMer);
+					
+					
+					}
+				}
+	    });
+
+        cmbCriterion.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					setCriterion(dbCon.getCriterion((Long)mapCmbCriterion.get(cmbCriterion.getSelectedIndex())));				        				
+					
+				}
+				}
+	    });
+        
+        cmbExercise.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					setExercise(dbCon.getExercise((Long)mapCmbExercise.get(cmbExercise.getSelectedIndex())));
+					loadExercise();				        				
+					
+					}
+				}
+	    });
+        
+        lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
+        lblMeta.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblMeta.setBounds(10, 98, 392, 14);
+        panel_remed.add(lblMeta);
+        
+        label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
+        label_15.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_15.setBounds(66, 459, 179, 14);
+        panel_remed.add(label_15);
+        
+        lblMerFunction = new JLabel("");
+        lblMerFunction.setBounds(190, 484, 272, 14);
+        panel_remed.add(lblMerFunction);
+        
+        lblExercicio = new JLabel("EXERC\u00CDCIO: 1");
+        lblExercicio.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblExercicio.setBounds(10, 48, 112, 14);
+        panel_remed.add(lblExercicio);
+        
+        button = new JButton("Salvar Remedia\u00E7\u00E3o");
+        button.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+
+        		try{
+        			currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+        		} catch (NumberFormatException e) {
+        			currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+        		} finally {
+        			dbCon.save(currentRemediation);
+        			RulesFactory.createRules(currentRemediation, mer);				    
+        			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
+        			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
+        			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
+        			
+        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
+        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
+        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
+        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
+        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
+        			
+        			//RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
+        		}
+        	}
+        });
+        button.setBounds(692, 540, 179, 23);
+        panel_remed.add(button);
+        
+        
+        label_18 = new JLabel("Visualiza\u00E7\u00E3o");
+        label_18.setFont(new Font("Tahoma", Font.BOLD, 11));
+        label_18.setBounds(540, 152, 95, 14);
+        panel_remed.add(label_18);
+        
+        lblEspecificarResposta = new JLabel("Especificar resposta");
+        lblEspecificarResposta.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblEspecificarResposta.setBounds(316, 243, 146, 20);
+        panel_remed.add(lblEspecificarResposta);
+        
+        txtWrongAnswer = new JTextField();
+        txtWrongAnswer.setBounds(316, 271, 86, 20);
+        panel_remed.add(txtWrongAnswer);
+        txtWrongAnswer.setColumns(10);
+        
+        JLabel lblErroRelatado = new JLabel("Erro relatado:");
+        lblErroRelatado.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblErroRelatado.setBounds(10, 123, 95, 14);
+        panel_remed.add(lblErroRelatado);
+        
+        textAreaErroRelatado = new JTextArea();
+        textAreaErroRelatado.setBounds(10, 144, 331, 43);
+        panel_remed.add(textAreaErroRelatado);
+        
+        JLabel lblRemediao = new JLabel("Remediação esperada");
+        lblRemediao.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblRemediao.setBounds(10, 526, 132, 14);
+        panel_remed.add(lblRemediao);
+        
+        lblRemediacao = new JLabel("");
+        lblRemediacao.setBounds(10, 551, 452, 43);
+        panel_remed.add(lblRemediacao);
+        
+        lblMer = new JLabel("");
+        lblMer.setBounds(540, 177, 354, 321);
+        panel_remed.add(lblMer);
+        
+        lblApsNmeroDe = new JLabel("Após número de tentativas:");
+        lblApsNmeroDe.setFont(new Font("Tahoma", Font.BOLD, 11));
+        lblApsNmeroDe.setBounds(540, 48, 179, 14);
+        panel_remed.add(lblApsNmeroDe);
+        
+        txtTentativas = new JTextField();
+        txtTentativas.setBounds(729, 45, 86, 20);
+        panel_remed.add(txtTentativas);
+        txtTentativas.setColumns(10);
+
+	}
+
+	
+	public void loadRemediacao(Remediation rem){
+        
+        
+		cmbSorter.setSelectedIndex(Integer.parseInt(rem.getItemSorter().getSorter().getId().toString()));
+		cmbErrorType.setSelectedIndex(Integer.parseInt(rem.getItemSorter().getErrorType().getId().toString()));
+        
+        cmbCriterion.setSelectedIndex(Integer.parseInt(rem.getCriterion().getId().toString()));
+
+        cmbSubErrorType.setSelectedIndex(Integer.parseInt(rem.getItemSorter().getSubErrorType().getId().toString()));
+        
+        
+        
+        
+        txtWrongAnswer.setText(rem.getWrongAnswer());
+        
+        textAreaErroRelatado.setText(rem.getRelatedError());;
+        
+       // lblRemediacao.setText(rem.ge);;
+        
+        //lblMer = new JLabel("");
+                
+        txtTentativas.setText(""+rem.getAttempts());;
+        
+
 	}
 
 	public mxGraph getGraph() {
