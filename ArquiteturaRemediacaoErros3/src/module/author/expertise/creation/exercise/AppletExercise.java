@@ -679,7 +679,7 @@ public Component getComponentByName(String name) {
 			}
 			else if (graph.getLabel(cell).startsWith("Remediação")){
 				//se o grafo é vermelho (remediação), focar na tela de cadastro de remediação
-				loadPanelInicRemediacao();
+				//loadPanelRemediacao();
 			
 				if (exercise.getId() != null) {
 					//nova remediação
