@@ -551,7 +551,7 @@ public class RulesFactory {
 	
 	public static RuleInformation ruleMERSwypeMersMerFunction(Remediation rem, MultipleExternalRepresentation mer) {
 		RuleInformation r = new RuleInformation();
-		r.setRuleName("ruleMER_criterion_" + rem.getCriterion().getId() + "_swypemersmerfunction_" + rem.getItemSorter().getMerFunction().getId());		
+		r.setRuleName("ruleMER_criterion_" + rem.getCriterion().getId() + "_remediation_" + rem.getId() + "_swypemersmerfunction_" + rem.getItemSorter().getMerFunction().getId());		
 		r.setDeclarations(new ArrayList<String>());
 		r.getDeclarations().add("Action action;");
 		r.getDeclarations().add("Action lastAction;");

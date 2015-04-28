@@ -914,7 +914,7 @@ public class DBConnect {
                 	goal.setSuperGoal(new Goal(rs.getLong("id_supergoal")));
                 }
                 	
-                //goal.setRemediations(getRemediationsByGoal(rs.getLong("id")));
+                goal.setRemediations(getRemediationsByGoal(rs.getLong("id")));
 
             } 
             rs.close();
@@ -1032,7 +1032,7 @@ public class DBConnect {
                 remediation.setId(rs.getLong("id"));
                 remediation.setAttempts(rs.getInt("attempts"));
                 remediation.setCriterion(getCriterion(rs.getLong("id_criterion")));
-                remediation.setGoal(getGoal(rs.getLong("id_goal"), false));
+                remediation.setGoal(new Goal(rs.getLong("id_goal")));
                 remediation.setItemSorter(getItemSorter(rs.getLong("id_itemsorter")));
                 remediation.setRelatedError(rs.getString("relatederror"));
                 remediation.setWrongAnswer(rs.getString("wronganswer"));

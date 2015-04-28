@@ -82,6 +82,9 @@ public class AppletExercise extends JApplet {
 	private int i;
 	private ArrayList<State> states;
 	private HashMap componentMap;
+	private JButton btnEstadoInicial;
+	private JButton btnNovoEstado;
+	private JTabbedPane tabbedPane;
 	public JPanel panel_exerc;
 	
 	public JPanel panel_remed;
@@ -136,6 +139,8 @@ public class AppletExercise extends JApplet {
 	private JLabel lblApsNmeroDe;
 	private JTextField txtTentativas;
 	
+
+	
 	
 	public AppletExercise() {
 		
@@ -167,7 +172,7 @@ public class AppletExercise extends JApplet {
 		exercise = new Exercise(null, null, new ArrayList<Path>(), new ArrayList<ExerciseInitialState>());
 
 		
-		final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0, 0, 1200, 650);
 		getContentPane().add(tabbedPane);
 		
@@ -238,49 +243,16 @@ public class AppletExercise extends JApplet {
 		panel_exerc.add(separator);
 		
 		
-		final JButton btnEstadoInicial = new JButton("Estado Inicial");
+		btnEstadoInicial = new JButton("Estado Inicial");
 		btnEstadoInicial.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-				path = new Path(new Long(1), "caminho de resolução nº 1");
-
-				for (Component c : panel_exerc.getComponents()){
-					if (c instanceof JTextField){
-						ExerciseInitialState eis = new ExerciseInitialState(exercise, ((JTextField)c).getName(), ((JTextField) c).getText());
-						exercise.getInitialState().add(eis);
-					}
-				}
-				i = 0;
-				//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
-        		getGraph().getModel().beginUpdate();
-        		Object parent = getGraph().getDefaultParent(); 
-        		Object v1 = getGraph().insertVertex(parent, null, 
-        				"Estado Inicial\n" + "txt0 = " + txt0.getText() + "\n"
-        									+ "txt1 = " + txt1.getText() + "\n"
-        									+ "txt2 = " + txt2.getText() + "\n"
-        									+ "txt3 = " + txt3.getText() + "\n"
-        									+ "txt4 = " + txt4.getText() + "\n"
-        									+ "txt5 = " + txt5.getText() + "\n"
-        									+ "txt6 = " + txt6.getText() + "\n"
-        									+ "txt7 = " + txt7.getText() + "\n"
-        									+ "txt8 = " + txt8.getText() + "\n", 
-        				30, 30, 100, 160, "MyStyleRectangle");
-        		getMapEstadosGrafo().put(i, v1);
-        		
-        		states = new ArrayList<State>();
-        		State state = new State(i);
-        		state.getMap().put(txt0.getName(), txt0.getText()+"");state.getMap().put(txt1.getName(), txt1.getText()+"");state.getMap().put(txt2.getName(), txt2.getText()+"");
-        		state.getMap().put(txt3.getName(), txt3.getText()+"");state.getMap().put(txt4.getName(), txt4.getText()+"");state.getMap().put(txt5.getName(), txt5.getText()+"");
-        		state.getMap().put(txt6.getName(), txt6.getText()+"");state.getMap().put(txt7.getName(), txt7.getText()+"");state.getMap().put(txt8.getName(), txt8.getText()+"");
-        		states.add(state);
-        		
-        		getGraph().getModel().endUpdate();
-        		btnEstadoInicial.setEnabled(false);				
-					}
-				});
+				iniciaEstadoInicial();
+			}
+		});
 				btnEstadoInicial.setBounds(206, 250, 130, 23);
 				panel_exerc.add(btnEstadoInicial);
 				
-				JButton btnNovoEstado = new JButton("Novo Estado");
+				btnNovoEstado = new JButton("Novo Estado");
 				btnNovoEstado.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 							addEstado();
@@ -299,34 +271,8 @@ public class AppletExercise extends JApplet {
 							public void mouseReleased(MouseEvent e)
 								{
 									if (!e.isConsumed() && isEditEvent(e)){
-										Object cell = getCellAt(e.getX(), e.getY(), false);
-										if (cell != null && getGraph().isCellEditable(cell))
-										{
-											Object val = graph.getModel().getValue(cell);
-											//System.out.println("double-clicked on " + graph.getLabel(cell));
-											if (graph.getLabel(cell).startsWith("Meta")){
-												System.out.println("double-clicked on " + graph.getLabel(cell));
-												addRemediacao(cell);	
-											}
-											else if (graph.getLabel(cell).startsWith("Remediação")){
-												//currentGoal = path.getGoals().get(arg0) 
-												
-												currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasRemediacoesGrafo(), cell)));
-												tabbedPane.setSelectedIndex(1);
-												
-												lblExercicio.setText("EXERCÍCIO: " + 1);
-												lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
-												lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
-																currentGoal.getComponent() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
-												
-												
-												//Sorter s = cadSorterTeste();
-												//cmbSorter.setModel(new DefaultComboBoxModel(new String[] {"-", "" + s.getId() + " - " + s.getDescription()}));
-												
-											}
-												
-											}
-										}
+										addNodo(e.getX(), e.getY());
+									}
 								}
 							});
 						}
@@ -703,13 +649,17 @@ public class AppletExercise extends JApplet {
 			
 		}
 		
-		for (Path path : exercise.getPaths()){
-			for (Goal goal: path.getGoals()){
+		iniciaEstadoInicial();
+		
+		for (Path p : exercise.getPaths()){
+			for (Goal goal: p.getGoals()){
 				((JTextField)getComponentByName(goal.getComponent())).setText(goal.getAnswer().getValue());
 
 				addEstado();
 				for (Remediation r: goal.getRemediations()){
-					
+					Object meta = getMapMetasGrafo().get(getMapMetasGrafo().size());
+					//int i = (int) getKey(getMapMetasGrafo(), cell);
+					addRemediacao(meta, goal);
 				}
 			}
 		}
@@ -854,6 +804,45 @@ public Component getComponentByName(String name) {
 
 	}
 	
+	public void iniciaEstadoInicial(){
+		path = new Path(new Long(1), "caminho de resolução nº 1");
+
+		for (Component c : panel_exerc.getComponents()){
+			if (c instanceof JTextField){
+				ExerciseInitialState eis = new ExerciseInitialState(exercise, ((JTextField)c).getName(), ((JTextField) c).getText());
+				exercise.getInitialState().add(eis);
+			}
+		}
+		i = 0;
+		//Goal goal = new Goal(1, path, false, JComponent component, new CorrectAnswer("6"), null, null, "meta 1");
+		getGraph().getModel().beginUpdate();
+		Object parent = getGraph().getDefaultParent(); 
+		Object v1 = getGraph().insertVertex(parent, null, 
+				"Estado Inicial\n" + "txt0 = " + txt0.getText() + "\n"
+									+ "txt1 = " + txt1.getText() + "\n"
+									+ "txt2 = " + txt2.getText() + "\n"
+									+ "txt3 = " + txt3.getText() + "\n"
+									+ "txt4 = " + txt4.getText() + "\n"
+									+ "txt5 = " + txt5.getText() + "\n"
+									+ "txt6 = " + txt6.getText() + "\n"
+									+ "txt7 = " + txt7.getText() + "\n"
+									+ "txt8 = " + txt8.getText() + "\n", 
+				30, 30, 100, 160, "MyStyleRectangle");
+		getMapEstadosGrafo().put(i, v1);
+		
+		states = new ArrayList<State>();
+		State state = new State(i);
+		state.getMap().put(txt0.getName(), txt0.getText()+"");state.getMap().put(txt1.getName(), txt1.getText()+"");state.getMap().put(txt2.getName(), txt2.getText()+"");
+		state.getMap().put(txt3.getName(), txt3.getText()+"");state.getMap().put(txt4.getName(), txt4.getText()+"");state.getMap().put(txt5.getName(), txt5.getText()+"");
+		state.getMap().put(txt6.getName(), txt6.getText()+"");state.getMap().put(txt7.getName(), txt7.getText()+"");state.getMap().put(txt8.getName(), txt8.getText()+"");
+		states.add(state);
+		
+		getGraph().getModel().endUpdate();
+		btnEstadoInicial.setEnabled(false);				
+	
+
+	}
+
 	public void addEstado(){
 		Object parent = getGraph().getDefaultParent();
 		i++;
@@ -913,11 +902,11 @@ public Component getComponentByName(String name) {
 
 	}
 
-	public void addRemediacao(Object cell){
+	public void addRemediacao(Object cell, Goal goal){
 		Object parent = getGraph().getDefaultParent();
 		int i = (int) getKey(getMapMetasGrafo(), cell);
 		int j = (int) getMapRemediacoesGrafo().size() + 1;
-		Goal goal = path.getGoals().get(i-1);
+		//Goal goal = path.getGoals().get(i-1);
 		//WrongAnswer wrongAnswer = new WrongAnswer();
 		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
 		Object v2 = getGraph().insertVertex(parent, null, "Remediação nº " + j + " \npara a meta nº " + goal.getId() + ":\n " + 
@@ -945,7 +934,33 @@ public Component getComponentByName(String name) {
 		
 	}
 	
-	
+	public void addNodo(int x, int y){
+		Object cell = graphComponent.getCellAt(x, y, false);
+		if (cell != null && getGraph().isCellEditable(cell))
+		{
+			Object val = graph.getModel().getValue(cell);
+			currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasRemediacoesGrafo(), cell)));
+			//Se o grafo é verde (meta), adicionar nodo de remediação
+			if (graph.getLabel(cell).startsWith("Meta")){
+				System.out.println("double-clicked on " + graph.getLabel(cell));
+				addRemediacao(cell, currentGoal);	
+			}
+			else if (graph.getLabel(cell).startsWith("Remediação")){
+				//se o grafo é vermelho (remediação), focar na tela de cadastro de remediação
+				
+				//nova remediação
+				tabbedPane.setSelectedIndex(1);
+				
+				lblExercicio.setText("EXERCÍCIO: " + currentGoal.getPath().getExercise().getId());
+				lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
+				lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
+								currentGoal.getComponent() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+														
+			}
+				
+		}
+
+	}
 	/*
 	public Sorter cadSorterTeste(){
 		//cad classificadores
