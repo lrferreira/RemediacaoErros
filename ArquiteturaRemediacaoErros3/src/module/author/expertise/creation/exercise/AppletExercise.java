@@ -139,6 +139,8 @@ public class AppletExercise extends JApplet {
 	private JLabel lblApsNmeroDe;
 	private JTextField txtTentativas;
 	private Remediation currentRemediation;
+	private Map<String, Object> edgeStyle;
+	private Map<String, Object> edgeRemStyle;
 
 	
 	
@@ -522,13 +524,23 @@ public Component getComponentByName(String name) {
 
 	    stylesheet.putCellStyle("MyStyleRectangle", style);
 	    
-	    Map<String, Object> edgeStyle = new HashMap<String, Object>();
+	    edgeStyle = new HashMap<String, Object>();
 		//edgeStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
 		edgeStyle.put(mxConstants.STYLE_SHAPE,    mxConstants.SHAPE_CONNECTOR);
 		edgeStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
 		edgeStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 		edgeStyle.put(mxConstants.STYLE_FONTCOLOR, "#000000");
 		edgeStyle.put(mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, "#ffffff");
+		
+	    edgeRemStyle = new HashMap<String, Object>();
+		//edgeStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+		edgeRemStyle.put(mxConstants.STYLE_SHAPE,    mxConstants.SHAPE_CONNECTOR);
+		edgeRemStyle.put(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_CLASSIC);
+		edgeRemStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+		edgeRemStyle.put(mxConstants.STYLE_STROKECOLOR, "#FF0000");
+		edgeRemStyle.put(mxConstants.STYLE_FONTCOLOR, "#000000");
+		edgeRemStyle.put(mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, "#ffffff");
+
 	
 		//stylesheet = new mxStylesheet();
 		stylesheet.setDefaultEdgeStyle(edgeStyle);
@@ -629,6 +641,8 @@ public Component getComponentByName(String name) {
         //String nome = JOptionPane.showInputDialog("Digite o nome da linha:");
 		Object v0 = getMapEstadosGrafo().get(i-1);
 		
+		graph.getStylesheet().setDefaultEdgeStyle(edgeStyle);
+		
 		getGraph().insertEdge(parent, null, "", v0, v1);
         getGraph().insertEdge(parent, null, "", v1, v2);
 
@@ -647,16 +661,8 @@ public Component getComponentByName(String name) {
 				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight()+ 100,
 				120, 140, "MyStyleEllipseRem");
 		
-	    Map<String, Object> edgeStyle = new HashMap<String, Object>();
-		//edgeStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-		edgeStyle.put(mxConstants.STYLE_SHAPE,    mxConstants.SHAPE_CONNECTOR);
-		edgeStyle.put(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_CLASSIC);
-		edgeStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-		edgeStyle.put(mxConstants.STYLE_STROKECOLOR, "#FF0000");
-		edgeStyle.put(mxConstants.STYLE_FONTCOLOR, "#000000");
-		edgeStyle.put(mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, "#ffffff");
 	
-		graph.getStylesheet().setDefaultEdgeStyle(edgeStyle);
+		graph.getStylesheet().setDefaultEdgeStyle(edgeRemStyle);
 		
 
 		getGraph().insertEdge(parent, null, "", cell, v2);
