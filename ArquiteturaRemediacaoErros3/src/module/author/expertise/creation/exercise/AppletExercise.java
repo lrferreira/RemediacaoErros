@@ -752,10 +752,11 @@ public Component getComponentByName(String name) {
         cmbWrongAnswer = new JComboBox();
         cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta específica", "Estudante cometeu um erro (não importa a resposta)", "Estudante NÃO informou resposta específica"}));
         cmbWrongAnswer.setToolTipText("");
-        cmbWrongAnswer.setBounds(10, 271, 272, 20);
+        cmbWrongAnswer.setBounds(10, 271, 360, 20);
         panel_remed.add(cmbWrongAnswer);
         
         lblCaminho = new JLabel("CAMINHO DE RESOLU\u00C7\u00C3O:");
+        lblCaminho.setForeground(new Color(0, 0, 205));
         lblCaminho.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblCaminho.setBounds(10, 73, 179, 14);
         panel_remed.add(lblCaminho);
@@ -766,79 +767,89 @@ public Component getComponentByName(String name) {
         panel_remed.add(label_2);
         
         label_3 = new JLabel("Se");
+        label_3.setForeground(new Color(0, 0, 205));
         label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_3.setBounds(10, 246, 46, 14);
         panel_remed.add(label_3);
         
         label_4 = new JLabel("Ent\u00E3o");
+        label_4.setForeground(new Color(0, 0, 205));
         label_4.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_4.setBounds(10, 312, 46, 14);
         panel_remed.add(label_4);
         
         cmbErrorType = new JComboBox();
         cmbErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
-        cmbErrorType.setBounds(10, 337, 452, 20);
+        cmbErrorType.setBounds(10, 337, 534, 20);
         panel_remed.add(cmbErrorType);
         
         label_5 = new JLabel("E");
+        label_5.setForeground(new Color(0, 0, 205));
         label_5.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_5.setBounds(10, 442, 46, 14);
         panel_remed.add(label_5);
         
         label_6 = new JLabel("Especificar MRE:");
+        label_6.setForeground(new Color(0, 0, 205));
         label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
-        label_6.setBounds(540, 90, 146, 14);
+        label_6.setBounds(708, 90, 146, 14);
         panel_remed.add(label_6);
         
         label_7 = new JLabel("Crit\u00E9rio para Remedia\u00E7\u00E3o");
+        label_7.setForeground(new Color(0, 0, 205));
         label_7.setFont(new Font("Tahoma", Font.BOLD, 11));
-        label_7.setBounds(540, 12, 146, 14);
+        label_7.setBounds(708, 12, 146, 14);
         panel_remed.add(label_7);
         
         cmbCriterion = new JComboBox();
         cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
         //cmbCriterion.setSelectedIndex(1);
-        cmbCriterion.setBounds(696, 10, 286, 20);
+        cmbCriterion.setBounds(864, 10, 286, 20);
         panel_remed.add(cmbCriterion);
         
         label_8 = new JLabel("Classifique o Tipo de Erro como");
+        label_8.setForeground(new Color(0, 0, 205));
         label_8.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_8.setBounds(66, 312, 179, 14);
         panel_remed.add(label_8);
         
         label_9 = new JLabel("Com este tipo de erro");
+        label_9.setForeground(new Color(0, 0, 205));
         label_9.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_9.setBounds(66, 442, 179, 14);
         panel_remed.add(label_9);
         
         label_10 = new JLabel("E");
+        label_10.setForeground(new Color(0, 0, 205));
         label_10.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_10.setBounds(10, 376, 46, 14);
         panel_remed.add(label_10);
         
         label_11 = new JLabel("Classifique o Subtipo de Erro como");
+        label_11.setForeground(new Color(0, 0, 205));
         label_11.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_11.setBounds(66, 376, 348, 14);
         panel_remed.add(label_11);
         
         cmbSubErrorType = new JComboBox();
         cmbSubErrorType.setModel(new DefaultComboBoxModel(new String[] {"-"}));
-        cmbSubErrorType.setBounds(10, 398, 452, 20);
+        cmbSubErrorType.setBounds(10, 398, 534, 20);
         panel_remed.add(cmbSubErrorType);
         
         label_12 = new JLabel("Classificador de Erro:");
+        label_12.setForeground(new Color(0, 0, 205));
         label_12.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_12.setBounds(10, 212, 146, 14);
         panel_remed.add(label_12);
         
         cmbSorter = new JComboBox();
         cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
-        cmbSorter.setBounds(190, 209, 272, 20);
+        cmbSorter.setBounds(190, 209, 354, 20);
         panel_remed.add(cmbSorter);
         
 
         cmbMre = new JComboBox();
-        cmbMre.setBounds(540, 109, 331, 20);
+        cmbMre.setBounds(708, 109, 331, 20);
         panel_remed.add(cmbMre);
         
         cmbSorter.addItemListener(new ItemListener() {
@@ -869,7 +880,7 @@ public Component getComponentByName(String name) {
     										(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()),
     							null);
     					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
-    					lblRemediacao.setText(itemSorter.getRemediation());
+    					lblRemediacao.setText("<html><p>"+itemSorter.getRemediation()+"</p></html>");
     					cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
 				}
 
@@ -929,20 +940,24 @@ public Component getComponentByName(String name) {
 	    });
         
         lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
+        lblMeta.setForeground(new Color(0, 0, 205));
         lblMeta.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblMeta.setBounds(10, 98, 392, 14);
         panel_remed.add(lblMeta);
         
         label_15 = new JLabel("o Tipo de Fun\u00E7\u00E3o da MRE ser\u00E1");
+        label_15.setForeground(new Color(0, 0, 205));
         label_15.setFont(new Font("Tahoma", Font.BOLD, 11));
         label_15.setBounds(66, 459, 179, 14);
         panel_remed.add(label_15);
         
         lblMerFunction = new JLabel("");
+        lblMerFunction.setBackground(new Color(192, 192, 192));
         lblMerFunction.setBounds(190, 484, 272, 14);
         panel_remed.add(lblMerFunction);
         
         lblExercicio = new JLabel("EXERC\u00CDCIO: 1");
+        lblExercicio.setForeground(new Color(0, 0, 205));
         lblExercicio.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblExercicio.setBounds(10, 48, 112, 14);
         panel_remed.add(lblExercicio);
@@ -977,21 +992,24 @@ public Component getComponentByName(String name) {
         
         
         label_18 = new JLabel("Visualiza\u00E7\u00E3o");
+        label_18.setForeground(new Color(0, 0, 205));
         label_18.setFont(new Font("Tahoma", Font.BOLD, 11));
-        label_18.setBounds(540, 152, 95, 14);
+        label_18.setBounds(708, 152, 95, 14);
         panel_remed.add(label_18);
         
         lblEspecificarResposta = new JLabel("Especificar resposta");
+        lblEspecificarResposta.setForeground(new Color(0, 0, 205));
         lblEspecificarResposta.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblEspecificarResposta.setBounds(316, 243, 146, 20);
+        lblEspecificarResposta.setBounds(398, 243, 146, 20);
         panel_remed.add(lblEspecificarResposta);
         
         txtWrongAnswer = new JTextField();
-        txtWrongAnswer.setBounds(316, 271, 86, 20);
+        txtWrongAnswer.setBounds(398, 271, 86, 20);
         panel_remed.add(txtWrongAnswer);
         txtWrongAnswer.setColumns(10);
         
         JLabel lblErroRelatado = new JLabel("Erro relatado:");
+        lblErroRelatado.setForeground(new Color(0, 0, 205));
         lblErroRelatado.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblErroRelatado.setBounds(10, 123, 95, 14);
         panel_remed.add(lblErroRelatado);
@@ -1001,25 +1019,29 @@ public Component getComponentByName(String name) {
         panel_remed.add(textAreaErroRelatado);
         
         JLabel lblRemediao = new JLabel("Remediação esperada");
+        lblRemediao.setForeground(new Color(0, 0, 205));
         lblRemediao.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblRemediao.setBounds(10, 526, 132, 14);
         panel_remed.add(lblRemediao);
         
         lblRemediacao = new JLabel("");
-        lblRemediacao.setBounds(10, 551, 452, 43);
+        lblRemediacao.setBackground(new Color(192, 192, 192));
+        lblRemediacao.setBounds(10, 551, 534, 60);
         panel_remed.add(lblRemediacao);
         
         lblMer = new JLabel("");
-        lblMer.setBounds(540, 177, 354, 321);
+        lblMer.setBackground(new Color(220, 220, 220));
+        lblMer.setBounds(708, 177, 354, 321);
         panel_remed.add(lblMer);
         
         lblApsNmeroDe = new JLabel("Após número de tentativas:");
+        lblApsNmeroDe.setForeground(new Color(0, 0, 205));
         lblApsNmeroDe.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblApsNmeroDe.setBounds(540, 48, 179, 14);
+        lblApsNmeroDe.setBounds(708, 48, 179, 14);
         panel_remed.add(lblApsNmeroDe);
         
         txtTentativas = new JTextField();
-        txtTentativas.setBounds(729, 45, 86, 20);
+        txtTentativas.setBounds(897, 45, 86, 20);
         panel_remed.add(txtTentativas);
         txtTentativas.setColumns(10);
 
