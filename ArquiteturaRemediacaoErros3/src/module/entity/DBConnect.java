@@ -578,42 +578,99 @@ public class DBConnect {
 
 	
 	public void save(Remediation remediation){
-		String strDescription = null;
+
 		try {
 			this.stm = this.conn.createStatement();
 			
 			if (remediation.getId() == null) {
 				ResultSet rs = this.stm.executeQuery("select max(id) FROM remediation");
 				remediation.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+				PreparedStatement prepStmt = null;
+				
+				try{
+					prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?)");
+					prepStmt.setLong(1, remediation.getId());
+					prepStmt.setLong(2, remediation.getGoal().getId());
+					prepStmt.setLong(3, remediation.getItemSorter().getId());
+					prepStmt.setLong(4, remediation.getCriterion().getId());
+					if (remediation.getAttempts() != null)
+						prepStmt.setInt(5, remediation.getAttempts());
+					prepStmt.setString(6, remediation.getWrongAnswer());
+					prepStmt.setString(7, remediation.getRelatedError());
+					if (remediation.getMer() != null)
+						prepStmt.setLong(8, remediation.getMer().getId());
+					
+					prepStmt.executeUpdate();
+					
+					
+					
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally{
+					try {
+						prepStmt.close();
+					} catch (Exception e) {
+					}
+				}
+			}
+			else {
+
+				PreparedStatement prepStmt = null;
+				
+				try{
+					String update = "UPDATE remediation SET id_goal = ? ,"+
+							"id_itemsorter = ? , " + 
+							"id_criterion = ? ,";
+					if (remediation.getAttempts() != null)
+						update = update + "attempts = ? , ";						
+					update = update + "wronganswer = ? , ";
+					update = update + "relatederror = ?  ";
+					if (remediation.getMer() != null) 
+						update = update + ", id_mer = ? ";		
+					update = update + "WHERE id = ? ";
+
+					prepStmt= conn.prepareStatement(update);
+					prepStmt.setLong(1, remediation.getGoal().getId());
+					prepStmt.setLong(2, remediation.getItemSorter().getId());
+					prepStmt.setLong(3, remediation.getCriterion().getId());
+					if (remediation.getAttempts() != null){
+						prepStmt.setInt(4, remediation.getAttempts());
+						prepStmt.setString(5, remediation.getWrongAnswer());
+						prepStmt.setString(6, remediation.getRelatedError());
+						if (remediation.getMer() != null) {
+							prepStmt.setLong(7, remediation.getMer().getId());
+							prepStmt.setLong(8, remediation.getId());							
+						}
+						else
+							prepStmt.setLong(7, remediation.getId());
+						
+					} else {
+						prepStmt.setString(4, remediation.getWrongAnswer());
+						prepStmt.setString(5, remediation.getRelatedError());
+						if (remediation.getMer() != null) {
+							prepStmt.setLong(6, remediation.getMer().getId());
+							prepStmt.setLong(7, remediation.getId());							
+						} else
+							prepStmt.setLong(6, remediation.getId());
+					}
+
+
+					
+					prepStmt.executeUpdate();
+					
+					
+					
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally{
+					try {
+						prepStmt.close();
+					} catch (Exception e) {
+					}
+				}
+				
 			}
 			
-			PreparedStatement prepStmt = null;
-			
-			try{
-	            prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?)");
-	            prepStmt.setLong(1, remediation.getId());
-	            prepStmt.setLong(2, remediation.getGoal().getId());
-	            prepStmt.setLong(3, remediation.getItemSorter().getId());
-	            prepStmt.setLong(4, remediation.getCriterion().getId());
-	            if (remediation.getAttempts() != null)
-	            	prepStmt.setInt(5, remediation.getAttempts());
-	            prepStmt.setString(6, remediation.getWrongAnswer());
-	            prepStmt.setString(7, remediation.getRelatedError());
-	            if (remediation.getMer() != null)
-	            	prepStmt.setLong(8, remediation.getMer().getId());
-
-	            prepStmt.executeUpdate();
-	            
-	            
-	            
-			}catch(Exception e){
-	            e.printStackTrace();
-	        }finally{
-	            try {
-	                prepStmt.close();
-	            } catch (Exception e) {
-	            }
-	        }
 			
 			
 

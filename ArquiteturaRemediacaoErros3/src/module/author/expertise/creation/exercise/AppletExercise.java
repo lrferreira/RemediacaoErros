@@ -1009,25 +1009,45 @@ public Component getComponentByName(String name) {
         button.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
 
-        		try{
-        			currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
-        		} catch (NumberFormatException e) {
-        			currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
-        		} finally {
-        			dbCon.save(currentRemediation);
-        			RulesFactory.createRules(currentRemediation, mer);				    
-        			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
-        			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
-        			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
-        			
-        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
-        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
-        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
-        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
-        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
-        			
-        			remediationPendent = false;
-        			//RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
+        		if (currentRemediation != null && currentRemediation.getId() != null){
+        			try{
+	        			currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+	        		} catch (NumberFormatException e) {
+	        			currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+	        		} finally {
+	        			dbCon.save(currentRemediation);
+	        			RulesFactory.createRules(currentRemediation, mer);				    
+	        			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
+	        			
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
+	        		}	        			
+        		}else{
+	        		try{
+	        			currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+	        		} catch (NumberFormatException e) {
+	        			currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+	        		} finally {
+	        			dbCon.save(currentRemediation);
+	        			RulesFactory.createRules(currentRemediation, mer);				    
+	        			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
+	        			
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
+	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
+	        			
+	        			remediationPendent = false;
+	        			//RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
+	        		}
         		}
         	}
         });
