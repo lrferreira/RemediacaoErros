@@ -38,6 +38,14 @@ public class Goal {
 		this.setId(id);
 	}
 
+	
+	public boolean equals(Goal obj2) {
+	    if(this.getId().equals(obj2.getId())) { 
+	        return true;
+	    }
+	    else return false;
+	}
+
 	public String getComponent() {
 		return component;
 	}

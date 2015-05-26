@@ -1094,6 +1094,28 @@ public class DBConnect {
         
         return mers;
 	}
+
+	public int getMaxRemediation() {
+		Statement stmt=null;
+		int max = 0;
+
+        try {
+			stmt=conn.createStatement();
+
+			ResultSet rs=stmt.executeQuery("SELECT max(id) FROM remediation; ");
+			
+			while(rs.next()){
+			 max= (int) rs.getLong("max(id)");
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return max;
+		
+	}
 	
 	
 }

@@ -15,13 +15,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTabbedPane;
@@ -57,9 +57,9 @@ public class AppletExercise extends JApplet {
 	
 	protected static mxGraph graph = new mxGraph();
 	protected static HashMap mapEstadosGrafo = new HashMap();
-	protected static HashMap mapMetasGrafo = new HashMap();
-	protected static HashMap mapMetasRemediacoesGrafo = new HashMap();
-	protected static HashMap mapRemediacoesGrafo = new HashMap();
+	protected static HashMap<Object, Goal> mapMetasGrafo = new HashMap<Object, Goal>();
+	//protected static HashMap mapMetasRemediacoesGrafo = new HashMap();
+	protected static HashMap mapRemediacoesGrafo = new HashMap<Object, Remediation>();
 	private mxGraphComponent graphComponent;
 	private Exercise exercise;
 	private Path path; 
@@ -141,6 +141,7 @@ public class AppletExercise extends JApplet {
 	private Remediation currentRemediation;
 	private Map<String, Object> edgeStyle;
 	private Map<String, Object> edgeRemStyle;
+	private boolean remediationPendent;
 
 	
 	
@@ -273,7 +274,7 @@ public class AppletExercise extends JApplet {
 							public void mouseReleased(MouseEvent e)
 								{
 									if (!e.isConsumed() && isEditEvent(e)){
-										addNodo(e.getX(), e.getY());
+										addNodoOrRemediation(e.getX(), e.getY());
 									}
 								}
 							});
@@ -389,12 +390,13 @@ public class AppletExercise extends JApplet {
 		for (Path p : exercise.getPaths()){
 			for (Goal goal: p.getGoals()){
 				((JTextField)getComponentByName(goal.getComponent())).setText(goal.getAnswer().getValue());
-
 				addEstado();
 				for (Remediation r: goal.getRemediations()){
-					Object meta = getMapMetasGrafo().get(getMapMetasGrafo().size());
+					r.setGoal(goal);
+					Object cellMeta = getValue(getMapMetasGrafo(),(Goal)goal); 
+							//getValue(getMapMetasGrafo(),goal);
 					//int i = (int) getKey(getMapMetasGrafo(), cell);
-					addRemediacao(meta, goal);
+					addNodoRemediacao(cellMeta, r);
 				}
 			}
 		}
@@ -635,7 +637,7 @@ public Component getComponentByName(String name) {
 				"\nno campo " + goalAt.getComponent(), 
 				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX() + 150, 30, 100, 100, "MyStyleEllipse");
 		
-		getMapMetasGrafo().put(i,v1);
+		getMapMetasGrafo().put(goalAt,v1);
 		//Object v1 = getMapEstadosGrafo().get(JOptionPane.showInputDialog("Digite o grafo 1:"));
         //Object v2 = getMapEstadosGrafo().get(JOptionPane.showInputDialog("Digite o grafo 2:"));
         //String nome = JOptionPane.showInputDialog("Digite o nome da linha:");
@@ -648,10 +650,10 @@ public Component getComponentByName(String name) {
 
 	}
 
-	public void addRemediacao(Object cell, Goal goal){
+	public void addNodoRemediacao(Object cell, Goal goal){
 		Object parent = getGraph().getDefaultParent();
 		int i = (int) getKey(getMapMetasGrafo(), cell);
-		int j = (int) getMapRemediacoesGrafo().size() + 1;
+		int j = dbCon.getMaxRemediation() + 1;
 		//Goal goal = path.getGoals().get(i-1);
 		//WrongAnswer wrongAnswer = new WrongAnswer();
 		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
@@ -667,26 +669,56 @@ public Component getComponentByName(String name) {
 
 		getGraph().insertEdge(parent, null, "", cell, v2);
         
-		getMapMetasRemediacoesGrafo().put(i, v2);
-		getMapRemediacoesGrafo().put(j, v2);
+		//getMapMetasRemediacoesGrafo().put(i, v2);
+		Remediation rem = new Remediation();
+		rem.setGoal(goal);
+		getMapRemediacoesGrafo().put(rem, v2);
+		remediationPendent = true;
 		
 	}
+
+	// for load exercises
+	public void addNodoRemediacao(Object cell, Remediation rem){
+		Object parent = getGraph().getDefaultParent();
+		Goal goal = (Goal) getKey(getMapMetasGrafo(), cell);
+		int j = Integer.parseInt(Long.toString(rem.getId()));
+		//Goal goal = path.getGoals().get(i-1);
+		//WrongAnswer wrongAnswer = new WrongAnswer();
+		//wrongAnswer.setValue(JOptionPane.showInputDialog("Digite o possível valor de erro do estudante:"));
+		Object v2 = getGraph().insertVertex(parent, null, "Remediação nº " + j + " \npara a meta nº " + goal.getId() + ":\n " + 
+					"campo " + goal.getComponent(), 
+				getGraph().getCellBounds(cell).getX(), 
+				getGraph().getCellBounds(cell).getY() + getGraph().getCellBounds(cell).getHeight()+ 100,
+				120, 140, "MyStyleEllipseRem");
+		
 	
-	public void addNodo(int x, int y){
+		graph.getStylesheet().setDefaultEdgeStyle(edgeRemStyle);
+		
+
+		getGraph().insertEdge(parent, null, "", cell, v2);
+        
+		//getMapMetasRemediacoesGrafo().put(i, v2);
+		getMapRemediacoesGrafo().put(rem, v2);
+		
+	}
+
+	public void addNodoOrRemediation(int x, int y){
 		Object cell = graphComponent.getCellAt(x, y, false);
 		if (cell != null && getGraph().isCellEditable(cell))
 		{
 			Object val = graph.getModel().getValue(cell);
-			currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasRemediacoesGrafo(), cell)));
 			//Se o grafo é verde (meta), adicionar nodo de remediação
-			if (graph.getLabel(cell).startsWith("Meta")){
+			if (graph.getLabel(cell).startsWith("Meta") && !remediationPendent){
 				System.out.println("double-clicked on " + graph.getLabel(cell));
-				addRemediacao(cell, currentGoal);	
+				currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasGrafo(), cell)));
+				addNodoRemediacao(cell, currentGoal);	
 			}
 			else if (graph.getLabel(cell).startsWith("Remediação")){
 				//se o grafo é vermelho (remediação), focar na tela de cadastro de remediação
 				//loadPanelRemediacao();
-			
+				//currentGoal = path.getGoalById((dbCon.getRemediation(new Long((int) getKey(getMapRemediacoesGrafo(), cell)))).getGoal().getId());
+				currentGoal = ((Remediation)getKey(getMapRemediacoesGrafo(), cell)).getGoal();
+				currentRemediation = ((Remediation)getKey(getMapRemediacoesGrafo(), cell));
 				if (exercise.getId() != null) {
 					//nova remediação
 					
@@ -694,12 +726,13 @@ public Component getComponentByName(String name) {
 					
 					lblExercicio.setText("EXERCÍCIO: " + exercise.getId());
 					lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
-					lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> adicionar no campo \"" +
-									currentGoal.getComponent() + "\" o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+					lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> preencher o campo \"" +
+									currentGoal.getComponent() + "\" com o valor \"" + currentGoal.getAnswer().getValue() + "\"");
 				} else {
-					currentRemediation = currentGoal.getRemediations().get((int) getKey(getMapRemediacoesGrafo(), cell) - 1);
-					loadRemediacao(currentRemediation);
+					//currentRemediation = dbCon.getRemediation(Long.parseLong(String.valueOf((((int) getKey(getMapRemediacoesGrafo(), cell))))));
+					//loadRemediacao(currentRemediation);
 				}
+				loadRemediacao(currentRemediation);
 														
 			}
 				
@@ -743,6 +776,16 @@ public Component getComponentByName(String name) {
 	    }
 	    return null;
 	}
+	
+	private Object getValue(HashMap<Object, Goal> m, Goal goal){
+		for (Entry e: m.entrySet()){
+			Goal g =(Goal) e.getKey();
+			if (g.equals(goal))
+				return e.getValue();
+		}
+		return null;
+	}
+
 	
 	public void loadPanelInicRemediacao(){
         panel_remed = new JPanel();
@@ -983,6 +1026,7 @@ public Component getComponentByName(String name) {
         			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
         			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
         			
+        			remediationPendent = false;
         			//RulesFactory.compile(StringConstants.FILE_MER_MANAGER_KB);
         		}
         	}
@@ -1050,15 +1094,28 @@ public Component getComponentByName(String name) {
 	
 	public void loadRemediacao(Remediation rem){
         
-        
-		cmbSorter.setSelectedIndex(Integer.parseInt(rem.getItemSorter().getSorter().getId().toString()));
-		cmbErrorType.setSelectedIndex(Integer.parseInt(rem.getItemSorter().getErrorType().getId().toString()));
-        
-        cmbCriterion.setSelectedIndex(Integer.parseInt(rem.getCriterion().getId().toString()));
+		cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
+		cmbSorter.setSelectedIndex(rem.getItemSorter().getSorter() != null ? Integer.parseInt(rem.getItemSorter().getSorter().getId().toString()) : 0);
+		sorter = rem.getItemSorter().getSorter();
 
-        cmbSubErrorType.setSelectedIndex(Integer.parseInt(rem.getItemSorter().getSubErrorType().getId().toString()));
+		cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(rem.getItemSorter().getSorter().getId()))));
+		cmbErrorType.setSelectedIndex(rem.getItemSorter().getErrorType() != null ? Integer.parseInt(rem.getItemSorter().getErrorType().getId().toString()): 0);
+		
         
+        cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
+        cmbCriterion.setSelectedIndex(rem.getCriterion() != null ? Integer.parseInt(rem.getCriterion().getId().toString()) : 0);
+        criterion = rem.getCriterion();
+
+        errorType = dbCon.getErrorType((Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()));
+		cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
+        cmbSubErrorType.setSelectedIndex(rem.getItemSorter().getSubErrorType() != null ? Integer.parseInt(rem.getItemSorter().getSubErrorType().getId().toString()) : 0);
+        subErrorType = rem.getItemSorter().getSubErrorType();
         
+        cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(rem.getItemSorter().getMerFunction().getId()))));
+        cmbMre.setSelectedIndex(rem.getMer() != null ? (Integer)getKey(mapCmbMer,rem.getMer().getId()) : 0);
+        setMer(dbCon.getMER((Long)mapCmbMer.get(cmbMre.getSelectedIndex())));
+		if (mer != null)
+			getMer().renderImage(lblMer);
         
         
         txtWrongAnswer.setText(rem.getWrongAnswer());
@@ -1069,7 +1126,7 @@ public Component getComponentByName(String name) {
         
         //lblMer = new JLabel("");
                 
-        txtTentativas.setText(""+rem.getAttempts());;
+        txtTentativas.setText(rem.getAttempts() == 0 ? "" : ""+rem.getAttempts());;
         
 
 	}
@@ -1303,7 +1360,7 @@ public Component getComponentByName(String name) {
 		this.currentGoal = currentGoal;
 	}
 
-
+/*
 	public static HashMap getMapMetasRemediacoesGrafo() {
 		return mapMetasRemediacoesGrafo;
 	}
@@ -1312,7 +1369,7 @@ public Component getComponentByName(String name) {
 	public static void setMapMetasRemediacoesGrafo(HashMap mapMetasRemediacoesGrafo) {
 		AppletExercise.mapMetasRemediacoesGrafo = mapMetasRemediacoesGrafo;
 	}
-
+*/
 
 	public static HashMap getMapRemediacoesGrafo() {
 		return mapRemediacoesGrafo;

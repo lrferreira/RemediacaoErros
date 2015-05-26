@@ -22,6 +22,7 @@ public class ItemSorter implements Serializable{
 			 String remediation) {
 		super();
 		this.id = id;
+		this.sorter = sorter;
 		this.errorType = errorType;
 		this.subErrorType = subErrorType;
 		this.merFunction = merFunction;

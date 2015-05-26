@@ -1381,7 +1381,7 @@ import java.util.ArrayList;
 /**
  * Knowledge base created by JEOPS from file MERManagerNotSpecificMERKB.rules
  *
- * @version 24/04/2015
+ * @version 25/05/2015
  */
 public class MERManagerNotSpecificMERKB extends jeops.AbstractKnowledgeBase {
 
