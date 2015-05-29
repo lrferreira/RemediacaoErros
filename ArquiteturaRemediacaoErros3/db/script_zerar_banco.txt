@@ -1,0 +1,10 @@
+delete from action;
+delete from exercise_initialstate;
+delete from exercise;
+delete from goal;
+delete from mer_merfunction;
+delete from mer_type;
+delete from mer;
+delete from path;
+delete from remediation;
+delete from rule_action;

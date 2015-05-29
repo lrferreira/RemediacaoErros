@@ -1,0 +1,20 @@
+package module.expression.identifier;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.CorrectAnswer;
+import module.entity.RuleToHuman;
+import java.util.ArrayList;
+import module.error.sorter.ErrorSorterController;
+import javax.swing.*;
+
+
+ruleBase ExpressionIdentifierCorrectAnswerKB {
+	
+
+
+
+// end_rules
+	
+}

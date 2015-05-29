@@ -1,0 +1,338 @@
+package module.merfunction.sorter;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import module.entity.RuleToHuman;
+import util.Constants;
+import module.entity.MERFunction;
+import module.mer.manager.MERManagerController;
+import module.entity.DBConnect;
+
+
+ruleBase MERFunctionSorterKB {
+
+
+
+ 
+
+	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_0 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_2_1 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_3_2 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(3L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_4_3 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(4L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_4_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Indiretamente identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(5L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_2_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_5 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(5L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Interpretação Equivocada \n");
+			action.setMerFunction( dbCon.getMERFunction(1L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Papéis Complementares");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_6 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(5L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_1_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Interpretação Equivocada \n");
+			action.setMerFunction( dbCon.getMERFunction(1L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Papéis Complementares");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_7 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(6L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_8 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(6L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_9 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(6L);
+
+		actions
+			action.getRegrasAcionadas().add("merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Fun��o da MRE: merfunction_3_PATH_1_GOAL_1_COMPONENT_txt3_REMEDIATION_6_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " \t Tipo de Erro = Diretamente Identificáveis \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Fun��o MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+// end_rules
+	
+}

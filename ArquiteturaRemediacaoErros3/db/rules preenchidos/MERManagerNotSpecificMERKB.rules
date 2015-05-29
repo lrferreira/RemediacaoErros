@@ -1,0 +1,177 @@
+package module.mer.manager;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import util.Constants;
+import module.entity.MERFunction;
+import module.entity.MultipleExternalRepresentation;
+import module.entity.RuleToHuman;
+import module.entity.TypeMER;
+import module.entity.DBConnect;
+import java.util.ArrayList;
+
+ruleBase MERManagerNotSpecificMERKB {
+
+
+
+
+
+	rule ruleMER_10_remediation_2_criterionnotspecific_2_0 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(10L);
+			action.getRemediation().getCriterion().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_2_criterionnotspecific_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(2L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(11L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 11 - mer 11");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_remediation_2_criterionnotspecific_2_1 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(10L);
+			action.getRemediation().getCriterion().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_2_criterionnotspecific_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(2L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(12L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 12 - mer 12");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_remediation_2_criterionnotspecific_2_2 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(10L);
+			action.getRemediation().getCriterion().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_2_criterionnotspecific_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(2L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(13L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 13 - mer 13");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_remediation_2_criterionnotspecific_2_3 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(10L);
+			action.getRemediation().getCriterion().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_2_criterionnotspecific_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(2L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(14L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 14 - mer 14");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule ruleMER_10_remediation_2_criterionnotspecific_2_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(10L);
+			action.getRemediation().getCriterion().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_2_criterionnotspecific_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(2L);\n");
+			MultipleExternalRepresentation m = dbCon.getMER(15L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("ruleMER_10_remediation_2_criterionnotspecific_2_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibi��o de MRE 15 - mer 15");
+			flush();
+
+	}
+// -rule-end- 
+
+// end_rules
+	
+}

@@ -1,0 +1,19 @@
+import module.entity.RuleToHuman;
+import java.util.ArrayList;
+import module.error.sorter.ErrorSorterController;
+import javax.swing.*;
+
+
+ruleBase GoalsKB {
+
+	rule goal_0 {
+	
+		declarations
+		
+		conditions
+		
+		actions
+	
+	}
+// end_rules
+}

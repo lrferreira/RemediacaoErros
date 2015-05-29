@@ -1,0 +1,21 @@
+package module.merfunction.sorter;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import module.entity.RuleToHuman;
+import util.Constants;
+import module.entity.MERFunction;
+import module.mer.manager.MERManagerController;
+import module.entity.DBConnect;
+
+
+ruleBase MERFunctionSorterKB {
+
+
+
+ 
+// end_rules
+	
+}

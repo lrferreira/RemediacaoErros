@@ -1,0 +1,50 @@
+package module.error.sorter;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.WrongAnswer;
+import module.entity.Action;
+import module.entity.RuleToHuman;
+import module.entity.Remediation;
+import module.author.expertise.creation.sorters.entity.ErrorType;
+import module.author.expertise.creation.sorters.entity.SubErrorType;
+import util.Constants;
+import java.util.ArrayList;
+import module.entity.DBConnect;
+
+
+
+ruleBase ErrorSorterKB {
+
+
+
+// end_rules
+
+// rule necessary by default
+
+
+	rule solutionNonCategorizable {
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+			
+		localdecl
+				
+		conditions
+			//wrongAnswer.getValue() == null;
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: solutionNonCategorizable_ ");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  ");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Usu�rio n�o informou nenhuma resposta (campos nulos)");
+			//action.setAttempts(action.getAttempts() + 1);
+			//modified(action);
+			System.out.println("Erro classificado como Solução Não Categorizável");		
+			((WrongAnswer)action.getAnswer()).setErrorType(new ErrorType(Constants.TIPO_ERRO_SOLUCAO_NAO_CATEGORIZAVEL, "Solução não Categorizável", new ArrayList<SubErrorType>()));
+			modified(ruleToHuman);
+			modified(action);
+			flush();			
+	}
+
+
+	
+}

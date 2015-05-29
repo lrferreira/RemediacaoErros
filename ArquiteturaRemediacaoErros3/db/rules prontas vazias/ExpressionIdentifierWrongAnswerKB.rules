@@ -1,0 +1,46 @@
+package module.expression.identifier;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import module.entity.RuleToHuman;
+import module.entity.Remediation;
+import module.entity.DBConnect;
+import java.util.ArrayList;
+import module.error.sorter.ErrorSorterController;
+import module.entity.DBConnect;
+
+
+ruleBase ExpressionIdentifierWrongAnswerKB {
+
+
+
+
+// end_rules
+
+// rule necessary by default
+
+	rule wrongAnswer_default {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getCorrect() == null;
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: wrongAnswer_default \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��o: n�o estar prevista no cadastro de erros  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta campo = " + action.getAnswer().getValue() + "\n");
+			System.out.println("Resposta Errada (1) detectada");
+			action.setCorrect(false);
+			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}	
+}

@@ -1,0 +1,22 @@
+package module.mer.manager;
+
+import javax.swing.JComponent;
+import module.entity.Goal;
+import module.entity.Action;
+import module.entity.WrongAnswer;
+import util.Constants;
+import module.entity.MERFunction;
+import module.entity.MultipleExternalRepresentation;
+import module.entity.RuleToHuman;
+import module.entity.TypeMER;
+import module.entity.DBConnect;
+import java.util.ArrayList;
+
+ruleBase MERManagerErrorPersistKB {
+
+
+
+
+// end_rules
+	
+}
