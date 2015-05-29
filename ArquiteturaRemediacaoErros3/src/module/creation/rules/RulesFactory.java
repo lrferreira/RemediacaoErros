@@ -824,6 +824,55 @@ public class RulesFactory {
 	}	
 
 	/**
+	 * Comment an existing rule file, ignoring a rule
+	 * @author leandro
+	 * @param fileName
+	 * @param ruleName
+	 */
+	public static void commentFileRule(String fileName, String ruleName){
+		
+		try {
+			String fileNameTemp = fileName + "_temp";
+			BufferedReader in;
+			in = new BufferedReader(new FileReader(fileName));
+			BufferedWriter out = new BufferedWriter(new FileWriter(fileNameTemp));  
+			boolean atRule = false;
+			String str;
+			
+		    	while ((str = in.readLine()) != null) {  
+		    		System.out.println(str);  
+		    		if (str.contains(ruleName)){
+		    			out.write("/* \n");
+		    			atRule = true;
+		    		}
+		    		out.write(str); out.write("\n");
+		    		if (str.contains(StringConstants.RULE_END) && atRule) {
+		    			out.write("\n */");
+		    			atRule = false;
+		    		}
+		    	}  
+		    
+		    in.close();
+		   	out.close();
+		   
+		   	File file = new File(fileName);
+		   	File tempFile = new File(fileNameTemp);
+		   
+		   	if (file.delete()) {
+		   		if (tempFile.renameTo(file)) {
+		   			tempFile.delete();
+		   		}
+		   	}
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+	/**
 	 * Edit an existing rule file, deleting a rule
 	 * @author leandro
 	 * @param fileName
@@ -866,7 +915,7 @@ public class RulesFactory {
 		}
 
 	}
-	
+
 	/**
 	 * Extract an existing rule file, without deleting
 	 * @author leandro

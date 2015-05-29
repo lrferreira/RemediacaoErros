@@ -16,68 +16,6 @@ ruleBase MERManagerSpecificMERKB {
 
 
 
-
-	rule ruleMER_10_remediation_1_criterion_1_0 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getRemediation().getMer().getId().equals(10L);
-			action.getRemediation().getCriterion().getId().equals(1L);
-
-		actions
-			action.getRegrasAcionadas().add("ruleMER_10_remediation_1_criterion_1_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_1_criterion_1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(1L);\n");
-			MultipleExternalRepresentation m = dbCon.getMER(10L);
-			action.setMer(m);
-			action.getRegrasAcionadas().add("ruleMER_10_remediation_1_criterion_1_");
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Exibi��o de MRE 10 - mer 10");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule ruleMER_10_remediation_6_criterion_1_1 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			action.getRemediation().getMer().getId().equals(10L);
-			action.getRemediation().getCriterion().getId().equals(1L);
-
-		actions
-			action.getRegrasAcionadas().add("ruleMER_10_remediation_6_criterion_1_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_10_remediation_6_criterion_1_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getMer().getId().equals(10L);\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(1L);\n");
-			MultipleExternalRepresentation m = dbCon.getMER(10L);
-			action.setMer(m);
-			action.getRegrasAcionadas().add("ruleMER_10_remediation_6_criterion_1_");
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Exibi��o de MRE 10 - mer 10");
-			flush();
-
-	}
-// -rule-end- 
-
 // end_rules
 	
 }
