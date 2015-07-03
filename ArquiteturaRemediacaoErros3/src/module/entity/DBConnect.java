@@ -268,6 +268,21 @@ public class DBConnect {
 		return c;
 	}
 
+	public TreatmentWrongAnswer getTreatment(Long id_treatment){
+		TreatmentWrongAnswer t = null;
+		ResultSet rs;
+		try {
+			this.stm = this.conn.createStatement();
+			rs = this.stm.executeQuery("select * from treatmentwronganswer WHERE id = " + id_treatment);
+			if (rs.next()){
+				t = new TreatmentWrongAnswer(rs.getLong("id"), rs.getString("description"));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return t;
+	}
+
 	public ItemSorter getItemSorter(Long id_itemsorter){
 		ItemSorter is = null;
 		ResultSet rs;
@@ -471,6 +486,22 @@ public class DBConnect {
 		}
 		return criterions;
 	}
+
+	public ArrayList<TreatmentWrongAnswer> getTreatments(){
+		ArrayList<TreatmentWrongAnswer> treatments = new ArrayList<TreatmentWrongAnswer>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from treatmentwronganswer");
+			while (rs.next()){
+				treatments.add(new TreatmentWrongAnswer(rs.getLong("id"), rs.getString("description")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return treatments;
+	}
 	
 	public void save(Action action){
 		String strDescription = null;
@@ -588,7 +619,7 @@ public class DBConnect {
 				PreparedStatement prepStmt = null;
 				
 				try{
-					prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?)");
+					prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?,?)");
 					prepStmt.setLong(1, remediation.getId());
 					prepStmt.setLong(2, remediation.getGoal().getId());
 					prepStmt.setLong(3, remediation.getItemSorter().getId());
@@ -599,7 +630,7 @@ public class DBConnect {
 					prepStmt.setString(7, remediation.getRelatedError());
 					if (remediation.getMer() != null)
 						prepStmt.setLong(8, remediation.getMer().getId());
-					
+					prepStmt.setLong(9, remediation.getTreatmentWrongAnswer().getId());
 					prepStmt.executeUpdate();
 					
 					
@@ -624,6 +655,7 @@ public class DBConnect {
 					if (remediation.getAttempts() != null)
 						update = update + "attempts = ? , ";						
 					update = update + "wronganswer = ? , ";
+					update = update + "id_treatmentwronganswer = ?,  ";
 					update = update + "relatederror = ?  ";
 					if (remediation.getMer() != null) 
 						update = update + ", id_mer = ? ";		
@@ -636,22 +668,24 @@ public class DBConnect {
 					if (remediation.getAttempts() != null){
 						prepStmt.setInt(4, remediation.getAttempts());
 						prepStmt.setString(5, remediation.getWrongAnswer());
+						prepStmt.setLong(6, remediation.getTreatmentWrongAnswer().getId());
+						prepStmt.setString(7, remediation.getRelatedError());
+						if (remediation.getMer() != null) {
+							prepStmt.setLong(8, remediation.getMer().getId());
+							prepStmt.setLong(9, remediation.getId());							
+						}
+						else
+							prepStmt.setLong(8, remediation.getId());
+						
+					} else {
+						prepStmt.setString(4, remediation.getWrongAnswer());
+						prepStmt.setLong(5, remediation.getTreatmentWrongAnswer().getId());
 						prepStmt.setString(6, remediation.getRelatedError());
 						if (remediation.getMer() != null) {
 							prepStmt.setLong(7, remediation.getMer().getId());
 							prepStmt.setLong(8, remediation.getId());							
-						}
-						else
-							prepStmt.setLong(7, remediation.getId());
-						
-					} else {
-						prepStmt.setString(4, remediation.getWrongAnswer());
-						prepStmt.setString(5, remediation.getRelatedError());
-						if (remediation.getMer() != null) {
-							prepStmt.setLong(6, remediation.getMer().getId());
-							prepStmt.setLong(7, remediation.getId());							
 						} else
-							prepStmt.setLong(6, remediation.getId());
+							prepStmt.setLong(7, remediation.getId());
 					}
 
 

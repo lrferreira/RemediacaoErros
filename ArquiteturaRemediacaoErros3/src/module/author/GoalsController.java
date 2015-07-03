@@ -30,7 +30,7 @@ public class GoalsController {
 
 		System.out.println("Resposta do aluno: " + 
 							action.getAnswer().getValue());
-		System.out.println("Tentativa n� " + action.getAttempt());
+		System.out.println("Tentativa nº " + action.getAttempt());
 		
 		RuleToHuman ruleToHuman = new RuleToHuman();
 		ruleToHuman.setDescription("");
@@ -43,7 +43,7 @@ public class GoalsController {
 		if (action.getCorrect() != null && action.isCorrect()) {
 			textPane.setText(ruleToHuman.getDescription());
 			if (action.getGoal().getSubGoal() != null){
-				System.out.println("componente pr�xima meta: " + action.getGoal().getSubGoal().getComponent());
+				System.out.println("componente próxima meta: " + action.getGoal().getSubGoal().getComponent());
 			}
 			System.out.println("Resposta Correta! Fim!");
 			//System.exit(1);
@@ -69,7 +69,7 @@ public class GoalsController {
 						imgPath = imgPath.replace("bin", "images");
 						
 						System.out.println("Id = " + action.getMer().getId());
-						System.out.println(" Descri��o = " + action.getMer().getDescription());
+						System.out.println(" Descrição = " + action.getMer().getDescription());
 						System.out.println(" Image name: " + action.getMer().getImage());
 						
 						lblImg.setIcon(new ImageIcon(action.getMer().getImage()));
@@ -79,7 +79,7 @@ public class GoalsController {
 
 					textPane.setText(ruleToHuman.getDescription());
 					
-					System.out.println("Ap�s rodada: n� tentativas: " + action.getAttempt());
+					System.out.println("Após rodada: nº tentativas: " + action.getAttempt());
 					
 					
 				}

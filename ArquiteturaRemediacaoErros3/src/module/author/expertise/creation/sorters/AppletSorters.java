@@ -136,7 +136,7 @@ public class AppletSorters extends JApplet {
 		panel.add(btnSalvarClassificador);
 		
 		final JComboBox cmbClassificador = new JComboBox();
-		cmbClassificador.setBounds(10, 39, 231, 20);
+		cmbClassificador.setBounds(10, 39, 305, 20);
 		cmbClassificador.addItem("-");
 		panel.add(cmbClassificador);
 		

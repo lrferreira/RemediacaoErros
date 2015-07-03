@@ -1,0 +1,806 @@
+-----------------------------1
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique o tipo de erro como "Interpretação Equivocada" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ 
+ Condições:  
+	Tipo de Erro = "Interpretação Equivocada"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique a Função MRE como "Papéis Complementares" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ 
+ Condições:  
+	MRE = "MRE 1"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 1" 
+
+-----------------------------2
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência em relação ao domínio ou uso inadequado de dados" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência em relação ao domínio ou uso inadequado de dados"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ 
+ Condições:  
+	MRE = "MRE 2"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 2" 
+
+-----------------------------3
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ 
+ Condições:  
+	Resposta = "6"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ 
+ Condições:  
+	Resposta = "6"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência em relação ao domínio ou uso inadequado de dados" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência em relação ao domínio ou uso inadequado de dados"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ 
+ Condições:  
+	MRE = "MRE 2"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 2" 
+
+-----------------------------4
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ 
+ Condições:  
+	Resposta diferente de "1"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ 
+ Condições:  
+	Resposta diferente de "1"
+	Resposta = ""
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique o tipo de erro como "Solução não categorizável" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ 
+ Condições:  
+	Tipo de Erro = "Solução não categorizável"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ 
+ Condições:  
+	MRE = "MRE 6"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 6" 
+
+-----------------------------5
+Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_1_COMPONENTE_txt1_ 
+ Condições:  
+	Resposta = "1"
+	Caminho = 1
+	Meta = 1
+	Componente = "txt1"
+ Ações:  
+	Marque a Meta 1 como satisfeita 
+
+-----------------------------6
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Classifique o tipo de erro como "Interpretação Equivocada" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ 
+ Condições:  
+	Tipo de Erro = "Interpretação Equivocada"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Classifique a Função MRE como "Papéis Complementares" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ 
+ Condições:  
+	MRE = "MRE 1"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 1" 
+
+-----------------------------7
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ 
+ Condições:  
+	Resposta diferente de "0"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ 
+ Condições:  
+	Resposta diferente de "0"
+	Resposta = ""
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Classifique o tipo de erro como "Solução não categorizável" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ 
+ Condições:  
+	Tipo de Erro = "Solução não categorizável"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ 
+ Condições:  
+	MRE = "MRE 6"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 6" 
+
+-----------------------------8
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ 
+ Condições:  
+	Resposta = "6"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ 
+ Condições:  
+	Resposta = "6"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência em relação ao domínio ou uso inadequado de dados" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência em relação ao domínio ou uso inadequado de dados"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ 
+ Condições:  
+	MRE = "MRE 2"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 2" 
+
+-----------------------------9
+Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_2_COMPONENTE_txt2_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 2
+	Componente = "txt2"
+ Ações:  
+	Marque a Meta 2 como satisfeita 
+
+----------------------------10
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência em relação ao domínio ou uso inadequado de dados" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência em relação ao domínio ou uso inadequado de dados"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ 
+ Condições:  
+	MRE = "MRE 2"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 2" 
+
+----------------------------11
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ 
+ Condições:  
+	Resposta = "1"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ 
+ Condições:  
+	Resposta = "1"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência em relação ao domínio ou uso inadequado de dados" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência em relação ao domínio ou uso inadequado de dados"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ 
+ Condições:  
+	MRE = "MRE 2"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 2" 
+
+----------------------------12
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ 
+ Condições:  
+	Resposta diferente de "6"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ 
+ Condições:  
+	Resposta diferente de "6"
+	Resposta = ""
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Classifique o tipo de erro como "Solução não categorizável" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ 
+ Condições:  
+	Tipo de Erro = "Solução não categorizável"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ 
+ Condições:  
+	MRE = "MRE 6"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 6" 
+
+----------------------------13
+Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_3_COMPONENTE_txt5_ 
+ Condições:  
+	Resposta = "6"
+	Caminho = 1
+	Meta = 3
+	Componente = "txt5"
+ Ações:  
+	Marque a Meta 3 como satisfeita 
+
+----------------------------14
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ 
+ Condições:  
+	Resposta = "-"
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ 
+ Condições:  
+	Resposta = "-"
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência na escolha do operador correto" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência na escolha do operador correto"
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ 
+ Condições:  
+	MRE = "MRE 4"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 4" 
+
+----------------------------15
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ 
+ Condições:  
+	Resposta diferente de "+"
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ 
+ Condições:  
+	Resposta diferente de "+"
+	Resposta = ""
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Classifique o tipo de erro como "Solução não categorizável" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ 
+ Condições:  
+	Tipo de Erro = "Solução não categorizável"
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ 
+ Condições:  
+	MRE = "MRE 6"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 6" 
+
+----------------------------16
+Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_4_COMPONENTE_txt3_ 
+ Condições:  
+	Resposta = "+"
+	Caminho = 1
+	Meta = 4
+	Componente = "txt3"
+ Ações:  
+	Marque a Meta 4 como satisfeita 
+
+----------------------------17
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_ 
+ Condições:  
+	Resposta = "4"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_ 
+ Condições:  
+	Resposta = "4"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência na escolha do operador correto" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência na escolha do operador correto"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ 
+ Condições:  
+	MRE = "MRE 4"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 4" 
+
+----------------------------18
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência de regra, teorema ou definição" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência de regra, teorema ou definição"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_3_REMEDIACAO_10_criterion_1_ 
+ Condições:  
+	MRE = "MRE 3"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 3" 
+
+----------------------------19
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_ 
+ Condições:  
+	Resposta = "1"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_ 
+ Condições:  
+	Resposta = "1"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência de regra, teorema ou definição" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência de regra, teorema ou definição"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_3_REMEDIACAO_10_criterion_1_ 
+ Condições:  
+	MRE = "MRE 3"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 3" 
+
+----------------------------20
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique o tipo de erro como "Diretamente Identificáveis" 
+	e classifique o subtipo do erro como "Deficiência de regra, teorema ou definição" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_ 
+ Condições:  
+	Tipo de Erro = "Diretamente Identificáveis"
+	Subtipo de Erro = "Deficiência de regra, teorema ou definição"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_3_REMEDIACAO_10_criterion_1_ 
+ Condições:  
+	MRE = "MRE 3"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 3" 
+
+----------------------------21
+Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_5_COMPONENTE_txt8_ 
+ Condições:  
+	Resposta = "6"
+	Caminho = 1
+	Meta = 5
+	Componente = "txt8"
+ Ações:  
+	Marque a Meta 5 como satisfeita 
+
+----------------------------22
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ 
+ Condições:  
+	Resposta = " "
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Classifique o tipo de erro como "Indiretamente identificáveis" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ 
+ Condições:  
+	Tipo de Erro = "Indiretamente identificáveis"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ 
+ Condições:  
+	MRE = "MRE 5"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 5" 
+
+----------------------------23
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ 
+ Condições:  
+	Resposta = "0"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Classifique o tipo de erro como "Indiretamente identificáveis" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ 
+ Condições:  
+	Tipo de Erro = "Indiretamente identificáveis"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Classifique a Função MRE como "Restrição de Interpretação" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ 
+ Condições:  
+	MRE = "MRE 5"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 5" 
+
+----------------------------24
+Regra acionada para resposta errada: respostaErrada_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ 
+ Condições:  
+	Resposta diferente de "1"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Marque a resposta como errada 
+
+
+Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ 
+ Condições:  
+	Resposta diferente de "1"
+	Resposta = ""
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Classifique o tipo de erro como "Solução não categorizável" 
+
+
+Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ 
+ Condições:  
+	Tipo de Erro = "Solução não categorizável"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Classifique a Função MRE como "Compreensão mais aprofundada" 
+
+
+Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ 
+ Condições:  
+	MRE = "MRE 6"
+	Critério = "MRE específica para o erro"
+ Ações:  
+	Exiba a MRE "MRE 6" 
+
+----------------------------25
+Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_6_COMPONENTE_txt7_ 
+ Condições:  
+	Resposta = "1"
+	Caminho = 1
+	Meta = 6
+	Componente = "txt7"
+ Ações:  
+	Marque a Meta 6 como satisfeita 

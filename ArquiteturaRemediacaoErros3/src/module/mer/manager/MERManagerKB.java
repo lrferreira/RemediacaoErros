@@ -20,32 +20,32 @@ import java.util.ArrayList;
 
 	
     /**
-     * Identifiers of rule ruleMER_1_0
+     * Identifiers of rule regraMRE_7_0
      */
-    private String[] identifiers_ruleMER_1_0 = {
+    private String[] identifiers_regraMRE_7_0 = {
         "action",
         "dbCon",
         "ruleToHuman"
     };
 
     /**
-     * Returns the identifiers declared in rule ruleMER_1_0
+     * Returns the identifiers declared in rule regraMRE_7_0
      *
-     * @return the identifiers declared in rule ruleMER_1_0
+     * @return the identifiers declared in rule regraMRE_7_0
      */
-    private String[] getDeclaredIdentifiers_ruleMER_1_0() {
-         return identifiers_ruleMER_1_0;
+    private String[] getDeclaredIdentifiers_regraMRE_7_0() {
+         return identifiers_regraMRE_7_0;
     }
 
     /**
      * Returns the name of the class of one declared object for
-     * rule ruleMER_1_0.
+     * rule regraMRE_7_0.
      *
      * @param index the index of the declaration
      * @return the name of the class of the declared objects for
      *          this rule.
      */
-    private String getDeclaredClassName_ruleMER_1_0(int index) {
+    private String getDeclaredClassName_regraMRE_7_0(int index) {
         switch (index) {
             case 0: return "module.entity.Action";
             case 1: return "module.entity.DBConnect";
@@ -55,12 +55,12 @@ import java.util.ArrayList;
     }
 
     /**
-     * Returns the class of one declared object for rule ruleMER_1_0.
+     * Returns the class of one declared object for rule regraMRE_7_0.
      *
      * @param index the index of the declaration
      * @return the class of the declared objects for this rule.
      */
-    private Class getDeclaredClass_ruleMER_1_0(int index) {
+    private Class getDeclaredClass_regraMRE_7_0(int index) {
         switch (index) {
             case 0: return module.entity.Action.class;
             case 1: return module.entity.DBConnect.class;
@@ -70,12 +70,12 @@ import java.util.ArrayList;
     }
 
     /**
-     * Sets an object declared in the rule ruleMER_1_0.
+     * Sets an object declared in the rule regraMRE_7_0.
      *
      * @param index the index of the declared object
      * @param value the value of the object being set.
      */
-    private void setObject_ruleMER_1_0(int index, Object value) {
+    private void setObject_regraMRE_7_0(int index, Object value) {
         switch (index) {
             case 0: this.module_entity_Action_1 = (module.entity.Action) value; break;
             case 1: this.module_entity_DBConnect_1 = (module.entity.DBConnect) value; break;
@@ -84,12 +84,12 @@ import java.util.ArrayList;
     }
 
     /**
-     * Returns an object declared in the rule ruleMER_1_0.
+     * Returns an object declared in the rule regraMRE_7_0.
      *
      * @param index the index of the declared object
      * @return the value of the corresponding object.
      */
-    private Object getObject_ruleMER_1_0(int index) {
+    private Object getObject_regraMRE_7_0(int index) {
         switch (index) {
             case 0: return module_entity_Action_1;
             case 1: return module_entity_DBConnect_1;
@@ -100,12 +100,12 @@ import java.util.ArrayList;
 
     /**
      * Returns all variables bound to the declarations 
-     * of rule ruleMER_1_0
+     * of rule regraMRE_7_0
      *
      * @return an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private Object[] getObjects_ruleMER_1_0() {
+    private Object[] getObjects_regraMRE_7_0() {
         return new Object[] {
                             module_entity_Action_1,
                             module_entity_DBConnect_1,
@@ -115,55 +115,55 @@ import java.util.ArrayList;
 
     /**
      * Defines all variables bound to the declarations 
-     * of rule ruleMER_1_0
+     * of rule regraMRE_7_0
      *
      * @param objects an object array of the variables bound to the
      *          declarations of this rule.
      */
-    private void setObjects_ruleMER_1_0(Object[] objects) {
+    private void setObjects_regraMRE_7_0(Object[] objects) {
         module_entity_Action_1 = (module.entity.Action) objects[0];
         module_entity_DBConnect_1 = (module.entity.DBConnect) objects[1];
         module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
     }
 
     /**
-     * Condition 0 of rule ruleMER_1_0.<p>
+     * Condition 0 of rule regraMRE_7_0.<p>
      * The original expression was:<br>
-     * <code>action.getMer().getId().equals(1L)</code>
+     * <code>action.getMer().getId().equals(7L)</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean ruleMER_1_0_cond_0() {
-        return (module_entity_Action_1.getMer().getId().equals(1L));
+    private boolean regraMRE_7_0_cond_0() {
+        return (module_entity_Action_1.getMer().getId().equals(7L));
     }
 
     /**
-     * Checks whether some conditions of rule ruleMER_1_0 is satisfied.
+     * Checks whether some conditions of rule regraMRE_7_0 is satisfied.
      *
      * @param index the index of the condition to be checked.
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean ruleMER_1_0_cond(int index) {
+    private boolean regraMRE_7_0_cond(int index) {
         switch (index) {
-            case 0: return ruleMER_1_0_cond_0();
+            case 0: return regraMRE_7_0_cond_0();
             default: return false;
         }
     }
 
     /**
-     * Checks whether all conditions of rule ruleMER_1_0 that depend only on
+     * Checks whether all conditions of rule regraMRE_7_0 that depend only on
      * the given object are satisfied.
      *
      * @param declIndex the index of the declaration to be checked
      * @return <code>true</code> if all corresponding conditions for
      *          this rule are satisfied; <code>false</code> otherwise.
      */
-    private boolean checkConditionsOnlyOf_ruleMER_1_0(int declIndex) {
+    private boolean checkConditionsOnlyOf_regraMRE_7_0(int declIndex) {
         switch (declIndex) {
             case 0:
-                if (!ruleMER_1_0_cond_0()) return false;
+                if (!regraMRE_7_0_cond_0()) return false;
                 return true;
             case 1:
                 return true;
@@ -183,7 +183,7 @@ import java.util.ArrayList;
      *          up to the given declaration are true;
      *          <code>false</code> otherwise.
      */
-    private boolean checkCondForDeclaration_ruleMER_1_0(int declIndex) {
+    private boolean checkCondForDeclaration_regraMRE_7_0(int declIndex) {
         switch (declIndex) {
             case 0:
                 return true;
@@ -196,218 +196,21 @@ import java.util.ArrayList;
     }
 
     /**
-     * Executes the action part of the rule ruleMER_1_0
+     * Executes the action part of the rule regraMRE_7_0
      */
-    private void ruleMER_1_0() {
-			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_1_");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_1_ \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condi��es:  \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "action.getMer().getId().equals(1L);\n");
-			MultipleExternalRepresentation m = module_entity_DBConnect_1.getMER(1L);
+    private void regraMRE_7_0() {
+			module_entity_Action_1.getRegrasAcionadas().add("regraMRE_7_");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_7_ \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condições:  \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "\tMRE = 7\n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Ações:  \n");
+			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			MultipleExternalRepresentation m = module_entity_DBConnect_1.getMER(7L);
 			module_entity_Action_1.setMer(m);
-			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_1_");
+			module_entity_Action_1.getRegrasAcionadas().add("regraMRE_7_");
 			modified(module_entity_RuleToHuman_1);
 			modified(module_entity_Action_1);
-			System.out.println("Exibi��o de MRE 1 - mre 1");
-			flush();
-
-	    }
-
-
-// -rule-end- 
-
-
-	
-    /**
-     * Identifiers of rule ruleMER_2_1
-     */
-    private String[] identifiers_ruleMER_2_1 = {
-        "action",
-        "dbCon",
-        "ruleToHuman"
-    };
-
-    /**
-     * Returns the identifiers declared in rule ruleMER_2_1
-     *
-     * @return the identifiers declared in rule ruleMER_2_1
-     */
-    private String[] getDeclaredIdentifiers_ruleMER_2_1() {
-         return identifiers_ruleMER_2_1;
-    }
-
-    /**
-     * Returns the name of the class of one declared object for
-     * rule ruleMER_2_1.
-     *
-     * @param index the index of the declaration
-     * @return the name of the class of the declared objects for
-     *          this rule.
-     */
-    private String getDeclaredClassName_ruleMER_2_1(int index) {
-        switch (index) {
-            case 0: return "module.entity.Action";
-            case 1: return "module.entity.DBConnect";
-            case 2: return "module.entity.RuleToHuman";
-            default: return null;
-        }
-    }
-
-    /**
-     * Returns the class of one declared object for rule ruleMER_2_1.
-     *
-     * @param index the index of the declaration
-     * @return the class of the declared objects for this rule.
-     */
-    private Class getDeclaredClass_ruleMER_2_1(int index) {
-        switch (index) {
-            case 0: return module.entity.Action.class;
-            case 1: return module.entity.DBConnect.class;
-            case 2: return module.entity.RuleToHuman.class;
-            default: return null;
-        }
-    }
-
-    /**
-     * Sets an object declared in the rule ruleMER_2_1.
-     *
-     * @param index the index of the declared object
-     * @param value the value of the object being set.
-     */
-    private void setObject_ruleMER_2_1(int index, Object value) {
-        switch (index) {
-            case 0: this.module_entity_Action_1 = (module.entity.Action) value; break;
-            case 1: this.module_entity_DBConnect_1 = (module.entity.DBConnect) value; break;
-            case 2: this.module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) value; break;
-        }
-    }
-
-    /**
-     * Returns an object declared in the rule ruleMER_2_1.
-     *
-     * @param index the index of the declared object
-     * @return the value of the corresponding object.
-     */
-    private Object getObject_ruleMER_2_1(int index) {
-        switch (index) {
-            case 0: return module_entity_Action_1;
-            case 1: return module_entity_DBConnect_1;
-            case 2: return module_entity_RuleToHuman_1;
-            default: return null;
-        }
-    }
-
-    /**
-     * Returns all variables bound to the declarations 
-     * of rule ruleMER_2_1
-     *
-     * @return an object array of the variables bound to the
-     *          declarations of this rule.
-     */
-    private Object[] getObjects_ruleMER_2_1() {
-        return new Object[] {
-                            module_entity_Action_1,
-                            module_entity_DBConnect_1,
-                            module_entity_RuleToHuman_1
-                            };
-    }
-
-    /**
-     * Defines all variables bound to the declarations 
-     * of rule ruleMER_2_1
-     *
-     * @param objects an object array of the variables bound to the
-     *          declarations of this rule.
-     */
-    private void setObjects_ruleMER_2_1(Object[] objects) {
-        module_entity_Action_1 = (module.entity.Action) objects[0];
-        module_entity_DBConnect_1 = (module.entity.DBConnect) objects[1];
-        module_entity_RuleToHuman_1 = (module.entity.RuleToHuman) objects[2];
-    }
-
-    /**
-     * Condition 0 of rule ruleMER_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getMer().getId().equals(2L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean ruleMER_2_1_cond_0() {
-        return (module_entity_Action_1.getMer().getId().equals(2L));
-    }
-
-    /**
-     * Checks whether some conditions of rule ruleMER_2_1 is satisfied.
-     *
-     * @param index the index of the condition to be checked.
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean ruleMER_2_1_cond(int index) {
-        switch (index) {
-            case 0: return ruleMER_2_1_cond_0();
-            default: return false;
-        }
-    }
-
-    /**
-     * Checks whether all conditions of rule ruleMER_2_1 that depend only on
-     * the given object are satisfied.
-     *
-     * @param declIndex the index of the declaration to be checked
-     * @return <code>true</code> if all corresponding conditions for
-     *          this rule are satisfied; <code>false</code> otherwise.
-     */
-    private boolean checkConditionsOnlyOf_ruleMER_2_1(int declIndex) {
-        switch (declIndex) {
-            case 0:
-                if (!ruleMER_2_1_cond_0()) return false;
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default: return false;
-        }
-    }
-
-    /**
-     * Checks whether all the conditions of a rule which
-     * reference some declared element of the declarations are
-     * true.
-     *
-     * @param declIndex the index of the declared element.
-     * @return <code>true</code> if the conditions that reference
-     *          up to the given declaration are true;
-     *          <code>false</code> otherwise.
-     */
-    private boolean checkCondForDeclaration_ruleMER_2_1(int declIndex) {
-        switch (declIndex) {
-            case 0:
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default: return false;
-        }
-    }
-
-    /**
-     * Executes the action part of the rule ruleMER_2_1
-     */
-    private void ruleMER_2_1() {
-			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_2_");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "Regra acionada para selecionar a MRE: ruleMER_2_ \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + " Condi��es:  \n");
-			module_entity_RuleToHuman_1.setDescription(module_entity_RuleToHuman_1.getDescription() + "action.getMer().getId().equals(2L);\n");
-			MultipleExternalRepresentation m = module_entity_DBConnect_1.getMER(2L);
-			module_entity_Action_1.setMer(m);
-			module_entity_Action_1.getRegrasAcionadas().add("ruleMER_2_");
-			modified(module_entity_RuleToHuman_1);
-			modified(module_entity_Action_1);
-			System.out.println("Exibi��o de MRE 2 - mre 2");
+			System.out.println("Exibi��o de MRE 7 - MRE 1");
 			flush();
 
 	    }
@@ -422,8 +225,7 @@ import java.util.ArrayList;
      * The names of the rules in this class file
      */
     private static final String[] File_ruleNames = {
-        "ruleMER_1_0",
-        "ruleMER_2_1"
+        "regraMRE_7_0"
     };
 
     /**
@@ -439,7 +241,6 @@ import java.util.ArrayList;
      * The number of declarations of the rules in this class file.
      */
     private static final int[] File_numberOfDeclarations = {
-        3,
         3
     };
 
@@ -456,7 +257,6 @@ import java.util.ArrayList;
      * The number of conditions of the rules in this class file.
      */
     private static final int[] File_numberOfConditions = {
-        1,
         1
     };
 
@@ -479,8 +279,7 @@ import java.util.ArrayList;
      */
     public boolean checkCondition(int ruleIndex, int condIndex) {
         switch (ruleIndex) {
-            case 0: return ruleMER_1_0_cond(condIndex);
-            case 1: return ruleMER_2_1_cond(condIndex);
+            case 0: return regraMRE_7_0_cond(condIndex);
             default: return false;
         }
     }
@@ -497,8 +296,7 @@ import java.util.ArrayList;
      */
     public boolean checkConditionsOnlyOf(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkConditionsOnlyOf_ruleMER_1_0(declIndex);
-            case 1: return checkConditionsOnlyOf_ruleMER_2_1(declIndex);
+            case 0: return checkConditionsOnlyOf_regraMRE_7_0(declIndex);
             default: return false;
         }
     }
@@ -516,8 +314,7 @@ import java.util.ArrayList;
      */
     public boolean checkCondForDeclaration(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return checkCondForDeclaration_ruleMER_1_0(declIndex);
-            case 1: return checkCondForDeclaration_ruleMER_2_1(declIndex);
+            case 0: return checkCondForDeclaration_regraMRE_7_0(declIndex);
             default: return false;
         }
     }
@@ -531,8 +328,7 @@ import java.util.ArrayList;
      */
     public String getDeclaredClassName(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClassName_ruleMER_1_0(declIndex);
-            case 1: return getDeclaredClassName_ruleMER_2_1(declIndex);
+            case 0: return getDeclaredClassName_regraMRE_7_0(declIndex);
             default: return null;
         }
     }
@@ -546,8 +342,7 @@ import java.util.ArrayList;
      */
     public Class getDeclaredClass(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredClass_ruleMER_1_0(declIndex);
-            case 1: return getDeclaredClass_ruleMER_2_1(declIndex);
+            case 0: return getDeclaredClass_regraMRE_7_0(declIndex);
             default: return null;
         }
     }
@@ -559,8 +354,7 @@ import java.util.ArrayList;
      */
     protected void internalFireRule(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: ruleMER_1_0(); break;
-            case 1: ruleMER_2_1(); break;
+            case 0: regraMRE_7_0(); break;
         }
     }
 
@@ -570,7 +364,7 @@ import java.util.ArrayList;
      * @return the number of rules.
      */
     public int getNumberOfRules() {
-        return 2;
+        return 1;
     }
 
     /**
@@ -581,8 +375,7 @@ import java.util.ArrayList;
      */
     public String[] getDeclaredIdentifiers(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getDeclaredIdentifiers_ruleMER_1_0();
-            case 1: return getDeclaredIdentifiers_ruleMER_2_1();
+            case 0: return getDeclaredIdentifiers_regraMRE_7_0();
             default: return new String[0];
         }
     }
@@ -596,8 +389,7 @@ import java.util.ArrayList;
      */
     public void setObject(int ruleIndex, int declIndex, Object value) {
         switch (ruleIndex) {
-            case 0: setObject_ruleMER_1_0(declIndex, value); break;
-            case 1: setObject_ruleMER_2_1(declIndex, value); break;
+            case 0: setObject_regraMRE_7_0(declIndex, value); break;
         }
     }
 
@@ -610,8 +402,7 @@ import java.util.ArrayList;
      */
     public Object getObject(int ruleIndex, int declIndex) {
         switch (ruleIndex) {
-            case 0: return getObject_ruleMER_1_0(declIndex);
-            case 1: return getObject_ruleMER_2_1(declIndex);
+            case 0: return getObject_regraMRE_7_0(declIndex);
             default: return null;
         }
     }
@@ -626,8 +417,7 @@ import java.util.ArrayList;
      */
     public Object[] getObjects(int ruleIndex) {
         switch (ruleIndex) {
-            case 0: return getObjects_ruleMER_1_0();
-            case 1: return getObjects_ruleMER_2_1();
+            case 0: return getObjects_regraMRE_7_0();
             default: return null;
         }
     }
@@ -641,8 +431,7 @@ import java.util.ArrayList;
      */
     public void setObjects(int ruleIndex, Object[] objects) {
         switch (ruleIndex) {
-            case 0: setObjects_ruleMER_1_0(objects); break;
-            case 1: setObjects_ruleMER_2_1(objects); break;
+            case 0: setObjects_regraMRE_7_0(objects); break;
         }
     }
 
@@ -667,7 +456,7 @@ import java.util.ArrayList;
 /**
  * Knowledge base created by JEOPS from file MERManagerKB.rules
  *
- * @version 26/05/2015
+ * @version 30/06/2015
  */
 public class MERManagerKB extends jeops.AbstractKnowledgeBase {
 

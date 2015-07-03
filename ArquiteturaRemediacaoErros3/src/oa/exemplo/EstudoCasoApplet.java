@@ -26,6 +26,7 @@ import module.entity.Goal;
 import module.entity.Path;
 import module.entity.Student;
 import util.StringConstants;
+import java.awt.Font;
 
 public class EstudoCasoApplet extends Applet {
 	/**
@@ -65,78 +66,87 @@ public class EstudoCasoApplet extends Applet {
 		setLayout(null);
 		
 		panel = new JPanel();
-		panel.setBounds(10, 10, 922, 495);
+		panel.setBounds(10, 11, 1232, 629);
 		add(panel);
 		panel.setLayout(null);
 		
 		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField.setName("txt1");
 		textField.setColumns(10);
-		textField.setBounds(139, 94, 30, 30);
+		textField.setBounds(137, 146, 30, 30);
 		panel.add(textField);
 		
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_1.setName("txt0");
 		textField_1.setColumns(10);
-		textField_1.setBounds(98, 94, 30, 30);
+		textField_1.setBounds(96, 146, 30, 30);
 		panel.add(textField_1);
 		
 		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_2.setName("txt2");
 		textField_2.setColumns(10);
-		textField_2.setBounds(177, 94, 30, 30);
+		textField_2.setBounds(175, 146, 30, 30);
 		panel.add(textField_2);
 		
 		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_3.setName("txt3");
 		textField_3.setColumns(10);
-		textField_3.setBounds(98, 135, 30, 30);
+		textField_3.setBounds(96, 187, 30, 30);
 		panel.add(textField_3);
 		
 		textField_4 = new JTextField();
+		textField_4.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_4.setName("txt4");
 		textField_4.setColumns(10);
-		textField_4.setBounds(139, 135, 30, 30);
+		textField_4.setBounds(137, 187, 30, 30);
 		panel.add(textField_4);
 		
 		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_5.setName("txt5");
 		textField_5.setColumns(10);
-		textField_5.setBounds(177, 135, 30, 30);
+		textField_5.setBounds(175, 187, 30, 30);
 		panel.add(textField_5);
 		
 		textField_6 = new JTextField();
+		textField_6.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_6.setName("txt6");
 		textField_6.setColumns(10);
-		textField_6.setBounds(99, 182, 30, 30);
+		textField_6.setBounds(97, 234, 30, 30);
 		panel.add(textField_6);
 		
 		textField_7 = new JTextField();
+		textField_7.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_7.setName("txt7");
 		textField_7.setColumns(10);
-		textField_7.setBounds(141, 182, 30, 30);
+		textField_7.setBounds(139, 234, 30, 30);
 		panel.add(textField_7);
 		
 		textField_8 = new JTextField();
+		textField_8.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_8.setName("txt8");
 		textField_8.setColumns(10);
-		textField_8.setBounds(181, 182, 30, 30);
+		textField_8.setBounds(179, 234, 30, 30);
 		panel.add(textField_8);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(60, 176, 200, 2);
+		separator.setBounds(58, 228, 200, 2);
 		panel.add(separator);
 		
 		lblMer = new JLabel("");
-		lblMer.setBounds(333, 94, 200, 197);
+		lblMer.setBounds(332, 135, 200, 197);
 		panel.add(lblMer);
 		
 		textPane = new JTextPane();
-		textPane.setBounds(566, 38, 320, 403);
+		textPane.setBounds(578, 52, 622, 461);
 		panel.add(textPane);
 		
 		textArea = new JTextArea();
-		textArea.setBounds(20, 11, 272, 57);
+		textArea.setBounds(20, 11, 434, 74);
 		panel.add(textArea);
 		
 		try {

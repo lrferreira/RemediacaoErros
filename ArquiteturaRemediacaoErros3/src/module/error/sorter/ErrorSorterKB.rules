@@ -18,6 +18,753 @@ ruleBase ErrorSorterKB {
 
 
 
+	rule tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getAnswer().getValue().equalsIgnoreCase(" ");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \" \"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Interpretação Equivocada\" \n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getRemediation().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getAnswer().getValue().equalsIgnoreCase(" ");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \" \"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Interpretação Equivocada\" \n");
+			System.out.println("Erro classificado como Interpretação Equivocada");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getRemediation().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"0\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência em relação ao domínio ou uso inadequado de dados\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(4L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"0\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência em relação ao domínio ou uso inadequado de dados\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência em relação ao domínio ou uso inadequado de dados\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getRemediation().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência em relação ao domínio ou uso inadequado de dados\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getRemediation().getId().equals(7L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência em relação ao domínio ou uso inadequado de dados\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(1L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(4L);
+			action.getRemediation().getId().equals(8L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("-");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"-\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência na escolha do operador correto\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(3L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getRemediation().getId().equals(9L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("4");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência na escolha do operador correto\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(3L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getRemediation().getId().equals(10L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"0\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência de regra, teorema ou definição\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getRemediation().getId().equals(11L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência de regra, teorema ou definição\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getRemediation().getId().equals(12L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase(" ");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \" \"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Diretamente Identificáveis\" \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	e classifique o subtipo do erro como \"Deficiência de regra, teorema ou definição\" \n");
+			System.out.println("Erro classificado como Diretamente Identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getRemediation().getId().equals(13L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getAnswer().getValue().equalsIgnoreCase(" ");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \" \"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Indiretamente identificáveis\" \n");
+			System.out.println("Erro classificado como Indiretamente identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(3L));
+			action.getRegrasAcionadas().add("tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getRemediation().getId().equals(14L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"0\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Indiretamente identificáveis\" \n");
+			System.out.println("Erro classificado como Indiretamente identificáveis");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(3L));
+			action.getRegrasAcionadas().add("tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+
+
+	rule tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getRemediation().getId().equals(15L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			!action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Solução não categorizável\" \n");
+			System.out.println("Erro classificado como Solução não categorizável");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(4L));
+			action.getRegrasAcionadas().add("tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getRemediation().getId().equals(16L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			!action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"0\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Solução não categorizável\" \n");
+			System.out.println("Erro classificado como Solução não categorizável");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(4L));
+			action.getRegrasAcionadas().add("tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getRemediation().getId().equals(17L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			!action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Solução não categorizável\" \n");
+			System.out.println("Erro classificado como Solução não categorizável");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(4L));
+			action.getRegrasAcionadas().add("tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(4L);
+			action.getRemediation().getId().equals(18L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			!action.getAnswer().getValue().equalsIgnoreCase("+");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"+\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Solução não categorizável\" \n");
+			System.out.println("Erro classificado como Solução não categorizável");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(4L));
+			action.getRegrasAcionadas().add("tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getRemediation().getId().equals(19L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			!action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Solução não categorizável\" \n");
+			System.out.println("Erro classificado como Solução não categorizável");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(4L));
+			action.getRegrasAcionadas().add("tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getRemediation().getId().equals(20L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			!action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique o tipo de erro como \"Solução não categorizável\" \n");
+			System.out.println("Erro classificado como Solução não categorizável");
+			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(4L));
+			action.getRegrasAcionadas().add("tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");
+			modified(ruleToHuman);
+			modified(action);
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 
 // rule necessary by default

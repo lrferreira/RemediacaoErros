@@ -27,6 +27,9 @@ public class Constants {
 	public static final Long CRITERIO_COMPLEXIDADE = 5L;
 	public static final Long CRITERIO_SUCESSOS_ANTERIORES_MRE = 6L;
 	
+	public static final Long TRATAMENTO_RESPOSTA_ESPECIFICA = 1L;
+	public static final Long TRATAMENTO_QUALQUER_RESPOSTA = 2L;
+	
 	public static final Integer QUANT_COMPLEXIDADE = 5;
 	
 }

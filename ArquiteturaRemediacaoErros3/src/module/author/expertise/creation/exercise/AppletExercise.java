@@ -44,6 +44,7 @@ import module.entity.Goal;
 import module.entity.MultipleExternalRepresentation;
 import module.entity.Path;
 import module.entity.Remediation;
+import module.entity.TreatmentWrongAnswer;
 import util.StringConstants;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -121,6 +122,7 @@ public class AppletExercise extends JApplet {
 	private DBConnect dbCon;
 	
 	Sorter sorter;
+	TreatmentWrongAnswer treatment;
 	static ItemSorter itemSorter;
 	ErrorType errorType;
 	SubErrorType subErrorType;
@@ -130,6 +132,7 @@ public class AppletExercise extends JApplet {
 	private Criterion criterion;
 	
 	private HashMap mapCmbSorter = new HashMap();
+	private HashMap mapCmbTreatmentWrongAnswer = new HashMap();
 	private HashMap mapCmbErrorType = new HashMap();
 	private HashMap mapCmbSubErrorType = new HashMap();
 	private HashMap mapCmbMer = new HashMap();
@@ -419,6 +422,18 @@ public class AppletExercise extends JApplet {
 		
 	}
 
+	private String[] putTreatmentsOnForm() {
+		 
+		 ArrayList<TreatmentWrongAnswer> treatments = dbCon.getTreatments(); 
+        String[] model = new String[treatments.size() + 1];
+        model[0] = "-";
+        for (int i = 1; i < treatments.size() + 1; i++){
+        	model[i] = "" + treatments.get(i-1).getId() + "-" + treatments.get(i-1).getDescription();
+        	mapCmbTreatmentWrongAnswer.put(i, treatments.get(i-1).getId());
+        }
+        return model;
+		
+	}
 	private String[] putExerciseOnForm() {
 		 
 		ArrayList<Exercise> exercises = dbCon.getExercises(); 
@@ -564,15 +579,16 @@ public Component getComponentByName(String name) {
 		getGraph().getModel().beginUpdate();
 		Object parent = getGraph().getDefaultParent(); 
 		Object v1 = getGraph().insertVertex(parent, null, 
-				"Estado Inicial\n" + "txt0 = " + txt0.getText() + "\n"
-									+ "txt1 = " + txt1.getText() + "\n"
-									+ "txt2 = " + txt2.getText() + "\n"
-									+ "txt3 = " + txt3.getText() + "\n"
-									+ "txt4 = " + txt4.getText() + "\n"
-									+ "txt5 = " + txt5.getText() + "\n"
-									+ "txt6 = " + txt6.getText() + "\n"
-									+ "txt7 = " + txt7.getText() + "\n"
-									+ "txt8 = " + txt8.getText() + "\n", 
+				"Estado Inicial\n" 
+									+ "txt0 = " + (!txt0.getText().equals("") ? txt0.getText() : "\" \"") + "\n"
+									+ "txt1 = " + (!txt1.getText().equals("") ? txt1.getText() : "\" \"") + "\n"
+									+ "txt2 = " + (!txt2.getText().equals("") ? txt2.getText() : "\" \"") + "\n"
+									+ "txt3 = " + (!txt3.getText().equals("") ? txt3.getText() : "\" \"") + "\n"
+									+ "txt4 = " + (!txt4.getText().equals("") ? txt4.getText() : "\" \"") + "\n"
+									+ "txt5 = " + (!txt5.getText().equals("") ? txt5.getText() : "\" \"") + "\n"
+									+ "txt6 = " + (!txt6.getText().equals("") ? txt6.getText() : "\" \"") + "\n"
+									+ "txt7 = " + (!txt7.getText().equals("") ? txt7.getText() : "\" \"") + "\n"
+									+ "txt8 = " + (!txt8.getText().equals("") ? txt8.getText() : "\" \"") + "\n", 
 				30, 30, 100, 160, "MyStyleRectangle");
 		getMapEstadosGrafo().put(i, v1);
 		
@@ -595,15 +611,15 @@ public Component getComponentByName(String name) {
 		//criar nodo para estado
 		Object v2 = getGraph().insertVertex(parent, null, 
 				"Estado " + i + "\n" 
-									+ "txt0 = " + txt0.getText() + "\n"
-									+ "txt1 = " + txt1.getText() + "\n"
-									+ "txt2 = " + txt2.getText() + "\n"
-									+ "txt3 = " + txt3.getText() + "\n"
-									+ "txt4 = " + txt4.getText() + "\n"
-									+ "txt5 = " + txt5.getText() + "\n"
-									+ "txt6 = " + txt6.getText() + "\n"
-									+ "txt7 = " + txt7.getText() + "\n"
-									+ "txt8 = " + txt8.getText() + "\n", 
+						+ "txt0 = " + (!txt0.getText().equals("") ? txt0.getText() : "\" \"") + "\n"
+						+ "txt1 = " + (!txt1.getText().equals("") ? txt1.getText() : "\" \"") + "\n"
+						+ "txt2 = " + (!txt2.getText().equals("") ? txt2.getText() : "\" \"") + "\n"
+						+ "txt3 = " + (!txt3.getText().equals("") ? txt3.getText() : "\" \"") + "\n"
+						+ "txt4 = " + (!txt4.getText().equals("") ? txt4.getText() : "\" \"") + "\n"
+						+ "txt5 = " + (!txt5.getText().equals("") ? txt5.getText() : "\" \"") + "\n"
+						+ "txt6 = " + (!txt6.getText().equals("") ? txt6.getText() : "\" \"") + "\n"
+						+ "txt7 = " + (!txt7.getText().equals("") ? txt7.getText() : "\" \"") + "\n"
+						+ "txt8 = " + (!txt8.getText().equals("") ? txt8.getText() : "\" \"") + "\n",  
 				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX()+ 300, 30, 100, 160, "MyStyleRectangle");
 		getMapEstadosGrafo().put(i, v2);
 
@@ -633,8 +649,8 @@ public Component getComponentByName(String name) {
 			goalLast.setSubGoal(goalAt);
 		path.getGoals().add(goalAt);
 		Object v1 = getGraph().insertVertex(parent, null, 
-				"Meta nº " + goalAt.getId() + ":\n inserir o valor " + goalAt.getAnswer().getValue() +
-				"\nno campo " + goalAt.getComponent(), 
+				"Meta nº " + goalAt.getId() + ":\n inserir o valor \"" + goalAt.getAnswer().getValue() +
+				"\"\nno campo \"" + goalAt.getComponent() + "\"", 
 				getGraph().getCellBounds(getMapEstadosGrafo().get(i-1)).getX() + 150, 30, 100, 100, "MyStyleEllipse");
 		
 		getMapMetasGrafo().put(goalAt,v1);
@@ -652,7 +668,7 @@ public Component getComponentByName(String name) {
 
 	public void addNodoRemediacao(Object cell, Goal goal){
 		Object parent = getGraph().getDefaultParent();
-		int i = (int) getKey(getMapMetasGrafo(), cell);
+		//int i = (int) getKey(getMapMetasGrafo(), cell);
 		int j = dbCon.getMaxRemediation() + 1;
 		//Goal goal = path.getGoals().get(i-1);
 		//WrongAnswer wrongAnswer = new WrongAnswer();
@@ -710,7 +726,8 @@ public Component getComponentByName(String name) {
 			//Se o grafo é verde (meta), adicionar nodo de remediação
 			if (graph.getLabel(cell).startsWith("Meta") && !remediationPendent){
 				System.out.println("double-clicked on " + graph.getLabel(cell));
-				currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasGrafo(), cell)));
+				//currentGoal = path.getGoalById(new Long((int) getKey(getMapMetasGrafo(), cell)));
+				currentGoal = (Goal)(getKey(getMapMetasGrafo(), cell));
 				addNodoRemediacao(cell, currentGoal);	
 			}
 			else if (graph.getLabel(cell).startsWith("Remediação")){
@@ -719,19 +736,20 @@ public Component getComponentByName(String name) {
 				//currentGoal = path.getGoalById((dbCon.getRemediation(new Long((int) getKey(getMapRemediacoesGrafo(), cell)))).getGoal().getId());
 				currentGoal = ((Remediation)getKey(getMapRemediacoesGrafo(), cell)).getGoal();
 				currentRemediation = ((Remediation)getKey(getMapRemediacoesGrafo(), cell));
+				tabbedPane.setSelectedIndex(1);
 				if (exercise.getId() != null) {
 					//nova remediação
 					
-					tabbedPane.setSelectedIndex(1);
 					
 					lblExercicio.setText("EXERCÍCIO: " + exercise.getId());
-					lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
-					lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> preencher o campo \"" +
-									currentGoal.getComponent() + "\" com o valor \"" + currentGoal.getAnswer().getValue() + "\"");
+					
 				} else {
 					//currentRemediation = dbCon.getRemediation(Long.parseLong(String.valueOf((((int) getKey(getMapRemediacoesGrafo(), cell))))));
 					//loadRemediacao(currentRemediation);
 				}
+				lblCaminho.setText("CAMINHO DE RESOLUÇÃO: " + currentGoal.getPath().getId());
+				lblMeta.setText("META:    nº \"" + currentGoal.getId() + "\" -> preencher o campo \"" +
+								currentGoal.getComponent() + "\" com o valor \"" + currentGoal.getAnswer().getValue() + "\"");
 				loadRemediacao(currentRemediation);
 														
 			}
@@ -793,7 +811,7 @@ public Component getComponentByName(String name) {
         panel_remed.setLayout(null);
         
         cmbWrongAnswer = new JComboBox();
-        cmbWrongAnswer.setModel(new DefaultComboBoxModel(new String[] {"Estudante informou uma resposta específica", "Estudante cometeu um erro (não importa a resposta)", "Estudante NÃO informou resposta específica"}));
+        cmbWrongAnswer.setModel(new DefaultComboBoxModel(putTreatmentsOnForm()));
         cmbWrongAnswer.setToolTipText("");
         cmbWrongAnswer.setBounds(10, 271, 360, 20);
         panel_remed.add(cmbWrongAnswer);
@@ -907,6 +925,17 @@ public Component getComponentByName(String name) {
 				}
 	    });
         
+        cmbWrongAnswer.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					
+						treatment = dbCon.getTreatment((Long)mapCmbTreatmentWrongAnswer.get(cmbWrongAnswer.getSelectedIndex()));
+					}
+
+				}
+	    });
+        
         cmbErrorType.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
@@ -982,7 +1011,7 @@ public Component getComponentByName(String name) {
 				}
 	    });
         
-        lblMeta = new JLabel("META:    n\u00BA X -> adicionar no campo \"txtY\" o valor \"Z\"");
+        lblMeta = new JLabel("META:    nº X -> inserir no campo \"txtY\" o valor \"Z\"");
         lblMeta.setForeground(new Color(0, 0, 205));
         lblMeta.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblMeta.setBounds(10, 98, 392, 14);
@@ -1011,15 +1040,15 @@ public Component getComponentByName(String name) {
 
         			try{
         				if (currentRemediation != null && currentRemediation.getId() != null)
-        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);
+        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);
         				else 
-        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);        					
+        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
 
 	        		} catch (NumberFormatException e) {
         				if (currentRemediation != null && currentRemediation.getId() != null)
-        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);        					
+        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
         				else 
-        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), textAreaErroRelatado.getText(), mer);        					
+        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
 
 	        		} finally {
 	        			dbCon.save(currentRemediation);
@@ -1033,6 +1062,7 @@ public Component getComponentByName(String name) {
 	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
 	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
 	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
+	        			remediationPendent = false;
 	        		}	        			
         		}
         });
@@ -1099,39 +1129,45 @@ public Component getComponentByName(String name) {
 	
 	public void loadRemediacao(Remediation rem){
         
-		cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
-		cmbSorter.setSelectedIndex(rem.getItemSorter().getSorter() != null ? Integer.parseInt(rem.getItemSorter().getSorter().getId().toString()) : 0);
-		sorter = rem.getItemSorter().getSorter();
 
-		cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(rem.getItemSorter().getSorter().getId()))));
-		cmbErrorType.setSelectedIndex(rem.getItemSorter().getErrorType() != null ? Integer.parseInt(rem.getItemSorter().getErrorType().getId().toString()): 0);
+		cmbSorter.setModel(new DefaultComboBoxModel(putSorterOnForm()));
+		if (rem.getId() != null) {
+			
+			cmbSorter.setSelectedIndex((rem.getItemSorter() != null && rem.getItemSorter().getSorter() != null) ? Integer.parseInt(rem.getItemSorter().getSorter().getId().toString()) : 0);
+			sorter = (rem.getItemSorter() != null && rem.getItemSorter().getSorter() != null) ? rem.getItemSorter().getSorter() : null;
+			
+	
+			    
+		    cmbErrorType.setModel(new DefaultComboBoxModel(putErrorTypeOnForm(dbCon.getErrorsTypesBySorter(rem.getItemSorter().getSorter().getId()))));
+			cmbErrorType.setSelectedIndex((rem.getItemSorter() != null && rem.getItemSorter().getErrorType() != null) ? Integer.parseInt(rem.getItemSorter().getErrorType().getId().toString()): 0);
+			cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
+			cmbCriterion.setSelectedIndex(rem.getCriterion() != null ? Integer.parseInt(rem.getCriterion().getId().toString()) : 0);
+			criterion = rem.getCriterion();
+			
+			errorType = dbCon.getErrorType((Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()));
+			cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
+			cmbSubErrorType.setSelectedIndex((rem.getItemSorter() != null && rem.getItemSorter().getSubErrorType() != null) ? Integer.parseInt(rem.getItemSorter().getSubErrorType().getId().toString()) : 0);
+			subErrorType = (rem.getItemSorter() != null && rem.getItemSorter().getSubErrorType() != null) ? rem.getItemSorter().getSubErrorType() : null;
+			
+			cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(rem.getItemSorter().getMerFunction().getId()))));
+			cmbMre.setSelectedIndex(rem.getMer() != null ? (Integer)getKey(mapCmbMer,rem.getMer().getId()) : 0);
+			setMer(dbCon.getMER((Long)mapCmbMer.get(cmbMre.getSelectedIndex())));
+			if (mer != null)
+				getMer().renderImage(lblMer);
+			
+			
+			txtWrongAnswer.setText(rem.getWrongAnswer());
+			
+			textAreaErroRelatado.setText(rem.getRelatedError());;
+			
+			// lblRemediacao.setText(rem.ge);;
+			
+			//lblMer = new JLabel("");
+			
+			txtTentativas.setText(rem.getAttempts() == 0 ? "" : ""+rem.getAttempts());;
 		
         
-        cmbCriterion.setModel(new DefaultComboBoxModel(putCriterionOnForm()));
-        cmbCriterion.setSelectedIndex(rem.getCriterion() != null ? Integer.parseInt(rem.getCriterion().getId().toString()) : 0);
-        criterion = rem.getCriterion();
-
-        errorType = dbCon.getErrorType((Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()));
-		cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
-        cmbSubErrorType.setSelectedIndex(rem.getItemSorter().getSubErrorType() != null ? Integer.parseInt(rem.getItemSorter().getSubErrorType().getId().toString()) : 0);
-        subErrorType = rem.getItemSorter().getSubErrorType();
-        
-        cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(rem.getItemSorter().getMerFunction().getId()))));
-        cmbMre.setSelectedIndex(rem.getMer() != null ? (Integer)getKey(mapCmbMer,rem.getMer().getId()) : 0);
-        setMer(dbCon.getMER((Long)mapCmbMer.get(cmbMre.getSelectedIndex())));
-		if (mer != null)
-			getMer().renderImage(lblMer);
-        
-        
-        txtWrongAnswer.setText(rem.getWrongAnswer());
-        
-        textAreaErroRelatado.setText(rem.getRelatedError());;
-        
-       // lblRemediacao.setText(rem.ge);;
-        
-        //lblMer = new JLabel("");
-                
-        txtTentativas.setText(rem.getAttempts() == 0 ? "" : ""+rem.getAttempts());;
+		}
         
 
 	}

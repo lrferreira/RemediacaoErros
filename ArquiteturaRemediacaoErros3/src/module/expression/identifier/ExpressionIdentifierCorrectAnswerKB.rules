@@ -15,6 +15,222 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 
 
 
+
+	rule respostaCorreta_CAMINHO_1_META_1_COMPONENTE_txt1_0 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_1_COMPONENTE_txt1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Marque a Meta 1 como satisfeita \n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			action.getRegrasAcionadas().add("respostaCorreta_CAMINHO_1_META_1_COMPONENTE_txt1_");
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule respostaCorreta_CAMINHO_1_META_2_COMPONENTE_txt2_1 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getAnswer().getValue().equalsIgnoreCase("0");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_2_COMPONENTE_txt2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"0\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Marque a Meta 2 como satisfeita \n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			action.getRegrasAcionadas().add("respostaCorreta_CAMINHO_1_META_2_COMPONENTE_txt2_");
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule respostaCorreta_CAMINHO_1_META_3_COMPONENTE_txt5_2 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_3_COMPONENTE_txt5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Marque a Meta 3 como satisfeita \n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			action.getRegrasAcionadas().add("respostaCorreta_CAMINHO_1_META_3_COMPONENTE_txt5_");
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule respostaCorreta_CAMINHO_1_META_4_COMPONENTE_txt3_3 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(4L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getAnswer().getValue().equalsIgnoreCase("+");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_4_COMPONENTE_txt3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"+\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Marque a Meta 4 como satisfeita \n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			action.getRegrasAcionadas().add("respostaCorreta_CAMINHO_1_META_4_COMPONENTE_txt3_");
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule respostaCorreta_CAMINHO_1_META_5_COMPONENTE_txt8_4 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getAnswer().getValue().equalsIgnoreCase("6");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_5_COMPONENTE_txt8_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Marque a Meta 5 como satisfeita \n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			action.getRegrasAcionadas().add("respostaCorreta_CAMINHO_1_META_5_COMPONENTE_txt8_");
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule respostaCorreta_CAMINHO_1_META_6_COMPONENTE_txt7_5 {
+
+		declarations
+			Action action;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getAnswer().getValue().equalsIgnoreCase("1");
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta correta: respostaCorreta_CAMINHO_1_META_6_COMPONENTE_txt7_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta = \"1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Marque a Meta 6 como satisfeita \n");
+			System.out.println("Resposta Correta (1) detectada\n");
+			action.setCorrect(true);
+			action.setAnswer(new CorrectAnswer(action.getAnswer().getValue()));
+			action.getGoal().setSatisfied(true);
+			action.getRegrasAcionadas().add("respostaCorreta_CAMINHO_1_META_6_COMPONENTE_txt7_");
+			modified(action);
+			modified(ruleToHuman);
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 	
 }
