@@ -175,18 +175,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(1L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(1L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -199,7 +187,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_1();
             case 2: return funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_2();
             case 3: return funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_3();
-            case 4: return funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_4();
             default: return false;
         }
     }
@@ -219,7 +206,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_1()) return false;
                 if (!funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_2()) return false;
                 if (!funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_3()) return false;
-                if (!funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -433,18 +419,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(2L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(2L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -457,7 +431,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_1();
             case 2: return funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_2();
             case 3: return funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_3();
-            case 4: return funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_4();
             default: return false;
         }
     }
@@ -477,7 +450,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_1()) return false;
                 if (!funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_2()) return false;
                 if (!funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_3()) return false;
-                if (!funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -703,18 +675,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(3L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(3L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -728,7 +688,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_3();
             case 4: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_4();
-            case 5: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_5();
             default: return false;
         }
     }
@@ -749,7 +708,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_3()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_4()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -976,18 +934,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(4L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(4L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -1001,7 +947,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_3();
             case 4: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_4();
-            case 5: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_5();
             default: return false;
         }
     }
@@ -1022,7 +967,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_3()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_4()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -1249,18 +1193,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(5L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(5L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -1274,7 +1206,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_3();
             case 4: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_4();
-            case 5: return funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_5();
             default: return false;
         }
     }
@@ -1295,7 +1226,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_3()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_4()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -1522,18 +1452,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(6L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(6L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -1547,7 +1465,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_3();
             case 4: return funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_4();
-            case 5: return funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_5();
             default: return false;
         }
     }
@@ -1568,7 +1485,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_3()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_4()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -1795,18 +1711,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(7L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(7L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -1820,7 +1724,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_3();
             case 4: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_4();
-            case 5: return funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_5();
             default: return false;
         }
     }
@@ -1841,7 +1744,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_3()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_4()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -2068,18 +1970,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(8L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(8L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -2093,7 +1983,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_3();
             case 4: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_4();
-            case 5: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_5();
             default: return false;
         }
     }
@@ -2114,7 +2003,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_3()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_4()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -2341,18 +2229,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(9L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(9L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -2366,7 +2242,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_3();
             case 4: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_4();
-            case 5: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_5();
             default: return false;
         }
     }
@@ -2387,7 +2262,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_3()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_4()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -2614,18 +2488,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(10L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(10L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -2639,7 +2501,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_3();
             case 4: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_4();
-            case 5: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_5();
             default: return false;
         }
     }
@@ -2660,7 +2521,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_3()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_4()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -2887,18 +2747,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(11L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(11L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -2912,7 +2760,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_3();
             case 4: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_4();
-            case 5: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_5();
             default: return false;
         }
     }
@@ -2933,7 +2780,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_3()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_4()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -3160,18 +3006,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 5 of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(12L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_5() {
-        return (module_entity_Action_1.getRemediation().getId().equals(12L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -3185,7 +3019,6 @@ import module.entity.DBConnect;
             case 2: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_3();
             case 4: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_4();
-            case 5: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_5();
             default: return false;
         }
     }
@@ -3206,7 +3039,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_3()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_4()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_5()) return false;
                 return true;
             case 1:
                 return true;
@@ -3421,18 +3253,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(13L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(13L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -3445,7 +3265,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_1();
             case 2: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_3();
-            case 4: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_4();
             default: return false;
         }
     }
@@ -3465,7 +3284,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_1()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_3()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -3679,18 +3497,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(14L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(14L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -3703,7 +3509,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_1();
             case 2: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_2();
             case 3: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_3();
-            case 4: return funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_4();
             default: return false;
         }
     }
@@ -3723,7 +3528,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_1()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_2()) return false;
                 if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_3()) return false;
-                if (!funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -3937,18 +3741,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(15L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(15L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -3961,7 +3753,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_4();
             default: return false;
         }
     }
@@ -3981,7 +3772,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4195,18 +3985,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(15L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(15L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -4219,7 +3997,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_4();
             default: return false;
         }
     }
@@ -4239,7 +4016,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4453,18 +4229,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(16L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(16L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -4477,7 +4241,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_4();
             default: return false;
         }
     }
@@ -4497,7 +4260,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4711,18 +4473,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(17L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(17L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -4735,7 +4485,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_4();
             default: return false;
         }
     }
@@ -4755,7 +4504,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4969,18 +4717,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(18L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(18L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -4993,7 +4729,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_4();
             default: return false;
         }
     }
@@ -5013,7 +4748,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -5227,18 +4961,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(19L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(19L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -5251,7 +4973,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_4();
             default: return false;
         }
     }
@@ -5271,7 +4992,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -5485,18 +5205,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(20L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(20L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -5509,7 +5217,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_4();
             default: return false;
         }
     }
@@ -5529,7 +5236,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -5948,18 +5654,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(15L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(15L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -5972,7 +5666,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_4();
             default: return false;
         }
     }
@@ -5992,7 +5685,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -6206,18 +5898,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(16L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(16L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -6230,7 +5910,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_4();
             default: return false;
         }
     }
@@ -6250,7 +5929,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -6464,18 +6142,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(17L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(17L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -6488,7 +6154,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_4();
             default: return false;
         }
     }
@@ -6508,7 +6173,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -6722,18 +6386,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(18L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(18L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -6746,7 +6398,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_4();
             default: return false;
         }
     }
@@ -6766,7 +6417,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -6980,18 +6630,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(19L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(19L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -7004,7 +6642,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_4();
             default: return false;
         }
     }
@@ -7024,7 +6661,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -7238,18 +6874,6 @@ import module.entity.DBConnect;
     }
 
     /**
-     * Condition 4 of rule funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27.<p>
-     * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(20L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_4() {
-        return (module_entity_Action_1.getRemediation().getId().equals(20L));
-    }
-
-    /**
      * Checks whether some conditions of rule funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27 is satisfied.
      *
      * @param index the index of the condition to be checked.
@@ -7262,7 +6886,6 @@ import module.entity.DBConnect;
             case 1: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_1();
             case 2: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_2();
             case 3: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_3();
-            case 4: return funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_4();
             default: return false;
         }
     }
@@ -7282,7 +6905,6 @@ import module.entity.DBConnect;
                 if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_1()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_2()) return false;
                 if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_3()) return false;
-                if (!funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -7431,18 +7053,8 @@ import module.entity.DBConnect;
      * The number of conditions of the rules in this class file.
      */
     private static final int[] File_numberOfConditions = {
-        5,
-        5,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
+        4,
+        4,
         5,
         5,
         5,
@@ -7452,13 +7064,23 @@ import module.entity.DBConnect;
         5,
         5,
         5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
         1,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
     };
 
     /**
@@ -7954,7 +7576,7 @@ import module.entity.DBConnect;
 /**
  * Knowledge base created by JEOPS from file MERFunctionSorterKB.rules
  *
- * @version 02/07/2015
+ * @version 04/07/2015
  */
 public class MERFunctionSorterKB extends jeops.AbstractKnowledgeBase {
 

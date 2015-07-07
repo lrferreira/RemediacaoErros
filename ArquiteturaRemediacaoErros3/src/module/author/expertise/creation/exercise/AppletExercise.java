@@ -930,7 +930,7 @@ public Component getComponentByName(String name) {
 			public void itemStateChanged(ItemEvent e) {
 				if(e.getStateChange() == ItemEvent.SELECTED) {
 					
-						treatment = dbCon.getTreatment((Long)mapCmbTreatmentWrongAnswer.get(cmbWrongAnswer.getSelectedIndex()));
+						treatment = dbCon.getTreatmentWrongAnswer((Long)mapCmbTreatmentWrongAnswer.get(cmbWrongAnswer.getSelectedIndex()));
 					}
 
 				}

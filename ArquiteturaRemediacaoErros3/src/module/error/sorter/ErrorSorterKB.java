@@ -153,36 +153,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(1L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(1L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_3() {
+    private boolean tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt1"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0.<p>
+     * Condition 3 of rule tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase(" ")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_4() {
+    private boolean tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase(" "));
     }
 
@@ -199,7 +187,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_1();
             case 2: return tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_2();
             case 3: return tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_3();
-            case 4: return tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_4();
             default: return false;
         }
     }
@@ -219,7 +206,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_1()) return false;
                 if (!tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_2()) return false;
                 if (!tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_3()) return false;
-                if (!tipoErro_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -411,36 +397,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(2L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(2L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt2")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_3() {
+    private boolean tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt2"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1.<p>
+     * Condition 3 of rule tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase(" ")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_4() {
+    private boolean tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase(" "));
     }
 
@@ -457,7 +431,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_1();
             case 2: return tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_2();
             case 3: return tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_3();
-            case 4: return tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_4();
             default: return false;
         }
     }
@@ -477,7 +450,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_1()) return false;
                 if (!tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_2()) return false;
                 if (!tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_3()) return false;
-                if (!tipoErro_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -669,36 +641,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(3L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(3L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt5")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_3() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt5"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("0")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_4() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("0"));
     }
 
@@ -715,7 +675,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_1();
             case 2: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_2();
             case 3: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_3();
-            case 4: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_4();
             default: return false;
         }
     }
@@ -735,7 +694,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -929,36 +887,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(4L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(4L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_3() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt1"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("0")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_4() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("0"));
     }
 
@@ -975,7 +921,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_1();
             case 2: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_2();
             case 3: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_3();
-            case 4: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_4();
             default: return false;
         }
     }
@@ -995,7 +940,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -1189,36 +1133,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(5L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(5L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_3() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt1"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("6")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_4() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("6"));
     }
 
@@ -1235,7 +1167,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_1();
             case 2: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_2();
             case 3: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_3();
-            case 4: return tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_4();
             default: return false;
         }
     }
@@ -1255,7 +1186,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -1449,36 +1379,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(6L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(6L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt2")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_3() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt2"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("6")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_4() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("6"));
     }
 
@@ -1495,7 +1413,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_1();
             case 2: return tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_2();
             case 3: return tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_3();
-            case 4: return tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_4();
             default: return false;
         }
     }
@@ -1515,7 +1432,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -1709,36 +1625,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(7L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(7L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt5")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_3() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt5"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_4() {
+    private boolean tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("1"));
     }
 
@@ -1755,7 +1659,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_1();
             case 2: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_2();
             case 3: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_3();
-            case 4: return tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_4();
             default: return false;
         }
     }
@@ -1775,7 +1678,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -1969,36 +1871,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(8L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(8L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt3")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_3() {
+    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt3"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("-")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_4() {
+    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("-"));
     }
 
@@ -2015,7 +1905,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_1();
             case 2: return tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_2();
             case 3: return tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_3();
-            case 4: return tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_4();
             default: return false;
         }
     }
@@ -2035,7 +1924,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -2229,36 +2117,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(9L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(9L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt8")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_3() {
+    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt8"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("4")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_4() {
+    private boolean tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("4"));
     }
 
@@ -2275,7 +2151,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_1();
             case 2: return tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_2();
             case 3: return tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_3();
-            case 4: return tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_4();
             default: return false;
         }
     }
@@ -2295,7 +2170,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -2489,36 +2363,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(10L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(10L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt8")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_3() {
+    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt8"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("0")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_4() {
+    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("0"));
     }
 
@@ -2535,7 +2397,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_1();
             case 2: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_2();
             case 3: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_3();
-            case 4: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_4();
             default: return false;
         }
     }
@@ -2555,7 +2416,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -2749,36 +2609,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(11L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(11L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt8")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_3() {
+    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt8"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_4() {
+    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("1"));
     }
 
@@ -2795,7 +2643,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_1();
             case 2: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_2();
             case 3: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_3();
-            case 4: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_4();
             default: return false;
         }
     }
@@ -2815,7 +2662,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -3009,36 +2855,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(12L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(12L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt8")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_3() {
+    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt8"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11.<p>
+     * Condition 3 of rule tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase(" ")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_4() {
+    private boolean tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase(" "));
     }
 
@@ -3055,7 +2889,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_1();
             case 2: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_2();
             case 3: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_3();
-            case 4: return tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_4();
             default: return false;
         }
     }
@@ -3075,7 +2908,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_1()) return false;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_2()) return false;
                 if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_3()) return false;
-                if (!tipoErro_2_suberrortype_2_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -3269,36 +3101,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(13L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(13L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt7")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_3() {
+    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt7"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12.<p>
+     * Condition 3 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase(" ")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_4() {
+    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase(" "));
     }
 
@@ -3315,7 +3135,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_1();
             case 2: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_2();
             case 3: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_3();
-            case 4: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_4();
             default: return false;
         }
     }
@@ -3335,7 +3154,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_1()) return false;
                 if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_2()) return false;
                 if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_3()) return false;
-                if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -3527,36 +3345,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(14L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(14L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt7")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_3() {
+    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt7"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13.<p>
+     * Condition 3 of rule tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13.<p>
      * The original expression was:<br>
      * <code>action.getAnswer().getValue().equalsIgnoreCase("0")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_4() {
+    private boolean tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_3() {
         return (module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("0"));
     }
 
@@ -3573,7 +3379,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_1();
             case 2: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_2();
             case 3: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_3();
-            case 4: return tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_4();
             default: return false;
         }
     }
@@ -3593,7 +3398,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_1()) return false;
                 if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_2()) return false;
                 if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_3()) return false;
-                if (!tipoErro_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -3787,36 +3591,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(15L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(15L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_3() {
+    private boolean tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt1"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14.<p>
+     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14.<p>
      * The original expression was:<br>
      * <code>!action.getAnswer().getValue().equalsIgnoreCase("1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_4() {
+    private boolean tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_3() {
         return (!module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("1"));
     }
 
@@ -3833,7 +3625,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_1();
             case 2: return tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_2();
             case 3: return tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_3();
-            case 4: return tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_4();
             default: return false;
         }
     }
@@ -3853,7 +3644,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_1()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_2()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_3()) return false;
-                if (!tipoErro_4_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4046,36 +3836,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(16L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(16L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt2")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_3() {
+    private boolean tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt2"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15.<p>
+     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15.<p>
      * The original expression was:<br>
      * <code>!action.getAnswer().getValue().equalsIgnoreCase("0")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_4() {
+    private boolean tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_3() {
         return (!module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("0"));
     }
 
@@ -4092,7 +3870,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_1();
             case 2: return tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_2();
             case 3: return tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_3();
-            case 4: return tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_4();
             default: return false;
         }
     }
@@ -4112,7 +3889,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_1()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_2()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_3()) return false;
-                if (!tipoErro_4_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_15_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4305,36 +4081,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(17L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(17L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt5")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_3() {
+    private boolean tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt5"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16.<p>
+     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16.<p>
      * The original expression was:<br>
      * <code>!action.getAnswer().getValue().equalsIgnoreCase("6")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_4() {
+    private boolean tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_3() {
         return (!module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("6"));
     }
 
@@ -4351,7 +4115,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_1();
             case 2: return tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_2();
             case 3: return tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_3();
-            case 4: return tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_4();
             default: return false;
         }
     }
@@ -4371,7 +4134,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_1()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_2()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_3()) return false;
-                if (!tipoErro_4_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_16_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4564,36 +4326,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(18L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(18L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt3")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_3() {
+    private boolean tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt3"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17.<p>
+     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17.<p>
      * The original expression was:<br>
      * <code>!action.getAnswer().getValue().equalsIgnoreCase("+")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_4() {
+    private boolean tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_3() {
         return (!module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("+"));
     }
 
@@ -4610,7 +4360,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_1();
             case 2: return tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_2();
             case 3: return tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_3();
-            case 4: return tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_4();
             default: return false;
         }
     }
@@ -4630,7 +4379,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_1()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_2()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_3()) return false;
-                if (!tipoErro_4_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_17_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -4823,36 +4571,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(19L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(19L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt8")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_3() {
+    private boolean tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt8"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18.<p>
+     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18.<p>
      * The original expression was:<br>
      * <code>!action.getAnswer().getValue().equalsIgnoreCase("6")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_4() {
+    private boolean tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_3() {
         return (!module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("6"));
     }
 
@@ -4869,7 +4605,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_1();
             case 2: return tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_2();
             case 3: return tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_3();
-            case 4: return tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_4();
             default: return false;
         }
     }
@@ -4889,7 +4624,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_1()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_2()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_3()) return false;
-                if (!tipoErro_4_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_18_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -5082,36 +4816,24 @@ import module.entity.DBConnect;
     /**
      * Condition 2 of rule tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19.<p>
      * The original expression was:<br>
-     * <code>action.getRemediation().getId().equals(20L)</code>
-     *
-     * @return <code>true</code> if the condition is satisfied;
-     *          <code>false</code> otherwise.
-     */
-    private boolean tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_2() {
-        return (module_entity_Action_1.getRemediation().getId().equals(20L));
-    }
-
-    /**
-     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19.<p>
-     * The original expression was:<br>
      * <code>action.getGoal().getComponent().equalsIgnoreCase("txt7")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_3() {
+    private boolean tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_2() {
         return (module_entity_Action_1.getGoal().getComponent().equalsIgnoreCase("txt7"));
     }
 
     /**
-     * Condition 4 of rule tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19.<p>
+     * Condition 3 of rule tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19.<p>
      * The original expression was:<br>
      * <code>!action.getAnswer().getValue().equalsIgnoreCase("1")</code>
      *
      * @return <code>true</code> if the condition is satisfied;
      *          <code>false</code> otherwise.
      */
-    private boolean tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_4() {
+    private boolean tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_3() {
         return (!module_entity_Action_1.getAnswer().getValue().equalsIgnoreCase("1"));
     }
 
@@ -5128,7 +4850,6 @@ import module.entity.DBConnect;
             case 1: return tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_1();
             case 2: return tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_2();
             case 3: return tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_3();
-            case 4: return tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_4();
             default: return false;
         }
     }
@@ -5148,7 +4869,6 @@ import module.entity.DBConnect;
                 if (!tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_1()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_2()) return false;
                 if (!tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_3()) return false;
-                if (!tipoErro_4_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_19_cond_4()) return false;
                 return true;
             case 1:
                 return true;
@@ -5459,26 +5179,26 @@ import module.entity.DBConnect;
      * The number of conditions of the rules in this class file.
      */
     private static final int[] File_numberOfConditions = {
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
         0
     };
 
@@ -5898,7 +5618,7 @@ import module.entity.DBConnect;
 /**
  * Knowledge base created by JEOPS from file ErrorSorterKB.rules
  *
- * @version 02/07/2015
+ * @version 04/07/2015
  */
 public class ErrorSorterKB extends jeops.AbstractKnowledgeBase {
 

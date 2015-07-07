@@ -32,7 +32,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getRemediation().getId().equals(1L);
+			//action.getRemediation().getId().equals(1L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_");
@@ -68,7 +68,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getRemediation().getId().equals(2L);
+			//action.getRemediation().getId().equals(2L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_");
@@ -105,7 +105,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(3L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getRemediation().getId().equals(3L);
+			//action.getRemediation().getId().equals(3L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_");
@@ -143,7 +143,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getRemediation().getId().equals(4L);
+			//action.getRemediation().getId().equals(4L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_");
@@ -181,7 +181,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getRemediation().getId().equals(5L);
+			//action.getRemediation().getId().equals(5L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_");
@@ -219,7 +219,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getRemediation().getId().equals(6L);
+			//action.getRemediation().getId().equals(6L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_");
@@ -257,7 +257,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(3L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getRemediation().getId().equals(7L);
+			//action.getRemediation().getId().equals(7L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_");
@@ -295,7 +295,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(4L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			action.getRemediation().getId().equals(8L);
+			//action.getRemediation().getId().equals(8L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_");
@@ -333,7 +333,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(9L);
+			//action.getRemediation().getId().equals(9L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_");
@@ -371,7 +371,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(10L);
+			//action.getRemediation().getId().equals(10L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_");
@@ -409,7 +409,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(11L);
+			//action.getRemediation().getId().equals(11L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_");
@@ -447,7 +447,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(12L);
+			//action.getRemediation().getId().equals(12L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_");
@@ -484,7 +484,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(6L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			action.getRemediation().getId().equals(13L);
+			//action.getRemediation().getId().equals(13L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_");
@@ -520,7 +520,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(6L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			action.getRemediation().getId().equals(14L);
+			//action.getRemediation().getId().equals(14L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_");
@@ -556,7 +556,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getRemediation().getId().equals(15L);
+			//action.getRemediation().getId().equals(15L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
@@ -592,7 +592,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getRemediation().getId().equals(15L);
+			//action.getRemediation().getId().equals(15L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
@@ -628,7 +628,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getRemediation().getId().equals(16L);
+			//action.getRemediation().getId().equals(16L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
@@ -664,7 +664,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(3L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getRemediation().getId().equals(17L);
+			//action.getRemediation().getId().equals(17L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
@@ -700,7 +700,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(4L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			action.getRemediation().getId().equals(18L);
+			//action.getRemediation().getId().equals(18L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
@@ -736,7 +736,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(19L);
+			//action.getRemediation().getId().equals(19L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_");
@@ -772,7 +772,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(6L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			action.getRemediation().getId().equals(20L);
+			//action.getRemediation().getId().equals(20L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");
@@ -843,7 +843,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			action.getRemediation().getId().equals(15L);
+			//action.getRemediation().getId().equals(15L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
@@ -879,7 +879,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			action.getRemediation().getId().equals(16L);
+			//action.getRemediation().getId().equals(16L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
@@ -915,7 +915,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(3L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			action.getRemediation().getId().equals(17L);
+			//action.getRemediation().getId().equals(17L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
@@ -951,7 +951,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(4L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			action.getRemediation().getId().equals(18L);
+			//action.getRemediation().getId().equals(18L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
@@ -987,7 +987,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(19L);
+			//action.getRemediation().getId().equals(19L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_");
@@ -1023,7 +1023,7 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(6L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			action.getRemediation().getId().equals(20L);
+			//action.getRemediation().getId().equals(20L);
 
 		actions
 			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");

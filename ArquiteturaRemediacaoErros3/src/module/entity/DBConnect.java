@@ -268,7 +268,7 @@ public class DBConnect {
 		return c;
 	}
 
-	public TreatmentWrongAnswer getTreatment(Long id_treatment){
+	public TreatmentWrongAnswer getTreatmentWrongAnswer(Long id_treatment){
 		TreatmentWrongAnswer t = null;
 		ResultSet rs;
 		try {
@@ -1128,6 +1128,7 @@ public class DBConnect {
                 remediation.setRelatedError(rs.getString("relatederror"));
                 remediation.setWrongAnswer(rs.getString("wronganswer"));
                 remediation.setMer(getMER(rs.getLong("id_mer")));
+                remediation.setTreatmentWrongAnswer(getTreatmentWrongAnswer(rs.getLong("id_treatmentwronganswer")));
                 
 
             }
