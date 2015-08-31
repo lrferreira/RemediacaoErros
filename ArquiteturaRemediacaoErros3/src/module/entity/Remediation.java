@@ -1,5 +1,7 @@
 package module.entity;
 
+import java.util.ArrayList;
+
 import module.author.expertise.creation.sorters.entity.ItemSorter;
 
 public class Remediation {
@@ -46,6 +48,13 @@ public class Remediation {
 		this.mer = mer;
 	}
 	
+	public static boolean hasTreatment(TreatmentWrongAnswer t, ArrayList<Remediation> rs){
+		for (Remediation r : rs){
+			if (r.getTreatmentWrongAnswer().equals(t))
+				return true;
+		}
+		return false;
+	}
 	
 	public Long getId() {
 		return id;

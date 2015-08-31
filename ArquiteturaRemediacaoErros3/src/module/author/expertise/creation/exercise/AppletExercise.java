@@ -45,12 +45,15 @@ import module.entity.MultipleExternalRepresentation;
 import module.entity.Path;
 import module.entity.Remediation;
 import module.entity.TreatmentWrongAnswer;
+import util.Constants;
 import util.StringConstants;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import javax.swing.JTextPane;
+import java.awt.SystemColor;
 
 
 public class AppletExercise extends JApplet {
@@ -126,7 +129,6 @@ public class AppletExercise extends JApplet {
 	static ItemSorter itemSorter;
 	ErrorType errorType;
 	SubErrorType subErrorType;
-	private JLabel lblRemediacao;
 	private JTextArea textAreaErroRelatado;
 	private MultipleExternalRepresentation mer;
 	private Criterion criterion;
@@ -145,6 +147,8 @@ public class AppletExercise extends JApplet {
 	private Map<String, Object> edgeStyle;
 	private Map<String, Object> edgeRemStyle;
 	private boolean remediationPendent;
+	private JTextArea txtRemediacao;
+	private JTextArea txtMsg;
 
 	
 	
@@ -952,7 +956,7 @@ public Component getComponentByName(String name) {
     										(Long)mapCmbErrorType.get(cmbErrorType.getSelectedIndex()),
     							null);
     					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
-    					lblRemediacao.setText("<html><p>"+itemSorter.getRemediation()+"</p></html>");
+    					txtRemediacao.setText(itemSorter.getRemediation());
     					cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
 				}
 
@@ -970,7 +974,7 @@ public Component getComponentByName(String name) {
 							(Long)mapCmbSubErrorType.get(cmbSubErrorType.getSelectedIndex()));
 					lblMerFunction.setText(itemSorter.getMerFunction().getId() + " - " + itemSorter.getMerFunction().getDescription());
 					//cmbSubErrorType.setModel(new DefaultComboBoxModel(putSubErrorTypeOnForm(dbCon.getSubErrorsTypesByErrorType(errorType.getId()))));
-					lblRemediacao.setText(itemSorter.getRemediation());
+					txtRemediacao.setText(itemSorter.getRemediation());
 					cmbMre.setModel(new DefaultComboBoxModel(putMerOnForm(dbCon.getMersByMerFunction(itemSorter.getMerFunction().getId()))));
 				}
 				
@@ -1038,35 +1042,40 @@ public Component getComponentByName(String name) {
         button.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
 
-        			try{
-        				if (currentRemediation != null && currentRemediation.getId() != null)
-        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);
-        				else 
-        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
-
-	        		} catch (NumberFormatException e) {
-        				if (currentRemediation != null && currentRemediation.getId() != null)
-        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
-        				else 
-        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
-
-	        		} finally {
-	        			dbCon.save(currentRemediation);
-	        			RulesFactory.createRules(currentRemediation, mer);				    
-	        			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
-	        			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
-	        			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
-	        			
-	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
-	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
-	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
-	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
-	        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
-	        			remediationPendent = false;
-	        		}	        			
-        		}
+        			txtMsg.setText("");
+        			
+	        		if (validateRemediation() == true){
+		        		
+	        			try{
+	        				if (currentRemediation != null && currentRemediation.getId() != null)
+	        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);
+	        				else 
+	        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, Integer.parseInt(txtTentativas.getText()), txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
+	
+		        		} catch (NumberFormatException e) {
+	        				if (currentRemediation != null && currentRemediation.getId() != null)
+	        					currentRemediation = new Remediation(currentRemediation.getId(), currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
+	        				else 
+	        					currentRemediation = new Remediation(null, currentGoal, itemSorter, criterion, null, txtWrongAnswer.getText(), treatment, textAreaErroRelatado.getText(), mer);        					
+	
+		        		} finally {
+		        			dbCon.save(currentRemediation);
+		        			RulesFactory.createRules(currentRemediation, mer);				    
+		        			RulesFactory.compile(StringConstants.FILE_EXPRESSION_IDENTIFIER_WRONG_ANSWER_KB);
+		        			RulesFactory.compile(StringConstants.FILE_ERROR_SORTER_KB);
+		        			RulesFactory.compile(StringConstants.FILE_MERFUNCTION_SORTER_KB);
+		        			
+		        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SPECIFIC_MER_KB);
+		        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_NOT_SPECIFIC_MER_KB);
+		        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_SWYPE_MERFUNCTION_KB);
+		        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_COMPLEXITY_KB);
+		        			RulesFactory.compile(StringConstants.FILE_MER_MANAGER_ERROR_PERSIST_KB);
+		        			remediationPendent = false;
+		        		}	        			
+	        		}
+        	}
         });
-        button.setBounds(692, 540, 179, 23);
+        button.setBounds(721, 455, 179, 23);
         panel_remed.add(button);
         
         
@@ -1103,11 +1112,6 @@ public Component getComponentByName(String name) {
         lblRemediao.setBounds(10, 526, 132, 14);
         panel_remed.add(lblRemediao);
         
-        lblRemediacao = new JLabel("");
-        lblRemediacao.setBackground(new Color(192, 192, 192));
-        lblRemediacao.setBounds(10, 551, 534, 60);
-        panel_remed.add(lblRemediacao);
-        
         lblMer = new JLabel("");
         lblMer.setBackground(new Color(220, 220, 220));
         lblMer.setBounds(708, 177, 354, 321);
@@ -1123,6 +1127,23 @@ public Component getComponentByName(String name) {
         txtTentativas.setBounds(897, 45, 86, 20);
         panel_remed.add(txtTentativas);
         txtTentativas.setColumns(10);
+        
+        txtMsg = new JTextArea();
+        txtMsg.setWrapStyleWord(true);
+        txtMsg.setLineWrap(true);
+        txtMsg.setEditable(false);
+        txtMsg.setForeground(Color.RED);
+        txtMsg.setBackground(SystemColor.control);
+        txtMsg.setBounds(721, 510, 407, 90);
+        panel_remed.add(txtMsg);
+        
+        txtRemediacao = new JTextArea();
+        txtRemediacao.setWrapStyleWord(true);
+        txtRemediacao.setLineWrap(true);
+        txtRemediacao.setBackground(SystemColor.control);
+        txtRemediacao.setEditable(false);
+        txtRemediacao.setBounds(20, 551, 524, 43);
+        panel_remed.add(txtRemediacao);
 
 	}
 
@@ -1172,6 +1193,57 @@ public Component getComponentByName(String name) {
 
 	}
 
+	public boolean validateRemediation(){
+		if (treatment == null) {
+			txtMsg.setText("Informe um tratamento para a resposta");
+			return false;
+		}
+		// verificar tratamento da resposta, se já existe "não importa a resposta"
+		if ((treatment.getId().equals(Constants.TRATAMENTO_QUALQUER_RESPOSTA)) &&
+			Remediation.hasTreatment(treatment, dbCon.getRemediationsByGoal(currentGoal.getId()))){
+				txtMsg.setText("-> Já existe remediação nesta meta para este tratamento de resposta (" + treatment.getDescription() + ")."
+						+ "\n Permitido apenas uma remediação para este caso.");
+				return false;
+			}
+		if (treatment.getId().equals(Constants.TRATAMENTO_RESPOSTA_ESPECIFICA) &&
+				txtWrongAnswer.getText() == null){
+			txtMsg.setText("Para o tratamento de resposta selecionado, deve ser informada uma resposta.");
+			return false;
+		}
+		if (sorter == null){
+			txtMsg.setText("O usuário deve selecionar um classificador");
+			return false;
+		}
+		if (itemSorter == null){
+			txtMsg.setText("O usuário deve selecionar o tipo de erro.");
+			return false;
+		}
+		if (itemSorter.getErrorType() != null && 
+					!itemSorter.getErrorType().getSubErrorTypes().isEmpty() && 
+						itemSorter.getSubErrorType() == null){
+			txtMsg.setText("O usuário deve selecionar um subtipo de erro para o tipo de erro selecionado.");
+			return false;
+		}
+		if (criterion == null){
+			txtMsg.setText("O usuário deve selecionar um critério de remediação.");
+			return false;
+		}
+		if (criterion != null &&
+				(criterion.getId().equals(Constants.CRITERIO_MRE_ESPECIFICA_ERRO) || criterion.getId().equals(Constants.CRITERIO_NAO_USAR_MRE_ESPECIFICA)) && 
+				mer != null){
+			txtMsg.setText("Especificar MRE para o critério de seleção selecionado.");
+		}
+		if (criterion != null &&
+				txtTentativas.getText() != null &&
+				criterion.getId().equals(Constants.CRITERIO_PERSISTENCIA_ERRO) &&
+				(!txtTentativas.getText().matches("[+]?\\d*(\\.\\d+)?") ||
+				Integer.parseInt(txtTentativas.getText()) <= 0 )  ){
+			txtMsg.setText("Informar um valor válido no campo \"número de tentativas\" para o critério selecionado.");
+		}
+
+		return true;
+	}
+	
 	public mxGraph getGraph() {
 		return graph;
 	}

@@ -34,6 +34,7 @@ import module.entity.MERFunction;
 import org.xml.sax.SAXException;
 
 import javax.swing.JScrollPane;
+import java.awt.Font;
 
 public class AppletSorters extends JApplet {
 	
@@ -132,7 +133,7 @@ public class AppletSorters extends JApplet {
 				
 			}
 		});
-		btnSalvarClassificador.setBounds(286, 394, 168, 23);
+		btnSalvarClassificador.setBounds(281, 263, 168, 23);
 		panel.add(btnSalvarClassificador);
 		
 		final JComboBox cmbClassificador = new JComboBox();
@@ -151,20 +152,15 @@ public class AppletSorters extends JApplet {
 		putSorterOnCombo(cmbClassificador);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 100, 1265, 457);
+		scrollPane.setBounds(10, 100, 1265, 147);
 		panel.add(scrollPane);
 		
 		table = new JTable();
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
 				{null, null, null, null},
 				{null, null, null, null},
 				{null, null, null, null},

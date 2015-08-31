@@ -5,6 +5,13 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -174,9 +181,10 @@ public class EstudoCasoTesteApplet extends Applet {
 	public void acionaTeste(){
 		for (int exec = 0; exec < 30; exec++){
 			i = -1;
+			int interaction = 1;
 			prepareNextGoal();
 			for (Goal g : path.getGoals()) g.setSatisfied(false);
-			student = new Student((long) (exec+2), "estudante " + (exec +2));
+			student = new Student((long) (exec+1), "estudante " + (exec +1));
 			for (Goal g: path.getGoals()) {
 				JTextField f = null;
 				ArrayList<Remediation> rs = dbCon.getRemediationsByGoal(goal.getId());
@@ -188,16 +196,71 @@ public class EstudoCasoTesteApplet extends Applet {
 					else
 						f.setText(r.getWrongAnswer());
 					aciona(f);
+					saveLog(student,textPane, interaction);
+					interaction++;
 				}
 				f.setText(g.getAnswer().getValue());
 				aciona(f);
+				saveLog(student,textPane, interaction);
+				interaction++;
 			}
+			
 			
 		}
 	}
 	
 	
 	
+	private void saveLog(Student student2, JTextPane textPane2, int interaction) {
+		// TODO Auto-generated method stub
+		String fileName = StringConstants.DIR_LOG_RULES + "student_" + student2.getId() + ".txt";
+		
+			
+			try {
+				new FileOutputStream(fileName,true).close();
+				String fileNameTemp = fileName + "_temp";
+				BufferedReader in;
+				in = new BufferedReader(new FileReader(fileName));
+				BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));  
+			   
+				String str;
+				
+			    while ((str = in.readLine()) != null) {
+			    		//out.write(str);
+			    	}
+			    out.write("------------------------- interação:" + interaction);
+			    out.write("\n\n");
+			    
+			    out.write(textPane2.getText());
+			    		
+			    out.write("\n");
+			    
+			    in.close();
+			   	out.close();
+
+			   	/*
+			   	File file = new File(fileName);
+			   	File tempFile = new File(fileNameTemp);
+			   
+			   	file.createNewFile();
+			   	while (!file.delete());
+			   	
+			   		if (tempFile.renameTo(file)) {
+			   			tempFile.delete();
+			   		}
+*/
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		
+
+
+	}
+	
+
+
 	public void loadExercise(){
 		for (ExerciseInitialState eis: exercise.getInitialState()){
 			JTextField f = (JTextField) getComponentByName(eis.getComponent());
