@@ -2,6 +2,8 @@ package module.merfunction.sorter;
 
 import javax.swing.JComponent;
 import module.entity.Goal;
+import module.entity.Exercise;
+import module.entity.Question;
 import module.entity.Action;
 import module.entity.WrongAnswer;
 import module.entity.RuleToHuman;
@@ -16,9 +18,49 @@ ruleBase MERFunctionSorterKB {
 
 
 
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_0 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getRemediation().getId().equals(24L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
 
 
-	rule funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_0 {
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_1 {
 
 		declarations
 			Action action;
@@ -29,16 +71,20 @@ ruleBase MERFunctionSorterKB {
 
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(1L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			//action.getRemediation().getId().equals(1L);
+			action.getRemediation().getId().equals(1L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Interpretação Equivocada\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
@@ -54,7 +100,131 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_1 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_indice_2 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(4L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_indice_3 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(5L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(15L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_indice_5 {
 
 		declarations
 			Action action;
@@ -65,16 +235,20 @@ ruleBase MERFunctionSorterKB {
 
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			//action.getRemediation().getId().equals(2L);
+			action.getRemediation().getId().equals(2L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Interpretação Equivocada\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
@@ -90,7 +264,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_2 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_indice_6 {
 
 		declarations
 			Action action;
@@ -102,131 +276,21 @@ ruleBase MERFunctionSorterKB {
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(3L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			//action.getRemediation().getId().equals(3L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
-			action.setMerFunction( dbCon.getMERFunction(2L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Restrição de Interpretação");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_3 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			//action.getRemediation().getId().equals(4L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
-			action.setMerFunction( dbCon.getMERFunction(2L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Restrição de Interpretação");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_4 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			//action.getRemediation().getId().equals(5L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
-			action.setMerFunction( dbCon.getMERFunction(2L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Restrição de Interpretação");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_5 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(2L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			//action.getRemediation().getId().equals(6L);
+			action.getRemediation().getId().equals(6L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
@@ -242,7 +306,47 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_6 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_7 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getRemediation().getId().equals(16L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_indice_8 {
 
 		declarations
 			Action action;
@@ -254,17 +358,21 @@ ruleBase MERFunctionSorterKB {
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(3L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			//action.getRemediation().getId().equals(7L);
+			action.getRemediation().getId().equals(3L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
@@ -280,7 +388,89 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_7 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_indice_9 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getRemediation().getId().equals(7L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_10 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getRemediation().getId().equals(17L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_indice_11 {
 
 		declarations
 			Action action;
@@ -292,17 +482,21 @@ ruleBase MERFunctionSorterKB {
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(4L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			//action.getRemediation().getId().equals(8L);
+			action.getRemediation().getId().equals(8L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência na escolha do operador correto\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
@@ -318,7 +512,619 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_8 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_12 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(4L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(18L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_13 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(5L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt8");
+			action.getRemediation().getId().equals(24L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_indice_14 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getRemediation().getId().equals(13L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Indiretamente identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_indice_15 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getRemediation().getId().equals(14L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Indiretamente identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_16 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getRemediation().getId().equals(20L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_17 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Interpretação Equivocada\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Papéis Complementares\" \n");
+			action.setMerFunction( dbCon.getMERFunction(1L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Papéis Complementares");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_indice_18 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(4L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_indice_19 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(5L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_20 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(1L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt1");
+			action.getRemediation().getId().equals(15L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_indice_21 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getRemediation().getId().equals(2L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Interpretação Equivocada\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Papéis Complementares\" \n");
+			action.setMerFunction( dbCon.getMERFunction(1L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Papéis Complementares");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_indice_22 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getRemediation().getId().equals(6L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_23 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(2L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt2");
+			action.getRemediation().getId().equals(16L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_indice_24 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getRemediation().getId().equals(3L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_indice_25 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getRemediation().getId().equals(7L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência em relação ao domínio ou uso inadequado de dados\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_26 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(3L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt5");
+			action.getRemediation().getId().equals(17L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
+			action.setMerFunction( dbCon.getMERFunction(3L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Compreensão mais aprofundada");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_indice_27 {
 
 		declarations
 			Action action;
@@ -330,383 +1136,21 @@ ruleBase MERFunctionSorterKB {
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(3L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(5L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			//action.getRemediation().getId().equals(9L);
+			action.getGoal().getId().equals(4L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt3");
+			action.getRemediation().getId().equals(8L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_9_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência na escolha do operador correto\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_9 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(5L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			//action.getRemediation().getId().equals(10L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_10_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_10 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(5L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			//action.getRemediation().getId().equals(11L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_11_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_11 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(5L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			//action.getRemediation().getId().equals(12L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_12_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_12 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(6L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			//action.getRemediation().getId().equals(13L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Indiretamente identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
-			action.setMerFunction( dbCon.getMERFunction(2L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Restrição de Interpretação");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_13 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(6L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			//action.getRemediation().getId().equals(14L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Indiretamente identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
-			action.setMerFunction( dbCon.getMERFunction(2L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Restrição de Interpretação");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_14 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			//action.getRemediation().getId().equals(15L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			//action.getRemediation().getId().equals(15L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(2L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			//action.getRemediation().getId().equals(16L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(3L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			//action.getRemediation().getId().equals(17L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(4L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			//action.getRemediation().getId().equals(18L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
@@ -722,7 +1166,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_28 {
 
 		declarations
 			Action action;
@@ -733,231 +1177,20 @@ ruleBase MERFunctionSorterKB {
 
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(5L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			//action.getRemediation().getId().equals(19L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(6L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			//action.getRemediation().getId().equals(20L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-// end_rules
-
-
-// rule necessary by default
-
-	rule compreensao_mais_aprofundada{
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-
-		actions
-			action.getRegrasAcionadas().add("compreensao_mais_aprofundada");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: compreensao_mais_aprofundada \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução Não Categorizável\"\n");
-
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão Mais Aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(2L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Restrição de Interpretação");
-			flush();
-
-	}
-// -rule-end- 
-
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_15indice_17 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(1L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt1");
-			//action.getRemediation().getId().equals(15L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt1\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_16indice_19 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(2L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt2");
-			//action.getRemediation().getId().equals(16L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 2\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt2\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_17indice_21 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(3L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt5");
-			//action.getRemediation().getId().equals(17L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 3\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt5\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_18indice_23 {
-
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(4L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt3");
-			//action.getRemediation().getId().equals(18L);
+			action.getRemediation().getId().equals(18L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 4\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt3\"\n");
@@ -973,7 +1206,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_indice_19indice_25 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_29 {
 
 		declarations
 			Action action;
@@ -983,17 +1216,23 @@ ruleBase MERFunctionSorterKB {
 		localdecl
 
 		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
+			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			//action.getRemediation().getId().equals(19L);
+			action.getRemediation().getId().equals(24L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_19_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
@@ -1009,7 +1248,87 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_20indice_27 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_indice_30 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getRemediation().getId().equals(13L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Indiretamente identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_indice_31 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(3L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
+			action.getGoal().getPath().getId().equals(1L);
+			action.getGoal().getId().equals(6L);
+			action.getGoal().getComponent().equalsIgnoreCase("txt7");
+			action.getRemediation().getId().equals(14L);
+
+		actions
+			action.getRegrasAcionadas().add("funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Indiretamente identificáveis\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Restrição de Interpretação\" \n");
+			action.setMerFunction( dbCon.getMERFunction(2L));
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Função MRE: Restrição de Interpretação");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_32 {
 
 		declarations
 			Action action;
@@ -1020,16 +1339,20 @@ ruleBase MERFunctionSorterKB {
 
 		conditions
 			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(4L);
+			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
+			action.getGoal().getPath().getQuestion().getId().equals(1L);
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(6L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt7");
-			//action.getRemediation().getId().equals(20L);
+			action.getRemediation().getId().equals(20L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Solução não categorizável\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 6\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt7\"\n");

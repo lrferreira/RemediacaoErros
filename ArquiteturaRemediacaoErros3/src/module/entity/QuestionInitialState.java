@@ -1,25 +1,19 @@
 package module.entity;
 
-public class ExerciseInitialState {
+public class QuestionInitialState {
 	
-	private Exercise exercise;
+	private Question question;
 	private String component;
 	private String value;
 
-	public ExerciseInitialState(Exercise exercise, String component,
+	public QuestionInitialState(Question question, String component,
 			String value) {
 		super();
-		this.exercise = exercise;
+		this.question = question;
 		this.component = component;
 		this.value = value;
 	}
 	
-	public Exercise getExercise() {
-		return exercise;
-	}
-	public void setExercise(Exercise exercise) {
-		this.exercise = exercise;
-	}
 	public String getComponent() {
 		return component;
 	}
@@ -31,6 +25,14 @@ public class ExerciseInitialState {
 	}
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
 	
 	

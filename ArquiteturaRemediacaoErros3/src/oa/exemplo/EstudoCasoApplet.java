@@ -2,6 +2,7 @@ package oa.exemplo;
 
 import java.applet.Applet;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
@@ -20,13 +21,12 @@ import module.author.GoalsController;
 import module.entity.Action;
 import module.entity.Answer;
 import module.entity.DBConnect;
-import module.entity.Exercise;
-import module.entity.ExerciseInitialState;
 import module.entity.Goal;
 import module.entity.Path;
+import module.entity.Question;
+import module.entity.QuestionInitialState;
 import module.entity.Student;
 import util.StringConstants;
-import java.awt.Font;
 
 public class EstudoCasoApplet extends Applet {
 	/**
@@ -46,7 +46,7 @@ public class EstudoCasoApplet extends Applet {
 	
 	private JLabel lblMer;
 
-	private Exercise exercise;
+	private Question question;
 	private Path path;
 	
 	private HashMap componentMap;
@@ -157,9 +157,9 @@ public class EstudoCasoApplet extends Applet {
 
 		createComponentMap();
 		
-		exercise = dbCon.getExercise(1L);
-		path = exercise.getPaths().get(0);
-		loadExercise();
+		question = dbCon.getQuestion(1L);
+		path = question.getPaths().get(0);
+		loadQuestion();
 
 
 		prepareNextGoal();
@@ -169,14 +169,14 @@ public class EstudoCasoApplet extends Applet {
 	
 	
 	
-	public void loadExercise(){
-		for (ExerciseInitialState eis: exercise.getInitialState()){
+	public void loadQuestion(){
+		for (QuestionInitialState eis: question.getInitialState()){
 			JTextField f = (JTextField) getComponentByName(eis.getComponent());
 			f.setText(eis.getValue());
 			
 		}
 		
-		textArea.setText(exercise.getEnunciate());
+		textArea.setText(question.getEnunciate());
 
 	}
 	
@@ -210,6 +210,8 @@ public class EstudoCasoApplet extends Applet {
 			if (c instanceof JTextField){
 				final JTextField f = (JTextField) c;
 				f.addKeyListener(new KeyAdapter(){
+					private Action lastAction;
+
 					public void keyPressed(KeyEvent e)
 				      {
 				        if (e.getKeyCode() == KeyEvent.VK_ENTER){
@@ -224,12 +226,12 @@ public class EstudoCasoApplet extends Applet {
 				        	action.setRegrasAcionadas(new ArrayList<String>());
 				        	action.setRemediation(null);
 				        	
-							GoalsController.run(action, textPane, lblMer, dbCon);
+							GoalsController.run(action, lastAction, textPane, lblMer, dbCon);
 							if (action.getCorrect())
 								prepareNextGoal();
 							else
 								attempt++;
-							
+							lastAction = action;
 				        }
 				      }
 				});

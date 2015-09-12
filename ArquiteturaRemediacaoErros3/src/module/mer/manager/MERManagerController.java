@@ -2,6 +2,7 @@ package module.mer.manager;
 
 import java.util.ArrayList;
 
+import jeops.conflict.LRUConflictSet;
 import jeops.conflict.OneShotConflictSet;
 import module.entity.Action;
 import module.entity.DBConnect;
@@ -12,31 +13,33 @@ import util.Constants;
 public class MERManagerController {
 	
 	private static Integer complexity = 1;
-
+	private static MERManagerNotSpecificMERKB merManagerNotSpecificMERKB = new MERManagerNotSpecificMERKB();
+	private static MERManagerSpecificMERKB merManagerSpecificMERKB = new MERManagerSpecificMERKB();
+	
 	public static void aciona(Action action, ArrayList<Action> historic, DBConnect dbCon, RuleToHuman ruleToHuman) {
 
 		if (action.getRemediation() != null && action.getRemediation().getId() != null){
 			
 			if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_MRE_ESPECIFICA_ERRO)) {
-				MERManagerSpecificMERKB gerenciadorMREKB = new MERManagerSpecificMERKB();
-				gerenciadorMREKB.tell(action);
-				gerenciadorMREKB.tell(dbCon);
-				gerenciadorMREKB.tell(ruleToHuman);
+				//MERManagerSpecificMERKB gerenciadorMREKB = new MERManagerSpecificMERKB();
+				merManagerSpecificMERKB.tell(action);
+				merManagerSpecificMERKB.tell(dbCon);
+				merManagerSpecificMERKB.tell(ruleToHuman);
 						
 
-				gerenciadorMREKB.run();
+				merManagerSpecificMERKB.run();
 				
 				ruleToHuman.setDescription(ruleToHuman.getDescription() + "\n\n");
 
 			}
 			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_NAO_USAR_MRE_ESPECIFICA)) {
-				MERManagerNotSpecificMERKB gerenciadorMREKB = new MERManagerNotSpecificMERKB(new OneShotConflictSet());
-				gerenciadorMREKB.tell(action);
-				gerenciadorMREKB.tell(dbCon);
-				gerenciadorMREKB.tell(ruleToHuman);
+				//gerenciadorMREKB = new MERManagerNotSpecificMERKB(new DefaultConflictSet());
+				merManagerNotSpecificMERKB.tell(action);
+				merManagerNotSpecificMERKB.tell(dbCon);
+				merManagerNotSpecificMERKB.tell(ruleToHuman);
 						
 
-				gerenciadorMREKB.run();
+				merManagerNotSpecificMERKB.run();
 				
 				ruleToHuman.setDescription(ruleToHuman.getDescription() + "\n\n");				
 			}
@@ -54,7 +57,7 @@ public class MERManagerController {
 			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_ALTERNAR_ENTRE_MRE_TIPO_ESPECIFICADO)) {
 				MERManagerSwypeMERFunctionKB gerenciadorMREKB = new MERManagerSwypeMERFunctionKB(new OneShotConflictSet());
 				gerenciadorMREKB.tell(action);
-				gerenciadorMREKB.tell(historic.get(historic.size() - 1));
+				gerenciadorMREKB.tell(dbCon.getLastAction(action.getRemediation().getItemSorter().getMerFunction().getId()));
 				gerenciadorMREKB.tell(dbCon);
 				gerenciadorMREKB.tell(ruleToHuman);
 						
@@ -82,7 +85,8 @@ public class MERManagerController {
 			}
 			else if (action.getRemediation().getCriterion().getId().equals(Constants.CRITERIO_SUCESSOS_ANTERIORES_MRE)) {
 				ArrayList<MultipleExternalRepresentation> mers = dbCon.getMersBySuccess(action.getMerFunction().getId());
-				if(mers != null) action.setMer(mers.get(0));
+				if(mers != null) 
+					action.setMer(mers.get(0));
 				MERManagerKB gerenciadorMREKB = new MERManagerKB(new OneShotConflictSet());
 				gerenciadorMREKB.tell(action);
 				gerenciadorMREKB.tell(dbCon);

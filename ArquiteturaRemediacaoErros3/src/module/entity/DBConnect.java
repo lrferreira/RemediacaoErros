@@ -619,7 +619,7 @@ public class DBConnect {
 				PreparedStatement prepStmt = null;
 				
 				try{
-					prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?,?)");
+					prepStmt= conn.prepareStatement("insert into remediation VALUES (?,?,?,?,?,?,?,?,?,?)");
 					prepStmt.setLong(1, remediation.getId());
 					prepStmt.setLong(2, remediation.getGoal().getId());
 					prepStmt.setLong(3, remediation.getItemSorter().getId());
@@ -631,6 +631,7 @@ public class DBConnect {
 					if (remediation.getMer() != null)
 						prepStmt.setLong(8, remediation.getMer().getId());
 					prepStmt.setLong(9, remediation.getTreatmentWrongAnswer().getId());
+					prepStmt.setBoolean(10, remediation.getActive());
 					prepStmt.executeUpdate();
 					
 					
@@ -656,7 +657,8 @@ public class DBConnect {
 						update = update + "attempts = ? , ";						
 					update = update + "wronganswer = ? , ";
 					update = update + "id_treatmentwronganswer = ?,  ";
-					update = update + "relatederror = ?  ";
+					update = update + "relatederror = ?,  ";
+					update = update + "active = ?  ";
 					if (remediation.getMer() != null) 
 						update = update + ", id_mer = ? ";		
 					update = update + "WHERE id = ? ";
@@ -670,22 +672,24 @@ public class DBConnect {
 						prepStmt.setString(5, remediation.getWrongAnswer());
 						prepStmt.setLong(6, remediation.getTreatmentWrongAnswer().getId());
 						prepStmt.setString(7, remediation.getRelatedError());
+						prepStmt.setBoolean(8, remediation.getActive());
 						if (remediation.getMer() != null) {
-							prepStmt.setLong(8, remediation.getMer().getId());
-							prepStmt.setLong(9, remediation.getId());							
+							prepStmt.setLong(9, remediation.getMer().getId());
+							prepStmt.setLong(10, remediation.getId());							
 						}
 						else
-							prepStmt.setLong(8, remediation.getId());
+							prepStmt.setLong(9, remediation.getId());
 						
 					} else {
 						prepStmt.setString(4, remediation.getWrongAnswer());
 						prepStmt.setLong(5, remediation.getTreatmentWrongAnswer().getId());
 						prepStmt.setString(6, remediation.getRelatedError());
+						prepStmt.setBoolean(7, remediation.getActive());
 						if (remediation.getMer() != null) {
-							prepStmt.setLong(7, remediation.getMer().getId());
-							prepStmt.setLong(8, remediation.getId());							
+							prepStmt.setLong(8, remediation.getMer().getId());
+							prepStmt.setLong(9, remediation.getId());							
 						} else
-							prepStmt.setLong(7, remediation.getId());
+							prepStmt.setLong(8, remediation.getId());
 					}
 
 
@@ -731,7 +735,7 @@ public class DBConnect {
 	            prepStmt= conn.prepareStatement("insert into path VALUES (?,?, ?)");
 	            prepStmt.setLong(1, path.getId());
 	            prepStmt.setString(2, path.getDescription());
-	            prepStmt.setLong(3, path.getExercise().getId());
+	            prepStmt.setLong(3, path.getQuestion().getId());
 
 	            prepStmt.executeUpdate();
 	            
@@ -755,29 +759,30 @@ public class DBConnect {
 		
 	}
 
-	public void save(Exercise exercise){
+	public void save(Question question){
 
 		try {
 			this.stm = this.conn.createStatement();
 			
-			if (exercise.getId() == null) {
-				ResultSet rs = this.stm.executeQuery("select max(id) FROM exercise");
-				exercise.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
+			if (question.getId() == null) {
+				ResultSet rs = this.stm.executeQuery("select max(id) FROM question");
+				question.setId((Long.valueOf(rs.getInt("max(id)") + 1)));
 			}
 			
 			PreparedStatement prepStmt = null;
 			
 			try{
-	            prepStmt= conn.prepareStatement("insert into exercise VALUES (?,?)");
-	            prepStmt.setLong(1, exercise.getId());
-	            prepStmt.setString(2, exercise.getEnunciate());
+	            prepStmt= conn.prepareStatement("insert into question VALUES (?,?,?)");
+	            prepStmt.setLong(1, question.getId());
+	            prepStmt.setString(2,question.getEnunciate());
+	            prepStmt.setLong(3,  question.getExercise().getId());
 
 
 	            prepStmt.executeUpdate();
 	            
-	            for (Path path : exercise.getPaths())
+	            for (Path path : question.getPaths())
 	            	save(path);
-	            for (ExerciseInitialState eis: exercise.getInitialState())
+	            for (QuestionInitialState eis: question.getInitialState())
 	            	save(eis);
 	            
 			}catch(Exception e){
@@ -797,7 +802,7 @@ public class DBConnect {
 		
 	}
 
-	public void save(ExerciseInitialState eis){
+	public void save(QuestionInitialState eis){
 
 		try {
 			this.stm = this.conn.createStatement();
@@ -806,8 +811,8 @@ public class DBConnect {
 			PreparedStatement prepStmt = null;
 			
 			try{
-	            prepStmt= conn.prepareStatement("insert into exercise_initialstate VALUES (?,?,?)");
-	            prepStmt.setLong(1, eis.getExercise().getId());
+	            prepStmt= conn.prepareStatement("insert into question_initialstate VALUES (?,?,?)");
+	            prepStmt.setLong(1, eis.getQuestion().getId());
 	            prepStmt.setString(2, eis.getComponent());
 	            prepStmt.setString(3, eis.getValue());
 
@@ -926,6 +931,7 @@ public class DBConnect {
 		return exercises;
 	}
 
+
 	public Exercise getExercise(Long id_exercise) {
 
 		Exercise exercise = null;
@@ -935,9 +941,9 @@ public class DBConnect {
             stmt=conn.createStatement();
             ResultSet rs=stmt.executeQuery("select * from exercise where id="+id_exercise);
             if(rs.next()){
-            	exercise = new Exercise(rs.getLong("id"),rs.getString("enunciate"), getPathsByExercise(id_exercise), null );
-            	for (Path p: exercise.getPaths()) p.setExercise(exercise);
-            	exercise.setInitialState(getInitialState(exercise));
+            	exercise = new Exercise(rs.getLong("id"), getQuestionsByExercise(id_exercise));
+            	for (Question q: exercise.getQuestions()) q.setExercise(exercise);
+            	
             } else return null;
             rs.close();
             
@@ -948,6 +954,46 @@ public class DBConnect {
         }
 
 		return exercise;
+	}
+
+	public ArrayList<Question> getQuestions(){
+		ArrayList<Question> questions = new ArrayList<Question>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from question");
+			if (rs.next()){
+				questions.add(getQuestion(rs.getLong("id")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return questions;
+	}
+
+	public Question getQuestion(Long id_question) {
+
+		Question question = null;
+		
+        Statement stmt=null;
+        try{
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from question where id="+id_question);
+            if(rs.next()){
+            	question = new Question(rs.getLong("id"),rs.getString("enunciate"), new Exercise(rs.getLong("id_exercise"), null), getPathsByQuestion(id_question), null);
+            	for (Path p: question.getPaths()) p.setQuestion(question);
+            	question.setInitialState(getInitialState(question));
+            } else return null;
+            rs.close();
+            
+                        
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+
+		return question;
 	}
 	
 	public Path getPath(Long id_path) {
@@ -1056,12 +1102,12 @@ public class DBConnect {
 
 	}
 
-	public ArrayList<Path> getPathsByExercise(long id_exercise) {
+	public ArrayList<Path> getPathsByQuestion(long id_question) {
 
 		ArrayList<Path> paths = new ArrayList<Path>();
 		try {
 			this.stm = this.conn.createStatement();
-			ResultSet rs = this.stm.executeQuery("select * from path where id_exercise = " + id_exercise);
+			ResultSet rs = this.stm.executeQuery("select * from path where id_question = " + id_question);
 			while (rs.next()){
 				paths.add(getPath(rs.getLong("id")));
 			}
@@ -1074,14 +1120,32 @@ public class DBConnect {
 
 	}
 
-	public ArrayList<ExerciseInitialState> getInitialState(Exercise exercise) {
+	public ArrayList<Question> getQuestionsByExercise(long id_exercise) {
 
-		ArrayList<ExerciseInitialState> initialState = new ArrayList<ExerciseInitialState>();
+		ArrayList<Question> questions = new ArrayList<Question>();
 		try {
 			this.stm = this.conn.createStatement();
-			ResultSet rs = this.stm.executeQuery("select * from exercise_initialstate  where id_exercise = " + exercise.getId());
+			ResultSet rs = this.stm.executeQuery("select * from question where id_exercise = " + id_exercise);
 			while (rs.next()){
-				initialState.add(new ExerciseInitialState(exercise, rs.getString("component"), rs.getString("value")));
+				questions.add(getQuestion(rs.getLong("id")));
+			}
+				
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return questions;
+
+	}
+
+	public ArrayList<QuestionInitialState> getInitialState(Question question) {
+
+		ArrayList<QuestionInitialState> initialState = new ArrayList<QuestionInitialState>();
+		try {
+			this.stm = this.conn.createStatement();
+			ResultSet rs = this.stm.executeQuery("select * from question_initialstate  where id_question = " + question.getId());
+			while (rs.next()){
+				initialState.add(new QuestionInitialState(question, rs.getString("component"), rs.getString("value")));
 			}
 				
 		} catch (SQLException e1) {
@@ -1129,7 +1193,7 @@ public class DBConnect {
                 remediation.setWrongAnswer(rs.getString("wronganswer"));
                 remediation.setMer(getMER(rs.getLong("id_mer")));
                 remediation.setTreatmentWrongAnswer(getTreatmentWrongAnswer(rs.getLong("id_treatmentwronganswer")));
-                
+                remediation.setActive(rs.getBoolean("active"));
 
             }
             rs.close();
@@ -1170,7 +1234,7 @@ public class DBConnect {
 			stmt=conn.createStatement();
 
 			ResultSet rs=stmt.executeQuery("SELECT b.id, count(a.id) as success FROM mer b left join action a on a.id_mer = b.id " +
-					 " where a.correct = 'true' " +
+					 " where a.correct = 1 " +
 			" and id_merfunction = " + id_merfunction +
 					" group by b.id " +
 					" order by success ");
@@ -1185,6 +1249,58 @@ public class DBConnect {
 		}
         
         return mers;
+	}
+
+	public MultipleExternalRepresentation getLastMer(Long id_merfunction){
+		MultipleExternalRepresentation mer = new MultipleExternalRepresentation();
+		Statement stmt=null;
+
+        try {
+			stmt=conn.createStatement();
+
+			ResultSet rs=stmt.executeQuery(
+					" select id_mer, id_merfunction from action " +
+					" where id_merfunction = " + id_merfunction +
+					" order by id desc " +
+					" limit 1"
+					);
+			
+			while(rs.next()){
+				mer= getMER(rs.getLong("id_mer"));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return mer;
+	}
+
+	public Action getLastAction(Long id_merfunction){
+		Action action = new Action();
+		Statement stmt=null;
+
+        try {
+			stmt=conn.createStatement();
+
+			ResultSet rs=stmt.executeQuery(
+					" select id, id_mer, id_merfunction from action " +
+					" where id_merfunction = " + id_merfunction +
+					" order by id desc " +
+					" limit 1"
+					);
+			
+			while(rs.next()){
+				action= getAction(rs.getLong("id"));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return action;
 	}
 
 	public int getMaxRemediation() {

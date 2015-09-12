@@ -24,7 +24,7 @@ public class GoalsController {
 
 	public static ArrayList<Action> historicActions = new ArrayList<Action>();
 	
-	public static void run(Action action, JTextPane textPane, JLabel lblImg, DBConnect dbCon){
+	public static void run(Action action, Action lastAction, JTextPane textPane, JLabel lblImg, DBConnect dbCon){
 		//action.setAnswer(new Answer(action.getGoal().getComponent()));
 		
 
@@ -44,6 +44,11 @@ public class GoalsController {
 			textPane.setText(ruleToHuman.getDescription());
 			if (action.getGoal().getSubGoal() != null){
 				System.out.println("componente próxima meta: " + action.getGoal().getSubGoal().getComponent());
+			}
+			if (lastAction != null && !lastAction.isCorrect()){
+				action.setMer(lastAction.getMer());
+				action.setRemediation(lastAction.getRemediation());
+				action.setMerFunction(lastAction.getMerFunction());
 			}
 			System.out.println("Resposta Correta! Fim!");
 			//System.exit(1);

@@ -27,6 +27,8 @@ public class Remediation {
 	
 	private TreatmentWrongAnswer treatmentWrongAnswer;
 	
+	private Boolean active;
+	
 	
 	public Remediation() {
 		super();
@@ -35,7 +37,7 @@ public class Remediation {
 	
 	
 	public Remediation(Long id, Goal goal, ItemSorter itemSorter,
-			Criterion criterion, Integer attempts, String wrongAnswer, TreatmentWrongAnswer treatment, String relatedError, MultipleExternalRepresentation mer) {
+			Criterion criterion, Integer attempts, String wrongAnswer, TreatmentWrongAnswer treatment, String relatedError, MultipleExternalRepresentation mer, Boolean active) {
 		super();
 		this.id = id;
 		this.goal = goal;
@@ -46,11 +48,12 @@ public class Remediation {
 		this.relatedError = relatedError;
 		this.treatmentWrongAnswer = treatment;
 		this.mer = mer;
+		this.active = active;
 	}
 	
 	public static boolean hasTreatment(TreatmentWrongAnswer t, ArrayList<Remediation> rs){
 		for (Remediation r : rs){
-			if (r.getTreatmentWrongAnswer().equals(t))
+			if (r.getTreatmentWrongAnswer().equals(t) && r.isActive())
 				return true;
 		}
 		return false;
@@ -134,7 +137,19 @@ public class Remediation {
 		this.treatmentWrongAnswer = treatmentWrongAnswer;
 	}
 
-	
+
+	public Boolean getActive() {
+		return active;
+	}
+
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+	public Boolean isActive(){
+		return this.active;
+	}
 	
 	
 	

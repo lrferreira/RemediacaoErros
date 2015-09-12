@@ -7,7 +7,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -28,10 +27,10 @@ import module.author.GoalsController;
 import module.entity.Action;
 import module.entity.Answer;
 import module.entity.DBConnect;
-import module.entity.Exercise;
-import module.entity.ExerciseInitialState;
 import module.entity.Goal;
 import module.entity.Path;
+import module.entity.Question;
+import module.entity.QuestionInitialState;
 import module.entity.Remediation;
 import module.entity.Student;
 import util.Constants;
@@ -55,7 +54,7 @@ public class EstudoCasoTesteApplet extends Applet {
 	
 	private JLabel lblMer;
 
-	private Exercise exercise;
+	private Question question;
 	private Path path;
 	
 	private HashMap componentMap;
@@ -70,6 +69,7 @@ public class EstudoCasoTesteApplet extends Applet {
 
 	private Student student = new Student(1L, "estudante 1");
 	private JTextArea textArea;
+	private Action lastAction;
 	
 	public EstudoCasoTesteApplet() {
 		setLayout(null);
@@ -166,8 +166,8 @@ public class EstudoCasoTesteApplet extends Applet {
 
 		createComponentMap();
 		
-		exercise = dbCon.getExercise(1L);
-		path = exercise.getPaths().get(0);
+		question = dbCon.getQuestion(1L);
+		path = question.getPaths().get(0);
 		loadExercise();
 
 
@@ -179,7 +179,8 @@ public class EstudoCasoTesteApplet extends Applet {
 	}
 	
 	public void acionaTeste(){
-		for (int exec = 0; exec < 30; exec++){
+		//for (int exec = 0; exec < 30; exec++){
+		for (int exec = 1; exec < 30; exec++){
 			i = -1;
 			int interaction = 1;
 			prepareNextGoal();
@@ -189,15 +190,16 @@ public class EstudoCasoTesteApplet extends Applet {
 				JTextField f = null;
 				ArrayList<Remediation> rs = dbCon.getRemediationsByGoal(goal.getId());
 				for (Remediation r : rs) {
-					
-					f = (JTextField) getComponentByName(goal.getComponent());
-					if (r.getTreatmentWrongAnswer().getId().equals(Constants.TRATAMENTO_QUALQUER_RESPOSTA))
-						f.setText("X");
-					else
-						f.setText(r.getWrongAnswer());
-					aciona(f);
-					saveLog(student,textPane, interaction);
-					interaction++;
+					if (r.isActive()){
+						f = (JTextField) getComponentByName(goal.getComponent());
+						if (r.getTreatmentWrongAnswer().getId().equals(Constants.TRATAMENTO_QUALQUER_RESPOSTA))
+							f.setText("X");
+						else
+							f.setText(r.getWrongAnswer());
+						aciona(f);
+						saveLog(student,textPane, interaction);
+						interaction++;						
+					}
 				}
 				f.setText(g.getAnswer().getValue());
 				aciona(f);
@@ -262,13 +264,13 @@ public class EstudoCasoTesteApplet extends Applet {
 
 
 	public void loadExercise(){
-		for (ExerciseInitialState eis: exercise.getInitialState()){
+		for (QuestionInitialState eis: question.getInitialState()){
 			JTextField f = (JTextField) getComponentByName(eis.getComponent());
 			f.setText(eis.getValue());
 			
 		}
 		
-		textArea.setText(exercise.getEnunciate());
+		textArea.setText(question.getEnunciate());
 
 	}
 	
@@ -328,12 +330,12 @@ public class EstudoCasoTesteApplet extends Applet {
     	action.setRegrasAcionadas(new ArrayList<String>());
     	action.setRemediation(null);
     	
-		GoalsController.run(action, textPane, lblMer, dbCon);
+		GoalsController.run(action, lastAction, textPane, lblMer, dbCon);
 		if (action.getCorrect())
 			prepareNextGoal();
 		else
 			attempt++;
-
+		lastAction = action;
 	}
 	private void createComponentMap() {
         componentMap = new HashMap<String,Component>();

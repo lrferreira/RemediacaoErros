@@ -8,15 +8,15 @@ public class Path {
 
 	private Long id;
 	private String description;
-	private Exercise exercise;
+	private Question question;
 	private ArrayList<Goal> goals;
 	
-	public Path(Long id, Exercise exercise, String description, ArrayList<Goal> goals) {
+	public Path(Long id, Question question, String description, ArrayList<Goal> goals) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.goals = goals;
-		this.exercise = exercise;
+		this.question = question;
 	}
 	
 	public Path(Long id, String description) {
@@ -52,12 +52,13 @@ public class Path {
 		return null;
 	}
 
-	public Exercise getExercise() {
-		return exercise;
+	public Question getQuestion() {
+		return question;
 	}
 
-	public void setExercise(Exercise exercise) {
-		this.exercise = exercise;
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
+
 
 }

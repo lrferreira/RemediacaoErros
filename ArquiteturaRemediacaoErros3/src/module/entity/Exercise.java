@@ -5,17 +5,12 @@ import java.util.ArrayList;
 public class Exercise {
 
 	private Long id;
-	private String enunciate;
-	private ArrayList<Path> paths;
-	private ArrayList<ExerciseInitialState> initialState;
-	
-	public Exercise(Long id, String enunciate, ArrayList<Path> paths,
-			ArrayList<ExerciseInitialState> initialState) {
+	private ArrayList<Question> questions;
+
+	public Exercise(Long id, ArrayList<Question> questions) {
 		super();
 		this.id = id;
-		this.enunciate = enunciate;
-		this.paths = paths;
-		this.initialState = initialState;
+		this.questions = questions;
 	}
 	
 	public Long getId() {
@@ -24,24 +19,14 @@ public class Exercise {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getEnunciate() {
-		return enunciate;
+	public ArrayList<Question> getQuestions() {
+		return questions;
 	}
-	public void setEnunciate(String enunciate) {
-		this.enunciate = enunciate;
+	public void setQuestions(ArrayList<Question> questions) {
+		this.questions = questions;
 	}
-	public ArrayList<Path> getPaths() {
-		return paths;
-	}
-	public void setPaths(ArrayList<Path> paths) {
-		this.paths = paths;
-	}
-	public ArrayList<ExerciseInitialState> getInitialState() {
-		return initialState;
-	}
-	public void setInitialState(ArrayList<ExerciseInitialState> initialState) {
-		this.initialState = initialState;
-	}
+	
+	
 	
 	
 	
