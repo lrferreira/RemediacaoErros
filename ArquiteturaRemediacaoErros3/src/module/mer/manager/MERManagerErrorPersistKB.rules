@@ -33,7 +33,7 @@ ruleBase MERManagerErrorPersistKB {
 		actions
 			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getAttempt() == 3;\n");
 			MultipleExternalRepresentation m = dbCon.getMER(6L);
@@ -41,7 +41,7 @@ ruleBase MERManagerErrorPersistKB {
 			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_");
 			modified(ruleToHuman);
 			modified(action);
-			System.out.println("Exibi��o de MRE 6 - MRE 6");
+			System.out.println("Exibição de MRE 6 - MRE 6");
 			flush();
 
 	}
@@ -64,7 +64,7 @@ ruleBase MERManagerErrorPersistKB {
 		actions
 			action.getRegrasAcionadas().add("regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getAttempt() != 3;\n");
 			MultipleExternalRepresentation m = dbCon.getMER(3L);
@@ -72,7 +72,7 @@ ruleBase MERManagerErrorPersistKB {
 			action.getRegrasAcionadas().add("regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_");
 			modified(ruleToHuman);
 			modified(action);
-			System.out.println("Exibi��o de MRE 6 - MRE 3");
+			System.out.println("Exibição de MRE 3 - MRE 3");
 			flush();
 
 	}
@@ -95,7 +95,7 @@ ruleBase MERManagerErrorPersistKB {
 		actions
 			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condi��es:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getAttempt() != 3;\n");
 			MultipleExternalRepresentation m = dbCon.getMER(4L);
@@ -103,12 +103,104 @@ ruleBase MERManagerErrorPersistKB {
 			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_");
 			modified(ruleToHuman);
 			modified(action);
-			System.out.println("Exibi��o de MRE 6 - MRE 4");
+			System.out.println("Exibição de MRE 4 - MRE 4");
 			flush();
 
 	}
 // -rule-end- 
 
+
+	rule regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_indice_3 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getCriterion().getId().equals(3L);
+			action.getAttempt() == 3;
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getAttempt() == 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_23_criterioPersistenciaErro_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_indice_4 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getCriterion().getId().equals(3L);
+			action.getAttempt() != 3;
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getAttempt() != 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(3L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_3_REMEDIACAO_23_criterioPersistenciaErro_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 3 - MRE 3");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_indice_5 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getCriterion().getId().equals(3L);
+			action.getAttempt() != 3;
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getRemediation().getCriterion().getId().equals(3L);\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "action.getAttempt() != 3;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_23_criterioPersistenciaErro_3_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
 
 // end_rules
 	

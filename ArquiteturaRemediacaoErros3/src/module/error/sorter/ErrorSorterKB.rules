@@ -20,8 +20,6 @@ ruleBase ErrorSorterKB {
 
 
 
-
-
 	rule tipoErro_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_0 {
 
 		declarations
@@ -502,7 +500,7 @@ ruleBase ErrorSorterKB {
 // -rule-end- 
 
 
-	rule tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_12 {
+	rule tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_indice_12 {
 
 		declarations
 			Action action;
@@ -520,7 +518,7 @@ ruleBase ErrorSorterKB {
 			!action.getAnswer().getValue().equalsIgnoreCase("6");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"6\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
@@ -534,7 +532,7 @@ ruleBase ErrorSorterKB {
 			System.out.println("Erro classificado como Diretamente Identificáveis");
 			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
-			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_");
 			modified(ruleToHuman);
 			modified(action);
 			flush();
@@ -1140,7 +1138,7 @@ ruleBase ErrorSorterKB {
 // -rule-end- 
 
 
-	rule tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_28 {
+	rule tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_indice_28 {
 
 		declarations
 			Action action;
@@ -1158,7 +1156,7 @@ ruleBase ErrorSorterKB {
 			!action.getAnswer().getValue().equalsIgnoreCase("6");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar o erro: tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"6\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
@@ -1172,7 +1170,7 @@ ruleBase ErrorSorterKB {
 			System.out.println("Erro classificado como Diretamente Identificáveis");
 			((WrongAnswer)action.getAnswer()).setErrorType( dbCon.getErrorType(2L));
 			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().add( dbCon.getSubErrorType(2L));
-			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
+			action.getRegrasAcionadas().add("tipoErro_2_suberrortype_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_");
 			modified(ruleToHuman);
 			modified(action);
 			flush();

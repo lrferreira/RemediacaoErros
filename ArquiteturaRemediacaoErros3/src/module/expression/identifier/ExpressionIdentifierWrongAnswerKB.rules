@@ -525,7 +525,7 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 // -rule-end- 
 
 
-	rule respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_12 {
+	rule respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_indice_12 {
 
 		declarations
 			Action action;
@@ -543,7 +543,7 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 			!action.getAnswer().getValue().equalsIgnoreCase("6");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"6\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
@@ -556,8 +556,8 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 			System.out.println("Resposta Errada (1) detectada");
 			action.setCorrect(false);
 			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
-			action.getRegrasAcionadas().add("respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
-			Remediation r = dbCon.getRemediation(24L);
+			action.getRegrasAcionadas().add("respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_");
+			Remediation r = dbCon.getRemediation(25L);
 			action.setRemediation(r);
 			modified(action);
 			modified(ruleToHuman);
@@ -1197,7 +1197,7 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 // -rule-end- 
 
 
-	rule respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_28 {
+	rule respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_indice_28 {
 
 		declarations
 			Action action;
@@ -1215,7 +1215,7 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 			!action.getAnswer().getValue().equalsIgnoreCase("6");
 
 		actions
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para resposta errada: respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tResposta diferente de \"6\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
@@ -1228,8 +1228,8 @@ ruleBase ExpressionIdentifierWrongAnswerKB {
 			System.out.println("Resposta Errada (1) detectada");
 			action.setCorrect(false);
 			action.setAnswer(new WrongAnswer(action.getAnswer().getValue()));
-			action.getRegrasAcionadas().add("respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
-			Remediation r = dbCon.getRemediation(24L);
+			action.getRegrasAcionadas().add("respostaErrada_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_");
+			Remediation r = dbCon.getRemediation(25L);
 			action.setRemediation(r);
 			modified(action);
 			modified(ruleToHuman);

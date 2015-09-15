@@ -1995,6 +1995,4956 @@ ruleBase MERManagerSpecificMERKB {
 	}
 // -rule-end- 
 
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_60 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_61 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_62 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_63 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_64 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_65 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_66 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_67 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_68 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_69 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_70 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_71 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_72 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_73 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_74 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_75 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_76 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_77 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_78 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_79 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_80 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_81 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_82 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_83 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_84 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_85 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_86 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_87 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_88 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_89 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_90 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_91 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_92 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_93 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_94 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_95 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_96 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_97 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_98 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_99 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_100 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_101 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_102 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_103 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_104 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_105 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_106 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_107 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_108 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_109 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_110 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_111 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_112 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_113 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_114 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_115 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_116 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_117 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_118 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_119 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_120 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_121 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_122 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_123 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_124 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_125 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_126 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_127 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_128 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_129 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_130 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_131 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_132 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_133 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_134 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_135 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_136 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_137 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_138 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_139 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_140 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_141 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_142 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_143 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_144 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_145 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_146 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_147 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_148 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_149 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_150 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_151 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_152 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_153 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_154 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_155 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_156 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_157 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_158 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_159 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_160 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_161 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_162 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_163 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_164 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_165 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_166 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_167 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_168 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_169 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_170 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_171 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_172 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_173 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_174 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_175 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_176 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_177 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_178 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_179 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_180 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_181 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_182 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_183 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_184 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_185 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_186 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_187 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_188 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_189 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_190 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_191 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_192 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_193 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_194 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_1_criterion_1_indice_195 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_1_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_1_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_4_criterion_1_indice_196 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_4_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_4_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_5_criterion_1_indice_197 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_5_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_5_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_15_criterion_1_indice_198 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_15_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_15_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_1_REMEDIACAO_2_criterion_1_indice_199 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(1L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_1_REMEDIACAO_2_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 1\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(1L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 1\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_1_REMEDIACAO_2_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 1 - MRE 1");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_6_criterion_1_indice_200 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_6_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_6_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_16_criterion_1_indice_201 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_16_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_16_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_3_criterion_1_indice_202 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_3_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_3_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_2_REMEDIACAO_7_criterion_1_indice_203 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(2L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_2_REMEDIACAO_7_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 2\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(2L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 2\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_2_REMEDIACAO_7_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 2 - MRE 2");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_17_criterion_1_indice_204 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_17_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_17_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_REMEDIACAO_8_criterion_1_indice_205 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(4L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_REMEDIACAO_8_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 4\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 4\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_REMEDIACAO_8_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_18_criterion_1_indice_206 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_18_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_18_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_13_criterion_1_indice_207 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_13_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_13_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_5_REMEDIACAO_14_criterion_1_indice_208 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(5L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_5_REMEDIACAO_14_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 5\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(5L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 5\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_5_REMEDIACAO_14_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 5 - MRE 5");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_REMEDIACAO_20_criterion_1_indice_209 {
+
+		declarations
+			Action action;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			action.getRemediation().getMer().getId().equals(6L);
+			action.getRemediation().getCriterion().getId().equals(1L);
+
+		actions
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_REMEDIACAO_20_criterion_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMRE = \"MRE 6\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCritério = \"MRE específica para o erro\"\n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Exiba a MRE \"MRE 6\" \n");
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_REMEDIACAO_20_criterion_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
 // end_rules
 	
 }

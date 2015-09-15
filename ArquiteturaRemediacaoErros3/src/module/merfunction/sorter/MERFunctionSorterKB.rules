@@ -18,49 +18,8 @@ ruleBase MERFunctionSorterKB {
 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_0 {
 
-		declarations
-			Action action;
-			DBConnect dbCon;
-			RuleToHuman ruleToHuman;
-
-		localdecl
-
-		conditions
-			((WrongAnswer)action.getAnswer()).getErrorType().getId().equals(2L);
-			((WrongAnswer)action.getAnswer()).getErrorType().getSubErrorTypes().get(0).getId().equals(2L);
-			action.getGoal().getPath().getQuestion().getExercise().getId().equals(1L);
-			action.getGoal().getPath().getQuestion().getId().equals(1L);
-			action.getGoal().getPath().getId().equals(1L);
-			action.getGoal().getId().equals(5L);
-			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(24L);
-
-		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tExercício = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tQuestão = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tCaminho = 1\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tMeta = 5\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tComponente = \"txt8\"\n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Ações:  \n");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "	Classifique a Função MRE como \"Compreensão mais aprofundada\" \n");
-			action.setMerFunction( dbCon.getMERFunction(3L));
-			modified(ruleToHuman);
-			modified(action);
-			System.out.println("Função MRE: Compreensão mais aprofundada");
-			flush();
-
-	}
-// -rule-end- 
-
-
-	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_1 {
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_0 {
 
 		declarations
 			Action action;
@@ -100,7 +59,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_indice_2 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_indice_1 {
 
 		declarations
 			Action action;
@@ -142,7 +101,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_indice_3 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_indice_2 {
 
 		declarations
 			Action action;
@@ -184,7 +143,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_4 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_3 {
 
 		declarations
 			Action action;
@@ -224,7 +183,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_indice_5 {
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_indice_4 {
 
 		declarations
 			Action action;
@@ -264,7 +223,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_indice_6 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_indice_5 {
 
 		declarations
 			Action action;
@@ -306,7 +265,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_7 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_6 {
 
 		declarations
 			Action action;
@@ -346,7 +305,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_indice_8 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_indice_7 {
 
 		declarations
 			Action action;
@@ -388,7 +347,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_indice_9 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_indice_8 {
 
 		declarations
 			Action action;
@@ -430,7 +389,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_10 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_9 {
 
 		declarations
 			Action action;
@@ -470,7 +429,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_indice_11 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_indice_10 {
 
 		declarations
 			Action action;
@@ -512,7 +471,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_12 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_11 {
 
 		declarations
 			Action action;
@@ -552,7 +511,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_13 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_indice_12 {
 
 		declarations
 			Action action;
@@ -569,11 +528,11 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(24L);
+			action.getRemediation().getId().equals(25L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
@@ -594,7 +553,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_indice_14 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_indice_13 {
 
 		declarations
 			Action action;
@@ -634,7 +593,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_indice_15 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_indice_14 {
 
 		declarations
 			Action action;
@@ -674,7 +633,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_16 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_15 {
 
 		declarations
 			Action action;
@@ -714,7 +673,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_17 {
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_1_indice_16 {
 
 		declarations
 			Action action;
@@ -754,7 +713,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_indice_18 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_4_indice_17 {
 
 		declarations
 			Action action;
@@ -796,7 +755,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_indice_19 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_5_indice_18 {
 
 		declarations
 			Action action;
@@ -838,7 +797,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_20 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_REMEDIACAO_15_indice_19 {
 
 		declarations
 			Action action;
@@ -878,7 +837,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_indice_21 {
+	rule funcaoMRE_1_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_2_indice_20 {
 
 		declarations
 			Action action;
@@ -918,7 +877,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_indice_22 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_6_indice_21 {
 
 		declarations
 			Action action;
@@ -960,7 +919,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_23 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_2_COMPONENTE_txt2_REMEDIACAO_16_indice_22 {
 
 		declarations
 			Action action;
@@ -1000,7 +959,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_indice_24 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_3_indice_23 {
 
 		declarations
 			Action action;
@@ -1042,7 +1001,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_indice_25 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_7_indice_24 {
 
 		declarations
 			Action action;
@@ -1084,7 +1043,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_26 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_3_COMPONENTE_txt5_REMEDIACAO_17_indice_25 {
 
 		declarations
 			Action action;
@@ -1124,7 +1083,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_indice_27 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_8_indice_26 {
 
 		declarations
 			Action action;
@@ -1166,7 +1125,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_28 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_4_COMPONENTE_txt3_REMEDIACAO_18_indice_27 {
 
 		declarations
 			Action action;
@@ -1206,7 +1165,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_indice_29 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_indice_28 {
 
 		declarations
 			Action action;
@@ -1223,11 +1182,11 @@ ruleBase MERFunctionSorterKB {
 			action.getGoal().getPath().getId().equals(1L);
 			action.getGoal().getId().equals(5L);
 			action.getGoal().getComponent().equalsIgnoreCase("txt8");
-			action.getRemediation().getId().equals(24L);
+			action.getRemediation().getId().equals(25L);
 
 		actions
-			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_");
-			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_24_ \n");
+			action.getRegrasAcionadas().add("funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para classificar a Função da MRE: funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_5_COMPONENTE_txt8_REMEDIACAO_25_ \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tTipo de Erro = \"Diretamente Identificáveis\"\n");
 			ruleToHuman.setDescription(ruleToHuman.getDescription() + "\tSubtipo de Erro = \"Deficiência de regra, teorema ou definição\"\n");
@@ -1248,7 +1207,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_indice_30 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_13_indice_29 {
 
 		declarations
 			Action action;
@@ -1288,7 +1247,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_indice_31 {
+	rule funcaoMRE_2_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_14_indice_30 {
 
 		declarations
 			Action action;
@@ -1328,7 +1287,7 @@ ruleBase MERFunctionSorterKB {
 // -rule-end- 
 
 
-	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_32 {
+	rule funcaoMRE_3_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_6_COMPONENTE_txt7_REMEDIACAO_20_indice_31 {
 
 		declarations
 			Action action;

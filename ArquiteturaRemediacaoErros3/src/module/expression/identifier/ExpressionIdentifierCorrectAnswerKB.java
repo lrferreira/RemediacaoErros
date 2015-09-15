@@ -18,6 +18,7 @@ import javax.swing.*;
 
 
 
+
 	
     /**
      * Identifiers of rule respostaCorreta_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_indice_0
@@ -3588,7 +3589,7 @@ import javax.swing.*;
 /**
  * Knowledge base created by JEOPS from file ExpressionIdentifierCorrectAnswerKB.rules
  *
- * @version 10/09/2015
+ * @version 14/09/2015
  */
 public class ExpressionIdentifierCorrectAnswerKB extends jeops.AbstractKnowledgeBase {
 

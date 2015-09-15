@@ -61,6 +61,10 @@ MRE a ser apresentado depende desta informac~ao;*/
 		this.regrasAcionadas = regrasAcionadas;
 	}
 
+
+	public String toString() {
+		return "Ação nº " + this.getId();
+	}
 	
 	public Answer getAnswer() {
 		return answer;

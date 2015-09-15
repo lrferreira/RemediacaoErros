@@ -1237,7 +1237,7 @@ public class DBConnect {
 					 " where a.correct = 1 " +
 			" and id_merfunction = " + id_merfunction +
 					" group by b.id " +
-					" order by success ");
+					" order by success desc");
 			
 			while(rs.next()){
 				mers.add(getMER(rs.getLong("b.id")));

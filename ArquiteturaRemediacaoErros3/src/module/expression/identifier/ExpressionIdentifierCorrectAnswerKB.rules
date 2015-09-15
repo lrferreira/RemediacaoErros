@@ -18,6 +18,7 @@ ruleBase ExpressionIdentifierCorrectAnswerKB {
 
 
 
+
 	rule respostaCorreta_EXERCICIO_1_QUESTAO_1_CAMINHO_1_META_1_COMPONENTE_txt1_indice_0 {
 
 		declarations

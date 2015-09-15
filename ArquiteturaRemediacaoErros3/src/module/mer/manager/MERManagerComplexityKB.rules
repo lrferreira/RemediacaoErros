@@ -15,6 +15,95 @@ import java.util.ArrayList;
 ruleBase MERManagerComplexityKB {
 
 
+
+
+	rule regraMRE_3_complexity_1_indice_0 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 1;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_3_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(3L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_3_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 3 - MRE 3");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_4_complexity_1_indice_1 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 2;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_4_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(4L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_4_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 4 - MRE 4");
+			flush();
+
+	}
+// -rule-end- 
+
+
+	rule regraMRE_6_complexity_1_indice_2 {
+
+		declarations
+			Action action;
+			Integer complexity;
+			DBConnect dbCon;
+			RuleToHuman ruleToHuman;
+
+		localdecl
+
+		conditions
+			complexity == 3;
+
+		actions
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "Regra acionada para selecionar a MRE: regraMRE_6_complexity_1_ \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + " Condições:  \n");
+			ruleToHuman.setDescription(ruleToHuman.getDescription() + "complexity == 1;\n");
+			MultipleExternalRepresentation m = dbCon.getMER(6L);
+			action.setMer(m);
+			action.getRegrasAcionadas().add("regraMRE_6_complexity_1_");
+			modified(ruleToHuman);
+			modified(action);
+			System.out.println("Exibição de MRE 6 - MRE 6");
+			flush();
+
+	}
+// -rule-end- 
+
+
 // end_rules
 	
 }
